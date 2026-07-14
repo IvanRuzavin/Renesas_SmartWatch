@@ -1,0 +1,11 @@
+PROJECT_NAME           = "R7FA4M2 Multi-Click Smartwatch"
+OUTPUT_DIRECTORY       = docs
+INPUT                  = README.md include src
+FILE_PATTERNS           = *.h *.c *.md
+RECURSIVE               = YES
+USE_MDFILE_AS_MAINPAGE  = README.md
+EXTRACT_STATIC          = NO
+GENERATE_HTML           = YES
+GENERATE_LATEX          = NO
+QUIET                   = YES
+WARN_IF_UNDOCUMENTED    = YES

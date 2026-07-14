@@ -1,0 +1,5 @@
+.meproject
+build-*
+.cache
+compile_commands.json
+settings.json
