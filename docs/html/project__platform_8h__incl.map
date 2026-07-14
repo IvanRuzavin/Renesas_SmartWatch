@@ -1,0 +1,9 @@
+<map id="include/project_platform.h" name="include/project_platform.h">
+<area shape="rect" id="Node000001" title="Project&#45;specific SDK hooks used by the example." alt="" coords="35,5,228,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,76,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="118,33,68,72,65,68,115,29"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="100,79,163,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="134,31,134,65,129,65,129,31"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="187,79,265,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="148,29,201,68,198,72,145,33"/>
+</map>

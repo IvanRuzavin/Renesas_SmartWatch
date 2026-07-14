@@ -1,0 +1,23 @@
+<map id="src/rtc14.c" name="src/rtc14.c">
+<area shape="rect" id="Node000001" title="RTC 14 Click date/time validation, conversion and I2C access." alt="" coords="194,5,283,31"/>
+<area shape="rect" id="Node000002" href="$rtc14_8h.html" title="Public declarations for this module." alt="" coords="40,79,107,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="213,33,114,76,112,71,211,28"/>
+<area shape="rect" id="Node000005" href="$app__config_8h.html" title="Compile&#45;time configuration for the R7FA4M2 smartwatch example." alt="" coords="148,152,252,177"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="238,32,209,139,204,138,233,30"/>
+<area shape="rect" id="Node000006" href="$iic0__bus_8h.html" title="Public declarations for this module." alt="" coords="237,79,323,104"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="248,30,269,65,264,68,243,32"/>
+<area shape="rect" id="Node000007" href="$project__platform_8h.html" title="Project&#45;specific SDK hooks used by the example." alt="" coords="347,79,490,104"/>
+<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="269,28,378,71,376,76,267,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="165,225,235,251"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="56,106,36,121,18,139,9,158,9,167,13,176,41,202,77,219,115,229,151,234,150,239,114,235,75,224,38,207,9,179,4,168,3,157,14,135,32,117,53,102"/>
+<area shape="rect" id="Node000004" href="$app__types_8h.html" title="Shared data types and result codes." alt="" coords="23,152,124,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="76,104,76,138,71,138,71,104"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="95,175,169,216,166,221,93,180"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="203,178,203,212,197,212,197,178"/>
+<area shape="poly" id="edge8_Node000006_Node000003" title=" " alt="" coords="283,105,279,139,266,179,250,201,230,219,227,215,246,197,262,176,274,138,278,104"/>
+<area shape="poly" id="edge10_Node000007_Node000003" title=" " alt="" coords="403,106,230,220,228,215,400,102"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="386,152,449,177"/>
+<area shape="poly" id="edge11_Node000007_Node000008" title=" " alt="" coords="421,104,421,139,415,138,416,104"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="473,152,551,177"/>
+<area shape="poly" id="edge12_Node000007_Node000009" title=" " alt="" coords="435,102,488,141,484,146,432,106"/>
+</map>

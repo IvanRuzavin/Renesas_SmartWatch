@@ -1,0 +1,24 @@
+<map id="src/temphum27.c" name="src/temphum27.c">
+<area shape="rect" id="Node000001" title="Temp&amp;Hum 27 Click reset, CRC validation and fixed&#45;point conversion." alt="" coords="149,5,283,31"/>
+<area shape="rect" id="Node000002" href="$temphum27_8h.html" title="Public declarations for this module." alt="" coords="22,79,135,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="195,33,114,75,112,70,193,28"/>
+<area shape="rect" id="Node000005" href="$app__config_8h.html" title="Compile&#45;time configuration for the R7FA4M2 smartwatch example." alt="" coords="131,152,235,177"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="216,31,204,79,191,139,185,138,199,78,211,30"/>
+<area shape="rect" id="Node000006" href="$iic0__bus_8h.html" title="Public declarations for this module." alt="" coords="214,79,301,104"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="225,30,246,65,241,68,221,32"/>
+<area shape="rect" id="Node000007" href="$ra4m2__baremetal_8h.html" title="Shared RA4M2 register definitions used by the local bare&#45;metal drivers." alt="" coords="325,79,475,104"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="247,28,358,71,356,76,245,33"/>
+<area shape="rect" id="Node000003" href="$app__types_8h.html" title="Shared data types and result codes." alt="" coords="5,152,107,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="77,105,66,140,61,138,72,104"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="198,225,269,251"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="85,175,193,218,191,223,84,180"/>
+<area shape="poly" id="edge5_Node000005_Node000004" title=" " alt="" coords="193,176,219,213,215,216,189,179"/>
+<area shape="poly" id="edge7_Node000006_Node000004" title=" " alt="" coords="259,105,249,178,242,212,237,211,244,177,254,104"/>
+<area shape="rect" id="Node000008" href="$project__platform_8h.html" title="Project&#45;specific SDK hooks used by the example." alt="" coords="322,152,465,177"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="402,105,398,139,393,138,396,104"/>
+<area shape="poly" id="edge10_Node000008_Node000004" title=" " alt="" coords="369,180,273,222,271,217,367,175"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="305,225,367,251"/>
+<area shape="poly" id="edge11_Node000008_Node000009" title=" " alt="" coords="386,179,356,216,352,213,382,176"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="392,225,469,251"/>
+<area shape="poly" id="edge12_Node000008_Node000010" title=" " alt="" coords="402,176,421,212,416,215,397,179"/>
+</map>

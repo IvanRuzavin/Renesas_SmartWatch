@@ -1,0 +1,8 @@
+var searchData=
+[
+  ['rtc14_5fget_5fdatetime_0',['rtc14_get_datetime',['../rtc14_8h.html#ad6c8223e08739c839ff35f907ac7a1ca',1,'rtc14_get_datetime(rtc14_datetime_t *datetime):&#160;rtc14.c'],['../rtc14_8c.html#ad6c8223e08739c839ff35f907ac7a1ca',1,'rtc14_get_datetime(rtc14_datetime_t *datetime):&#160;rtc14.c']]],
+  ['rtc14_5finit_1',['rtc14_init',['../rtc14_8h.html#ae02084fb7880e0443cb79bc08f00ebd9',1,'rtc14_init(void):&#160;rtc14.c'],['../rtc14_8c.html#ae02084fb7880e0443cb79bc08f00ebd9',1,'rtc14_init(void):&#160;rtc14.c']]],
+  ['rtc14_5fprint_5fdatetime_2',['rtc14_print_datetime',['../rtc14_8h.html#af59ef583c4726de5298aeedd6771edaa',1,'rtc14_print_datetime(const rtc14_datetime_t *datetime):&#160;rtc14.c'],['../rtc14_8c.html#af59ef583c4726de5298aeedd6771edaa',1,'rtc14_print_datetime(const rtc14_datetime_t *datetime):&#160;rtc14.c']]],
+  ['rtc14_5fset_5fdatetime_5f24h_3',['rtc14_set_datetime_24h',['../rtc14_8h.html#a594eeb620fb23edac916ba709ba312b2',1,'rtc14_set_datetime_24h(uint16_t year, uint8_t month, uint8_t day, uint8_t hour, uint8_t minute, uint8_t second, uint8_t weekday):&#160;rtc14.c'],['../rtc14_8c.html#a594eeb620fb23edac916ba709ba312b2',1,'rtc14_set_datetime_24h(uint16_t year, uint8_t month, uint8_t day, uint8_t hour, uint8_t minute, uint8_t second, uint8_t weekday):&#160;rtc14.c']]],
+  ['rtc14_5fset_5fdefault_5fdatetime_4',['rtc14_set_default_datetime',['../rtc14_8h.html#ab1aee4e1c6c5c4ff183a11c5d64263e9',1,'rtc14_set_default_datetime(void):&#160;rtc14.c'],['../rtc14_8c.html#ab1aee4e1c6c5c4ff183a11c5d64263e9',1,'rtc14_set_default_datetime(void):&#160;rtc14.c']]]
+];

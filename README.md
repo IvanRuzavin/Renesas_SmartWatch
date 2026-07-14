@@ -101,15 +101,11 @@ The first demo shows the physical-control path. P304 generates IRQ9 for B3 actio
 
 ![Controlling the example through pin interrupts](./pin_interrupt_control.gif)
 
-Place the prepared pin-control GIF next to this README and name it `pin_interrupt_control.gif`.
-
 ## Demo: control through Bluetooth
 
 The second demo shows the same state machine driven remotely through BLE TINY. SmartConsole writes B2, B3, B4 or RTC payloads to CodeLess memory slot 0. SCI3 interrupts collect the UART response, and the foreground parser applies the command without performing display or I2C work inside an ISR.
 
 ![Controlling the example through Bluetooth](./bluetooth_control.gif)
-
-Place the prepared Bluetooth-control GIF next to this README and name it `bluetooth_control.gif`.
 
 ## Project structure
 
@@ -138,8 +134,6 @@ Place the prepared Bluetooth-control GIF next to this README and name it `blueto
 │   ├── main.c
 │   ├── rtc14.c
 │   └── temphum27.c
-├── pin_interrupt_control.gif      # add your prepared GIF
-└── bluetooth_control.gif          # add your prepared GIF
 ```
 
 ## Module responsibilities
@@ -163,10 +157,6 @@ Place the prepared Bluetooth-control GIF next to this README and name it `blueto
 
 ## Documentation
 
-All public declarations have Doxygen-style comments. Run Doxygen from this directory:
-
-```bash
-doxygen Doxyfile
-```
+All public declarations have Doxygen-style comments.
 
 Generated HTML documentation is written to `docs/html/`.

@@ -1,0 +1,9 @@
+<map id="include/iic0_bus.h" name="include/iic0_bus.h">
+<area shape="rect" id="Node000001" title="Public declarations for this module." alt="" coords="115,5,253,31"/>
+<area shape="rect" id="Node000002" href="$iic0__bus_8c.html" title="Polling IIC0 master transport shared by RTC 14 and Temp&amp;Hum 27." alt="" coords="5,79,115,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="154,40,82,81,79,76,151,35"/>
+<area shape="rect" id="Node000003" href="$rtc14_8c.html" title="RTC 14 Click date/time validation, conversion and I2C access." alt="" coords="139,79,229,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="187,44,187,79,181,79,181,44"/>
+<area shape="rect" id="Node000004" href="$temphum27_8c.html" title="Temp&amp;Hum 27 Click reset, CRC validation and fixed&#45;point conversion." alt="" coords="253,79,387,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="219,34,299,76,297,81,216,39"/>
+</map>

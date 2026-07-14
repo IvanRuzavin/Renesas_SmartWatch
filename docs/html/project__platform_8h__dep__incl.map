@@ -1,0 +1,19 @@
+<map id="include/project_platform.h" name="include/project_platform.h">
+<area shape="rect" id="Node000001" title="Project&#45;specific SDK hooks used by the example." alt="" coords="460,5,653,31"/>
+<area shape="rect" id="Node000002" href="$ra4m2__baremetal_8h.html" title="Shared RA4M2 register definitions used by the local bare&#45;metal drivers." alt="" coords="257,79,459,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="513,38,391,81,390,76,511,33"/>
+<area shape="rect" id="Node000008" href="$app__controller_8c.html" title="Application state machine and foreground scheduling." alt="" coords="483,79,631,104"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="559,44,559,79,554,79,554,44"/>
+<area shape="rect" id="Node000009" href="$rtc14_8c.html" title="RTC 14 Click date/time validation, conversion and I2C access." alt="" coords="655,79,744,104"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="593,34,677,76,675,81,590,39"/>
+<area shape="rect" id="Node000003" href="$app__interrupts_8c.html" title="RAM vector installation, AGT0 tick and external button IRQ routing." alt="" coords="5,152,156,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="301,110,126,154,125,149,299,105"/>
+<area shape="rect" id="Node000004" href="$bletiny_8c.html" title="BLE TINY CodeLess UART transport, connection tracking and remote commands." alt="" coords="181,152,279,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="327,113,252,154,250,149,324,108"/>
+<area shape="rect" id="Node000005" href="$iic0__bus_8c.html" title="Polling IIC0 master transport shared by RTC 14 and Temp&amp;Hum 27." alt="" coords="303,152,413,177"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="361,118,361,152,355,152,355,118"/>
+<area shape="rect" id="Node000006" href="$ips2__display_8c.html" title="IPS Display 2 initialization, graphics primitives and smartwatch UI." alt="" coords="437,152,572,177"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="395,107,482,149,480,154,392,112"/>
+<area shape="rect" id="Node000007" href="$temphum27_8c.html" title="Temp&amp;Hum 27 Click reset, CRC validation and fixed&#45;point conversion." alt="" coords="596,152,731,177"/>
+<area shape="poly" id="edge6_Node000002_Node000007" title=" " alt="" coords="421,104,614,149,613,154,420,110"/>
+</map>

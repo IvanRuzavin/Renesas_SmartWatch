@@ -1,0 +1,29 @@
+<map id="src/bletiny.c" name="src/bletiny.c">
+<area shape="rect" id="Node000001" title="BLE TINY CodeLess UART transport, connection tracking and remote commands." alt="" coords="236,5,335,31"/>
+<area shape="rect" id="Node000002" href="$bletiny_8h.html" title="Public declarations for this module." alt="" coords="5,152,83,177"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="252,33,201,53,147,81,103,113,67,144,63,140,100,108,144,76,199,48,250,28"/>
+<area shape="rect" id="Node000004" href="$app__config_8h.html" title="Compile&#45;time configuration for the R7FA4M2 smartwatch example." alt="" coords="107,152,211,177"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="237,31,194,49,176,63,161,80,155,94,153,109,155,138,149,139,147,108,150,92,156,77,172,59,192,45,235,26"/>
+<area shape="rect" id="Node000005" href="$app__controller_8h.html" title="Public declarations for this module." alt="" coords="171,79,298,104"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="279,33,253,69,249,66,275,29"/>
+<area shape="rect" id="Node000006" href="$app__types_8h.html" title="Shared data types and result codes." alt="" coords="285,152,387,177"/>
+<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="293,30,313,78,332,138,327,139,308,80,288,32"/>
+<area shape="rect" id="Node000007" href="$ra4m2__baremetal_8h.html" title="Shared RA4M2 register definitions used by the local bare&#45;metal drivers." alt="" coords="465,79,615,104"/>
+<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="327,28,487,72,485,78,326,33"/>
+<area shape="rect" id="Node000011" href="$rtc14_8h.html" title="Public declarations for this module." alt="" coords="373,79,440,104"/>
+<area shape="poly" id="edge14_Node000001_Node000011" title=" " alt="" coords="306,28,377,69,374,74,303,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="257,225,327,251"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="83,174,244,220,242,225,82,180"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="181,175,259,216,257,221,179,180"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="242,103,285,211,280,213,237,105"/>
+<area shape="poly" id="edge8_Node000006_Node000003" title=" " alt="" coords="331,179,309,215,304,212,326,176"/>
+<area shape="rect" id="Node000008" href="$project__platform_8h.html" title="Project&#45;specific SDK hooks used by the example." alt="" coords="466,152,609,177"/>
+<area shape="poly" id="edge10_Node000007_Node000008" title=" " alt="" coords="542,104,541,139,536,138,537,104"/>
+<area shape="poly" id="edge11_Node000008_Node000003" title=" " alt="" coords="499,180,341,225,340,220,497,175"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="458,225,521,251"/>
+<area shape="poly" id="edge12_Node000008_Node000009" title=" " alt="" coords="532,179,507,216,502,213,527,176"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="545,225,623,251"/>
+<area shape="poly" id="edge13_Node000008_Node000010" title=" " alt="" coords="547,176,571,212,567,215,543,179"/>
+<area shape="poly" id="edge15_Node000011_Node000003" title=" " alt="" coords="411,104,413,139,409,160,401,179,374,206,342,224,339,219,371,202,396,176,404,158,407,139,406,104"/>
+<area shape="poly" id="edge16_Node000011_Node000006" title=" " alt="" coords="397,106,359,144,355,140,393,102"/>
+</map>

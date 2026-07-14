@@ -1,0 +1,27 @@
+<map id="include/app_types.h" name="include/app_types.h">
+<area shape="rect" id="Node000001" title="Shared data types and result codes." alt="" coords="315,5,467,31"/>
+<area shape="rect" id="Node000002" href="$ips2__display_8h.html" title="Public declarations for this module." alt="" coords="497,79,661,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="434,33,549,76,547,81,433,38"/>
+<area shape="rect" id="Node000003" href="$app__controller_8c.html" title="Application state machine and foreground scheduling." alt="" coords="242,152,390,177"/>
+<area shape="poly" id="edge11_Node000001_Node000003" title=" " alt="" coords="346,39,319,56,298,80,294,98,296,117,311,151,306,153,291,118,288,98,294,77,315,52,343,34"/>
+<area shape="rect" id="Node000005" href="$rtc14_8h.html" title="Public declarations for this module." alt="" coords="114,79,233,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="344,37,209,81,208,76,342,32"/>
+<area shape="rect" id="Node000006" href="$bletiny_8c.html" title="BLE TINY CodeLess UART transport, connection tracking and remote commands." alt="" coords="5,152,104,177"/>
+<area shape="poly" id="edge13_Node000001_Node000006" title=" " alt="" coords="302,32,186,52,136,65,103,81,87,97,74,117,60,153,55,151,70,114,83,94,100,76,135,60,185,46,301,27"/>
+<area shape="rect" id="Node000008" href="$temphum27_8h.html" title="Public declarations for this module." alt="" coords="309,79,473,104"/>
+<area shape="poly" id="edge8_Node000001_Node000008" title=" " alt="" coords="393,44,393,79,388,79,388,44"/>
+<area shape="rect" id="Node000010" href="$app__interrupts_8c.html" title="RAM vector installation, AGT0 tick and external button IRQ routing." alt="" coords="685,79,835,104"/>
+<area shape="poly" id="edge12_Node000001_Node000010" title=" " alt="" coords="464,31,701,76,700,81,463,36"/>
+<area shape="rect" id="Node000011" href="$iic0__bus_8c.html" title="Polling IIC0 master transport shared by RTC 14 and Temp&amp;Hum 27." alt="" coords="860,79,969,104"/>
+<area shape="poly" id="edge14_Node000001_Node000011" title=" " alt="" coords="481,27,848,76,860,78,859,83,848,81,480,33"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="524,110,359,154,358,149,523,105"/>
+<area shape="rect" id="Node000004" href="$ips2__display_8c.html" title="IPS Display 2 initialization, graphics primitives and smartwatch UI." alt="" coords="573,152,707,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="600,113,632,150,628,154,596,116"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="210,108,294,149,291,154,207,112"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="144,113,75,154,73,149,141,109"/>
+<area shape="rect" id="Node000007" href="$rtc14_8c.html" title="RTC 14 Click date/time validation, conversion and I2C access." alt="" coords="129,152,218,177"/>
+<area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="176,118,176,152,171,152,171,118"/>
+<area shape="poly" id="edge9_Node000008_Node000003" title=" " alt="" coords="371,115,330,154,326,150,367,111"/>
+<area shape="rect" id="Node000009" href="$temphum27_8c.html" title="Temp&amp;Hum 27 Click reset, CRC validation and fixed&#45;point conversion." alt="" coords="414,152,549,177"/>
+<area shape="poly" id="edge10_Node000008_Node000009" title=" " alt="" coords="418,110,468,150,465,154,415,115"/>
+</map>
