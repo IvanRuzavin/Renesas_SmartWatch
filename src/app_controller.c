@@ -294,6 +294,13 @@ int app_controller_init(void)
         app_halt_with_error("BLE TINY SCI3 initialization failed: %d\r\n", -1);
     }
 
+    if (APP_AUTO_B3_DEMO_ENABLED)
+    {
+        /* Demo mode keeps the stopwatch running in the background at all times. */
+        app_stopwatch_ms = 0U;
+        app_stopwatch_running = 1U;
+    }
+
     if (app_datetime_valid != 0U)
     {
         ips2_render_dashboard(&app_datetime, &app_environment,
@@ -307,14 +314,16 @@ int app_controller_init(void)
     app_auto_b3_last_trigger_ms = app_system_ms;
 
     printf_me("RTC14 initialized to 13.07.2026 12:18:00.\r\n");
-    printf_me("Physical B3 cycles WATCH -> ENV -> TIME OF DAY -> STOPWATCH -> WATCH; at a nonzero stopwatch value it resets first.\r\n");
-    printf_me("Physical B4 starts, pauses and continues the stopwatch while its screen is active.\r\n");
     if (APP_AUTO_B3_DEMO_ENABLED)
     {
-        printf_me("Automatic B3 demo is enabled: cycling every 15 seconds.\r\n");
+        printf_me("Automatic demo enabled: WATCH -> ENV -> TIME OF DAY -> STOPWATCH -> WATCH every 15 seconds.\r\n");
+        printf_me("The stopwatch starts at boot, runs continuously, and B3 only changes screens.\r\n");
+        printf_me("B4 and BLE stopwatch stop/pause/reset commands are locked in demo mode.\r\n");
     }
     else
     {
+        printf_me("Physical B3 cycles WATCH -> ENV -> TIME OF DAY -> STOPWATCH -> WATCH; at a nonzero stopwatch value it resets first.\r\n");
+        printf_me("Physical B4 starts, pauses and continues the stopwatch while its screen is active.\r\n");
         printf_me("Automatic B3 demo is disabled. Set APP_AUTO_B3_DEMO_ENABLED to true to enable it.\r\n");
     }
     printf_me("TempHum27 and RTC14 are sampled once per second on shared IIC0.\r\n");
@@ -386,7 +395,8 @@ static uint8_t app_handle_physical_b3(uint32_t now)
     app_physical_b3_pending = 0U;
     app_auto_b3_last_trigger_ms = now;
 
-    if ((app_active_screen == APP_SCREEN_STOPWATCH) &&
+    if ((!APP_AUTO_B3_DEMO_ENABLED) &&
+        (app_active_screen == APP_SCREEN_STOPWATCH) &&
         ((app_stopwatch_ms != 0U) || (app_stopwatch_running != 0U)))
     {
         app_stopwatch_ms = 0U;
@@ -450,7 +460,15 @@ static uint8_t app_handle_physical_b4(void)
     app_physical_b4_pending = 0U;
     if (app_active_screen == APP_SCREEN_STOPWATCH)
     {
-        app_stopwatch_running = app_stopwatch_running ? 0U : 1U;
+        if (APP_AUTO_B3_DEMO_ENABLED)
+        {
+            /* The automatic showcase owns the stopwatch run state. */
+            app_stopwatch_running = 1U;
+        }
+        else
+        {
+            app_stopwatch_running = app_stopwatch_running ? 0U : 1U;
+        }
         redraw = 1U;
     }
     elapsed = app_stopwatch_ms;
@@ -513,14 +531,22 @@ static uint8_t app_handle_ble_stopwatch_reset(uint32_t now)
     primask = __get_PRIMASK();
     __disable_irq();
     app_ble_stopwatch_reset_pending = 0U;
-    app_stopwatch_ms = 0U;
-    app_stopwatch_running = 0U;
+    if (APP_AUTO_B3_DEMO_ENABLED)
+    {
+        /* Demo mode must remain continuous even when BLE B3 is received. */
+        app_stopwatch_running = 1U;
+    }
+    else
+    {
+        app_stopwatch_ms = 0U;
+        app_stopwatch_running = 0U;
+    }
     if ((primask & 1U) == 0U)
     {
         __enable_irq();
     }
 
-    /* BLE B3 is dedicated to stopping/resetting and opens the timer result. */
+    /* BLE B3 opens the timer; reset is suppressed during automatic demo mode. */
     app_switch_screen(APP_SCREEN_STOPWATCH, now);
     return 1U;
 }
@@ -547,7 +573,15 @@ static uint8_t app_handle_ble_stopwatch_control(uint32_t now)
     app_ble_stopwatch_control_pending = 0U;
     screen_changed = (app_active_screen != APP_SCREEN_STOPWATCH) ? 1U : 0U;
     app_active_screen = APP_SCREEN_STOPWATCH;
-    app_stopwatch_running = app_stopwatch_running ? 0U : 1U;
+    if (APP_AUTO_B3_DEMO_ENABLED)
+    {
+        /* BLE B4 may show the stopwatch but cannot pause the automatic demo. */
+        app_stopwatch_running = 1U;
+    }
+    else
+    {
+        app_stopwatch_running = app_stopwatch_running ? 0U : 1U;
+    }
     elapsed = app_stopwatch_ms;
     running = app_stopwatch_running;
     if ((primask & 1U) == 0U)

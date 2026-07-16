@@ -2100,34 +2100,45 @@ static void ips2_draw_timer_actions(uint32_t elapsed_ms, uint8_t running)
     const char *b4_text;
     uint16_t b4_color;
 
-    if (elapsed_ms == 0U)
+    if (APP_AUTO_B3_DEMO_ENABLED)
     {
-        b3_action = 0U;
+        b3_action = 2U;
         b3_text = "B3 - NEXT";
+        b4_action = 3U;
+        b4_text = "AUTO RUN";
+        b4_color = IPS2_COLOR_CYAN;
     }
     else
     {
-        b3_action = 1U;
-        b3_text = "B3 - RESET";
-    }
+        if (elapsed_ms == 0U)
+        {
+            b3_action = 0U;
+            b3_text = "B3 - NEXT";
+        }
+        else
+        {
+            b3_action = 1U;
+            b3_text = "B3 - RESET";
+        }
 
-    if (running != 0U)
-    {
-        b4_action = 1U;
-        b4_text = "B4 - PAUSE";
-        b4_color = IPS2_COLOR_ERROR;
-    }
-    else if (elapsed_ms == 0U)
-    {
-        b4_action = 0U;
-        b4_text = "B4 - START";
-        b4_color = IPS2_COLOR_CYAN;
-    }
-    else
-    {
-        b4_action = 2U;
-        b4_text = "B4 - CONTINUE";
-        b4_color = IPS2_COLOR_CYAN;
+        if (running != 0U)
+        {
+            b4_action = 1U;
+            b4_text = "B4 - PAUSE";
+            b4_color = IPS2_COLOR_ERROR;
+        }
+        else if (elapsed_ms == 0U)
+        {
+            b4_action = 0U;
+            b4_text = "B4 - START";
+            b4_color = IPS2_COLOR_CYAN;
+        }
+        else
+        {
+            b4_action = 2U;
+            b4_text = "B4 - CONTINUE";
+            b4_color = IPS2_COLOR_CYAN;
+        }
     }
 
     if (b4_action != ips2_last_timer_b4_action)

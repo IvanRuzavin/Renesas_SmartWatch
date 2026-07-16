@@ -54,14 +54,19 @@
  * @name Automatic screen-cycle demo
  * @{
  */
-/** Set to true to generate the physical B3 action automatically. */
-#define APP_AUTO_B3_DEMO_ENABLED            (false)
+/**
+ * Set to true to cycle screens automatically every 15 seconds.
+ * The stopwatch starts at boot, runs continuously in the background, and
+ * B3/B4/BLE stopwatch controls cannot reset or pause it while enabled.
+ */
+#define APP_AUTO_B3_DEMO_ENABLED            (true)
 /** Time between automatic B3 actions when demo mode is enabled. */
 #define APP_AUTO_B3_DEMO_INTERVAL_MS        (15000UL)
 /** @} */
 
 /** @name P304 / IRQ9 B3 input configuration
- *  Physical B3 cycles screens and resets a nonzero stopwatch before advancing.
+ *  Physical B3 cycles screens. A nonzero stopwatch is reset before advancing
+ *  only when automatic demonstration mode is disabled.
  *  @{
  */
 #define APP_B3_IRQ_SLOT                     (16U)
