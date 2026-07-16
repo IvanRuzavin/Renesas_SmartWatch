@@ -59,7 +59,7 @@
  * The stopwatch starts at boot, runs continuously in the background, and
  * B3/B4/BLE stopwatch controls cannot reset or pause it while enabled.
  */
-#define APP_AUTO_B3_DEMO_ENABLED            (true)
+#define APP_AUTO_B3_DEMO_ENABLED            (false)
 /** Time between automatic B3 actions when demo mode is enabled. */
 #define APP_AUTO_B3_DEMO_INTERVAL_MS        (15000UL)
 /** @} */
