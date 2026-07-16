@@ -1,5 +1,5 @@
 <map id="include/ips2_display.h" name="include/ips2_display.h">
-<area shape="rect" id="Node000001" title="Public declarations for this module." alt="" coords="5,5,169,31"/>
+<area shape="rect" id="Node000001" title="IPS Display 2 transport and smartwatch UI rendering interface." alt="" coords="5,5,169,31"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="52,152,123,177"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="85,32,71,79,72,110,80,139,75,140,67,111,66,78,80,30"/>
 <area shape="rect" id="Node000003" href="$app__types_8h.html" title="Shared data types and result codes." alt="" coords="81,79,182,104"/>

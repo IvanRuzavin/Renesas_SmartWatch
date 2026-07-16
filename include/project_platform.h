@@ -13,12 +13,12 @@
 /** @brief System clock frequencies supplied by the NECTO project. */
 typedef struct
 {
-    uint32_t iclk;
-    uint32_t pclka;
-    uint32_t pclkb;
-    uint32_t pclkc;
-    uint32_t pclkd;
-    uint32_t fclk;
+    uint32_t iclk;  /**< CPU instruction clock frequency in hertz. */
+    uint32_t pclka; /**< Peripheral clock A frequency in hertz. */
+    uint32_t pclkb; /**< Peripheral clock B frequency in hertz. */
+    uint32_t pclkc; /**< Peripheral clock C frequency in hertz. */
+    uint32_t pclkd; /**< Peripheral clock D frequency in hertz. */
+    uint32_t fclk;  /**< Flash interface clock frequency in hertz. */
 } system_clocks_t;
 
 /**

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['watch_20without_20stopping_20the_20stopwatch_0',['Show the watch without stopping the stopwatch',['../index.html#autotoc_md10',1,'']]],
-  ['without_20stopping_20the_20stopwatch_1',['Show the watch without stopping the stopwatch',['../index.html#autotoc_md10',1,'']]]
+  ['new_20in_20this_20version_0',['What is new in this version',['../index.html#autotoc_md1',1,'']]],
+  ['notes_1',['Integration notes',['../index.html#autotoc_md26',1,'']]]
 ];

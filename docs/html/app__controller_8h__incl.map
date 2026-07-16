@@ -1,5 +1,5 @@
 <map id="include/app_controller.h" name="include/app_controller.h">
-<area shape="rect" id="Node000001" title="Public declarations for this module." alt="" coords="5,5,183,31"/>
+<area shape="rect" id="Node000001" title="Application state&#45;machine and foreground&#45;loop interface." alt="" coords="5,5,183,31"/>
 <area shape="rect" id="Node000002" title=" " alt="" coords="59,79,129,104"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="97,31,97,65,91,65,91,31"/>
 </map>

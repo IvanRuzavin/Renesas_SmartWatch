@@ -11,6 +11,10 @@
 #define TEMPHUM27_EN_MASK (1U << 5) /* P105 */
 #define TEMPHUM27_ALR_MASK (1U << 1) /* P101 */
 
+/**
+ * @brief Delay for the requested number of milliseconds.
+ * @param[in] milliseconds Delay duration in milliseconds.
+ */
 static void temphum27_delay_ms(uint32_t milliseconds)
 {
     while (milliseconds-- != 0U)
@@ -23,6 +27,9 @@ static void temphum27_delay_ms(uint32_t milliseconds)
 /* Temp&Hum 27 Click access                                                    */
 /* -------------------------------------------------------------------------- */
 
+/**
+ * @brief Configure pins.
+ */
 static void temphum27_configure_pins(void)
 {
     R_PMISC->PWPR_b.B0WI = 0U;
@@ -37,18 +44,27 @@ static void temphum27_configure_pins(void)
 }
 
 
+/**
+ * @brief Enable the Temp&Hum 27 sensor through its GPIO pin.
+ */
 static void temphum27_enable(void)
 {
     R_PORT1->PODR |= TEMPHUM27_EN_MASK;
 }
 
 
+/**
+ * @brief Disable the Temp&Hum 27 sensor through its GPIO pin.
+ */
 static void temphum27_disable(void)
 {
     R_PORT1->PODR &= (uint16_t)~TEMPHUM27_EN_MASK;
 }
 
 
+/**
+ * @brief Reset the Temp&Hum 27 sensor and wait for startup.
+ */
 static void temphum27_reset(void)
 {
     /* Match the reset sequence from the supplied Click driver. */
@@ -59,6 +75,12 @@ static void temphum27_reset(void)
 }
 
 
+/**
+ * @brief Calculate the sensor CRC for a two-byte measurement.
+ * @param[in] data Data buffer.
+ * @param[in] length Number of bytes in the buffer.
+ * @return Calculated or converted value.
+ */
 static uint8_t temphum27_calculate_crc(const uint8_t *data, uint8_t length)
 {
     uint8_t crc = 0xFFU;
@@ -86,6 +108,9 @@ static uint8_t temphum27_calculate_crc(const uint8_t *data, uint8_t length)
 }
 
 
+/**
+ * @brief Initialize the module.
+ */
 void temphum27_init(void)
 {
     temphum27_configure_pins();
@@ -93,6 +118,11 @@ void temphum27_init(void)
 }
 
 
+/**
+ * @brief Read data.
+ * @param[out] environment Temperature and humidity measurement.
+ * @return Zero on success; otherwise a negative error code.
+ */
 int temphum27_read_data(temphum27_data_t *environment)
 {
     uint8_t command = TEMPHUM27_CMD_HOLD_TEMP_HUM;
@@ -168,6 +198,10 @@ int temphum27_read_data(temphum27_data_t *environment)
 }
 
 
+/**
+ * @brief Print data.
+ * @param[in] environment Temperature and humidity measurement.
+ */
 void temphum27_print_data(const temphum27_data_t *environment)
 {
     int32_t temperature = environment->temperature_tenths_c;

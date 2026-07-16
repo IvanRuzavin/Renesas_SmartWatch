@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,6 +27,7 @@
   <td id="projectalign">
    <div id="projectname">R7FA4M2 Multi-Click Smartwatch
    </div>
+   <div id="projectbrief">Bare-metal multi-screen smartwatch demo for Clicker 4 for R7FA4M2A</div>
   </td>
  </tr>
  </tbody>
@@ -46,6 +51,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('iic0__bus_8c.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -67,11 +89,6 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
@@ -90,50 +107,560 @@ Include dependency graph for iic0_bus.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="iic0__bus_8c__incl.png" border="0" usemap="#asrc_2iic0__bus_8c" alt=""/></div>
 <map name="asrc_2iic0__bus_8c" id="asrc_2iic0__bus_8c">
-<area shape="rect" title="Polling IIC0 master transport shared by RTC 14 and Temp&amp;Hum 27." alt="" coords="147,5,257,31"/>
-<area shape="rect" href="iic0__bus_8h.html" title="Public declarations for this module." alt="" coords="5,152,92,177"/>
-<area shape="poly" title=" " alt="" coords="191,33,73,144,69,141,188,29"/>
-<area shape="rect" href="app__config_8h.html" title="Compile&#45;time configuration for the R7FA4M2 smartwatch example." alt="" coords="117,152,221,177"/>
-<area shape="poly" title=" " alt="" coords="200,32,186,79,175,139,170,138,181,78,195,30"/>
-<area shape="rect" href="app__types_8h.html" title="Shared data types and result codes." alt="" coords="195,79,297,104"/>
-<area shape="poly" title=" " alt="" coords="212,30,234,66,229,68,207,32"/>
-<area shape="rect" href="ra4m2__baremetal_8h.html" title="Shared RA4M2 register definitions used by the local bare&#45;metal drivers." alt="" coords="321,79,472,104"/>
-<area shape="poly" title=" " alt="" coords="234,28,353,71,351,76,232,33"/>
+<area shape="rect" title="Polling IIC0 master transport shared by RTC 14 and Temp&amp;Hum 27." alt="" coords="146,5,255,31"/>
+<area shape="rect" href="iic0__bus_8h.html" title="Shared polling IIC0 master interface." alt="" coords="5,152,92,177"/>
+<area shape="poly" title=" " alt="" coords="155,33,113,51,93,64,76,80,61,109,53,138,48,137,56,107,72,77,90,60,111,47,153,28"/>
+<area shape="rect" href="app__config_8h.html" title="Compile&#45;time configuration for the R7FA4M2 smartwatch example." alt="" coords="86,79,190,104"/>
+<area shape="poly" title=" " alt="" coords="192,33,159,70,155,66,188,29"/>
+<area shape="rect" href="app__types_8h.html" title="Shared data types and result codes." alt="" coords="214,79,315,104"/>
+<area shape="poly" title=" " alt="" coords="213,29,247,67,243,70,209,33"/>
+<area shape="rect" href="ra4m2__baremetal_8h.html" title="Shared RA4M2 register definitions used by the local bare&#45;metal drivers." alt="" coords="340,79,491,104"/>
+<area shape="poly" title=" " alt="" coords="236,28,368,72,367,77,234,33"/>
 <area shape="rect" title=" " alt="" coords="187,225,257,251"/>
 <area shape="poly" title=" " alt="" coords="78,175,182,218,180,222,76,180"/>
-<area shape="poly" title=" " alt="" coords="180,176,207,213,203,216,175,179"/>
-<area shape="poly" title=" " alt="" coords="247,105,235,178,229,212,224,211,230,177,242,104"/>
-<area shape="rect" href="project__platform_8h.html" title="Project&#45;specific SDK hooks used by the example." alt="" coords="316,152,459,177"/>
-<area shape="poly" title=" " alt="" coords="398,105,393,139,388,138,392,104"/>
-<area shape="poly" title=" " alt="" coords="362,180,263,222,260,217,360,175"/>
-<area shape="rect" title=" " alt="" coords="297,225,360,251"/>
-<area shape="poly" title=" " alt="" coords="380,179,349,217,345,213,376,176"/>
-<area shape="rect" title=" " alt="" coords="385,225,462,251"/>
-<area shape="poly" title=" " alt="" coords="396,176,414,212,409,214,391,179"/>
+<area shape="poly" title=" " alt="" coords="141,104,145,138,158,176,174,197,194,215,190,219,170,201,153,179,139,139,135,105"/>
+<area shape="rect" title=" " alt="" coords="167,152,250,177"/>
+<area shape="poly" title=" " alt="" coords="152,102,190,140,186,144,148,106"/>
+<area shape="poly" title=" " alt="" coords="269,104,271,138,265,178,255,198,244,216,239,213,251,196,259,177,265,138,264,105"/>
+<area shape="rect" href="project__platform_8h.html" title="Project&#45;specific SDK hooks used by the example." alt="" coords="335,152,477,177"/>
+<area shape="poly" title=" " alt="" coords="416,105,412,139,407,138,411,104"/>
+<area shape="poly" title=" " alt="" coords="377,180,266,223,264,218,375,175"/>
+<area shape="rect" title=" " alt="" coords="327,225,389,251"/>
+<area shape="poly" title=" " alt="" coords="400,179,376,216,371,213,396,176"/>
+<area shape="rect" title=" " alt="" coords="414,225,491,251"/>
+<area shape="poly" title=" " alt="" coords="416,176,440,212,435,215,411,179"/>
 </map>
 </div>
-</div><table class="memberdecls">
+</div>
+<p><a href="iic0__bus_8c_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a2e36972f6859a40d585e3d5411c88bba" id="r_a2e36972f6859a40d585e3d5411c88bba"><td class="memItemLeft" align="right" valign="top"><a id="a2e36972f6859a40d585e3d5411c88bba" name="a2e36972f6859a40d585e3d5411c88bba"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>iic0_bus_init</b> (void)</td></tr>
-<tr class="memdesc:a2e36972f6859a40d585e3d5411c88bba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize IIC0 on P400/P401 at the configured bus speed. <br /></td></tr>
+<tr class="memitem:ac1cf65bb239167aeca6a8abda6f9b965" id="r_ac1cf65bb239167aeca6a8abda6f9b965"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="iic0__bus_8c.html#ac1cf65bb239167aeca6a8abda6f9b965">iic0_wait_set</a> (volatile uint8_t *reg, uint8_t mask)</td></tr>
+<tr class="memdesc:ac1cf65bb239167aeca6a8abda6f9b965"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait until all requested register bits become set.  <br /></td></tr>
+<tr class="separator:ac1cf65bb239167aeca6a8abda6f9b965"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25214d611d00658f56cfced25d06a820" id="r_a25214d611d00658f56cfced25d06a820"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="iic0__bus_8c.html#a25214d611d00658f56cfced25d06a820">iic0_wait_clear</a> (volatile uint8_t *reg, uint8_t mask)</td></tr>
+<tr class="memdesc:a25214d611d00658f56cfced25d06a820"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait until all requested register bits become clear.  <br /></td></tr>
+<tr class="separator:a25214d611d00658f56cfced25d06a820"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75193ff8cbecad39b410f72a2829539a" id="r_a75193ff8cbecad39b410f72a2829539a"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="iic0__bus_8c.html#a75193ff8cbecad39b410f72a2829539a">iic0_wait_transmit_flag</a> (uint8_t mask)</td></tr>
+<tr class="memdesc:a75193ff8cbecad39b410f72a2829539a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait for the next IIC transmit-ready or completion flag.  <br /></td></tr>
+<tr class="separator:a75193ff8cbecad39b410f72a2829539a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9660e600c4b086679fe7efb06183b4f" id="r_ad9660e600c4b086679fe7efb06183b4f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="iic0__bus_8c.html#ad9660e600c4b086679fe7efb06183b4f">iic0_set_receive_nack</a> (uint8_t nack)</td></tr>
+<tr class="memdesc:ad9660e600c4b086679fe7efb06183b4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure the ACK/NACK response used for the next received byte.  <br /></td></tr>
+<tr class="separator:ad9660e600c4b086679fe7efb06183b4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb6556739af69de051cccc91eb40a23b" id="r_afb6556739af69de051cccc91eb40a23b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="iic0__bus_8c.html#afb6556739af69de051cccc91eb40a23b">iic0_clear_receive_state</a> (void)</td></tr>
+<tr class="memdesc:afb6556739af69de051cccc91eb40a23b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear receive flags before starting an IIC read phase.  <br /></td></tr>
+<tr class="separator:afb6556739af69de051cccc91eb40a23b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51347e1ebea5424280054c5572451457" id="r_a51347e1ebea5424280054c5572451457"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="iic0__bus_8c.html#a51347e1ebea5424280054c5572451457">iic0_request_stop</a> (void)</td></tr>
+<tr class="memdesc:a51347e1ebea5424280054c5572451457"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate an IIC STOP condition and wait for bus release.  <br /></td></tr>
+<tr class="separator:a51347e1ebea5424280054c5572451457"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d130bdf3be19552cfaeb0ea418dbd9c" id="r_a7d130bdf3be19552cfaeb0ea418dbd9c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="iic0__bus_8c.html#a7d130bdf3be19552cfaeb0ea418dbd9c">iic0_configure_pins</a> (void)</td></tr>
+<tr class="memdesc:a7d130bdf3be19552cfaeb0ea418dbd9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure pins.  <br /></td></tr>
+<tr class="separator:a7d130bdf3be19552cfaeb0ea418dbd9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee6c797fbc4ffdc76dd23e5849a84502" id="r_aee6c797fbc4ffdc76dd23e5849a84502"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="iic0__bus_8c.html#aee6c797fbc4ffdc76dd23e5849a84502">iic0_configure_bitrate</a> (uint32_t pclkb_hz, uint32_t bitrate_hz)</td></tr>
+<tr class="memdesc:aee6c797fbc4ffdc76dd23e5849a84502"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate and apply IIC0 clock timing registers.  <br /></td></tr>
+<tr class="separator:aee6c797fbc4ffdc76dd23e5849a84502"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e36972f6859a40d585e3d5411c88bba" id="r_a2e36972f6859a40d585e3d5411c88bba"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="iic0__bus_8c.html#a2e36972f6859a40d585e3d5411c88bba">iic0_bus_init</a> (void)</td></tr>
+<tr class="memdesc:a2e36972f6859a40d585e3d5411c88bba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle bus init.  <br /></td></tr>
 <tr class="separator:a2e36972f6859a40d585e3d5411c88bba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c64297892c8d800f8a2d5e91b3f6f4f" id="r_a1c64297892c8d800f8a2d5e91b3f6f4f"><td class="memItemLeft" align="right" valign="top"><a id="a1c64297892c8d800f8a2d5e91b3f6f4f" name="a1c64297892c8d800f8a2d5e91b3f6f4f"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>iic0_bus_write</b> (uint8_t address, const uint8_t *data, uint32_t length, uint8_t restart_after_write)</td></tr>
-<tr class="memdesc:a1c64297892c8d800f8a2d5e91b3f6f4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write one transaction to a 7-bit I2C address. <br /></td></tr>
+<tr class="memitem:a1c64297892c8d800f8a2d5e91b3f6f4f" id="r_a1c64297892c8d800f8a2d5e91b3f6f4f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="iic0__bus_8c.html#a1c64297892c8d800f8a2d5e91b3f6f4f">iic0_bus_write</a> (uint8_t address, const uint8_t *data, uint32_t length, uint8_t restart_after_write)</td></tr>
+<tr class="memdesc:a1c64297892c8d800f8a2d5e91b3f6f4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle bus write.  <br /></td></tr>
 <tr class="separator:a1c64297892c8d800f8a2d5e91b3f6f4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae76de0faa4f3d3fd6141aaf74f20c337" id="r_ae76de0faa4f3d3fd6141aaf74f20c337"><td class="memItemLeft" align="right" valign="top"><a id="ae76de0faa4f3d3fd6141aaf74f20c337" name="ae76de0faa4f3d3fd6141aaf74f20c337"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>iic0_bus_read_after_restart</b> (uint8_t address, uint8_t *data, uint32_t length)</td></tr>
-<tr class="memdesc:ae76de0faa4f3d3fd6141aaf74f20c337"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read after a previously generated repeated START. <br /></td></tr>
+<tr class="memitem:ae76de0faa4f3d3fd6141aaf74f20c337" id="r_ae76de0faa4f3d3fd6141aaf74f20c337"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="iic0__bus_8c.html#ae76de0faa4f3d3fd6141aaf74f20c337">iic0_bus_read_after_restart</a> (uint8_t address, uint8_t *data, uint32_t length)</td></tr>
+<tr class="memdesc:ae76de0faa4f3d3fd6141aaf74f20c337"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read bytes after a repeated START generated by the write phase.  <br /></td></tr>
 <tr class="separator:ae76de0faa4f3d3fd6141aaf74f20c337"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Polling IIC0 master transport shared by RTC 14 and Temp&amp;Hum 27. </p>
-</div></div><!-- contents -->
+
+<p class="definition">Definition in file <a class="el" href="iic0__bus_8c_source.html">iic0_bus.c</a>.</p>
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="a2e36972f6859a40d585e3d5411c88bba" name="a2e36972f6859a40d585e3d5411c88bba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e36972f6859a40d585e3d5411c88bba">&#9670;&#160;</a></span>iic0_bus_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int iic0_bus_init </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Handle bus init. </p>
+<p>Initialize IIC0 on P400/P401 at the configured bus speed.</p>
+<dl class="section return"><dt>Returns</dt><dd>Zero on success; otherwise a negative error code. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="iic0__bus_8c_source.html#l00256">256</a> of file <a class="el" href="iic0__bus_8c_source.html">iic0_bus.c</a>.</p>
+
+<p class="reference">References <a class="el" href="app__config_8h_source.html#l00015">APP_I2C_BITRATE_HZ</a>, <a class="el" href="iic0__bus_8c_source.html#l00106">iic0_clear_receive_state()</a>, <a class="el" href="iic0__bus_8c_source.html#l00182">iic0_configure_bitrate()</a>, <a class="el" href="iic0__bus_8c_source.html#l00140">iic0_configure_pins()</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00022">IIC_ICCR1_ICE</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00021">IIC_ICCR1_IICRST</a>, <a class="el" href="project__platform_8h_source.html#l00018">system_clocks_t::pclkb</a>, <a class="el" href="app__types_8h_source.html#l00014">RTC14_OK</a>, and <a class="el" href="project__platform_8h.html#ab3b699102d01f9fae47c234fb1dd5c51">SYSTEM_GetClocksFrequency()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="rtc14_8c_source.html#l00070">rtc14_init()</a>.</p>
+
+</div>
+</div>
+<a id="ae76de0faa4f3d3fd6141aaf74f20c337" name="ae76de0faa4f3d3fd6141aaf74f20c337"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae76de0faa4f3d3fd6141aaf74f20c337">&#9670;&#160;</a></span>iic0_bus_read_after_restart()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int iic0_bus_read_after_restart </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>length</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read bytes after a repeated START generated by the write phase. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">address</td><td>7-bit I2C device address. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">data</td><td>Data buffer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>Number of bytes in the buffer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Zero on success; otherwise a negative error code. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="iic0__bus_8c_source.html#l00369">369</a> of file <a class="el" href="iic0__bus_8c_source.html">iic0_bus.c</a>.</p>
+
+<p class="reference">References <a class="el" href="iic0__bus_8c_source.html#l00106">iic0_clear_receive_state()</a>, <a class="el" href="iic0__bus_8c_source.html#l00086">iic0_set_receive_nack()</a>, <a class="el" href="iic0__bus_8c_source.html#l00039">iic0_wait_clear()</a>, <a class="el" href="iic0__bus_8c_source.html#l00017">iic0_wait_set()</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00024">IIC_ICCR2_RS</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00025">IIC_ICCR2_SP</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00026">IIC_ICCR2_TRS</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00036">IIC_ICMR3_WAIT</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00029">IIC_ICSR2_NACKF</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00030">IIC_ICSR2_RDRF</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00028">IIC_ICSR2_STOP</a>, <a class="el" href="app__types_8h_source.html#l00018">RTC14_ERROR_ARGUMENT</a>, <a class="el" href="app__types_8h_source.html#l00016">RTC14_ERROR_NACK</a>, and <a class="el" href="app__types_8h_source.html#l00014">RTC14_OK</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="rtc14_8c_source.html#l00051">rtc14_read_registers()</a>, and <a class="el" href="temphum27_8c_source.html#l00126">temphum27_read_data()</a>.</p>
+
+</div>
+</div>
+<a id="a1c64297892c8d800f8a2d5e91b3f6f4f" name="a1c64297892c8d800f8a2d5e91b3f6f4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c64297892c8d800f8a2d5e91b3f6f4f">&#9670;&#160;</a></span>iic0_bus_write()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int iic0_bus_write </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>length</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>restart_after_write</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Handle bus write. </p>
+<p>Write one transaction to a 7-bit I2C address.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">address</td><td>7-bit I2C device address. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>Data buffer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>Number of bytes in the buffer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">restart_after_write</td><td>Nonzero to leave the bus in repeated-START state. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Zero on success; otherwise a negative error code. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="iic0__bus_8c_source.html#l00299">299</a> of file <a class="el" href="iic0__bus_8c_source.html">iic0_bus.c</a>.</p>
+
+<p class="reference">References <a class="el" href="iic0__bus_8c_source.html#l00118">iic0_request_stop()</a>, <a class="el" href="iic0__bus_8c_source.html#l00039">iic0_wait_clear()</a>, <a class="el" href="iic0__bus_8c_source.html#l00017">iic0_wait_set()</a>, <a class="el" href="iic0__bus_8c_source.html#l00060">iic0_wait_transmit_flag()</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00027">IIC_ICCR2_BBSY</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00024">IIC_ICCR2_RS</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00023">IIC_ICCR2_ST</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00029">IIC_ICSR2_NACKF</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00028">IIC_ICSR2_STOP</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00032">IIC_ICSR2_TDRE</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00031">IIC_ICSR2_TEND</a>, <a class="el" href="app__types_8h_source.html#l00018">RTC14_ERROR_ARGUMENT</a>, and <a class="el" href="app__types_8h_source.html#l00014">RTC14_OK</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="rtc14_8c_source.html#l00051">rtc14_read_registers()</a>, <a class="el" href="rtc14_8c_source.html#l00141">rtc14_set_datetime_24h()</a>, and <a class="el" href="temphum27_8c_source.html#l00126">temphum27_read_data()</a>.</p>
+
+</div>
+</div>
+<a id="afb6556739af69de051cccc91eb40a23b" name="afb6556739af69de051cccc91eb40a23b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb6556739af69de051cccc91eb40a23b">&#9670;&#160;</a></span>iic0_clear_receive_state()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void iic0_clear_receive_state </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Clear receive flags before starting an IIC read phase. </p>
+
+<p class="definition">Definition at line <a class="el" href="iic0__bus_8c_source.html#l00106">106</a> of file <a class="el" href="iic0__bus_8c_source.html">iic0_bus.c</a>.</p>
+
+<p class="reference">References <a class="el" href="iic0__bus_8c_source.html#l00086">iic0_set_receive_nack()</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00036">IIC_ICMR3_WAIT</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00029">IIC_ICSR2_NACKF</a>, and <a class="el" href="ra4m2__baremetal_8h_source.html#l00028">IIC_ICSR2_STOP</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="iic0__bus_8c_source.html#l00256">iic0_bus_init()</a>, and <a class="el" href="iic0__bus_8c_source.html#l00369">iic0_bus_read_after_restart()</a>.</p>
+
+</div>
+</div>
+<a id="aee6c797fbc4ffdc76dd23e5849a84502" name="aee6c797fbc4ffdc76dd23e5849a84502"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee6c797fbc4ffdc76dd23e5849a84502">&#9670;&#160;</a></span>iic0_configure_bitrate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int iic0_configure_bitrate </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>pclkb_hz</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>bitrate_hz</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calculate and apply IIC0 clock timing registers. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pclkb_hz</td><td>Peripheral clock B frequency in hertz. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">bitrate_hz</td><td>Bitrate hz value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Zero on success; otherwise a negative error code. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="iic0__bus_8c_source.html#l00182">182</a> of file <a class="el" href="iic0__bus_8c_source.html">iic0_bus.c</a>.</p>
+
+<p class="reference">References <a class="el" href="ra4m2__baremetal_8h_source.html#l00037">IIC_ICFER_NFE</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00038">IIC_ICFER_SCLE</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00039">IIC_ICMR1_CKS_SHIFT</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00033">IIC_ICMR3_NF_MASK</a>, <a class="el" href="app__types_8h_source.html#l00017">RTC14_ERROR_CLOCK</a>, and <a class="el" href="app__types_8h_source.html#l00014">RTC14_OK</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="iic0__bus_8c_source.html#l00256">iic0_bus_init()</a>.</p>
+
+</div>
+</div>
+<a id="a7d130bdf3be19552cfaeb0ea418dbd9c" name="a7d130bdf3be19552cfaeb0ea418dbd9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d130bdf3be19552cfaeb0ea418dbd9c">&#9670;&#160;</a></span>iic0_configure_pins()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void iic0_configure_pins </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Configure pins. </p>
+
+<p class="definition">Definition at line <a class="el" href="iic0__bus_8c_source.html#l00140">140</a> of file <a class="el" href="iic0__bus_8c_source.html">iic0_bus.c</a>.</p>
+
+<p class="reference">References <a class="el" href="ra4m2__baremetal_8h_source.html#l00015">PFS_NCODR_OPEN_DRAIN</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00014">PFS_PCR_PULLUP</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00013">PFS_PDR_OUTPUT</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00017">PFS_PMR_PERIPHERAL</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00012">PFS_PODR_HIGH</a>, and <a class="el" href="ra4m2__baremetal_8h_source.html#l00018">PFS_PSEL</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="iic0__bus_8c_source.html#l00256">iic0_bus_init()</a>.</p>
+
+</div>
+</div>
+<a id="a51347e1ebea5424280054c5572451457" name="a51347e1ebea5424280054c5572451457"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51347e1ebea5424280054c5572451457">&#9670;&#160;</a></span>iic0_request_stop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int iic0_request_stop </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Generate an IIC STOP condition and wait for bus release. </p>
+<dl class="section return"><dt>Returns</dt><dd>Result value. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="iic0__bus_8c_source.html#l00118">118</a> of file <a class="el" href="iic0__bus_8c_source.html">iic0_bus.c</a>.</p>
+
+<p class="reference">References <a class="el" href="iic0__bus_8c_source.html#l00017">iic0_wait_set()</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00025">IIC_ICCR2_SP</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00029">IIC_ICSR2_NACKF</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00028">IIC_ICSR2_STOP</a>, <a class="el" href="app__types_8h_source.html#l00015">RTC14_ERROR_TIMEOUT</a>, and <a class="el" href="app__types_8h_source.html#l00014">RTC14_OK</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="iic0__bus_8c_source.html#l00299">iic0_bus_write()</a>.</p>
+
+</div>
+</div>
+<a id="ad9660e600c4b086679fe7efb06183b4f" name="ad9660e600c4b086679fe7efb06183b4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9660e600c4b086679fe7efb06183b4f">&#9670;&#160;</a></span>iic0_set_receive_nack()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void iic0_set_receive_nack </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>nack</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Configure the ACK/NACK response used for the next received byte. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">nack</td><td>Nonzero to send NACK after the next received byte. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="iic0__bus_8c_source.html#l00086">86</a> of file <a class="el" href="iic0__bus_8c_source.html">iic0_bus.c</a>.</p>
+
+<p class="reference">References <a class="el" href="ra4m2__baremetal_8h_source.html#l00034">IIC_ICMR3_ACKBT</a>, and <a class="el" href="ra4m2__baremetal_8h_source.html#l00035">IIC_ICMR3_ACKWP</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="iic0__bus_8c_source.html#l00369">iic0_bus_read_after_restart()</a>, and <a class="el" href="iic0__bus_8c_source.html#l00106">iic0_clear_receive_state()</a>.</p>
+
+</div>
+</div>
+<a id="a25214d611d00658f56cfced25d06a820" name="a25214d611d00658f56cfced25d06a820"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25214d611d00658f56cfced25d06a820">&#9670;&#160;</a></span>iic0_wait_clear()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int iic0_wait_clear </td>
+          <td>(</td>
+          <td class="paramtype">volatile uint8_t *&#160;</td>
+          <td class="paramname"><em>reg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>mask</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Wait until all requested register bits become clear. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">reg</td><td>Register containing the bits to test. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mask</td><td>Bit mask to test or modify. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Result value. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="iic0__bus_8c_source.html#l00039">39</a> of file <a class="el" href="iic0__bus_8c_source.html">iic0_bus.c</a>.</p>
+
+<p class="reference">References <a class="el" href="app__config_8h_source.html#l00016">APP_I2C_TIMEOUT</a>, <a class="el" href="app__types_8h_source.html#l00015">RTC14_ERROR_TIMEOUT</a>, and <a class="el" href="app__types_8h_source.html#l00014">RTC14_OK</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="iic0__bus_8c_source.html#l00369">iic0_bus_read_after_restart()</a>, and <a class="el" href="iic0__bus_8c_source.html#l00299">iic0_bus_write()</a>.</p>
+
+</div>
+</div>
+<a id="ac1cf65bb239167aeca6a8abda6f9b965" name="ac1cf65bb239167aeca6a8abda6f9b965"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1cf65bb239167aeca6a8abda6f9b965">&#9670;&#160;</a></span>iic0_wait_set()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int iic0_wait_set </td>
+          <td>(</td>
+          <td class="paramtype">volatile uint8_t *&#160;</td>
+          <td class="paramname"><em>reg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>mask</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Wait until all requested register bits become set. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">reg</td><td>Register containing the bits to test. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">mask</td><td>Bit mask to test or modify. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Result value. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="iic0__bus_8c_source.html#l00017">17</a> of file <a class="el" href="iic0__bus_8c_source.html">iic0_bus.c</a>.</p>
+
+<p class="reference">References <a class="el" href="app__config_8h_source.html#l00016">APP_I2C_TIMEOUT</a>, <a class="el" href="app__types_8h_source.html#l00015">RTC14_ERROR_TIMEOUT</a>, and <a class="el" href="app__types_8h_source.html#l00014">RTC14_OK</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="iic0__bus_8c_source.html#l00369">iic0_bus_read_after_restart()</a>, <a class="el" href="iic0__bus_8c_source.html#l00299">iic0_bus_write()</a>, and <a class="el" href="iic0__bus_8c_source.html#l00118">iic0_request_stop()</a>.</p>
+
+</div>
+</div>
+<a id="a75193ff8cbecad39b410f72a2829539a" name="a75193ff8cbecad39b410f72a2829539a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75193ff8cbecad39b410f72a2829539a">&#9670;&#160;</a></span>iic0_wait_transmit_flag()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int iic0_wait_transmit_flag </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>mask</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Wait for the next IIC transmit-ready or completion flag. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">mask</td><td>Bit mask to test or modify. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Result value. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="iic0__bus_8c_source.html#l00060">60</a> of file <a class="el" href="iic0__bus_8c_source.html">iic0_bus.c</a>.</p>
+
+<p class="reference">References <a class="el" href="app__config_8h_source.html#l00016">APP_I2C_TIMEOUT</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00029">IIC_ICSR2_NACKF</a>, <a class="el" href="app__types_8h_source.html#l00016">RTC14_ERROR_NACK</a>, <a class="el" href="app__types_8h_source.html#l00015">RTC14_ERROR_TIMEOUT</a>, and <a class="el" href="app__types_8h_source.html#l00014">RTC14_OK</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="iic0__bus_8c_source.html#l00299">iic0_bus_write()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="iic0__bus_8c.html">iic0_bus.c</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
 </body>
 </html>

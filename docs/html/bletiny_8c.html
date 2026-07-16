@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,6 +27,7 @@
   <td id="projectalign">
    <div id="projectname">R7FA4M2 Multi-Click Smartwatch
    </div>
+   <div id="projectbrief">Bare-metal multi-screen smartwatch demo for Clicker 4 for R7FA4M2A</div>
   </td>
  </tr>
  </tbody>
@@ -46,6 +51,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('bletiny_8c.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -67,15 +89,11 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">bletiny.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -93,79 +111,1371 @@ Include dependency graph for bletiny.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="bletiny_8c__incl.png" border="0" usemap="#asrc_2bletiny_8c" alt=""/></div>
 <map name="asrc_2bletiny_8c" id="asrc_2bletiny_8c">
-<area shape="rect" title="BLE TINY CodeLess UART transport, connection tracking and remote commands." alt="" coords="236,5,335,31"/>
-<area shape="rect" href="bletiny_8h.html" title="Public declarations for this module." alt="" coords="5,152,83,177"/>
-<area shape="poly" title=" " alt="" coords="252,33,201,53,147,81,103,113,67,144,63,140,100,108,144,76,199,48,250,28"/>
-<area shape="rect" href="app__config_8h.html" title="Compile&#45;time configuration for the R7FA4M2 smartwatch example." alt="" coords="107,152,211,177"/>
-<area shape="poly" title=" " alt="" coords="237,31,194,49,176,63,161,80,155,94,153,109,155,138,149,139,147,108,150,92,156,77,172,59,192,45,235,26"/>
-<area shape="rect" href="app__controller_8h.html" title="Public declarations for this module." alt="" coords="171,79,298,104"/>
-<area shape="poly" title=" " alt="" coords="279,33,253,69,249,66,275,29"/>
-<area shape="rect" href="app__types_8h.html" title="Shared data types and result codes." alt="" coords="285,152,387,177"/>
-<area shape="poly" title=" " alt="" coords="293,30,313,78,332,138,327,139,308,80,288,32"/>
-<area shape="rect" href="ra4m2__baremetal_8h.html" title="Shared RA4M2 register definitions used by the local bare&#45;metal drivers." alt="" coords="465,79,615,104"/>
-<area shape="poly" title=" " alt="" coords="327,28,487,72,485,78,326,33"/>
-<area shape="rect" href="rtc14_8h.html" title="Public declarations for this module." alt="" coords="373,79,440,104"/>
-<area shape="poly" title=" " alt="" coords="306,28,377,69,374,74,303,33"/>
-<area shape="rect" title=" " alt="" coords="257,225,327,251"/>
-<area shape="poly" title=" " alt="" coords="83,174,244,220,242,225,82,180"/>
-<area shape="poly" title=" " alt="" coords="181,175,259,216,257,221,179,180"/>
-<area shape="poly" title=" " alt="" coords="242,103,285,211,280,213,237,105"/>
-<area shape="poly" title=" " alt="" coords="331,179,309,215,304,212,326,176"/>
-<area shape="rect" href="project__platform_8h.html" title="Project&#45;specific SDK hooks used by the example." alt="" coords="466,152,609,177"/>
-<area shape="poly" title=" " alt="" coords="542,104,541,139,536,138,537,104"/>
-<area shape="poly" title=" " alt="" coords="499,180,341,225,340,220,497,175"/>
-<area shape="rect" title=" " alt="" coords="458,225,521,251"/>
-<area shape="poly" title=" " alt="" coords="532,179,507,216,502,213,527,176"/>
-<area shape="rect" title=" " alt="" coords="545,225,623,251"/>
-<area shape="poly" title=" " alt="" coords="547,176,571,212,567,215,543,179"/>
-<area shape="poly" title=" " alt="" coords="411,104,413,139,409,160,401,179,374,206,342,224,339,219,371,202,396,176,404,158,407,139,406,104"/>
-<area shape="poly" title=" " alt="" coords="397,106,359,144,355,140,393,102"/>
+<area shape="rect" title="BLE TINY CodeLess UART transport, connection tracking and remote commands." alt="" coords="271,5,369,31"/>
+<area shape="rect" href="bletiny_8h.html" title="BLE Tiny Click SCI3 and CodeLess command interface." alt="" coords="5,152,83,177"/>
+<area shape="poly" title=" " alt="" coords="271,27,155,47,101,62,81,71,67,81,58,93,52,108,46,139,41,138,47,106,53,90,63,77,78,66,99,57,153,42,270,22"/>
+<area shape="rect" href="app__config_8h.html" title="Compile&#45;time configuration for the R7FA4M2 smartwatch example." alt="" coords="77,79,181,104"/>
+<area shape="poly" title=" " alt="" coords="290,33,174,76,172,71,288,28"/>
+<area shape="rect" href="app__controller_8h.html" title="Application state&#45;machine and foreground&#45;loop interface." alt="" coords="206,79,333,104"/>
+<area shape="poly" title=" " alt="" coords="314,33,288,69,283,66,309,29"/>
+<area shape="rect" href="app__types_8h.html" title="Shared data types and result codes." alt="" coords="317,152,419,177"/>
+<area shape="poly" title=" " alt="" coords="328,30,348,78,365,138,360,139,343,80,323,32"/>
+<area shape="rect" href="ra4m2__baremetal_8h.html" title="Shared RA4M2 register definitions used by the local bare&#45;metal drivers." alt="" coords="499,79,650,104"/>
+<area shape="poly" title=" " alt="" coords="362,28,521,72,520,78,360,33"/>
+<area shape="rect" href="rtc14_8h.html" title="RTC 14 Click driver interface." alt="" coords="408,79,475,104"/>
+<area shape="poly" title=" " alt="" coords="341,28,411,69,409,74,338,33"/>
+<area shape="rect" title=" " alt="" coords="289,225,359,251"/>
+<area shape="poly" title=" " alt="" coords="84,173,276,222,275,227,82,178"/>
+<area shape="poly" title=" " alt="" coords="131,104,134,139,140,159,150,176,177,198,210,214,243,224,275,230,274,236,242,230,208,219,174,203,146,179,135,161,128,140,126,104"/>
+<area shape="rect" title=" " alt="" coords="160,152,243,177"/>
+<area shape="poly" title=" " alt="" coords="143,102,182,140,178,144,139,106"/>
+<area shape="poly" title=" " alt="" coords="276,104,317,212,312,213,271,105"/>
+<area shape="poly" title=" " alt="" coords="363,179,341,215,336,212,358,176"/>
+<area shape="rect" href="project__platform_8h.html" title="Project&#45;specific SDK hooks used by the example." alt="" coords="498,152,641,177"/>
+<area shape="poly" title=" " alt="" coords="576,105,574,139,569,138,571,104"/>
+<area shape="poly" title=" " alt="" coords="531,180,373,225,372,220,529,175"/>
+<area shape="rect" title=" " alt="" coords="490,225,553,251"/>
+<area shape="poly" title=" " alt="" coords="564,179,539,216,534,213,559,176"/>
+<area shape="rect" title=" " alt="" coords="577,225,655,251"/>
+<area shape="poly" title=" " alt="" coords="579,176,603,212,599,215,575,179"/>
+<area shape="poly" title=" " alt="" coords="446,104,446,139,442,160,433,179,406,205,374,223,371,219,403,201,428,176,437,158,441,139,440,104"/>
+<area shape="poly" title=" " alt="" coords="431,106,392,144,388,140,427,102"/>
 </map>
 </div>
-</div><table class="memberdecls">
+</div>
+<p><a href="bletiny_8c_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:abd853eccbb0b13f02d18571643caa3a7" id="r_abd853eccbb0b13f02d18571643caa3a7"><td class="memItemLeft" align="right" valign="top"><a id="abd853eccbb0b13f02d18571643caa3a7" name="abd853eccbb0b13f02d18571643caa3a7"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>BLETINY_RST_MASK</b>&#160;&#160;&#160;(1U &lt;&lt; 11) /* P211 */</td></tr>
+<tr class="memitem:abd853eccbb0b13f02d18571643caa3a7" id="r_abd853eccbb0b13f02d18571643caa3a7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bletiny_8c.html#abd853eccbb0b13f02d18571643caa3a7">BLETINY_RST_MASK</a>&#160;&#160;&#160;(1U &lt;&lt; 11) /* P211 */</td></tr>
 <tr class="separator:abd853eccbb0b13f02d18571643caa3a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a853e3eecac4fae12a58b13e629f65f6e" id="r_a853e3eecac4fae12a58b13e629f65f6e"><td class="memItemLeft" align="right" valign="top"><a id="a853e3eecac4fae12a58b13e629f65f6e" name="a853e3eecac4fae12a58b13e629f65f6e"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>bletiny_process_rx</b> (void)</td></tr>
-<tr class="memdesc:a853e3eecac4fae12a58b13e629f65f6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse all bytes currently stored by the SCI3 RX interrupt. <br /></td></tr>
+<tr class="memitem:a4b9bb6d4f8586f8bd324ef432107bacf" id="r_a4b9bb6d4f8586f8bd324ef432107bacf"><td class="memItemLeft" align="right" valign="top">static volatile <a class="el" href="structra4m2__sci__registers__t.html">ra4m2_sci_registers_t</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bletiny_8c.html#a4b9bb6d4f8586f8bd324ef432107bacf">bletiny_sci3</a> (void)</td></tr>
+<tr class="memdesc:a4b9bb6d4f8586f8bd324ef432107bacf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the SCI3 register view used by BLE Tiny Click.  <br /></td></tr>
+<tr class="separator:a4b9bb6d4f8586f8bd324ef432107bacf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b377079151eb06789689675681bb571" id="r_a2b377079151eb06789689675681bb571"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bletiny_8c.html#a2b377079151eb06789689675681bb571">bletiny_rst_high</a> (void)</td></tr>
+<tr class="memdesc:a2b377079151eb06789689675681bb571"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deassert the BLE Tiny hardware reset signal.  <br /></td></tr>
+<tr class="separator:a2b377079151eb06789689675681bb571"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a0155a02639a51e6763e1bace093ee7" id="r_a4a0155a02639a51e6763e1bace093ee7"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bletiny_8c.html#a4a0155a02639a51e6763e1bace093ee7">bletiny_rst_low</a> (void)</td></tr>
+<tr class="memdesc:a4a0155a02639a51e6763e1bace093ee7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assert the BLE Tiny hardware reset signal.  <br /></td></tr>
+<tr class="separator:a4a0155a02639a51e6763e1bace093ee7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a82193a150711cc0248a11749ca6bf8a1" id="r_a82193a150711cc0248a11749ca6bf8a1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bletiny_8c.html#a82193a150711cc0248a11749ca6bf8a1">bletiny_configure_pins</a> (void)</td></tr>
+<tr class="memdesc:a82193a150711cc0248a11749ca6bf8a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure pins.  <br /></td></tr>
+<tr class="separator:a82193a150711cc0248a11749ca6bf8a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56b239f37488a9cdff2796dbf3cf18f3" id="r_a56b239f37488a9cdff2796dbf3cf18f3"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bletiny_8c.html#a56b239f37488a9cdff2796dbf3cf18f3">bletiny_sci3_set_baud</a> (uint32_t pclka_hz, uint32_t baud_hz)</td></tr>
+<tr class="memdesc:a56b239f37488a9cdff2796dbf3cf18f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Select SCI3 baud-rate settings closest to the requested rate.  <br /></td></tr>
+<tr class="separator:a56b239f37488a9cdff2796dbf3cf18f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4678808b3f97ff4501ba56ca622a85f4" id="r_a4678808b3f97ff4501ba56ca622a85f4"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bletiny_8c.html#a4678808b3f97ff4501ba56ca622a85f4">bletiny_uart_write_byte</a> (uint8_t value)</td></tr>
+<tr class="memdesc:a4678808b3f97ff4501ba56ca622a85f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transmit one byte through SCI3.  <br /></td></tr>
+<tr class="separator:a4678808b3f97ff4501ba56ca622a85f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab542449e70f20bd7a06e990452d9804a" id="r_ab542449e70f20bd7a06e990452d9804a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bletiny_8c.html#ab542449e70f20bd7a06e990452d9804a">bletiny_uart_write_text</a> (const char *text)</td></tr>
+<tr class="memdesc:ab542449e70f20bd7a06e990452d9804a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Transmit a null-terminated command string through SCI3.  <br /></td></tr>
+<tr class="separator:ab542449e70f20bd7a06e990452d9804a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc4aaf941d6b94117804a72f1853aa4b" id="r_acc4aaf941d6b94117804a72f1853aa4b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bletiny_8c.html#acc4aaf941d6b94117804a72f1853aa4b">bletiny_send_command</a> (const char *command)</td></tr>
+<tr class="memdesc:acc4aaf941d6b94117804a72f1853aa4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send a CodeLess command terminated with carriage return.  <br /></td></tr>
+<tr class="separator:acc4aaf941d6b94117804a72f1853aa4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2541a92bde665137d1798c0169b594c6" id="r_a2541a92bde665137d1798c0169b594c6"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bletiny_8c.html#a2541a92bde665137d1798c0169b594c6">bletiny_rx_push</a> (uint8_t value)</td></tr>
+<tr class="memdesc:a2541a92bde665137d1798c0169b594c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Append one received byte to the interrupt-safe ring buffer.  <br /></td></tr>
+<tr class="separator:a2541a92bde665137d1798c0169b594c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f2d06a97f88e4fc84570b0d8d8119dd" id="r_a6f2d06a97f88e4fc84570b0d8d8119dd"><td class="memItemLeft" align="right" valign="top">static int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bletiny_8c.html#a6f2d06a97f88e4fc84570b0d8d8119dd">bletiny_rx_pop</a> (uint8_t *value)</td></tr>
+<tr class="memdesc:a6f2d06a97f88e4fc84570b0d8d8119dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove one byte from the receive ring buffer.  <br /></td></tr>
+<tr class="separator:a6f2d06a97f88e4fc84570b0d8d8119dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4af05d10c0a0f773d9931d57396fb54a" id="r_a4af05d10c0a0f773d9931d57396fb54a"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bletiny_8c.html#a4af05d10c0a0f773d9931d57396fb54a">bletiny_line_contains</a> (const char *line, const char *token)</td></tr>
+<tr class="memdesc:a4af05d10c0a0f773d9931d57396fb54a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Test whether a received response line contains a token.  <br /></td></tr>
+<tr class="separator:a4af05d10c0a0f773d9931d57396fb54a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a49d18e60ce2eedc43bd0e1eb64b4c980" id="r_a49d18e60ce2eedc43bd0e1eb64b4c980"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bletiny_8c.html#a49d18e60ce2eedc43bd0e1eb64b4c980">bletiny_find_token</a> (const char *line, const char *token, uint16_t *token_index)</td></tr>
+<tr class="memdesc:a49d18e60ce2eedc43bd0e1eb64b4c980"><td class="mdescLeft">&#160;</td><td class="mdescRight">Locate a token inside a received response line.  <br /></td></tr>
+<tr class="separator:a49d18e60ce2eedc43bd0e1eb64b4c980"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27ed8edf2dafd39d1f6611ef43eef578" id="r_a27ed8edf2dafd39d1f6611ef43eef578"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bletiny_8c.html#a27ed8edf2dafd39d1f6611ef43eef578">bletiny_parse_uint_field</a> (const char **cursor, uint32_t *value, uint8_t expect_separator)</td></tr>
+<tr class="memdesc:a27ed8edf2dafd39d1f6611ef43eef578"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse one unsigned decimal field from a command payload.  <br /></td></tr>
+<tr class="separator:a27ed8edf2dafd39d1f6611ef43eef578"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6007790d3b293a40272e7bf6f3adf50" id="r_ab6007790d3b293a40272e7bf6f3adf50"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bletiny_8c.html#ab6007790d3b293a40272e7bf6f3adf50">bletiny_process_rtc_command</a> (const char *line)</td></tr>
+<tr class="memdesc:ab6007790d3b293a40272e7bf6f3adf50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Validate and apply an RTC command received through CodeLess memory.  <br /></td></tr>
+<tr class="separator:ab6007790d3b293a40272e7bf6f3adf50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51773e12f8dfde634f2a51358fb08e8a" id="r_a51773e12f8dfde634f2a51358fb08e8a"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bletiny_8c.html#a51773e12f8dfde634f2a51358fb08e8a">bletiny_process_stopwatch_command</a> (const char *line)</td></tr>
+<tr class="memdesc:a51773e12f8dfde634f2a51358fb08e8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decode BLE screen and stopwatch trigger commands.  <br /></td></tr>
+<tr class="separator:a51773e12f8dfde634f2a51358fb08e8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9256d31572d291e33ec319f1232c2f7" id="r_ae9256d31572d291e33ec319f1232c2f7"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bletiny_8c.html#ae9256d31572d291e33ec319f1232c2f7">bletiny_set_connected</a> (uint8_t connected)</td></tr>
+<tr class="memdesc:ae9256d31572d291e33ec319f1232c2f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the cached BLE connection state and change flag.  <br /></td></tr>
+<tr class="separator:ae9256d31572d291e33ec319f1232c2f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cc4d5b4dc9f5ccbc54ed6ef7f914f9a" id="r_a0cc4d5b4dc9f5ccbc54ed6ef7f914f9a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bletiny_8c.html#a0cc4d5b4dc9f5ccbc54ed6ef7f914f9a">bletiny_process_line</a> (const char *line)</td></tr>
+<tr class="memdesc:a0cc4d5b4dc9f5ccbc54ed6ef7f914f9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parse one complete SCI3 response line.  <br /></td></tr>
+<tr class="separator:a0cc4d5b4dc9f5ccbc54ed6ef7f914f9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a853e3eecac4fae12a58b13e629f65f6e" id="r_a853e3eecac4fae12a58b13e629f65f6e"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bletiny_8c.html#a853e3eecac4fae12a58b13e629f65f6e">bletiny_process_rx</a> (void)</td></tr>
+<tr class="memdesc:a853e3eecac4fae12a58b13e629f65f6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Process rx.  <br /></td></tr>
 <tr class="separator:a853e3eecac4fae12a58b13e629f65f6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1c1e854683237e0e4af642442ea42b9" id="r_ab1c1e854683237e0e4af642442ea42b9"><td class="memItemLeft" align="right" valign="top"><a id="ab1c1e854683237e0e4af642442ea42b9" name="ab1c1e854683237e0e4af642442ea42b9"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>bletiny_init</b> (uint32_t pclka_hz, uint32_t now_ms)</td></tr>
-<tr class="memdesc:ab1c1e854683237e0e4af642442ea42b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize BLE TINY Click over SCI3 UART. <br /></td></tr>
+<tr class="memitem:ab1c1e854683237e0e4af642442ea42b9" id="r_ab1c1e854683237e0e4af642442ea42b9"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bletiny_8c.html#ab1c1e854683237e0e4af642442ea42b9">bletiny_init</a> (uint32_t pclka_hz, uint32_t now_ms)</td></tr>
+<tr class="memdesc:ab1c1e854683237e0e4af642442ea42b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the module.  <br /></td></tr>
 <tr class="separator:ab1c1e854683237e0e4af642442ea42b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92d00c14ff061a76dfc0b5c24755da5f" id="r_a92d00c14ff061a76dfc0b5c24755da5f"><td class="memItemLeft" align="right" valign="top"><a id="a92d00c14ff061a76dfc0b5c24755da5f" name="a92d00c14ff061a76dfc0b5c24755da5f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>BLETINY_SCI3_RXI_IRQHandler</b> (void)</td></tr>
-<tr class="memdesc:a92d00c14ff061a76dfc0b5c24755da5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">SCI3 receive-data interrupt handler. <br /></td></tr>
+<tr class="memitem:a92d00c14ff061a76dfc0b5c24755da5f" id="r_a92d00c14ff061a76dfc0b5c24755da5f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bletiny_8c.html#a92d00c14ff061a76dfc0b5c24755da5f">BLETINY_SCI3_RXI_IRQHandler</a> (void)</td></tr>
+<tr class="memdesc:a92d00c14ff061a76dfc0b5c24755da5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Store a received SCI3 byte in the BLE ring buffer.  <br /></td></tr>
 <tr class="separator:a92d00c14ff061a76dfc0b5c24755da5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8b9f09f77ecc203600c1207b83e26440" id="r_a8b9f09f77ecc203600c1207b83e26440"><td class="memItemLeft" align="right" valign="top"><a id="a8b9f09f77ecc203600c1207b83e26440" name="a8b9f09f77ecc203600c1207b83e26440"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>BLETINY_SCI3_ERI_IRQHandler</b> (void)</td></tr>
-<tr class="memdesc:a8b9f09f77ecc203600c1207b83e26440"><td class="mdescLeft">&#160;</td><td class="mdescRight">SCI3 receive-error interrupt handler. <br /></td></tr>
+<tr class="memitem:a8b9f09f77ecc203600c1207b83e26440" id="r_a8b9f09f77ecc203600c1207b83e26440"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bletiny_8c.html#a8b9f09f77ecc203600c1207b83e26440">BLETINY_SCI3_ERI_IRQHandler</a> (void)</td></tr>
+<tr class="memdesc:a8b9f09f77ecc203600c1207b83e26440"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clear SCI3 receive errors and preserve any pending byte.  <br /></td></tr>
 <tr class="separator:a8b9f09f77ecc203600c1207b83e26440"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a25274d8b8ea86d12cebd00774335039f" id="r_a25274d8b8ea86d12cebd00774335039f"><td class="memItemLeft" align="right" valign="top"><a id="a25274d8b8ea86d12cebd00774335039f" name="a25274d8b8ea86d12cebd00774335039f"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>bletiny_is_connected</b> (void)</td></tr>
-<tr class="memdesc:a25274d8b8ea86d12cebd00774335039f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the current BLE connection state. <br /></td></tr>
+<tr class="memitem:a25274d8b8ea86d12cebd00774335039f" id="r_a25274d8b8ea86d12cebd00774335039f"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bletiny_8c.html#a25274d8b8ea86d12cebd00774335039f">bletiny_is_connected</a> (void)</td></tr>
+<tr class="memdesc:a25274d8b8ea86d12cebd00774335039f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine whether connected.  <br /></td></tr>
 <tr class="separator:a25274d8b8ea86d12cebd00774335039f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6e24aae296c28b21ec678ef38e035ab9" id="r_a6e24aae296c28b21ec678ef38e035ab9"><td class="memItemLeft" align="right" valign="top"><a id="a6e24aae296c28b21ec678ef38e035ab9" name="a6e24aae296c28b21ec678ef38e035ab9"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>bletiny_take_connection_changed</b> (uint8_t *connected)</td></tr>
-<tr class="memdesc:a6e24aae296c28b21ec678ef38e035ab9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Consume a pending BLE connection-state change. <br /></td></tr>
+<tr class="memitem:a6e24aae296c28b21ec678ef38e035ab9" id="r_a6e24aae296c28b21ec678ef38e035ab9"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bletiny_8c.html#a6e24aae296c28b21ec678ef38e035ab9">bletiny_take_connection_changed</a> (uint8_t *connected)</td></tr>
+<tr class="memdesc:a6e24aae296c28b21ec678ef38e035ab9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Consume connection changed.  <br /></td></tr>
 <tr class="separator:a6e24aae296c28b21ec678ef38e035ab9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4efe2de3242b057bc659e76635ef73b" id="r_aa4efe2de3242b057bc659e76635ef73b"><td class="memItemLeft" align="right" valign="top"><a id="aa4efe2de3242b057bc659e76635ef73b" name="aa4efe2de3242b057bc659e76635ef73b"></a>
-uint8_t&#160;</td><td class="memItemRight" valign="bottom"><b>bletiny_service</b> (uint32_t now_ms)</td></tr>
-<tr class="memdesc:aa4efe2de3242b057bc659e76635ef73b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run periodic GAP status and CodeLess memory polling. <br /></td></tr>
+<tr class="memitem:aa4efe2de3242b057bc659e76635ef73b" id="r_aa4efe2de3242b057bc659e76635ef73b"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bletiny_8c.html#aa4efe2de3242b057bc659e76635ef73b">bletiny_service</a> (uint32_t now_ms)</td></tr>
+<tr class="memdesc:aa4efe2de3242b057bc659e76635ef73b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Service periodic module work.  <br /></td></tr>
 <tr class="separator:aa4efe2de3242b057bc659e76635ef73b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:af5b1cf4acb264677f0c893eab2e73a8f" id="r_af5b1cf4acb264677f0c893eab2e73a8f"><td class="memItemLeft" align="right" valign="top">static volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bletiny_8c.html#af5b1cf4acb264677f0c893eab2e73a8f">bletiny_rx_buffer</a> [<a class="el" href="app__config_8h.html#a6d097ba50615f9fa1c7fae724d4af41e">BLETINY_RX_BUFFER_SIZE</a>]</td></tr>
+<tr class="separator:af5b1cf4acb264677f0c893eab2e73a8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae34b03a3b49e3b1b863b4668c131086a" id="r_ae34b03a3b49e3b1b863b4668c131086a"><td class="memItemLeft" align="right" valign="top">static volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bletiny_8c.html#ae34b03a3b49e3b1b863b4668c131086a">bletiny_rx_head</a></td></tr>
+<tr class="separator:ae34b03a3b49e3b1b863b4668c131086a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf76e926a345eca051ff6e49ca288a3a" id="r_acf76e926a345eca051ff6e49ca288a3a"><td class="memItemLeft" align="right" valign="top">static volatile uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bletiny_8c.html#acf76e926a345eca051ff6e49ca288a3a">bletiny_rx_tail</a></td></tr>
+<tr class="separator:acf76e926a345eca051ff6e49ca288a3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a2ae5c1a81aacd333f372af45a4ed12" id="r_a7a2ae5c1a81aacd333f372af45a4ed12"><td class="memItemLeft" align="right" valign="top">static volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bletiny_8c.html#a7a2ae5c1a81aacd333f372af45a4ed12">bletiny_rx_overflow</a></td></tr>
+<tr class="separator:a7a2ae5c1a81aacd333f372af45a4ed12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3157adb56ba1a7d93b433032b5a2ea3f" id="r_a3157adb56ba1a7d93b433032b5a2ea3f"><td class="memItemLeft" align="right" valign="top">static volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bletiny_8c.html#a3157adb56ba1a7d93b433032b5a2ea3f">bletiny_connected</a></td></tr>
+<tr class="separator:a3157adb56ba1a7d93b433032b5a2ea3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1036ed8ce8c551863af1a23008e87cd3" id="r_a1036ed8ce8c551863af1a23008e87cd3"><td class="memItemLeft" align="right" valign="top">static volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bletiny_8c.html#a1036ed8ce8c551863af1a23008e87cd3">bletiny_status_dirty</a> = 1U</td></tr>
+<tr class="separator:a1036ed8ce8c551863af1a23008e87cd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9030b15ce53065aa3bf85b91da79d08" id="r_ae9030b15ce53065aa3bf85b91da79d08"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bletiny_8c.html#ae9030b15ce53065aa3bf85b91da79d08">bletiny_next_status_query_ms</a></td></tr>
+<tr class="separator:ae9030b15ce53065aa3bf85b91da79d08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad025b7415dfc0fe41e226b683803c3e4" id="r_ad025b7415dfc0fe41e226b683803c3e4"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bletiny_8c.html#ad025b7415dfc0fe41e226b683803c3e4">bletiny_next_mem_query_ms</a></td></tr>
+<tr class="separator:ad025b7415dfc0fe41e226b683803c3e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4d17a62876899091c57a22de400eb22" id="r_ad4d17a62876899091c57a22de400eb22"><td class="memItemLeft" align="right" valign="top">static char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bletiny_8c.html#ad4d17a62876899091c57a22de400eb22">bletiny_line_buffer</a> [<a class="el" href="app__config_8h.html#a762c92e9501e1069c71368c596ffe30b">BLETINY_LINE_BUFFER_SIZE</a>]</td></tr>
+<tr class="separator:ad4d17a62876899091c57a22de400eb22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab426690f409c5e49b37323ce6c4d1db0" id="r_ab426690f409c5e49b37323ce6c4d1db0"><td class="memItemLeft" align="right" valign="top">static uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bletiny_8c.html#ab426690f409c5e49b37323ce6c4d1db0">bletiny_line_length</a></td></tr>
+<tr class="separator:ab426690f409c5e49b37323ce6c4d1db0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>BLE TINY CodeLess UART transport, connection tracking and remote commands. </p>
-</div></div><!-- contents -->
+
+<p class="definition">Definition in file <a class="el" href="bletiny_8c_source.html">bletiny.c</a>.</p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="abd853eccbb0b13f02d18571643caa3a7" name="abd853eccbb0b13f02d18571643caa3a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd853eccbb0b13f02d18571643caa3a7">&#9670;&#160;</a></span>BLETINY_RST_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BLETINY_RST_MASK&#160;&#160;&#160;(1U &lt;&lt; 11) /* P211 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="bletiny_8c_source.html#l00025">25</a> of file <a class="el" href="bletiny_8c_source.html">bletiny.c</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a82193a150711cc0248a11749ca6bf8a1" name="a82193a150711cc0248a11749ca6bf8a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a82193a150711cc0248a11749ca6bf8a1">&#9670;&#160;</a></span>bletiny_configure_pins()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void bletiny_configure_pins </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Configure pins. </p>
+
+<p class="definition">Definition at line <a class="el" href="bletiny_8c_source.html#l00056">56</a> of file <a class="el" href="bletiny_8c_source.html">bletiny.c</a>.</p>
+
+<p class="reference">References <a class="el" href="ra4m2__baremetal_8h_source.html#l00013">PFS_PDR_OUTPUT</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00017">PFS_PMR_PERIPHERAL</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00012">PFS_PODR_HIGH</a>, and <a class="el" href="ra4m2__baremetal_8h_source.html#l00018">PFS_PSEL</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="bletiny_8c_source.html#l00703">bletiny_init()</a>.</p>
+
+</div>
+</div>
+<a id="a49d18e60ce2eedc43bd0e1eb64b4c980" name="a49d18e60ce2eedc43bd0e1eb64b4c980"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a49d18e60ce2eedc43bd0e1eb64b4c980">&#9670;&#160;</a></span>bletiny_find_token()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint8_t bletiny_find_token </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>line</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>token</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t *&#160;</td>
+          <td class="paramname"><em>token_index</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Locate a token inside a received response line. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">line</td><td>Null-terminated received response line. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">token</td><td>Token to locate or match. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">token_index</td><td>Token index value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Result value. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="bletiny_8c_source.html#l00326">326</a> of file <a class="el" href="bletiny_8c_source.html">bletiny.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="bletiny_8c_source.html#l00424">bletiny_process_rtc_command()</a>, and <a class="el" href="bletiny_8c_source.html#l00508">bletiny_process_stopwatch_command()</a>.</p>
+
+</div>
+</div>
+<a id="ab1c1e854683237e0e4af642442ea42b9" name="ab1c1e854683237e0e4af642442ea42b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1c1e854683237e0e4af642442ea42b9">&#9670;&#160;</a></span>bletiny_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int bletiny_init </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>pclka_hz</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>now_ms</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize the module. </p>
+<p>Initialize BLE Tiny Click over SCI3 UART.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pclka_hz</td><td>Peripheral clock A frequency in hertz. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">now_ms</td><td>Current monotonic application time in milliseconds. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Zero on success; otherwise a negative error code. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="bletiny_8c_source.html#l00703">703</a> of file <a class="el" href="bletiny_8c_source.html">bletiny.c</a>.</p>
+
+<p class="reference">References <a class="el" href="bletiny_8c_source.html#l00056">bletiny_configure_pins()</a>, <a class="el" href="bletiny_8c_source.html#l00018">bletiny_connected</a>, <a class="el" href="app__config_8h_source.html#l00095">BLETINY_MEM_QUERY_MS</a>, <a class="el" href="bletiny_8c_source.html#l00021">bletiny_next_mem_query_ms</a>, <a class="el" href="bletiny_8c_source.html#l00020">bletiny_next_status_query_ms</a>, <a class="el" href="bletiny_8c_source.html#l00040">bletiny_rst_high()</a>, <a class="el" href="bletiny_8c_source.html#l00048">bletiny_rst_low()</a>, <a class="el" href="bletiny_8c_source.html#l00032">bletiny_sci3()</a>, <a class="el" href="app__config_8h_source.html#l00092">BLETINY_SCI3_ERI_EVENT</a>, <a class="el" href="app__config_8h_source.html#l00091">BLETINY_SCI3_ERI_IRQ_SLOT</a>, <a class="el" href="app__config_8h_source.html#l00093">BLETINY_SCI3_IRQ_PRIORITY</a>, <a class="el" href="app__config_8h_source.html#l00090">BLETINY_SCI3_RX_EVENT</a>, <a class="el" href="app__config_8h_source.html#l00089">BLETINY_SCI3_RX_IRQ_SLOT</a>, <a class="el" href="bletiny_8c_source.html#l00082">bletiny_sci3_set_baud()</a>, <a class="el" href="bletiny_8c_source.html#l00212">bletiny_send_command()</a>, <a class="el" href="bletiny_8c_source.html#l00019">bletiny_status_dirty</a>, <a class="el" href="app__config_8h_source.html#l00094">BLETINY_STATUS_QUERY_MS</a>, <a class="el" href="app__config_8h_source.html#l00088">BLETINY_UART_BAUD</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00119">ra4m2_sci_registers_t::fcr</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00079">SCI_FCR_FM</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00065">SCI_SCMR_CHR1</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00064">SCI_SCMR_SDIR</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00063">SCI_SCMR_SINV</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00062">SCI_SCMR_SMIF</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00053">SCI_SCR_RE</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00055">SCI_SCR_RIE</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00054">SCI_SCR_TE</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00066">SCI_SIMR1_IICM</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00073">SCI_SMR_CHR</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00074">SCI_SMR_CM</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00072">SCI_SMR_PE</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00071">SCI_SMR_PM</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00070">SCI_SMR_STOP</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00058">SCI_SSR_FER</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00059">SCI_SSR_ORER</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00057">SCI_SSR_PER</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00107">ra4m2_sci_registers_t::scmr</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00103">ra4m2_sci_registers_t::scr</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00108">ra4m2_sci_registers_t::semr</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00110">ra4m2_sci_registers_t::simr1</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00101">ra4m2_sci_registers_t::smr</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00109">ra4m2_sci_registers_t::snfr</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00114">ra4m2_sci_registers_t::spmr</a>, and <a class="el" href="ra4m2__baremetal_8h_source.html#l00105">ra4m2_sci_registers_t::ssr</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__controller_8c_source.html#l00238">app_controller_init()</a>.</p>
+
+</div>
+</div>
+<a id="a25274d8b8ea86d12cebd00774335039f" name="a25274d8b8ea86d12cebd00774335039f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a25274d8b8ea86d12cebd00774335039f">&#9670;&#160;</a></span>bletiny_is_connected()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t bletiny_is_connected </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Determine whether connected. </p>
+<p>Return the current BLE connection state.</p>
+<dl class="section return"><dt>Returns</dt><dd>Result value. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="bletiny_8c_source.html#l00822">822</a> of file <a class="el" href="bletiny_8c_source.html">bletiny.c</a>.</p>
+
+<p class="reference">References <a class="el" href="bletiny_8c_source.html#l00018">bletiny_connected</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__controller_8c_source.html#l00533">app_handle_ble_stopwatch_control()</a>, <a class="el" href="app__controller_8c_source.html#l00574">app_handle_periodic_update()</a>, <a class="el" href="app__controller_8c_source.html#l00373">app_handle_physical_b3()</a>, <a class="el" href="app__controller_8c_source.html#l00436">app_handle_physical_b4()</a>, <a class="el" href="app__controller_8c_source.html#l00652">app_refresh_active_screen_if_due()</a>, and <a class="el" href="app__controller_8c_source.html#l00178">app_render_active_screen()</a>.</p>
+
+</div>
+</div>
+<a id="a4af05d10c0a0f773d9931d57396fb54a" name="a4af05d10c0a0f773d9931d57396fb54a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4af05d10c0a0f773d9931d57396fb54a">&#9670;&#160;</a></span>bletiny_line_contains()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint8_t bletiny_line_contains </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>line</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>token</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Test whether a received response line contains a token. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">line</td><td>Null-terminated received response line. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">token</td><td>Token to locate or match. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Nonzero when the requested work succeeds or changes state; otherwise zero. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="bletiny_8c_source.html#l00285">285</a> of file <a class="el" href="bletiny_8c_source.html">bletiny.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="bletiny_8c_source.html#l00600">bletiny_process_line()</a>.</p>
+
+</div>
+</div>
+<a id="a27ed8edf2dafd39d1f6611ef43eef578" name="a27ed8edf2dafd39d1f6611ef43eef578"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27ed8edf2dafd39d1f6611ef43eef578">&#9670;&#160;</a></span>bletiny_parse_uint_field()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint8_t bletiny_parse_uint_field </td>
+          <td>(</td>
+          <td class="paramtype">const char **&#160;</td>
+          <td class="paramname"><em>cursor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *&#160;</td>
+          <td class="paramname"><em>value</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>expect_separator</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Parse one unsigned decimal field from a command payload. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">cursor</td><td>Current parser position. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>Value to process. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">expect_separator</td><td>Expect separator value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Nonzero when the requested work succeeds or changes state; otherwise zero. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="bletiny_8c_source.html#l00370">370</a> of file <a class="el" href="bletiny_8c_source.html">bletiny.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="bletiny_8c_source.html#l00424">bletiny_process_rtc_command()</a>.</p>
+
+</div>
+</div>
+<a id="a0cc4d5b4dc9f5ccbc54ed6ef7f914f9a" name="a0cc4d5b4dc9f5ccbc54ed6ef7f914f9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cc4d5b4dc9f5ccbc54ed6ef7f914f9a">&#9670;&#160;</a></span>bletiny_process_line()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void bletiny_process_line </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>line</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Parse one complete SCI3 response line. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">line</td><td>Null-terminated received response line. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="bletiny_8c_source.html#l00600">600</a> of file <a class="el" href="bletiny_8c_source.html">bletiny.c</a>.</p>
+
+<p class="reference">References <a class="el" href="bletiny_8c_source.html#l00285">bletiny_line_contains()</a>, <a class="el" href="bletiny_8c_source.html#l00424">bletiny_process_rtc_command()</a>, <a class="el" href="bletiny_8c_source.html#l00508">bletiny_process_stopwatch_command()</a>, and <a class="el" href="bletiny_8c_source.html#l00579">bletiny_set_connected()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="bletiny_8c_source.html#l00648">bletiny_process_rx()</a>.</p>
+
+</div>
+</div>
+<a id="ab6007790d3b293a40272e7bf6f3adf50" name="ab6007790d3b293a40272e7bf6f3adf50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab6007790d3b293a40272e7bf6f3adf50">&#9670;&#160;</a></span>bletiny_process_rtc_command()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint8_t bletiny_process_rtc_command </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>line</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Validate and apply an RTC command received through CodeLess memory. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">line</td><td>Null-terminated received response line. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Result value. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="bletiny_8c_source.html#l00424">424</a> of file <a class="el" href="bletiny_8c_source.html">bletiny.c</a>.</p>
+
+<p class="reference">References <a class="el" href="app__controller_8c_source.html#l00157">app_controller_request_rtc_refresh()</a>, <a class="el" href="bletiny_8c_source.html#l00326">bletiny_find_token()</a>, <a class="el" href="bletiny_8c_source.html#l00370">bletiny_parse_uint_field()</a>, <a class="el" href="bletiny_8c_source.html#l00212">bletiny_send_command()</a>, <a class="el" href="project__platform_8h.html#a17cb61c4ec78fad11fd285daf22ee5e7">printf_me()</a>, <a class="el" href="app__types_8h_source.html#l00018">RTC14_ERROR_ARGUMENT</a>, <a class="el" href="app__types_8h_source.html#l00014">RTC14_OK</a>, and <a class="el" href="rtc14_8c_source.html#l00141">rtc14_set_datetime_24h()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="bletiny_8c_source.html#l00600">bletiny_process_line()</a>.</p>
+
+</div>
+</div>
+<a id="a853e3eecac4fae12a58b13e629f65f6e" name="a853e3eecac4fae12a58b13e629f65f6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a853e3eecac4fae12a58b13e629f65f6e">&#9670;&#160;</a></span>bletiny_process_rx()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t bletiny_process_rx </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Process rx. </p>
+<p>Parse all bytes currently stored by the SCI3 receive interrupt.</p>
+<dl class="section return"><dt>Returns</dt><dd>Nonzero when the requested work succeeds or changes state; otherwise zero. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="bletiny_8c_source.html#l00648">648</a> of file <a class="el" href="bletiny_8c_source.html">bletiny.c</a>.</p>
+
+<p class="reference">References <a class="el" href="bletiny_8c_source.html#l00022">bletiny_line_buffer</a>, <a class="el" href="app__config_8h_source.html#l00098">BLETINY_LINE_BUFFER_SIZE</a>, <a class="el" href="bletiny_8c_source.html#l00023">bletiny_line_length</a>, <a class="el" href="bletiny_8c_source.html#l00600">bletiny_process_line()</a>, <a class="el" href="bletiny_8c_source.html#l00015">bletiny_rx_head</a>, <a class="el" href="bletiny_8c_source.html#l00017">bletiny_rx_overflow</a>, <a class="el" href="bletiny_8c_source.html#l00247">bletiny_rx_pop()</a>, <a class="el" href="bletiny_8c_source.html#l00016">bletiny_rx_tail</a>, and <a class="el" href="project__platform_8h.html#a17cb61c4ec78fad11fd285daf22ee5e7">printf_me()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__controller_8c_source.html#l00728">app_controller_run()</a>.</p>
+
+</div>
+</div>
+<a id="a51773e12f8dfde634f2a51358fb08e8a" name="a51773e12f8dfde634f2a51358fb08e8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51773e12f8dfde634f2a51358fb08e8a">&#9670;&#160;</a></span>bletiny_process_stopwatch_command()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint8_t bletiny_process_stopwatch_command </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>line</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Decode BLE screen and stopwatch trigger commands. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">line</td><td>Null-terminated received response line. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Result value. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="bletiny_8c_source.html#l00508">508</a> of file <a class="el" href="bletiny_8c_source.html">bletiny.c</a>.</p>
+
+<p class="reference">References <a class="el" href="app__controller_8c_source.html#l00132">app_controller_request_astronomy_screen()</a>, <a class="el" href="app__controller_8c_source.html#l00114">app_controller_request_dashboard_screen()</a>, <a class="el" href="app__controller_8c_source.html#l00123">app_controller_request_environment_screen()</a>, <a class="el" href="app__controller_8c_source.html#l00149">app_controller_request_stopwatch_control()</a>, <a class="el" href="app__controller_8c_source.html#l00141">app_controller_request_stopwatch_reset()</a>, <a class="el" href="bletiny_8c_source.html#l00326">bletiny_find_token()</a>, <a class="el" href="bletiny_8c_source.html#l00212">bletiny_send_command()</a>, and <a class="el" href="project__platform_8h.html#a17cb61c4ec78fad11fd285daf22ee5e7">printf_me()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="bletiny_8c_source.html#l00600">bletiny_process_line()</a>.</p>
+
+</div>
+</div>
+<a id="a2b377079151eb06789689675681bb571" name="a2b377079151eb06789689675681bb571"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b377079151eb06789689675681bb571">&#9670;&#160;</a></span>bletiny_rst_high()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void bletiny_rst_high </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Deassert the BLE Tiny hardware reset signal. </p>
+
+<p class="definition">Definition at line <a class="el" href="bletiny_8c_source.html#l00040">40</a> of file <a class="el" href="bletiny_8c_source.html">bletiny.c</a>.</p>
+
+<p class="reference">References <a class="el" href="bletiny_8c_source.html#l00025">BLETINY_RST_MASK</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="bletiny_8c_source.html#l00703">bletiny_init()</a>.</p>
+
+</div>
+</div>
+<a id="a4a0155a02639a51e6763e1bace093ee7" name="a4a0155a02639a51e6763e1bace093ee7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4a0155a02639a51e6763e1bace093ee7">&#9670;&#160;</a></span>bletiny_rst_low()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void bletiny_rst_low </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Assert the BLE Tiny hardware reset signal. </p>
+
+<p class="definition">Definition at line <a class="el" href="bletiny_8c_source.html#l00048">48</a> of file <a class="el" href="bletiny_8c_source.html">bletiny.c</a>.</p>
+
+<p class="reference">References <a class="el" href="bletiny_8c_source.html#l00025">BLETINY_RST_MASK</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="bletiny_8c_source.html#l00703">bletiny_init()</a>.</p>
+
+</div>
+</div>
+<a id="a6f2d06a97f88e4fc84570b0d8d8119dd" name="a6f2d06a97f88e4fc84570b0d8d8119dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f2d06a97f88e4fc84570b0d8d8119dd">&#9670;&#160;</a></span>bletiny_rx_pop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int bletiny_rx_pop </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Remove one byte from the receive ring buffer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>Value to process. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Nonzero when the requested work succeeds or changes state; otherwise zero. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="bletiny_8c_source.html#l00247">247</a> of file <a class="el" href="bletiny_8c_source.html">bletiny.c</a>.</p>
+
+<p class="reference">References <a class="el" href="bletiny_8c_source.html#l00014">bletiny_rx_buffer</a>, <a class="el" href="app__config_8h_source.html#l00097">BLETINY_RX_BUFFER_SIZE</a>, <a class="el" href="bletiny_8c_source.html#l00015">bletiny_rx_head</a>, and <a class="el" href="bletiny_8c_source.html#l00016">bletiny_rx_tail</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="bletiny_8c_source.html#l00648">bletiny_process_rx()</a>.</p>
+
+</div>
+</div>
+<a id="a2541a92bde665137d1798c0169b594c6" name="a2541a92bde665137d1798c0169b594c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2541a92bde665137d1798c0169b594c6">&#9670;&#160;</a></span>bletiny_rx_push()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void bletiny_rx_push </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Append one received byte to the interrupt-safe ring buffer. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>Value to process. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="bletiny_8c_source.html#l00226">226</a> of file <a class="el" href="bletiny_8c_source.html">bletiny.c</a>.</p>
+
+<p class="reference">References <a class="el" href="bletiny_8c_source.html#l00014">bletiny_rx_buffer</a>, <a class="el" href="app__config_8h_source.html#l00097">BLETINY_RX_BUFFER_SIZE</a>, <a class="el" href="bletiny_8c_source.html#l00015">bletiny_rx_head</a>, <a class="el" href="bletiny_8c_source.html#l00017">bletiny_rx_overflow</a>, and <a class="el" href="bletiny_8c_source.html#l00016">bletiny_rx_tail</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="bletiny_8c_source.html#l00804">BLETINY_SCI3_ERI_IRQHandler()</a>, and <a class="el" href="bletiny_8c_source.html#l00792">BLETINY_SCI3_RXI_IRQHandler()</a>.</p>
+
+</div>
+</div>
+<a id="a4b9bb6d4f8586f8bd324ef432107bacf" name="a4b9bb6d4f8586f8bd324ef432107bacf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4b9bb6d4f8586f8bd324ef432107bacf">&#9670;&#160;</a></span>bletiny_sci3()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static volatile <a class="el" href="structra4m2__sci__registers__t.html">ra4m2_sci_registers_t</a> * bletiny_sci3 </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the SCI3 register view used by BLE Tiny Click. </p>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the requested register or data view. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="bletiny_8c_source.html#l00032">32</a> of file <a class="el" href="bletiny_8c_source.html">bletiny.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="bletiny_8c_source.html#l00703">bletiny_init()</a>, <a class="el" href="bletiny_8c_source.html#l00804">BLETINY_SCI3_ERI_IRQHandler()</a>, <a class="el" href="bletiny_8c_source.html#l00792">BLETINY_SCI3_RXI_IRQHandler()</a>, <a class="el" href="bletiny_8c_source.html#l00082">bletiny_sci3_set_baud()</a>, <a class="el" href="bletiny_8c_source.html#l00212">bletiny_send_command()</a>, <a class="el" href="bletiny_8c_source.html#l00181">bletiny_uart_write_byte()</a>, and <a class="el" href="bletiny_8c_source.html#l00195">bletiny_uart_write_text()</a>.</p>
+
+</div>
+</div>
+<a id="a8b9f09f77ecc203600c1207b83e26440" name="a8b9f09f77ecc203600c1207b83e26440"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b9f09f77ecc203600c1207b83e26440">&#9670;&#160;</a></span>BLETINY_SCI3_ERI_IRQHandler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BLETINY_SCI3_ERI_IRQHandler </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Clear SCI3 receive errors and preserve any pending byte. </p>
+<p>SCI3 receive-error interrupt handler. </p>
+
+<p class="definition">Definition at line <a class="el" href="bletiny_8c_source.html#l00804">804</a> of file <a class="el" href="bletiny_8c_source.html">bletiny.c</a>.</p>
+
+<p class="reference">References <a class="el" href="bletiny_8c_source.html#l00226">bletiny_rx_push()</a>, <a class="el" href="bletiny_8c_source.html#l00032">bletiny_sci3()</a>, <a class="el" href="app__config_8h_source.html#l00091">BLETINY_SCI3_ERI_IRQ_SLOT</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00106">ra4m2_sci_registers_t::rdr</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00058">SCI_SSR_FER</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00059">SCI_SSR_ORER</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00057">SCI_SSR_PER</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00060">SCI_SSR_RDRF</a>, and <a class="el" href="ra4m2__baremetal_8h_source.html#l00105">ra4m2_sci_registers_t::ssr</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__interrupts_8c_source.html#l00032">rtc14_install_interrupt_vectors()</a>.</p>
+
+</div>
+</div>
+<a id="a92d00c14ff061a76dfc0b5c24755da5f" name="a92d00c14ff061a76dfc0b5c24755da5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92d00c14ff061a76dfc0b5c24755da5f">&#9670;&#160;</a></span>BLETINY_SCI3_RXI_IRQHandler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void BLETINY_SCI3_RXI_IRQHandler </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Store a received SCI3 byte in the BLE ring buffer. </p>
+<p>SCI3 receive-data interrupt handler. </p>
+
+<p class="definition">Definition at line <a class="el" href="bletiny_8c_source.html#l00792">792</a> of file <a class="el" href="bletiny_8c_source.html">bletiny.c</a>.</p>
+
+<p class="reference">References <a class="el" href="bletiny_8c_source.html#l00226">bletiny_rx_push()</a>, <a class="el" href="bletiny_8c_source.html#l00032">bletiny_sci3()</a>, <a class="el" href="app__config_8h_source.html#l00089">BLETINY_SCI3_RX_IRQ_SLOT</a>, and <a class="el" href="ra4m2__baremetal_8h_source.html#l00106">ra4m2_sci_registers_t::rdr</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__interrupts_8c_source.html#l00032">rtc14_install_interrupt_vectors()</a>.</p>
+
+</div>
+</div>
+<a id="a56b239f37488a9cdff2796dbf3cf18f3" name="a56b239f37488a9cdff2796dbf3cf18f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56b239f37488a9cdff2796dbf3cf18f3">&#9670;&#160;</a></span>bletiny_sci3_set_baud()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static int bletiny_sci3_set_baud </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>pclka_hz</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>baud_hz</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Select SCI3 baud-rate settings closest to the requested rate. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">pclka_hz</td><td>Peripheral clock A frequency in hertz. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">baud_hz</td><td>Baud hz value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Zero on success; otherwise a negative error code. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="bletiny_8c_source.html#l00082">82</a> of file <a class="el" href="bletiny_8c_source.html">bletiny.c</a>.</p>
+
+<p class="reference">References <a class="el" href="bletiny_8c_source.html#l00032">bletiny_sci3()</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00102">ra4m2_sci_registers_t::brr</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00077">SCI_SEMR_ABCS</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00076">SCI_SEMR_ABCSE</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00078">SCI_SEMR_BGDM</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00075">SCI_SEMR_BRME</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00108">ra4m2_sci_registers_t::semr</a>, and <a class="el" href="ra4m2__baremetal_8h_source.html#l00101">ra4m2_sci_registers_t::smr</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="bletiny_8c_source.html#l00703">bletiny_init()</a>.</p>
+
+</div>
+</div>
+<a id="acc4aaf941d6b94117804a72f1853aa4b" name="acc4aaf941d6b94117804a72f1853aa4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc4aaf941d6b94117804a72f1853aa4b">&#9670;&#160;</a></span>bletiny_send_command()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void bletiny_send_command </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>command</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Send a CodeLess command terminated with carriage return. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">command</td><td>CodeLess or display command string/value. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="bletiny_8c_source.html#l00212">212</a> of file <a class="el" href="bletiny_8c_source.html">bletiny.c</a>.</p>
+
+<p class="reference">References <a class="el" href="bletiny_8c_source.html#l00032">bletiny_sci3()</a>, <a class="el" href="bletiny_8c_source.html#l00181">bletiny_uart_write_byte()</a>, <a class="el" href="bletiny_8c_source.html#l00195">bletiny_uart_write_text()</a>, and <a class="el" href="ra4m2__baremetal_8h_source.html#l00056">SCI_SSR_TEND</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="bletiny_8c_source.html#l00703">bletiny_init()</a>, <a class="el" href="bletiny_8c_source.html#l00424">bletiny_process_rtc_command()</a>, <a class="el" href="bletiny_8c_source.html#l00508">bletiny_process_stopwatch_command()</a>, and <a class="el" href="bletiny_8c_source.html#l00858">bletiny_service()</a>.</p>
+
+</div>
+</div>
+<a id="aa4efe2de3242b057bc659e76635ef73b" name="aa4efe2de3242b057bc659e76635ef73b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4efe2de3242b057bc659e76635ef73b">&#9670;&#160;</a></span>bletiny_service()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t bletiny_service </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>now_ms</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Service periodic module work. </p>
+<p>Run periodic GAP-status and CodeLess-memory polling.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">now_ms</td><td>Current monotonic application time in milliseconds. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Nonzero when the requested work succeeds or changes state; otherwise zero. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="bletiny_8c_source.html#l00858">858</a> of file <a class="el" href="bletiny_8c_source.html">bletiny.c</a>.</p>
+
+<p class="reference">References <a class="el" href="bletiny_8c_source.html#l00018">bletiny_connected</a>, <a class="el" href="app__config_8h_source.html#l00095">BLETINY_MEM_QUERY_MS</a>, <a class="el" href="bletiny_8c_source.html#l00021">bletiny_next_mem_query_ms</a>, <a class="el" href="bletiny_8c_source.html#l00020">bletiny_next_status_query_ms</a>, <a class="el" href="bletiny_8c_source.html#l00212">bletiny_send_command()</a>, and <a class="el" href="app__config_8h_source.html#l00094">BLETINY_STATUS_QUERY_MS</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__controller_8c_source.html#l00728">app_controller_run()</a>.</p>
+
+</div>
+</div>
+<a id="ae9256d31572d291e33ec319f1232c2f7" name="ae9256d31572d291e33ec319f1232c2f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9256d31572d291e33ec319f1232c2f7">&#9670;&#160;</a></span>bletiny_set_connected()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void bletiny_set_connected </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>connected</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Update the cached BLE connection state and change flag. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">connected</td><td>BLE connection state or destination for that state. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="bletiny_8c_source.html#l00579">579</a> of file <a class="el" href="bletiny_8c_source.html">bletiny.c</a>.</p>
+
+<p class="reference">References <a class="el" href="app__controller_8c_source.html#l00060">app_controller_get_system_ms()</a>, <a class="el" href="bletiny_8c_source.html#l00018">bletiny_connected</a>, <a class="el" href="app__config_8h_source.html#l00096">BLETINY_MEM_FIRST_QUERY_MS</a>, <a class="el" href="bletiny_8c_source.html#l00021">bletiny_next_mem_query_ms</a>, and <a class="el" href="bletiny_8c_source.html#l00019">bletiny_status_dirty</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="bletiny_8c_source.html#l00600">bletiny_process_line()</a>.</p>
+
+</div>
+</div>
+<a id="a6e24aae296c28b21ec678ef38e035ab9" name="a6e24aae296c28b21ec678ef38e035ab9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e24aae296c28b21ec678ef38e035ab9">&#9670;&#160;</a></span>bletiny_take_connection_changed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t bletiny_take_connection_changed </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>connected</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Consume connection changed. </p>
+<p>Consume a pending BLE connection-state change.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">connected</td><td>BLE connection state or destination for that state. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Nonzero when the requested work succeeds or changes state; otherwise zero. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="bletiny_8c_source.html#l00832">832</a> of file <a class="el" href="bletiny_8c_source.html">bletiny.c</a>.</p>
+
+<p class="reference">References <a class="el" href="bletiny_8c_source.html#l00018">bletiny_connected</a>, and <a class="el" href="bletiny_8c_source.html#l00019">bletiny_status_dirty</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__controller_8c_source.html#l00355">app_handle_ble_status()</a>.</p>
+
+</div>
+</div>
+<a id="a4678808b3f97ff4501ba56ca622a85f4" name="a4678808b3f97ff4501ba56ca622a85f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4678808b3f97ff4501ba56ca622a85f4">&#9670;&#160;</a></span>bletiny_uart_write_byte()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void bletiny_uart_write_byte </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Transmit one byte through SCI3. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>Value to process. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="bletiny_8c_source.html#l00181">181</a> of file <a class="el" href="bletiny_8c_source.html">bletiny.c</a>.</p>
+
+<p class="reference">References <a class="el" href="bletiny_8c_source.html#l00032">bletiny_sci3()</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00061">SCI_SSR_TDRE</a>, <a class="el" href="ra4m2__baremetal_8h_source.html#l00105">ra4m2_sci_registers_t::ssr</a>, and <a class="el" href="ra4m2__baremetal_8h_source.html#l00104">ra4m2_sci_registers_t::tdr</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="bletiny_8c_source.html#l00212">bletiny_send_command()</a>, and <a class="el" href="bletiny_8c_source.html#l00195">bletiny_uart_write_text()</a>.</p>
+
+</div>
+</div>
+<a id="ab542449e70f20bd7a06e990452d9804a" name="ab542449e70f20bd7a06e990452d9804a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab542449e70f20bd7a06e990452d9804a">&#9670;&#160;</a></span>bletiny_uart_write_text()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void bletiny_uart_write_text </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>text</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Transmit a null-terminated command string through SCI3. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">text</td><td>Null-terminated text string. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="bletiny_8c_source.html#l00195">195</a> of file <a class="el" href="bletiny_8c_source.html">bletiny.c</a>.</p>
+
+<p class="reference">References <a class="el" href="bletiny_8c_source.html#l00032">bletiny_sci3()</a>, <a class="el" href="bletiny_8c_source.html#l00181">bletiny_uart_write_byte()</a>, and <a class="el" href="ra4m2__baremetal_8h_source.html#l00056">SCI_SSR_TEND</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="bletiny_8c_source.html#l00212">bletiny_send_command()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a3157adb56ba1a7d93b433032b5a2ea3f" name="a3157adb56ba1a7d93b433032b5a2ea3f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3157adb56ba1a7d93b433032b5a2ea3f">&#9670;&#160;</a></span>bletiny_connected</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint8_t bletiny_connected</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="bletiny_8c_source.html#l00018">18</a> of file <a class="el" href="bletiny_8c_source.html">bletiny.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="bletiny_8c_source.html#l00703">bletiny_init()</a>, <a class="el" href="bletiny_8c_source.html#l00822">bletiny_is_connected()</a>, <a class="el" href="bletiny_8c_source.html#l00858">bletiny_service()</a>, <a class="el" href="bletiny_8c_source.html#l00579">bletiny_set_connected()</a>, and <a class="el" href="bletiny_8c_source.html#l00832">bletiny_take_connection_changed()</a>.</p>
+
+</div>
+</div>
+<a id="ad4d17a62876899091c57a22de400eb22" name="ad4d17a62876899091c57a22de400eb22"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4d17a62876899091c57a22de400eb22">&#9670;&#160;</a></span>bletiny_line_buffer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char bletiny_line_buffer[<a class="el" href="app__config_8h.html#a762c92e9501e1069c71368c596ffe30b">BLETINY_LINE_BUFFER_SIZE</a>]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="bletiny_8c_source.html#l00022">22</a> of file <a class="el" href="bletiny_8c_source.html">bletiny.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="bletiny_8c_source.html#l00648">bletiny_process_rx()</a>.</p>
+
+</div>
+</div>
+<a id="ab426690f409c5e49b37323ce6c4d1db0" name="ab426690f409c5e49b37323ce6c4d1db0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab426690f409c5e49b37323ce6c4d1db0">&#9670;&#160;</a></span>bletiny_line_length</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t bletiny_line_length</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="bletiny_8c_source.html#l00023">23</a> of file <a class="el" href="bletiny_8c_source.html">bletiny.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="bletiny_8c_source.html#l00648">bletiny_process_rx()</a>.</p>
+
+</div>
+</div>
+<a id="ad025b7415dfc0fe41e226b683803c3e4" name="ad025b7415dfc0fe41e226b683803c3e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad025b7415dfc0fe41e226b683803c3e4">&#9670;&#160;</a></span>bletiny_next_mem_query_ms</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t bletiny_next_mem_query_ms</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="bletiny_8c_source.html#l00021">21</a> of file <a class="el" href="bletiny_8c_source.html">bletiny.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="bletiny_8c_source.html#l00703">bletiny_init()</a>, <a class="el" href="bletiny_8c_source.html#l00858">bletiny_service()</a>, and <a class="el" href="bletiny_8c_source.html#l00579">bletiny_set_connected()</a>.</p>
+
+</div>
+</div>
+<a id="ae9030b15ce53065aa3bf85b91da79d08" name="ae9030b15ce53065aa3bf85b91da79d08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9030b15ce53065aa3bf85b91da79d08">&#9670;&#160;</a></span>bletiny_next_status_query_ms</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t bletiny_next_status_query_ms</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="bletiny_8c_source.html#l00020">20</a> of file <a class="el" href="bletiny_8c_source.html">bletiny.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="bletiny_8c_source.html#l00703">bletiny_init()</a>, and <a class="el" href="bletiny_8c_source.html#l00858">bletiny_service()</a>.</p>
+
+</div>
+</div>
+<a id="af5b1cf4acb264677f0c893eab2e73a8f" name="af5b1cf4acb264677f0c893eab2e73a8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5b1cf4acb264677f0c893eab2e73a8f">&#9670;&#160;</a></span>bletiny_rx_buffer</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint8_t bletiny_rx_buffer[<a class="el" href="app__config_8h.html#a6d097ba50615f9fa1c7fae724d4af41e">BLETINY_RX_BUFFER_SIZE</a>]</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="bletiny_8c_source.html#l00014">14</a> of file <a class="el" href="bletiny_8c_source.html">bletiny.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="bletiny_8c_source.html#l00247">bletiny_rx_pop()</a>, and <a class="el" href="bletiny_8c_source.html#l00226">bletiny_rx_push()</a>.</p>
+
+</div>
+</div>
+<a id="ae34b03a3b49e3b1b863b4668c131086a" name="ae34b03a3b49e3b1b863b4668c131086a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae34b03a3b49e3b1b863b4668c131086a">&#9670;&#160;</a></span>bletiny_rx_head</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t bletiny_rx_head</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="bletiny_8c_source.html#l00015">15</a> of file <a class="el" href="bletiny_8c_source.html">bletiny.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="bletiny_8c_source.html#l00648">bletiny_process_rx()</a>, <a class="el" href="bletiny_8c_source.html#l00247">bletiny_rx_pop()</a>, and <a class="el" href="bletiny_8c_source.html#l00226">bletiny_rx_push()</a>.</p>
+
+</div>
+</div>
+<a id="a7a2ae5c1a81aacd333f372af45a4ed12" name="a7a2ae5c1a81aacd333f372af45a4ed12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a2ae5c1a81aacd333f372af45a4ed12">&#9670;&#160;</a></span>bletiny_rx_overflow</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint8_t bletiny_rx_overflow</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="bletiny_8c_source.html#l00017">17</a> of file <a class="el" href="bletiny_8c_source.html">bletiny.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="bletiny_8c_source.html#l00648">bletiny_process_rx()</a>, and <a class="el" href="bletiny_8c_source.html#l00226">bletiny_rx_push()</a>.</p>
+
+</div>
+</div>
+<a id="acf76e926a345eca051ff6e49ca288a3a" name="acf76e926a345eca051ff6e49ca288a3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf76e926a345eca051ff6e49ca288a3a">&#9670;&#160;</a></span>bletiny_rx_tail</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint16_t bletiny_rx_tail</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="bletiny_8c_source.html#l00016">16</a> of file <a class="el" href="bletiny_8c_source.html">bletiny.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="bletiny_8c_source.html#l00648">bletiny_process_rx()</a>, <a class="el" href="bletiny_8c_source.html#l00247">bletiny_rx_pop()</a>, and <a class="el" href="bletiny_8c_source.html#l00226">bletiny_rx_push()</a>.</p>
+
+</div>
+</div>
+<a id="a1036ed8ce8c551863af1a23008e87cd3" name="a1036ed8ce8c551863af1a23008e87cd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1036ed8ce8c551863af1a23008e87cd3">&#9670;&#160;</a></span>bletiny_status_dirty</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint8_t bletiny_status_dirty = 1U</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="bletiny_8c_source.html#l00019">19</a> of file <a class="el" href="bletiny_8c_source.html">bletiny.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="bletiny_8c_source.html#l00703">bletiny_init()</a>, <a class="el" href="bletiny_8c_source.html#l00579">bletiny_set_connected()</a>, and <a class="el" href="bletiny_8c_source.html#l00832">bletiny_take_connection_changed()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="bletiny_8c.html">bletiny.c</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
 </body>
 </html>

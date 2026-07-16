@@ -1,23 +1,25 @@
 <map id="src/rtc14.c" name="src/rtc14.c">
-<area shape="rect" id="Node000001" title="RTC 14 Click date/time validation, conversion and I2C access." alt="" coords="194,5,283,31"/>
-<area shape="rect" id="Node000002" href="$rtc14_8h.html" title="Public declarations for this module." alt="" coords="40,79,107,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="213,33,114,76,112,71,211,28"/>
-<area shape="rect" id="Node000005" href="$app__config_8h.html" title="Compile&#45;time configuration for the R7FA4M2 smartwatch example." alt="" coords="148,152,252,177"/>
-<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="238,32,209,139,204,138,233,30"/>
-<area shape="rect" id="Node000006" href="$iic0__bus_8h.html" title="Public declarations for this module." alt="" coords="237,79,323,104"/>
-<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="248,30,269,65,264,68,243,32"/>
-<area shape="rect" id="Node000007" href="$project__platform_8h.html" title="Project&#45;specific SDK hooks used by the example." alt="" coords="347,79,490,104"/>
-<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="269,28,378,71,376,76,267,33"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="165,225,235,251"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="56,106,36,121,18,139,9,158,9,167,13,176,41,202,77,219,115,229,151,234,150,239,114,235,75,224,38,207,9,179,4,168,3,157,14,135,32,117,53,102"/>
-<area shape="rect" id="Node000004" href="$app__types_8h.html" title="Shared data types and result codes." alt="" coords="23,152,124,177"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="76,104,76,138,71,138,71,104"/>
-<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="95,175,169,216,166,221,93,180"/>
-<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="203,178,203,212,197,212,197,178"/>
-<area shape="poly" id="edge8_Node000006_Node000003" title=" " alt="" coords="283,105,279,139,266,179,250,201,230,219,227,215,246,197,262,176,274,138,278,104"/>
-<area shape="poly" id="edge10_Node000007_Node000003" title=" " alt="" coords="403,106,230,220,228,215,400,102"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="386,152,449,177"/>
-<area shape="poly" id="edge11_Node000007_Node000008" title=" " alt="" coords="421,104,421,139,415,138,416,104"/>
-<area shape="rect" id="Node000009" title=" " alt="" coords="473,152,551,177"/>
-<area shape="poly" id="edge12_Node000007_Node000009" title=" " alt="" coords="435,102,488,141,484,146,432,106"/>
+<area shape="rect" id="Node000001" title="RTC 14 Click date/time validation, conversion and I2C access." alt="" coords="196,5,286,31"/>
+<area shape="rect" id="Node000002" href="$rtc14_8h.html" title="RTC 14 Click driver interface." alt="" coords="38,79,105,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="215,33,113,76,111,71,213,28"/>
+<area shape="rect" id="Node000005" href="$app__config_8h.html" title="Compile&#45;time configuration for the R7FA4M2 smartwatch example." alt="" coords="129,79,233,104"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="233,33,202,70,198,66,229,29"/>
+<area shape="rect" id="Node000007" href="$iic0__bus_8h.html" title="Shared polling IIC0 master interface." alt="" coords="258,79,344,104"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="253,29,285,66,281,70,249,33"/>
+<area shape="rect" id="Node000008" href="$project__platform_8h.html" title="Project&#45;specific SDK hooks used by the example." alt="" coords="368,79,511,104"/>
+<area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="274,28,395,71,393,76,272,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="126,225,196,251"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="55,106,35,121,18,138,9,157,9,167,13,176,33,197,58,212,86,223,113,229,112,234,84,228,56,217,29,201,8,179,3,168,3,156,14,135,32,117,51,102"/>
+<area shape="rect" id="Node000004" href="$app__types_8h.html" title="Shared data types and result codes." alt="" coords="22,152,124,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="75,104,75,138,70,139,69,104"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="89,175,138,214,134,219,86,179"/>
+<area shape="poly" id="edge7_Node000005_Node000003" title=" " alt="" coords="182,105,167,212,162,211,177,104"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="198,152,281,177"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="193,103,224,140,220,143,189,106"/>
+<area shape="poly" id="edge9_Node000007_Node000003" title=" " alt="" coords="306,104,308,139,304,160,295,179,278,198,256,212,211,230,209,225,254,207,274,193,291,176,299,158,302,139,301,104"/>
+<area shape="poly" id="edge11_Node000008_Node000003" title=" " alt="" coords="427,106,380,141,318,180,263,205,211,224,209,219,261,200,316,175,377,137,424,102"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="408,152,471,177"/>
+<area shape="poly" id="edge12_Node000008_Node000009" title=" " alt="" coords="442,104,442,138,437,138,437,104"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="496,152,573,177"/>
+<area shape="poly" id="edge13_Node000008_Node000010" title=" " alt="" coords="457,102,510,141,506,146,453,106"/>
 </map>

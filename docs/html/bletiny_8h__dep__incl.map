@@ -1,5 +1,5 @@
 <map id="include/bletiny.h" name="include/bletiny.h">
-<area shape="rect" id="Node000001" title="Public declarations for this module." alt="" coords="189,5,317,31"/>
+<area shape="rect" id="Node000001" title="BLE Tiny Click SCI3 and CodeLess command interface." alt="" coords="189,5,317,31"/>
 <area shape="rect" id="Node000002" href="$app__controller_8c.html" title="Application state machine and foreground scheduling." alt="" coords="5,79,153,104"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="213,38,109,81,107,76,211,33"/>
 <area shape="rect" id="Node000003" href="$app__interrupts_8c.html" title="RAM vector installation, AGT0 tick and external button IRQ routing." alt="" coords="177,79,328,104"/>

@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,6 +27,7 @@
   <td id="projectalign">
    <div id="projectname">R7FA4M2 Multi-Click Smartwatch
    </div>
+   <div id="projectbrief">Bare-metal multi-screen smartwatch demo for Clicker 4 for R7FA4M2A</div>
   </td>
  </tr>
  </tbody>
@@ -46,6 +51,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('app__controller_8c.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -67,14 +89,10 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">app_controller.c File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -95,93 +113,1674 @@ Include dependency graph for app_controller.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="app__controller_8c__incl.png" border="0" usemap="#asrc_2app__controller_8c" alt=""/></div>
 <map name="asrc_2app__controller_8c" id="asrc_2app__controller_8c">
-<area shape="rect" title="Application state machine and foreground scheduling." alt="" coords="413,5,561,31"/>
-<area shape="rect" href="app__controller_8h.html" title="Public declarations for this module." alt="" coords="750,152,877,177"/>
-<area shape="poly" title=" " alt="" coords="561,25,681,45,735,59,772,76,786,90,796,106,810,138,805,140,792,108,782,93,769,81,734,64,680,50,560,30"/>
-<area shape="rect" href="app__config_8h.html" title="Compile&#45;time configuration for the R7FA4M2 smartwatch example." alt="" coords="901,152,1005,177"/>
-<area shape="poly" title=" " alt="" coords="562,24,676,42,739,57,801,76,870,108,927,142,924,147,868,113,799,81,738,62,675,48,561,29"/>
-<area shape="rect" href="app__interrupts_8h.html" title="Public declarations for this module." alt="" coords="5,152,133,177"/>
-<area shape="poly" title=" " alt="" coords="413,23,324,27,227,37,141,54,108,66,86,81,77,93,72,107,69,138,64,138,67,106,72,90,82,77,106,61,139,49,226,31,324,22,412,18"/>
-<area shape="rect" href="app__types_8h.html" title="Shared data types and result codes." alt="" coords="333,152,435,177"/>
-<area shape="poly" title=" " alt="" coords="488,31,480,66,462,105,441,128,418,147,415,142,438,125,458,103,475,64,483,30"/>
-<area shape="rect" href="bletiny_8h.html" title="Public declarations for this module." alt="" coords="96,79,173,104"/>
-<area shape="poly" title=" " alt="" coords="427,33,187,81,186,76,426,28"/>
-<area shape="rect" href="ips2__display_8h.html" title="Public declarations for this module." alt="" coords="198,79,311,104"/>
-<area shape="poly" title=" " alt="" coords="450,33,306,77,304,72,449,28"/>
-<area shape="rect" href="project__platform_8h.html" title="Project&#45;specific SDK hooks used by the example." alt="" coords="615,79,758,104"/>
-<area shape="poly" title=" " alt="" coords="520,28,642,71,640,76,518,33"/>
-<area shape="rect" href="rtc14_8h.html" title="Public declarations for this module." alt="" coords="524,79,591,104"/>
-<area shape="poly" title=" " alt="" coords="500,29,538,67,534,71,496,33"/>
-<area shape="rect" href="temphum27_8h.html" title="Public declarations for this module." alt="" coords="335,79,449,104"/>
-<area shape="poly" title=" " alt="" coords="473,33,420,72,417,68,470,29"/>
-<area shape="rect" title=" " alt="" coords="393,225,463,251"/>
-<area shape="poly" title=" " alt="" coords="752,180,477,230,476,225,751,175"/>
-<area shape="poly" title=" " alt="" coords="902,178,890,180,659,212,477,234,477,228,658,207,889,175,901,173"/>
-<area shape="poly" title=" " alt="" coords="127,175,380,224,379,230,126,180"/>
-<area shape="poly" title=" " alt="" coords="394,176,416,212,411,215,389,179"/>
-<area shape="poly" title=" " alt="" coords="156,102,293,175,389,218,386,222,291,180,154,107"/>
-<area shape="poly" title=" " alt="" coords="264,103,288,137,323,175,356,199,390,217,387,222,353,203,320,179,284,141,259,106"/>
-<area shape="poly" title=" " alt="" coords="277,102,352,143,349,147,274,106"/>
-<area shape="poly" title=" " alt="" coords="656,107,605,127,549,154,498,187,455,219,452,214,495,182,547,150,603,122,654,102"/>
-<area shape="rect" title=" " alt="" coords="561,152,623,177"/>
-<area shape="poly" title=" " alt="" coords="673,106,620,146,617,141,670,102"/>
-<area shape="rect" title=" " alt="" coords="648,152,725,177"/>
-<area shape="poly" title=" " alt="" coords="689,104,689,138,684,138,684,104"/>
-<area shape="poly" title=" " alt="" coords="549,106,506,154,449,217,445,213,502,150,545,102"/>
-<area shape="poly" title=" " alt="" coords="530,106,426,149,424,144,528,102"/>
-<area shape="poly" title=" " alt="" coords="393,105,389,139,384,138,388,104"/>
+<area shape="rect" title="Application state machine and foreground scheduling." alt="" coords="394,5,542,31"/>
+<area shape="rect" href="app__controller_8h.html" title="Application state&#45;machine and foreground&#45;loop interface." alt="" coords="573,152,699,177"/>
+<area shape="poly" title=" " alt="" coords="543,23,571,29,598,40,623,56,644,77,650,92,653,108,648,139,643,138,647,108,645,93,639,80,620,60,596,45,569,35,542,28"/>
+<area shape="rect" href="app__config_8h.html" title="Compile&#45;time configuration for the R7FA4M2 smartwatch example." alt="" coords="525,79,629,104"/>
+<area shape="poly" title=" " alt="" coords="487,28,549,69,546,73,484,33"/>
+<area shape="rect" href="app__interrupts_8h.html" title="Interrupt&#45;vector, AGT0 tick and physical&#45;button interface." alt="" coords="964,152,1092,177"/>
+<area shape="poly" title=" " alt="" coords="542,18,617,22,706,32,802,49,894,76,956,107,1005,141,1002,146,953,112,892,81,800,54,706,37,617,27,542,23"/>
+<area shape="rect" href="app__types_8h.html" title="Shared data types and result codes." alt="" coords="239,152,340,177"/>
+<area shape="poly" title=" " alt="" coords="394,26,364,32,335,43,308,59,286,80,280,93,278,108,283,138,277,139,273,108,275,92,282,77,304,54,332,38,363,27,393,21"/>
+<area shape="rect" href="bletiny_8h.html" title="BLE Tiny Click SCI3 and CodeLess command interface." alt="" coords="5,79,83,104"/>
+<area shape="poly" title=" " alt="" coords="394,32,260,53,96,81,95,76,259,48,393,27"/>
+<area shape="rect" href="ips2__display_8h.html" title="IPS Display 2 transport and smartwatch UI rendering interface." alt="" coords="107,79,221,104"/>
+<area shape="poly" title=" " alt="" coords="420,33,227,78,226,73,419,28"/>
+<area shape="rect" href="project__platform_8h.html" title="Project&#45;specific SDK hooks used by the example." alt="" coords="739,79,882,104"/>
+<area shape="poly" title=" " alt="" coords="524,28,742,73,741,78,523,33"/>
+<area shape="rect" href="rtc14_8h.html" title="RTC 14 Click driver interface." alt="" coords="435,79,501,104"/>
+<area shape="poly" title=" " alt="" coords="471,31,471,65,465,65,465,31"/>
+<area shape="rect" href="temphum27_8h.html" title="Temp&amp;Hum 27 Click driver interface." alt="" coords="297,79,410,104"/>
+<area shape="poly" title=" " alt="" coords="451,33,385,74,382,69,448,28"/>
+<area shape="rect" title=" " alt="" coords="421,225,491,251"/>
+<area shape="poly" title=" " alt="" coords="608,180,499,223,497,218,606,175"/>
+<area shape="poly" title=" " alt="" coords="570,106,511,179,478,217,474,213,507,176,566,103"/>
+<area shape="rect" title=" " alt="" coords="415,152,497,177"/>
+<area shape="poly" title=" " alt="" coords="559,106,489,147,486,143,556,102"/>
+<area shape="poly" title=" " alt="" coords="964,178,952,180,505,234,505,229,952,175,963,173"/>
+<area shape="poly" title=" " alt="" coords="317,175,417,217,415,222,315,180"/>
+<area shape="poly" title=" " alt="" coords="63,102,121,138,198,175,253,193,309,208,408,227,406,232,308,213,252,198,196,180,119,142,60,107"/>
+<area shape="poly" title=" " alt="" coords="172,103,193,139,209,159,228,175,272,198,319,215,366,225,407,231,406,236,365,230,318,220,270,203,225,180,205,162,189,142,167,106"/>
+<area shape="poly" title=" " alt="" coords="185,102,258,143,256,147,183,106"/>
+<area shape="poly" title=" " alt="" coords="802,106,765,143,740,163,712,180,659,202,603,218,505,235,504,230,602,212,657,197,709,175,737,158,761,139,798,103"/>
+<area shape="rect" title=" " alt="" coords="877,152,939,177"/>
+<area shape="poly" title=" " alt="" coords="828,102,882,141,879,146,825,106"/>
+<area shape="rect" title=" " alt="" coords="775,152,852,177"/>
+<area shape="poly" title=" " alt="" coords="814,104,815,138,810,139,808,104"/>
+<area shape="poly" title=" " alt="" coords="449,106,425,126,405,153,403,169,408,185,432,215,428,218,403,188,397,170,400,151,421,122,446,102"/>
+<area shape="poly" title=" " alt="" coords="440,107,332,149,330,144,438,102"/>
+<area shape="poly" title=" " alt="" coords="345,106,311,144,307,140,341,103"/>
 </map>
 </div>
-</div><table class="memberdecls">
+</div>
+<p><a href="app__controller_8c_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aec991ed43a97b129754bfcf21e93b96e" id="r_aec991ed43a97b129754bfcf21e93b96e"><td class="memItemLeft" align="right" valign="top"><a id="aec991ed43a97b129754bfcf21e93b96e" name="aec991ed43a97b129754bfcf21e93b96e"></a>
-uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>app_controller_get_system_ms</b> (void)</td></tr>
-<tr class="memdesc:aec991ed43a97b129754bfcf21e93b96e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the monotonic AGT0 millisecond counter. <br /></td></tr>
+<tr class="memitem:ad78e51d3ba17d702dd2147d7b95c3021" id="r_ad78e51d3ba17d702dd2147d7b95c3021"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__controller_8c.html#ad78e51d3ba17d702dd2147d7b95c3021">app_halt_with_error</a> (const char *message, int error)</td></tr>
+<tr class="memdesc:ad78e51d3ba17d702dd2147d7b95c3021"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log a fatal initialization error and halt the processor.  <br /></td></tr>
+<tr class="separator:ad78e51d3ba17d702dd2147d7b95c3021"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec991ed43a97b129754bfcf21e93b96e" id="r_aec991ed43a97b129754bfcf21e93b96e"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__controller_8c.html#aec991ed43a97b129754bfcf21e93b96e">app_controller_get_system_ms</a> (void)</td></tr>
+<tr class="memdesc:aec991ed43a97b129754bfcf21e93b96e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the monotonic application timebase.  <br /></td></tr>
 <tr class="separator:aec991ed43a97b129754bfcf21e93b96e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b0859a741e4b3ccf6ca1428ccec4ff3" id="r_a2b0859a741e4b3ccf6ca1428ccec4ff3"><td class="memItemLeft" align="right" valign="top"><a id="a2b0859a741e4b3ccf6ca1428ccec4ff3" name="a2b0859a741e4b3ccf6ca1428ccec4ff3"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>app_controller_tick_1ms_isr</b> (void)</td></tr>
-<tr class="memdesc:a2b0859a741e4b3ccf6ca1428ccec4ff3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Advance the application timebase from the AGT0 ISR. <br /></td></tr>
+<tr class="memitem:a2b0859a741e4b3ccf6ca1428ccec4ff3" id="r_a2b0859a741e4b3ccf6ca1428ccec4ff3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__controller_8c.html#a2b0859a741e4b3ccf6ca1428ccec4ff3">app_controller_tick_1ms_isr</a> (void)</td></tr>
+<tr class="memdesc:a2b0859a741e4b3ccf6ca1428ccec4ff3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Advance the system and stopwatch counters from the 1 ms tick ISR.  <br /></td></tr>
 <tr class="separator:a2b0859a741e4b3ccf6ca1428ccec4ff3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8cb556c1622ce60dfe3c43db10ab9a8f" id="r_a8cb556c1622ce60dfe3c43db10ab9a8f"><td class="memItemLeft" align="right" valign="top"><a id="a8cb556c1622ce60dfe3c43db10ab9a8f" name="a8cb556c1622ce60dfe3c43db10ab9a8f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>app_controller_b3_button_isr</b> (void)</td></tr>
-<tr class="memdesc:a8cb556c1622ce60dfe3c43db10ab9a8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle the debounced physical B3 action from IRQ9. <br /></td></tr>
+<tr class="memitem:a8cb556c1622ce60dfe3c43db10ab9a8f" id="r_a8cb556c1622ce60dfe3c43db10ab9a8f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__controller_8c.html#a8cb556c1622ce60dfe3c43db10ab9a8f">app_controller_b3_button_isr</a> (void)</td></tr>
+<tr class="memdesc:a8cb556c1622ce60dfe3c43db10ab9a8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Debounce B3 and queue the physical screen-cycle action.  <br /></td></tr>
 <tr class="separator:a8cb556c1622ce60dfe3c43db10ab9a8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac6d1512f368352de9872569ead076d3d" id="r_ac6d1512f368352de9872569ead076d3d"><td class="memItemLeft" align="right" valign="top"><a id="ac6d1512f368352de9872569ead076d3d" name="ac6d1512f368352de9872569ead076d3d"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>app_controller_b4_button_isr</b> (void)</td></tr>
-<tr class="memdesc:ac6d1512f368352de9872569ead076d3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle the debounced physical B4 action from IRQ4. <br /></td></tr>
+<tr class="memitem:ac6d1512f368352de9872569ead076d3d" id="r_ac6d1512f368352de9872569ead076d3d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__controller_8c.html#ac6d1512f368352de9872569ead076d3d">app_controller_b4_button_isr</a> (void)</td></tr>
+<tr class="memdesc:ac6d1512f368352de9872569ead076d3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Debounce B4 and queue the physical stopwatch-control action.  <br /></td></tr>
 <tr class="separator:ac6d1512f368352de9872569ead076d3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abb6c8c562ca647f7810c95d5e4ae91b0" id="r_abb6c8c562ca647f7810c95d5e4ae91b0"><td class="memItemLeft" align="right" valign="top"><a id="abb6c8c562ca647f7810c95d5e4ae91b0" name="abb6c8c562ca647f7810c95d5e4ae91b0"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>app_controller_request_watch_screen</b> (void)</td></tr>
-<tr class="memdesc:abb6c8c562ca647f7810c95d5e4ae91b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Request the BLE B2 action: show the watch without changing stopwatch state. <br /></td></tr>
-<tr class="separator:abb6c8c562ca647f7810c95d5e4ae91b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62274cdd323be6eb4cfb874916bb9ad9" id="r_a62274cdd323be6eb4cfb874916bb9ad9"><td class="memItemLeft" align="right" valign="top"><a id="a62274cdd323be6eb4cfb874916bb9ad9" name="a62274cdd323be6eb4cfb874916bb9ad9"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>app_controller_request_stopwatch_navigation</b> (void)</td></tr>
-<tr class="memdesc:a62274cdd323be6eb4cfb874916bb9ad9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Request the BLE B3 action: open/reset/back. <br /></td></tr>
-<tr class="separator:a62274cdd323be6eb4cfb874916bb9ad9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1908f34f03abc183d533f43d062dccc6" id="r_a1908f34f03abc183d533f43d062dccc6"><td class="memItemLeft" align="right" valign="top"><a id="a1908f34f03abc183d533f43d062dccc6" name="a1908f34f03abc183d533f43d062dccc6"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>app_controller_request_stopwatch_control</b> (void)</td></tr>
-<tr class="memdesc:a1908f34f03abc183d533f43d062dccc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Request the BLE B4 action: start/pause/continue. <br /></td></tr>
+<tr class="memitem:a93e19972af0d62a5713a9bc822080d3c" id="r_a93e19972af0d62a5713a9bc822080d3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__controller_8c.html#a93e19972af0d62a5713a9bc822080d3c">app_controller_request_dashboard_screen</a> (void)</td></tr>
+<tr class="memdesc:a93e19972af0d62a5713a9bc822080d3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queue dashboard screen.  <br /></td></tr>
+<tr class="separator:a93e19972af0d62a5713a9bc822080d3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0ebe3ac905fe0228dafdc1fa500c657" id="r_aa0ebe3ac905fe0228dafdc1fa500c657"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__controller_8c.html#aa0ebe3ac905fe0228dafdc1fa500c657">app_controller_request_environment_screen</a> (void)</td></tr>
+<tr class="memdesc:aa0ebe3ac905fe0228dafdc1fa500c657"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queue environment screen.  <br /></td></tr>
+<tr class="separator:aa0ebe3ac905fe0228dafdc1fa500c657"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7f3abd7ff43944421ff257b6f6dd5b36" id="r_a7f3abd7ff43944421ff257b6f6dd5b36"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__controller_8c.html#a7f3abd7ff43944421ff257b6f6dd5b36">app_controller_request_astronomy_screen</a> (void)</td></tr>
+<tr class="memdesc:a7f3abd7ff43944421ff257b6f6dd5b36"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queue astronomy screen.  <br /></td></tr>
+<tr class="separator:a7f3abd7ff43944421ff257b6f6dd5b36"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f7b5e851ee9c10699361b8b00285c6f" id="r_a0f7b5e851ee9c10699361b8b00285c6f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__controller_8c.html#a0f7b5e851ee9c10699361b8b00285c6f">app_controller_request_stopwatch_reset</a> (void)</td></tr>
+<tr class="memdesc:a0f7b5e851ee9c10699361b8b00285c6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queue stopwatch reset.  <br /></td></tr>
+<tr class="separator:a0f7b5e851ee9c10699361b8b00285c6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1908f34f03abc183d533f43d062dccc6" id="r_a1908f34f03abc183d533f43d062dccc6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__controller_8c.html#a1908f34f03abc183d533f43d062dccc6">app_controller_request_stopwatch_control</a> (void)</td></tr>
+<tr class="memdesc:a1908f34f03abc183d533f43d062dccc6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queue stopwatch control.  <br /></td></tr>
 <tr class="separator:a1908f34f03abc183d533f43d062dccc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a545e01f646dfffc031ec50d1be37e299" id="r_a545e01f646dfffc031ec50d1be37e299"><td class="memItemLeft" align="right" valign="top"><a id="a545e01f646dfffc031ec50d1be37e299" name="a545e01f646dfffc031ec50d1be37e299"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>app_controller_request_rtc_refresh</b> (void)</td></tr>
-<tr class="memdesc:a545e01f646dfffc031ec50d1be37e299"><td class="mdescLeft">&#160;</td><td class="mdescRight">Request a fresh RTC read and a complete dashboard redraw. <br /></td></tr>
+<tr class="memitem:a545e01f646dfffc031ec50d1be37e299" id="r_a545e01f646dfffc031ec50d1be37e299"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__controller_8c.html#a545e01f646dfffc031ec50d1be37e299">app_controller_request_rtc_refresh</a> (void)</td></tr>
+<tr class="memdesc:a545e01f646dfffc031ec50d1be37e299"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queue rtc refresh.  <br /></td></tr>
 <tr class="separator:a545e01f646dfffc031ec50d1be37e299"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae7e9cf616595db655e19c65e34620222" id="r_ae7e9cf616595db655e19c65e34620222"><td class="memItemLeft" align="right" valign="top"><a id="ae7e9cf616595db655e19c65e34620222" name="ae7e9cf616595db655e19c65e34620222"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>app_controller_init</b> (void)</td></tr>
-<tr class="memdesc:ae7e9cf616595db655e19c65e34620222"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize all Click boards, UI, BLE and interrupt sources. <br /></td></tr>
+<tr class="memitem:a681ea2f76a79ea1374d3522cc04442bc" id="r_a681ea2f76a79ea1374d3522cc04442bc"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__controller_8c.html#a681ea2f76a79ea1374d3522cc04442bc">app_reset_render_timers</a> (void)</td></tr>
+<tr class="memdesc:a681ea2f76a79ea1374d3522cc04442bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invalidate all application-level display refresh timestamps.  <br /></td></tr>
+<tr class="separator:a681ea2f76a79ea1374d3522cc04442bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fbfd41dd7dce3de2f4eb85e72854fbd" id="r_a3fbfd41dd7dce3de2f4eb85e72854fbd"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__controller_8c.html#a3fbfd41dd7dce3de2f4eb85e72854fbd">app_render_active_screen</a> (uint32_t now)</td></tr>
+<tr class="memdesc:a3fbfd41dd7dce3de2f4eb85e72854fbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Render the currently selected application screen.  <br /></td></tr>
+<tr class="separator:a3fbfd41dd7dce3de2f4eb85e72854fbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0435fe2aa70a204473ed52db6b4eb84e" id="r_a0435fe2aa70a204473ed52db6b4eb84e"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__controller_8c.html#a0435fe2aa70a204473ed52db6b4eb84e">app_switch_screen</a> (<a class="el" href="app__types_8h.html#ac70ecff5013af5a2a6b9a3640c180bbd">app_screen_t</a> screen, uint32_t now)</td></tr>
+<tr class="memdesc:a0435fe2aa70a204473ed52db6b4eb84e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Select a screen, invalidate display caches and render it immediately.  <br /></td></tr>
+<tr class="separator:a0435fe2aa70a204473ed52db6b4eb84e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7e9cf616595db655e19c65e34620222" id="r_ae7e9cf616595db655e19c65e34620222"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__controller_8c.html#ae7e9cf616595db655e19c65e34620222">app_controller_init</a> (void)</td></tr>
+<tr class="memdesc:ae7e9cf616595db655e19c65e34620222"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the module.  <br /></td></tr>
 <tr class="separator:ae7e9cf616595db655e19c65e34620222"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76907810401c6da57839b9a5cf5a645e" id="r_a76907810401c6da57839b9a5cf5a645e"><td class="memItemLeft" align="right" valign="top"><a id="a76907810401c6da57839b9a5cf5a645e" name="a76907810401c6da57839b9a5cf5a645e"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>app_controller_run</b> (void)</td></tr>
-<tr class="memdesc:a76907810401c6da57839b9a5cf5a645e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run the cooperative foreground application loop. <br /></td></tr>
+<tr class="memitem:a0b7a6354668d7c708ef0e3d8cd3ebbc2" id="r_a0b7a6354668d7c708ef0e3d8cd3ebbc2"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__controller_8c.html#a0b7a6354668d7c708ef0e3d8cd3ebbc2">app_handle_auto_b3</a> (uint32_t now)</td></tr>
+<tr class="memdesc:a0b7a6354668d7c708ef0e3d8cd3ebbc2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Queue a physical B3 action when automatic demonstration mode expires.  <br /></td></tr>
+<tr class="separator:a0b7a6354668d7c708ef0e3d8cd3ebbc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc85ec1ff81aac4f852faeb74a457f74" id="r_adc85ec1ff81aac4f852faeb74a457f74"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__controller_8c.html#adc85ec1ff81aac4f852faeb74a457f74">app_handle_ble_status</a> (void)</td></tr>
+<tr class="memdesc:adc85ec1ff81aac4f852faeb74a457f74"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refresh the UI after a BLE connection-state change.  <br /></td></tr>
+<tr class="separator:adc85ec1ff81aac4f852faeb74a457f74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a2b81af6b2aae3446e36822bad8a83f" id="r_a3a2b81af6b2aae3446e36822bad8a83f"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__controller_8c.html#a3a2b81af6b2aae3446e36822bad8a83f">app_handle_physical_b3</a> (uint32_t now)</td></tr>
+<tr class="memdesc:a3a2b81af6b2aae3446e36822bad8a83f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Process a pending physical or automatic B3 action.  <br /></td></tr>
+<tr class="separator:a3a2b81af6b2aae3446e36822bad8a83f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53089040c206885ba8f2c7bd82fea360" id="r_a53089040c206885ba8f2c7bd82fea360"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__controller_8c.html#a53089040c206885ba8f2c7bd82fea360">app_handle_physical_b4</a> (void)</td></tr>
+<tr class="memdesc:a53089040c206885ba8f2c7bd82fea360"><td class="mdescLeft">&#160;</td><td class="mdescRight">Process a pending physical B4 stopwatch action.  <br /></td></tr>
+<tr class="separator:a53089040c206885ba8f2c7bd82fea360"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7c329c2b1df3be1f1a8c40718109dad" id="r_ae7c329c2b1df3be1f1a8c40718109dad"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__controller_8c.html#ae7c329c2b1df3be1f1a8c40718109dad">app_handle_ble_screen_request</a> (uint32_t now)</td></tr>
+<tr class="memdesc:ae7c329c2b1df3be1f1a8c40718109dad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply a pending BLE screen-selection request.  <br /></td></tr>
+<tr class="separator:ae7c329c2b1df3be1f1a8c40718109dad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6b0834fcd33e6ac3cfd239f894d0b8bd" id="r_a6b0834fcd33e6ac3cfd239f894d0b8bd"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__controller_8c.html#a6b0834fcd33e6ac3cfd239f894d0b8bd">app_handle_ble_stopwatch_reset</a> (uint32_t now)</td></tr>
+<tr class="memdesc:a6b0834fcd33e6ac3cfd239f894d0b8bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the BLE stopwatch stop/reset request.  <br /></td></tr>
+<tr class="separator:a6b0834fcd33e6ac3cfd239f894d0b8bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab73a2f5721c2b9d36a3536f9a7ef7a9" id="r_aab73a2f5721c2b9d36a3536f9a7ef7a9"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__controller_8c.html#aab73a2f5721c2b9d36a3536f9a7ef7a9">app_handle_ble_stopwatch_control</a> (uint32_t now)</td></tr>
+<tr class="memdesc:aab73a2f5721c2b9d36a3536f9a7ef7a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the BLE stopwatch start/pause/continue request.  <br /></td></tr>
+<tr class="separator:aab73a2f5721c2b9d36a3536f9a7ef7a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acaedc8b61705ba15f92c5dd9488ba309" id="r_acaedc8b61705ba15f92c5dd9488ba309"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__controller_8c.html#acaedc8b61705ba15f92c5dd9488ba309">app_handle_periodic_update</a> (uint32_t now)</td></tr>
+<tr class="memdesc:acaedc8b61705ba15f92c5dd9488ba309"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read the RTC and environmental sensor during the one-second update.  <br /></td></tr>
+<tr class="separator:acaedc8b61705ba15f92c5dd9488ba309"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7535f670804c42a02158cba2e0e747e3" id="r_a7535f670804c42a02158cba2e0e747e3"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__controller_8c.html#a7535f670804c42a02158cba2e0e747e3">app_refresh_active_screen_if_due</a> (uint32_t now)</td></tr>
+<tr class="memdesc:a7535f670804c42a02158cba2e0e747e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Refresh animated screen content when its render interval expires.  <br /></td></tr>
+<tr class="separator:a7535f670804c42a02158cba2e0e747e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76907810401c6da57839b9a5cf5a645e" id="r_a76907810401c6da57839b9a5cf5a645e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__controller_8c.html#a76907810401c6da57839b9a5cf5a645e">app_controller_run</a> (void)</td></tr>
+<tr class="memdesc:a76907810401c6da57839b9a5cf5a645e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle run.  <br /></td></tr>
 <tr class="separator:a76907810401c6da57839b9a5cf5a645e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a07188845441631542543f3ce48c53f47" id="r_a07188845441631542543f3ce48c53f47"><td class="memItemLeft" align="right" valign="top">static volatile uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__controller_8c.html#a07188845441631542543f3ce48c53f47">app_system_ms</a></td></tr>
+<tr class="separator:a07188845441631542543f3ce48c53f47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a637c98edd0edab14ed7306c9237a8f5d" id="r_a637c98edd0edab14ed7306c9237a8f5d"><td class="memItemLeft" align="right" valign="top">static volatile uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__controller_8c.html#a637c98edd0edab14ed7306c9237a8f5d">app_stopwatch_ms</a></td></tr>
+<tr class="separator:a637c98edd0edab14ed7306c9237a8f5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:addd5a1e32e8b37d38aa8252d4f39fd3d" id="r_addd5a1e32e8b37d38aa8252d4f39fd3d"><td class="memItemLeft" align="right" valign="top">static volatile uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__controller_8c.html#addd5a1e32e8b37d38aa8252d4f39fd3d">app_b3_last_press_ms</a></td></tr>
+<tr class="separator:addd5a1e32e8b37d38aa8252d4f39fd3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae69aae2b171b63ef02f18bd317704d3e" id="r_ae69aae2b171b63ef02f18bd317704d3e"><td class="memItemLeft" align="right" valign="top">static volatile uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__controller_8c.html#ae69aae2b171b63ef02f18bd317704d3e">app_b4_last_press_ms</a></td></tr>
+<tr class="separator:ae69aae2b171b63ef02f18bd317704d3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9289a67f5525179df8607a9541734e94" id="r_a9289a67f5525179df8607a9541734e94"><td class="memItemLeft" align="right" valign="top">static volatile uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__controller_8c.html#a9289a67f5525179df8607a9541734e94">app_auto_b3_last_trigger_ms</a></td></tr>
+<tr class="separator:a9289a67f5525179df8607a9541734e94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4d65b407cee55d60dd7bfeccfcc5b140" id="r_a4d65b407cee55d60dd7bfeccfcc5b140"><td class="memItemLeft" align="right" valign="top">static volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__controller_8c.html#a4d65b407cee55d60dd7bfeccfcc5b140">app_b3_seen</a></td></tr>
+<tr class="separator:a4d65b407cee55d60dd7bfeccfcc5b140"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a614dfc1cb8b6e03100c902942412d714" id="r_a614dfc1cb8b6e03100c902942412d714"><td class="memItemLeft" align="right" valign="top">static volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__controller_8c.html#a614dfc1cb8b6e03100c902942412d714">app_b4_seen</a></td></tr>
+<tr class="separator:a614dfc1cb8b6e03100c902942412d714"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bcf2998ff032ab94bea50945b73943a" id="r_a2bcf2998ff032ab94bea50945b73943a"><td class="memItemLeft" align="right" valign="top">static volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__controller_8c.html#a2bcf2998ff032ab94bea50945b73943a">app_stopwatch_running</a></td></tr>
+<tr class="separator:a2bcf2998ff032ab94bea50945b73943a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f3880cc0e21d4499bbf4588d10248f5" id="r_a8f3880cc0e21d4499bbf4588d10248f5"><td class="memItemLeft" align="right" valign="top">static volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__controller_8c.html#a8f3880cc0e21d4499bbf4588d10248f5">app_periodic_update_pending</a></td></tr>
+<tr class="separator:a8f3880cc0e21d4499bbf4588d10248f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3f67810ed3da409de151be4edf87738" id="r_ab3f67810ed3da409de151be4edf87738"><td class="memItemLeft" align="right" valign="top">static volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__controller_8c.html#ab3f67810ed3da409de151be4edf87738">app_physical_b3_pending</a></td></tr>
+<tr class="separator:ab3f67810ed3da409de151be4edf87738"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7290082aa4995e1d5cedb92b3e9e6c47" id="r_a7290082aa4995e1d5cedb92b3e9e6c47"><td class="memItemLeft" align="right" valign="top">static volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__controller_8c.html#a7290082aa4995e1d5cedb92b3e9e6c47">app_physical_b4_pending</a></td></tr>
+<tr class="separator:a7290082aa4995e1d5cedb92b3e9e6c47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad476ebab76e62e35145b683314ba2c7" id="r_aad476ebab76e62e35145b683314ba2c7"><td class="memItemLeft" align="right" valign="top">static volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__controller_8c.html#aad476ebab76e62e35145b683314ba2c7">app_ble_screen_pending</a></td></tr>
+<tr class="separator:aad476ebab76e62e35145b683314ba2c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a531d12d2b0fd1ded59d5ff897e0ae7e0" id="r_a531d12d2b0fd1ded59d5ff897e0ae7e0"><td class="memItemLeft" align="right" valign="top">static volatile <a class="el" href="app__types_8h.html#ac70ecff5013af5a2a6b9a3640c180bbd">app_screen_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__controller_8c.html#a531d12d2b0fd1ded59d5ff897e0ae7e0">app_ble_requested_screen</a></td></tr>
+<tr class="separator:a531d12d2b0fd1ded59d5ff897e0ae7e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0f616478dba7cca3a1f470bcd116aed" id="r_aa0f616478dba7cca3a1f470bcd116aed"><td class="memItemLeft" align="right" valign="top">static volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__controller_8c.html#aa0f616478dba7cca3a1f470bcd116aed">app_ble_stopwatch_reset_pending</a></td></tr>
+<tr class="separator:aa0f616478dba7cca3a1f470bcd116aed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a96b71ce21e740b8e66b82239470e2ac3" id="r_a96b71ce21e740b8e66b82239470e2ac3"><td class="memItemLeft" align="right" valign="top">static volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__controller_8c.html#a96b71ce21e740b8e66b82239470e2ac3">app_ble_stopwatch_control_pending</a></td></tr>
+<tr class="separator:a96b71ce21e740b8e66b82239470e2ac3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06ef568cfde5910e6625fee7d7d55368" id="r_a06ef568cfde5910e6625fee7d7d55368"><td class="memItemLeft" align="right" valign="top">static volatile uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__controller_8c.html#a06ef568cfde5910e6625fee7d7d55368">app_force_full_refresh</a></td></tr>
+<tr class="separator:a06ef568cfde5910e6625fee7d7d55368"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a383eda9a8b6520b1e10f5f901033077a" id="r_a383eda9a8b6520b1e10f5f901033077a"><td class="memItemLeft" align="right" valign="top">static volatile <a class="el" href="app__types_8h.html#ac70ecff5013af5a2a6b9a3640c180bbd">app_screen_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__controller_8c.html#a383eda9a8b6520b1e10f5f901033077a">app_active_screen</a> = <a class="el" href="app__types_8h.html#ac70ecff5013af5a2a6b9a3640c180bbda5163261f091352eebfe3accdd8e8bd19">APP_SCREEN_DASHBOARD</a></td></tr>
+<tr class="separator:a383eda9a8b6520b1e10f5f901033077a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9690ab9bdb4638686a8f51972f739c7b" id="r_a9690ab9bdb4638686a8f51972f739c7b"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structrtc14__datetime__t.html">rtc14_datetime_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__controller_8c.html#a9690ab9bdb4638686a8f51972f739c7b">app_datetime</a></td></tr>
+<tr class="separator:a9690ab9bdb4638686a8f51972f739c7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a05934504833e69a0de7e34862d486714" id="r_a05934504833e69a0de7e34862d486714"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="structtemphum27__data__t.html">temphum27_data_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__controller_8c.html#a05934504833e69a0de7e34862d486714">app_environment</a></td></tr>
+<tr class="separator:a05934504833e69a0de7e34862d486714"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9bdf58f981bbb851c8c629597d189b0" id="r_ae9bdf58f981bbb851c8c629597d189b0"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__controller_8c.html#ae9bdf58f981bbb851c8c629597d189b0">app_datetime_valid</a></td></tr>
+<tr class="separator:ae9bdf58f981bbb851c8c629597d189b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74547fa2f9f163fd4a19ee7e680e38ca" id="r_a74547fa2f9f163fd4a19ee7e680e38ca"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__controller_8c.html#a74547fa2f9f163fd4a19ee7e680e38ca">app_last_stopwatch_render_ms</a> = 0xFFFFFFFFUL</td></tr>
+<tr class="separator:a74547fa2f9f163fd4a19ee7e680e38ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad03d71f07aafcac3b1ea28c0eab28a97" id="r_ad03d71f07aafcac3b1ea28c0eab28a97"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__controller_8c.html#ad03d71f07aafcac3b1ea28c0eab28a97">app_last_dashboard_render_ms</a> = 0xFFFFFFFFUL</td></tr>
+<tr class="separator:ad03d71f07aafcac3b1ea28c0eab28a97"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a081370b8d74b0a42509c49cd0e6c58fc" id="r_a081370b8d74b0a42509c49cd0e6c58fc"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__controller_8c.html#a081370b8d74b0a42509c49cd0e6c58fc">app_last_environment_render_ms</a> = 0xFFFFFFFFUL</td></tr>
+<tr class="separator:a081370b8d74b0a42509c49cd0e6c58fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5b7463822847b04fd86214e612fa9b7" id="r_af5b7463822847b04fd86214e612fa9b7"><td class="memItemLeft" align="right" valign="top">static uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__controller_8c.html#af5b7463822847b04fd86214e612fa9b7">app_last_astronomy_render_ms</a> = 0xFFFFFFFFUL</td></tr>
+<tr class="separator:af5b7463822847b04fd86214e612fa9b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Application state machine and foreground scheduling. </p>
-</div></div><!-- contents -->
+
+<p class="definition">Definition in file <a class="el" href="app__controller_8c_source.html">app_controller.c</a>.</p>
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="a8cb556c1622ce60dfe3c43db10ab9a8f" name="a8cb556c1622ce60dfe3c43db10ab9a8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cb556c1622ce60dfe3c43db10ab9a8f">&#9670;&#160;</a></span>app_controller_b3_button_isr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void app_controller_b3_button_isr </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Debounce B3 and queue the physical screen-cycle action. </p>
+<p>Debounce the physical B3 input and queue its screen-cycle action. </p>
+
+<p class="definition">Definition at line <a class="el" href="app__controller_8c_source.html#l00084">84</a> of file <a class="el" href="app__controller_8c_source.html">app_controller.c</a>.</p>
+
+<p class="reference">References <a class="el" href="app__config_8h_source.html#l00071">APP_B3_DEBOUNCE_MS</a>, <a class="el" href="app__controller_8c_source.html#l00018">app_b3_last_press_ms</a>, <a class="el" href="app__controller_8c_source.html#l00021">app_b3_seen</a>, <a class="el" href="app__controller_8c_source.html#l00025">app_physical_b3_pending</a>, and <a class="el" href="app__controller_8c_source.html#l00016">app_system_ms</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__interrupts_8c_source.html#l00254">P304_IRQ9_IRQHandler()</a>.</p>
+
+</div>
+</div>
+<a id="ac6d1512f368352de9872569ead076d3d" name="ac6d1512f368352de9872569ead076d3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6d1512f368352de9872569ead076d3d">&#9670;&#160;</a></span>app_controller_b4_button_isr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void app_controller_b4_button_isr </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Debounce B4 and queue the physical stopwatch-control action. </p>
+<p>Debounce the physical B4 input and queue its stopwatch action. </p>
+
+<p class="definition">Definition at line <a class="el" href="app__controller_8c_source.html#l00099">99</a> of file <a class="el" href="app__controller_8c_source.html">app_controller.c</a>.</p>
+
+<p class="reference">References <a class="el" href="app__config_8h_source.html#l00082">APP_B4_DEBOUNCE_MS</a>, <a class="el" href="app__controller_8c_source.html#l00019">app_b4_last_press_ms</a>, <a class="el" href="app__controller_8c_source.html#l00022">app_b4_seen</a>, <a class="el" href="app__controller_8c_source.html#l00026">app_physical_b4_pending</a>, and <a class="el" href="app__controller_8c_source.html#l00016">app_system_ms</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__interrupts_8c_source.html#l00264">P111_IRQ4_IRQHandler()</a>.</p>
+
+</div>
+</div>
+<a id="aec991ed43a97b129754bfcf21e93b96e" name="aec991ed43a97b129754bfcf21e93b96e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec991ed43a97b129754bfcf21e93b96e">&#9670;&#160;</a></span>app_controller_get_system_ms()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t app_controller_get_system_ms </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Return the monotonic application timebase. </p>
+<p>Return the monotonic AGT0 application counter.</p>
+<dl class="section return"><dt>Returns</dt><dd>Result value. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="app__controller_8c_source.html#l00060">60</a> of file <a class="el" href="app__controller_8c_source.html">app_controller.c</a>.</p>
+
+<p class="reference">References <a class="el" href="app__controller_8c_source.html#l00016">app_system_ms</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="bletiny_8c_source.html#l00579">bletiny_set_connected()</a>.</p>
+
+</div>
+</div>
+<a id="ae7e9cf616595db655e19c65e34620222" name="ae7e9cf616595db655e19c65e34620222"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7e9cf616595db655e19c65e34620222">&#9670;&#160;</a></span>app_controller_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int app_controller_init </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize the module. </p>
+<p>Initialize Click boards, sensors, display, BLE and interrupt sources.</p>
+<dl class="section return"><dt>Returns</dt><dd>Zero on success; otherwise a negative error code. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="app__controller_8c_source.html#l00238">238</a> of file <a class="el" href="app__controller_8c_source.html">app_controller.c</a>.</p>
+
+<p class="reference">References <a class="el" href="app__config_8h_source.html#l00058">APP_AUTO_B3_DEMO_ENABLED</a>, <a class="el" href="app__controller_8c_source.html#l00020">app_auto_b3_last_trigger_ms</a>, <a class="el" href="app__controller_8c_source.html#l00034">app_datetime</a>, <a class="el" href="app__controller_8c_source.html#l00036">app_datetime_valid</a>, <a class="el" href="app__controller_8c_source.html#l00035">app_environment</a>, <a class="el" href="app__controller_8c_source.html#l00047">app_halt_with_error()</a>, <a class="el" href="app__interrupts_8c_source.html#l00276">app_interrupts_init()</a>, <a class="el" href="app__controller_8c_source.html#l00038">app_last_dashboard_render_ms</a>, <a class="el" href="app__controller_8c_source.html#l00016">app_system_ms</a>, <a class="el" href="bletiny_8c_source.html#l00703">bletiny_init()</a>, <a class="el" href="app__types_8h_source.html#l00039">temphum27_data_t::humidity_tenths_percent</a>, <a class="el" href="ips2__display_8c_source.html#l02274">ips2_init()</a>, <a class="el" href="ips2__display_8c_source.html#l01279">ips2_render_dashboard()</a>, <a class="el" href="ips2__display_8c_source.html#l02250">ips2_render_error()</a>, <a class="el" href="project__platform_8h_source.html#l00017">system_clocks_t::pclka</a>, <a class="el" href="project__platform_8h_source.html#l00018">system_clocks_t::pclkb</a>, <a class="el" href="project__platform_8h.html#a17cb61c4ec78fad11fd285daf22ee5e7">printf_me()</a>, <a class="el" href="rtc14_8c_source.html#l00217">rtc14_get_datetime()</a>, <a class="el" href="rtc14_8c_source.html#l00070">rtc14_init()</a>, <a class="el" href="app__types_8h_source.html#l00014">RTC14_OK</a>, <a class="el" href="rtc14_8c_source.html#l00266">rtc14_print_datetime()</a>, <a class="el" href="rtc14_8c_source.html#l00200">rtc14_set_default_datetime()</a>, <a class="el" href="project__platform_8h.html#ab3b699102d01f9fae47c234fb1dd5c51">SYSTEM_GetClocksFrequency()</a>, <a class="el" href="app__types_8h_source.html#l00038">temphum27_data_t::temperature_tenths_c</a>, <a class="el" href="temphum27_8c_source.html#l00114">temphum27_init()</a>, <a class="el" href="temphum27_8c_source.html#l00205">temphum27_print_data()</a>, <a class="el" href="temphum27_8c_source.html#l00126">temphum27_read_data()</a>, and <a class="el" href="app__types_8h_source.html#l00040">temphum27_data_t::valid</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="main_8c_source.html#l00016">main()</a>.</p>
+
+</div>
+</div>
+<a id="a7f3abd7ff43944421ff257b6f6dd5b36" name="a7f3abd7ff43944421ff257b6f6dd5b36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7f3abd7ff43944421ff257b6f6dd5b36">&#9670;&#160;</a></span>app_controller_request_astronomy_screen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void app_controller_request_astronomy_screen </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Queue astronomy screen. </p>
+<p>Request the BLE B5 action that opens the Time of Day screen. </p>
+
+<p class="definition">Definition at line <a class="el" href="app__controller_8c_source.html#l00132">132</a> of file <a class="el" href="app__controller_8c_source.html">app_controller.c</a>.</p>
+
+<p class="reference">References <a class="el" href="app__controller_8c_source.html#l00028">app_ble_requested_screen</a>, <a class="el" href="app__controller_8c_source.html#l00027">app_ble_screen_pending</a>, and <a class="el" href="app__types_8h_source.html#l00048">APP_SCREEN_ASTRONOMY</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="bletiny_8c_source.html#l00508">bletiny_process_stopwatch_command()</a>.</p>
+
+</div>
+</div>
+<a id="a93e19972af0d62a5713a9bc822080d3c" name="a93e19972af0d62a5713a9bc822080d3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93e19972af0d62a5713a9bc822080d3c">&#9670;&#160;</a></span>app_controller_request_dashboard_screen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void app_controller_request_dashboard_screen </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Queue dashboard screen. </p>
+<p>Request the BLE B1 action that opens the smartwatch dashboard. </p>
+
+<p class="definition">Definition at line <a class="el" href="app__controller_8c_source.html#l00114">114</a> of file <a class="el" href="app__controller_8c_source.html">app_controller.c</a>.</p>
+
+<p class="reference">References <a class="el" href="app__controller_8c_source.html#l00028">app_ble_requested_screen</a>, <a class="el" href="app__controller_8c_source.html#l00027">app_ble_screen_pending</a>, and <a class="el" href="app__types_8h_source.html#l00046">APP_SCREEN_DASHBOARD</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="bletiny_8c_source.html#l00508">bletiny_process_stopwatch_command()</a>.</p>
+
+</div>
+</div>
+<a id="aa0ebe3ac905fe0228dafdc1fa500c657" name="aa0ebe3ac905fe0228dafdc1fa500c657"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0ebe3ac905fe0228dafdc1fa500c657">&#9670;&#160;</a></span>app_controller_request_environment_screen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void app_controller_request_environment_screen </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Queue environment screen. </p>
+<p>Request the BLE B2 action that opens the environment screen. </p>
+
+<p class="definition">Definition at line <a class="el" href="app__controller_8c_source.html#l00123">123</a> of file <a class="el" href="app__controller_8c_source.html">app_controller.c</a>.</p>
+
+<p class="reference">References <a class="el" href="app__controller_8c_source.html#l00028">app_ble_requested_screen</a>, <a class="el" href="app__controller_8c_source.html#l00027">app_ble_screen_pending</a>, and <a class="el" href="app__types_8h_source.html#l00047">APP_SCREEN_ENVIRONMENT</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="bletiny_8c_source.html#l00508">bletiny_process_stopwatch_command()</a>.</p>
+
+</div>
+</div>
+<a id="a545e01f646dfffc031ec50d1be37e299" name="a545e01f646dfffc031ec50d1be37e299"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a545e01f646dfffc031ec50d1be37e299">&#9670;&#160;</a></span>app_controller_request_rtc_refresh()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void app_controller_request_rtc_refresh </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Queue rtc refresh. </p>
+<p>Request a fresh RTC read and complete active-screen redraw. </p>
+
+<p class="definition">Definition at line <a class="el" href="app__controller_8c_source.html#l00157">157</a> of file <a class="el" href="app__controller_8c_source.html">app_controller.c</a>.</p>
+
+<p class="reference">References <a class="el" href="app__controller_8c_source.html#l00031">app_force_full_refresh</a>, and <a class="el" href="app__controller_8c_source.html#l00024">app_periodic_update_pending</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="bletiny_8c_source.html#l00424">bletiny_process_rtc_command()</a>.</p>
+
+</div>
+</div>
+<a id="a1908f34f03abc183d533f43d062dccc6" name="a1908f34f03abc183d533f43d062dccc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1908f34f03abc183d533f43d062dccc6">&#9670;&#160;</a></span>app_controller_request_stopwatch_control()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void app_controller_request_stopwatch_control </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Queue stopwatch control. </p>
+<p>Request the BLE B4 action that shows or toggles the stopwatch. </p>
+
+<p class="definition">Definition at line <a class="el" href="app__controller_8c_source.html#l00149">149</a> of file <a class="el" href="app__controller_8c_source.html">app_controller.c</a>.</p>
+
+<p class="reference">References <a class="el" href="app__controller_8c_source.html#l00030">app_ble_stopwatch_control_pending</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="bletiny_8c_source.html#l00508">bletiny_process_stopwatch_command()</a>.</p>
+
+</div>
+</div>
+<a id="a0f7b5e851ee9c10699361b8b00285c6f" name="a0f7b5e851ee9c10699361b8b00285c6f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f7b5e851ee9c10699361b8b00285c6f">&#9670;&#160;</a></span>app_controller_request_stopwatch_reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void app_controller_request_stopwatch_reset </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Queue stopwatch reset. </p>
+<p>Request the BLE B3 action that stops and resets the stopwatch. </p>
+
+<p class="definition">Definition at line <a class="el" href="app__controller_8c_source.html#l00141">141</a> of file <a class="el" href="app__controller_8c_source.html">app_controller.c</a>.</p>
+
+<p class="reference">References <a class="el" href="app__controller_8c_source.html#l00029">app_ble_stopwatch_reset_pending</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="bletiny_8c_source.html#l00508">bletiny_process_stopwatch_command()</a>.</p>
+
+</div>
+</div>
+<a id="a76907810401c6da57839b9a5cf5a645e" name="a76907810401c6da57839b9a5cf5a645e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76907810401c6da57839b9a5cf5a645e">&#9670;&#160;</a></span>app_controller_run()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void app_controller_run </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Handle run. </p>
+<p>Run the cooperative foreground application loop indefinitely. </p>
+
+<p class="definition">Definition at line <a class="el" href="app__controller_8c_source.html#l00728">728</a> of file <a class="el" href="app__controller_8c_source.html">app_controller.c</a>.</p>
+
+<p class="reference">References <a class="el" href="app__controller_8c_source.html#l00337">app_handle_auto_b3()</a>, <a class="el" href="app__controller_8c_source.html#l00476">app_handle_ble_screen_request()</a>, <a class="el" href="app__controller_8c_source.html#l00355">app_handle_ble_status()</a>, <a class="el" href="app__controller_8c_source.html#l00533">app_handle_ble_stopwatch_control()</a>, <a class="el" href="app__controller_8c_source.html#l00504">app_handle_ble_stopwatch_reset()</a>, <a class="el" href="app__controller_8c_source.html#l00574">app_handle_periodic_update()</a>, <a class="el" href="app__controller_8c_source.html#l00373">app_handle_physical_b3()</a>, <a class="el" href="app__controller_8c_source.html#l00436">app_handle_physical_b4()</a>, <a class="el" href="app__controller_8c_source.html#l00652">app_refresh_active_screen_if_due()</a>, <a class="el" href="app__controller_8c_source.html#l00016">app_system_ms</a>, <a class="el" href="bletiny_8c_source.html#l00648">bletiny_process_rx()</a>, and <a class="el" href="bletiny_8c_source.html#l00858">bletiny_service()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="main_8c_source.html#l00016">main()</a>.</p>
+
+</div>
+</div>
+<a id="a2b0859a741e4b3ccf6ca1428ccec4ff3" name="a2b0859a741e4b3ccf6ca1428ccec4ff3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b0859a741e4b3ccf6ca1428ccec4ff3">&#9670;&#160;</a></span>app_controller_tick_1ms_isr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void app_controller_tick_1ms_isr </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Advance the system and stopwatch counters from the 1 ms tick ISR. </p>
+<p>Advance the system timebase and running stopwatch from the AGT0 ISR. </p>
+
+<p class="definition">Definition at line <a class="el" href="app__controller_8c_source.html#l00068">68</a> of file <a class="el" href="app__controller_8c_source.html">app_controller.c</a>.</p>
+
+<p class="reference">References <a class="el" href="app__controller_8c_source.html#l00024">app_periodic_update_pending</a>, <a class="el" href="app__controller_8c_source.html#l00017">app_stopwatch_ms</a>, <a class="el" href="app__controller_8c_source.html#l00023">app_stopwatch_running</a>, and <a class="el" href="app__controller_8c_source.html#l00016">app_system_ms</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__interrupts_8c_source.html#l00240">AGT0_IRQHandler()</a>.</p>
+
+</div>
+</div>
+<a id="ad78e51d3ba17d702dd2147d7b95c3021" name="ad78e51d3ba17d702dd2147d7b95c3021"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad78e51d3ba17d702dd2147d7b95c3021">&#9670;&#160;</a></span>app_halt_with_error()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void app_halt_with_error </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>message</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>error</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Log a fatal initialization error and halt the processor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">message</td><td>Printf-compatible fatal error message. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">error</td><td>Error code appended to the log message. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="app__controller_8c_source.html#l00047">47</a> of file <a class="el" href="app__controller_8c_source.html">app_controller.c</a>.</p>
+
+<p class="reference">References <a class="el" href="project__platform_8h.html#a17cb61c4ec78fad11fd285daf22ee5e7">printf_me()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__controller_8c_source.html#l00238">app_controller_init()</a>.</p>
+
+</div>
+</div>
+<a id="a0b7a6354668d7c708ef0e3d8cd3ebbc2" name="a0b7a6354668d7c708ef0e3d8cd3ebbc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b7a6354668d7c708ef0e3d8cd3ebbc2">&#9670;&#160;</a></span>app_handle_auto_b3()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint8_t app_handle_auto_b3 </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>now</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Queue a physical B3 action when automatic demonstration mode expires. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">now</td><td>Current monotonic application time in milliseconds. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Nonzero when the requested work succeeds or changes state; otherwise zero. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="app__controller_8c_source.html#l00337">337</a> of file <a class="el" href="app__controller_8c_source.html">app_controller.c</a>.</p>
+
+<p class="reference">References <a class="el" href="app__config_8h_source.html#l00058">APP_AUTO_B3_DEMO_ENABLED</a>, <a class="el" href="app__config_8h_source.html#l00060">APP_AUTO_B3_DEMO_INTERVAL_MS</a>, <a class="el" href="app__controller_8c_source.html#l00020">app_auto_b3_last_trigger_ms</a>, and <a class="el" href="app__controller_8c_source.html#l00025">app_physical_b3_pending</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__controller_8c_source.html#l00728">app_controller_run()</a>.</p>
+
+</div>
+</div>
+<a id="ae7c329c2b1df3be1f1a8c40718109dad" name="ae7c329c2b1df3be1f1a8c40718109dad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae7c329c2b1df3be1f1a8c40718109dad">&#9670;&#160;</a></span>app_handle_ble_screen_request()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint8_t app_handle_ble_screen_request </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>now</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Apply a pending BLE screen-selection request. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">now</td><td>Current monotonic application time in milliseconds. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Nonzero when the requested work succeeds or changes state; otherwise zero. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="app__controller_8c_source.html#l00476">476</a> of file <a class="el" href="app__controller_8c_source.html">app_controller.c</a>.</p>
+
+<p class="reference">References <a class="el" href="app__controller_8c_source.html#l00028">app_ble_requested_screen</a>, <a class="el" href="app__controller_8c_source.html#l00027">app_ble_screen_pending</a>, and <a class="el" href="app__controller_8c_source.html#l00223">app_switch_screen()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__controller_8c_source.html#l00728">app_controller_run()</a>.</p>
+
+</div>
+</div>
+<a id="adc85ec1ff81aac4f852faeb74a457f74" name="adc85ec1ff81aac4f852faeb74a457f74"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc85ec1ff81aac4f852faeb74a457f74">&#9670;&#160;</a></span>app_handle_ble_status()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint8_t app_handle_ble_status </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Refresh the UI after a BLE connection-state change. </p>
+<dl class="section return"><dt>Returns</dt><dd>Nonzero when the requested work succeeds or changes state; otherwise zero. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="app__controller_8c_source.html#l00355">355</a> of file <a class="el" href="app__controller_8c_source.html">app_controller.c</a>.</p>
+
+<p class="reference">References <a class="el" href="app__controller_8c_source.html#l00032">app_active_screen</a>, <a class="el" href="bletiny_8c_source.html#l00832">bletiny_take_connection_changed()</a>, <a class="el" href="ips2__display_8c_source.html#l00986">ips2_render_ble_status()</a>, and <a class="el" href="project__platform_8h.html#a17cb61c4ec78fad11fd285daf22ee5e7">printf_me()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__controller_8c_source.html#l00728">app_controller_run()</a>.</p>
+
+</div>
+</div>
+<a id="aab73a2f5721c2b9d36a3536f9a7ef7a9" name="aab73a2f5721c2b9d36a3536f9a7ef7a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab73a2f5721c2b9d36a3536f9a7ef7a9">&#9670;&#160;</a></span>app_handle_ble_stopwatch_control()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint8_t app_handle_ble_stopwatch_control </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>now</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Apply the BLE stopwatch start/pause/continue request. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">now</td><td>Current monotonic application time in milliseconds. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Nonzero when the requested work succeeds or changes state; otherwise zero. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="app__controller_8c_source.html#l00533">533</a> of file <a class="el" href="app__controller_8c_source.html">app_controller.c</a>.</p>
+
+<p class="reference">References <a class="el" href="app__controller_8c_source.html#l00032">app_active_screen</a>, <a class="el" href="app__controller_8c_source.html#l00030">app_ble_stopwatch_control_pending</a>, <a class="el" href="app__controller_8c_source.html#l00037">app_last_stopwatch_render_ms</a>, <a class="el" href="app__controller_8c_source.html#l00166">app_reset_render_timers()</a>, <a class="el" href="app__types_8h_source.html#l00049">APP_SCREEN_STOPWATCH</a>, <a class="el" href="app__controller_8c_source.html#l00017">app_stopwatch_ms</a>, <a class="el" href="app__controller_8c_source.html#l00023">app_stopwatch_running</a>, <a class="el" href="bletiny_8c_source.html#l00822">bletiny_is_connected()</a>, <a class="el" href="ips2__display_8c_source.html#l00699">ips2_invalidate_screen()</a>, and <a class="el" href="ips2__display_8c_source.html#l02194">ips2_render_timer()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__controller_8c_source.html#l00728">app_controller_run()</a>.</p>
+
+</div>
+</div>
+<a id="a6b0834fcd33e6ac3cfd239f894d0b8bd" name="a6b0834fcd33e6ac3cfd239f894d0b8bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b0834fcd33e6ac3cfd239f894d0b8bd">&#9670;&#160;</a></span>app_handle_ble_stopwatch_reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint8_t app_handle_ble_stopwatch_reset </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>now</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Apply the BLE stopwatch stop/reset request. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">now</td><td>Current monotonic application time in milliseconds. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Nonzero when the requested work succeeds or changes state; otherwise zero. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="app__controller_8c_source.html#l00504">504</a> of file <a class="el" href="app__controller_8c_source.html">app_controller.c</a>.</p>
+
+<p class="reference">References <a class="el" href="app__controller_8c_source.html#l00029">app_ble_stopwatch_reset_pending</a>, <a class="el" href="app__types_8h_source.html#l00049">APP_SCREEN_STOPWATCH</a>, <a class="el" href="app__controller_8c_source.html#l00017">app_stopwatch_ms</a>, <a class="el" href="app__controller_8c_source.html#l00023">app_stopwatch_running</a>, and <a class="el" href="app__controller_8c_source.html#l00223">app_switch_screen()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__controller_8c_source.html#l00728">app_controller_run()</a>.</p>
+
+</div>
+</div>
+<a id="acaedc8b61705ba15f92c5dd9488ba309" name="acaedc8b61705ba15f92c5dd9488ba309"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acaedc8b61705ba15f92c5dd9488ba309">&#9670;&#160;</a></span>app_handle_periodic_update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint8_t app_handle_periodic_update </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>now</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Read the RTC and environmental sensor during the one-second update. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">now</td><td>Current monotonic application time in milliseconds. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Nonzero when the requested work succeeds or changes state; otherwise zero. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="app__controller_8c_source.html#l00574">574</a> of file <a class="el" href="app__controller_8c_source.html">app_controller.c</a>.</p>
+
+<p class="reference">References <a class="el" href="app__controller_8c_source.html#l00032">app_active_screen</a>, <a class="el" href="app__controller_8c_source.html#l00034">app_datetime</a>, <a class="el" href="app__controller_8c_source.html#l00036">app_datetime_valid</a>, <a class="el" href="app__controller_8c_source.html#l00035">app_environment</a>, <a class="el" href="app__controller_8c_source.html#l00031">app_force_full_refresh</a>, <a class="el" href="app__controller_8c_source.html#l00040">app_last_astronomy_render_ms</a>, <a class="el" href="app__controller_8c_source.html#l00038">app_last_dashboard_render_ms</a>, <a class="el" href="app__controller_8c_source.html#l00039">app_last_environment_render_ms</a>, <a class="el" href="app__controller_8c_source.html#l00024">app_periodic_update_pending</a>, <a class="el" href="app__controller_8c_source.html#l00166">app_reset_render_timers()</a>, <a class="el" href="app__types_8h_source.html#l00048">APP_SCREEN_ASTRONOMY</a>, <a class="el" href="app__types_8h_source.html#l00046">APP_SCREEN_DASHBOARD</a>, <a class="el" href="app__types_8h_source.html#l00047">APP_SCREEN_ENVIRONMENT</a>, <a class="el" href="bletiny_8c_source.html#l00822">bletiny_is_connected()</a>, <a class="el" href="ips2__display_8c_source.html#l00699">ips2_invalidate_screen()</a>, <a class="el" href="ips2__display_8c_source.html#l01974">ips2_render_astronomy()</a>, <a class="el" href="ips2__display_8c_source.html#l01279">ips2_render_dashboard()</a>, <a class="el" href="ips2__display_8c_source.html#l01624">ips2_render_environment()</a>, <a class="el" href="ips2__display_8c_source.html#l02250">ips2_render_error()</a>, <a class="el" href="project__platform_8h.html#a17cb61c4ec78fad11fd285daf22ee5e7">printf_me()</a>, <a class="el" href="rtc14_8c_source.html#l00217">rtc14_get_datetime()</a>, <a class="el" href="app__types_8h_source.html#l00014">RTC14_OK</a>, <a class="el" href="rtc14_8c_source.html#l00266">rtc14_print_datetime()</a>, <a class="el" href="temphum27_8c_source.html#l00205">temphum27_print_data()</a>, and <a class="el" href="temphum27_8c_source.html#l00126">temphum27_read_data()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__controller_8c_source.html#l00728">app_controller_run()</a>.</p>
+
+</div>
+</div>
+<a id="a3a2b81af6b2aae3446e36822bad8a83f" name="a3a2b81af6b2aae3446e36822bad8a83f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3a2b81af6b2aae3446e36822bad8a83f">&#9670;&#160;</a></span>app_handle_physical_b3()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint8_t app_handle_physical_b3 </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>now</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Process a pending physical or automatic B3 action. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">now</td><td>Current monotonic application time in milliseconds. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Nonzero when the requested work succeeds or changes state; otherwise zero. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="app__controller_8c_source.html#l00373">373</a> of file <a class="el" href="app__controller_8c_source.html">app_controller.c</a>.</p>
+
+<p class="reference">References <a class="el" href="app__controller_8c_source.html#l00032">app_active_screen</a>, <a class="el" href="app__controller_8c_source.html#l00020">app_auto_b3_last_trigger_ms</a>, <a class="el" href="app__controller_8c_source.html#l00037">app_last_stopwatch_render_ms</a>, <a class="el" href="app__controller_8c_source.html#l00025">app_physical_b3_pending</a>, <a class="el" href="app__types_8h_source.html#l00048">APP_SCREEN_ASTRONOMY</a>, <a class="el" href="app__types_8h_source.html#l00046">APP_SCREEN_DASHBOARD</a>, <a class="el" href="app__types_8h_source.html#l00047">APP_SCREEN_ENVIRONMENT</a>, <a class="el" href="app__types_8h_source.html#l00049">APP_SCREEN_STOPWATCH</a>, <a class="el" href="app__controller_8c_source.html#l00017">app_stopwatch_ms</a>, <a class="el" href="app__controller_8c_source.html#l00023">app_stopwatch_running</a>, <a class="el" href="app__controller_8c_source.html#l00223">app_switch_screen()</a>, <a class="el" href="bletiny_8c_source.html#l00822">bletiny_is_connected()</a>, and <a class="el" href="ips2__display_8c_source.html#l02194">ips2_render_timer()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__controller_8c_source.html#l00728">app_controller_run()</a>.</p>
+
+</div>
+</div>
+<a id="a53089040c206885ba8f2c7bd82fea360" name="a53089040c206885ba8f2c7bd82fea360"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53089040c206885ba8f2c7bd82fea360">&#9670;&#160;</a></span>app_handle_physical_b4()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint8_t app_handle_physical_b4 </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Process a pending physical B4 stopwatch action. </p>
+<dl class="section return"><dt>Returns</dt><dd>Nonzero when the requested work succeeds or changes state; otherwise zero. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="app__controller_8c_source.html#l00436">436</a> of file <a class="el" href="app__controller_8c_source.html">app_controller.c</a>.</p>
+
+<p class="reference">References <a class="el" href="app__controller_8c_source.html#l00032">app_active_screen</a>, <a class="el" href="app__controller_8c_source.html#l00037">app_last_stopwatch_render_ms</a>, <a class="el" href="app__controller_8c_source.html#l00026">app_physical_b4_pending</a>, <a class="el" href="app__types_8h_source.html#l00049">APP_SCREEN_STOPWATCH</a>, <a class="el" href="app__controller_8c_source.html#l00017">app_stopwatch_ms</a>, <a class="el" href="app__controller_8c_source.html#l00023">app_stopwatch_running</a>, <a class="el" href="bletiny_8c_source.html#l00822">bletiny_is_connected()</a>, and <a class="el" href="ips2__display_8c_source.html#l02194">ips2_render_timer()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__controller_8c_source.html#l00728">app_controller_run()</a>.</p>
+
+</div>
+</div>
+<a id="a7535f670804c42a02158cba2e0e747e3" name="a7535f670804c42a02158cba2e0e747e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7535f670804c42a02158cba2e0e747e3">&#9670;&#160;</a></span>app_refresh_active_screen_if_due()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint8_t app_refresh_active_screen_if_due </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>now</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Refresh animated screen content when its render interval expires. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">now</td><td>Current monotonic application time in milliseconds. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Result value. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="app__controller_8c_source.html#l00652">652</a> of file <a class="el" href="app__controller_8c_source.html">app_controller.c</a>.</p>
+
+<p class="reference">References <a class="el" href="app__controller_8c_source.html#l00032">app_active_screen</a>, <a class="el" href="app__controller_8c_source.html#l00034">app_datetime</a>, <a class="el" href="app__controller_8c_source.html#l00036">app_datetime_valid</a>, <a class="el" href="app__controller_8c_source.html#l00035">app_environment</a>, <a class="el" href="app__controller_8c_source.html#l00040">app_last_astronomy_render_ms</a>, <a class="el" href="app__controller_8c_source.html#l00038">app_last_dashboard_render_ms</a>, <a class="el" href="app__controller_8c_source.html#l00039">app_last_environment_render_ms</a>, <a class="el" href="app__controller_8c_source.html#l00037">app_last_stopwatch_render_ms</a>, <a class="el" href="app__types_8h_source.html#l00046">APP_SCREEN_DASHBOARD</a>, <a class="el" href="app__types_8h_source.html#l00047">APP_SCREEN_ENVIRONMENT</a>, <a class="el" href="app__types_8h_source.html#l00049">APP_SCREEN_STOPWATCH</a>, <a class="el" href="app__controller_8c_source.html#l00017">app_stopwatch_ms</a>, <a class="el" href="app__controller_8c_source.html#l00023">app_stopwatch_running</a>, <a class="el" href="bletiny_8c_source.html#l00822">bletiny_is_connected()</a>, <a class="el" href="app__config_8h_source.html#l00110">IPS2_ASTRONOMY_REFRESH_MS</a>, <a class="el" href="app__config_8h_source.html#l00108">IPS2_DASHBOARD_REFRESH_MS</a>, <a class="el" href="app__config_8h_source.html#l00109">IPS2_ENVIRONMENT_REFRESH_MS</a>, <a class="el" href="ips2__display_8c_source.html#l01974">ips2_render_astronomy()</a>, <a class="el" href="ips2__display_8c_source.html#l01279">ips2_render_dashboard()</a>, <a class="el" href="ips2__display_8c_source.html#l01624">ips2_render_environment()</a>, <a class="el" href="ips2__display_8c_source.html#l02250">ips2_render_error()</a>, <a class="el" href="ips2__display_8c_source.html#l02194">ips2_render_timer()</a>, and <a class="el" href="app__config_8h_source.html#l00107">IPS2_STOPWATCH_REFRESH_MS</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__controller_8c_source.html#l00728">app_controller_run()</a>.</p>
+
+</div>
+</div>
+<a id="a3fbfd41dd7dce3de2f4eb85e72854fbd" name="a3fbfd41dd7dce3de2f4eb85e72854fbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fbfd41dd7dce3de2f4eb85e72854fbd">&#9670;&#160;</a></span>app_render_active_screen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void app_render_active_screen </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>now</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Render the currently selected application screen. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">now</td><td>Current monotonic application time in milliseconds. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="app__controller_8c_source.html#l00178">178</a> of file <a class="el" href="app__controller_8c_source.html">app_controller.c</a>.</p>
+
+<p class="reference">References <a class="el" href="app__controller_8c_source.html#l00032">app_active_screen</a>, <a class="el" href="app__controller_8c_source.html#l00034">app_datetime</a>, <a class="el" href="app__controller_8c_source.html#l00036">app_datetime_valid</a>, <a class="el" href="app__controller_8c_source.html#l00035">app_environment</a>, <a class="el" href="app__controller_8c_source.html#l00040">app_last_astronomy_render_ms</a>, <a class="el" href="app__controller_8c_source.html#l00038">app_last_dashboard_render_ms</a>, <a class="el" href="app__controller_8c_source.html#l00039">app_last_environment_render_ms</a>, <a class="el" href="app__controller_8c_source.html#l00037">app_last_stopwatch_render_ms</a>, <a class="el" href="app__types_8h_source.html#l00048">APP_SCREEN_ASTRONOMY</a>, <a class="el" href="app__types_8h_source.html#l00046">APP_SCREEN_DASHBOARD</a>, <a class="el" href="app__types_8h_source.html#l00047">APP_SCREEN_ENVIRONMENT</a>, <a class="el" href="app__controller_8c_source.html#l00017">app_stopwatch_ms</a>, <a class="el" href="app__controller_8c_source.html#l00023">app_stopwatch_running</a>, <a class="el" href="bletiny_8c_source.html#l00822">bletiny_is_connected()</a>, <a class="el" href="ips2__display_8c_source.html#l01974">ips2_render_astronomy()</a>, <a class="el" href="ips2__display_8c_source.html#l01279">ips2_render_dashboard()</a>, <a class="el" href="ips2__display_8c_source.html#l01624">ips2_render_environment()</a>, <a class="el" href="ips2__display_8c_source.html#l02250">ips2_render_error()</a>, and <a class="el" href="ips2__display_8c_source.html#l02194">ips2_render_timer()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__controller_8c_source.html#l00223">app_switch_screen()</a>.</p>
+
+</div>
+</div>
+<a id="a681ea2f76a79ea1374d3522cc04442bc" name="a681ea2f76a79ea1374d3522cc04442bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a681ea2f76a79ea1374d3522cc04442bc">&#9670;&#160;</a></span>app_reset_render_timers()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void app_reset_render_timers </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Invalidate all application-level display refresh timestamps. </p>
+
+<p class="definition">Definition at line <a class="el" href="app__controller_8c_source.html#l00166">166</a> of file <a class="el" href="app__controller_8c_source.html">app_controller.c</a>.</p>
+
+<p class="reference">References <a class="el" href="app__controller_8c_source.html#l00040">app_last_astronomy_render_ms</a>, <a class="el" href="app__controller_8c_source.html#l00038">app_last_dashboard_render_ms</a>, <a class="el" href="app__controller_8c_source.html#l00039">app_last_environment_render_ms</a>, and <a class="el" href="app__controller_8c_source.html#l00037">app_last_stopwatch_render_ms</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__controller_8c_source.html#l00533">app_handle_ble_stopwatch_control()</a>, <a class="el" href="app__controller_8c_source.html#l00574">app_handle_periodic_update()</a>, and <a class="el" href="app__controller_8c_source.html#l00223">app_switch_screen()</a>.</p>
+
+</div>
+</div>
+<a id="a0435fe2aa70a204473ed52db6b4eb84e" name="a0435fe2aa70a204473ed52db6b4eb84e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0435fe2aa70a204473ed52db6b4eb84e">&#9670;&#160;</a></span>app_switch_screen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void app_switch_screen </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="app__types_8h.html#ac70ecff5013af5a2a6b9a3640c180bbd">app_screen_t</a>&#160;</td>
+          <td class="paramname"><em>screen</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>now</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Select a screen, invalidate display caches and render it immediately. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">screen</td><td>Application screen whose status area is being updated. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">now</td><td>Current monotonic application time in milliseconds. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="app__controller_8c_source.html#l00223">223</a> of file <a class="el" href="app__controller_8c_source.html">app_controller.c</a>.</p>
+
+<p class="reference">References <a class="el" href="app__controller_8c_source.html#l00032">app_active_screen</a>, <a class="el" href="app__controller_8c_source.html#l00178">app_render_active_screen()</a>, <a class="el" href="app__controller_8c_source.html#l00166">app_reset_render_timers()</a>, and <a class="el" href="ips2__display_8c_source.html#l00699">ips2_invalidate_screen()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__controller_8c_source.html#l00476">app_handle_ble_screen_request()</a>, <a class="el" href="app__controller_8c_source.html#l00504">app_handle_ble_stopwatch_reset()</a>, and <a class="el" href="app__controller_8c_source.html#l00373">app_handle_physical_b3()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a383eda9a8b6520b1e10f5f901033077a" name="a383eda9a8b6520b1e10f5f901033077a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a383eda9a8b6520b1e10f5f901033077a">&#9670;&#160;</a></span>app_active_screen</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile <a class="el" href="app__types_8h.html#ac70ecff5013af5a2a6b9a3640c180bbd">app_screen_t</a> app_active_screen = <a class="el" href="app__types_8h.html#ac70ecff5013af5a2a6b9a3640c180bbda5163261f091352eebfe3accdd8e8bd19">APP_SCREEN_DASHBOARD</a></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="app__controller_8c_source.html#l00032">32</a> of file <a class="el" href="app__controller_8c_source.html">app_controller.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__controller_8c_source.html#l00355">app_handle_ble_status()</a>, <a class="el" href="app__controller_8c_source.html#l00533">app_handle_ble_stopwatch_control()</a>, <a class="el" href="app__controller_8c_source.html#l00574">app_handle_periodic_update()</a>, <a class="el" href="app__controller_8c_source.html#l00373">app_handle_physical_b3()</a>, <a class="el" href="app__controller_8c_source.html#l00436">app_handle_physical_b4()</a>, <a class="el" href="app__controller_8c_source.html#l00652">app_refresh_active_screen_if_due()</a>, <a class="el" href="app__controller_8c_source.html#l00178">app_render_active_screen()</a>, and <a class="el" href="app__controller_8c_source.html#l00223">app_switch_screen()</a>.</p>
+
+</div>
+</div>
+<a id="a9289a67f5525179df8607a9541734e94" name="a9289a67f5525179df8607a9541734e94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9289a67f5525179df8607a9541734e94">&#9670;&#160;</a></span>app_auto_b3_last_trigger_ms</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint32_t app_auto_b3_last_trigger_ms</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="app__controller_8c_source.html#l00020">20</a> of file <a class="el" href="app__controller_8c_source.html">app_controller.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__controller_8c_source.html#l00238">app_controller_init()</a>, <a class="el" href="app__controller_8c_source.html#l00337">app_handle_auto_b3()</a>, and <a class="el" href="app__controller_8c_source.html#l00373">app_handle_physical_b3()</a>.</p>
+
+</div>
+</div>
+<a id="addd5a1e32e8b37d38aa8252d4f39fd3d" name="addd5a1e32e8b37d38aa8252d4f39fd3d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#addd5a1e32e8b37d38aa8252d4f39fd3d">&#9670;&#160;</a></span>app_b3_last_press_ms</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint32_t app_b3_last_press_ms</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="app__controller_8c_source.html#l00018">18</a> of file <a class="el" href="app__controller_8c_source.html">app_controller.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__controller_8c_source.html#l00084">app_controller_b3_button_isr()</a>.</p>
+
+</div>
+</div>
+<a id="a4d65b407cee55d60dd7bfeccfcc5b140" name="a4d65b407cee55d60dd7bfeccfcc5b140"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d65b407cee55d60dd7bfeccfcc5b140">&#9670;&#160;</a></span>app_b3_seen</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint8_t app_b3_seen</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="app__controller_8c_source.html#l00021">21</a> of file <a class="el" href="app__controller_8c_source.html">app_controller.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__controller_8c_source.html#l00084">app_controller_b3_button_isr()</a>.</p>
+
+</div>
+</div>
+<a id="ae69aae2b171b63ef02f18bd317704d3e" name="ae69aae2b171b63ef02f18bd317704d3e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae69aae2b171b63ef02f18bd317704d3e">&#9670;&#160;</a></span>app_b4_last_press_ms</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint32_t app_b4_last_press_ms</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="app__controller_8c_source.html#l00019">19</a> of file <a class="el" href="app__controller_8c_source.html">app_controller.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__controller_8c_source.html#l00099">app_controller_b4_button_isr()</a>.</p>
+
+</div>
+</div>
+<a id="a614dfc1cb8b6e03100c902942412d714" name="a614dfc1cb8b6e03100c902942412d714"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a614dfc1cb8b6e03100c902942412d714">&#9670;&#160;</a></span>app_b4_seen</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint8_t app_b4_seen</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="app__controller_8c_source.html#l00022">22</a> of file <a class="el" href="app__controller_8c_source.html">app_controller.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__controller_8c_source.html#l00099">app_controller_b4_button_isr()</a>.</p>
+
+</div>
+</div>
+<a id="a531d12d2b0fd1ded59d5ff897e0ae7e0" name="a531d12d2b0fd1ded59d5ff897e0ae7e0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a531d12d2b0fd1ded59d5ff897e0ae7e0">&#9670;&#160;</a></span>app_ble_requested_screen</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile <a class="el" href="app__types_8h.html#ac70ecff5013af5a2a6b9a3640c180bbd">app_screen_t</a> app_ble_requested_screen</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="app__controller_8c_source.html#l00028">28</a> of file <a class="el" href="app__controller_8c_source.html">app_controller.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__controller_8c_source.html#l00132">app_controller_request_astronomy_screen()</a>, <a class="el" href="app__controller_8c_source.html#l00114">app_controller_request_dashboard_screen()</a>, <a class="el" href="app__controller_8c_source.html#l00123">app_controller_request_environment_screen()</a>, and <a class="el" href="app__controller_8c_source.html#l00476">app_handle_ble_screen_request()</a>.</p>
+
+</div>
+</div>
+<a id="aad476ebab76e62e35145b683314ba2c7" name="aad476ebab76e62e35145b683314ba2c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad476ebab76e62e35145b683314ba2c7">&#9670;&#160;</a></span>app_ble_screen_pending</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint8_t app_ble_screen_pending</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="app__controller_8c_source.html#l00027">27</a> of file <a class="el" href="app__controller_8c_source.html">app_controller.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__controller_8c_source.html#l00132">app_controller_request_astronomy_screen()</a>, <a class="el" href="app__controller_8c_source.html#l00114">app_controller_request_dashboard_screen()</a>, <a class="el" href="app__controller_8c_source.html#l00123">app_controller_request_environment_screen()</a>, and <a class="el" href="app__controller_8c_source.html#l00476">app_handle_ble_screen_request()</a>.</p>
+
+</div>
+</div>
+<a id="a96b71ce21e740b8e66b82239470e2ac3" name="a96b71ce21e740b8e66b82239470e2ac3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96b71ce21e740b8e66b82239470e2ac3">&#9670;&#160;</a></span>app_ble_stopwatch_control_pending</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint8_t app_ble_stopwatch_control_pending</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="app__controller_8c_source.html#l00030">30</a> of file <a class="el" href="app__controller_8c_source.html">app_controller.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__controller_8c_source.html#l00149">app_controller_request_stopwatch_control()</a>, and <a class="el" href="app__controller_8c_source.html#l00533">app_handle_ble_stopwatch_control()</a>.</p>
+
+</div>
+</div>
+<a id="aa0f616478dba7cca3a1f470bcd116aed" name="aa0f616478dba7cca3a1f470bcd116aed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0f616478dba7cca3a1f470bcd116aed">&#9670;&#160;</a></span>app_ble_stopwatch_reset_pending</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint8_t app_ble_stopwatch_reset_pending</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="app__controller_8c_source.html#l00029">29</a> of file <a class="el" href="app__controller_8c_source.html">app_controller.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__controller_8c_source.html#l00141">app_controller_request_stopwatch_reset()</a>, and <a class="el" href="app__controller_8c_source.html#l00504">app_handle_ble_stopwatch_reset()</a>.</p>
+
+</div>
+</div>
+<a id="a9690ab9bdb4638686a8f51972f739c7b" name="a9690ab9bdb4638686a8f51972f739c7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9690ab9bdb4638686a8f51972f739c7b">&#9670;&#160;</a></span>app_datetime</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structrtc14__datetime__t.html">rtc14_datetime_t</a> app_datetime</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="app__controller_8c_source.html#l00034">34</a> of file <a class="el" href="app__controller_8c_source.html">app_controller.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__controller_8c_source.html#l00238">app_controller_init()</a>, <a class="el" href="app__controller_8c_source.html#l00574">app_handle_periodic_update()</a>, <a class="el" href="app__controller_8c_source.html#l00652">app_refresh_active_screen_if_due()</a>, and <a class="el" href="app__controller_8c_source.html#l00178">app_render_active_screen()</a>.</p>
+
+</div>
+</div>
+<a id="ae9bdf58f981bbb851c8c629597d189b0" name="ae9bdf58f981bbb851c8c629597d189b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9bdf58f981bbb851c8c629597d189b0">&#9670;&#160;</a></span>app_datetime_valid</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t app_datetime_valid</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="app__controller_8c_source.html#l00036">36</a> of file <a class="el" href="app__controller_8c_source.html">app_controller.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__controller_8c_source.html#l00238">app_controller_init()</a>, <a class="el" href="app__controller_8c_source.html#l00574">app_handle_periodic_update()</a>, <a class="el" href="app__controller_8c_source.html#l00652">app_refresh_active_screen_if_due()</a>, and <a class="el" href="app__controller_8c_source.html#l00178">app_render_active_screen()</a>.</p>
+
+</div>
+</div>
+<a id="a05934504833e69a0de7e34862d486714" name="a05934504833e69a0de7e34862d486714"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a05934504833e69a0de7e34862d486714">&#9670;&#160;</a></span>app_environment</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structtemphum27__data__t.html">temphum27_data_t</a> app_environment</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="app__controller_8c_source.html#l00035">35</a> of file <a class="el" href="app__controller_8c_source.html">app_controller.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__controller_8c_source.html#l00238">app_controller_init()</a>, <a class="el" href="app__controller_8c_source.html#l00574">app_handle_periodic_update()</a>, <a class="el" href="app__controller_8c_source.html#l00652">app_refresh_active_screen_if_due()</a>, and <a class="el" href="app__controller_8c_source.html#l00178">app_render_active_screen()</a>.</p>
+
+</div>
+</div>
+<a id="a06ef568cfde5910e6625fee7d7d55368" name="a06ef568cfde5910e6625fee7d7d55368"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06ef568cfde5910e6625fee7d7d55368">&#9670;&#160;</a></span>app_force_full_refresh</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint8_t app_force_full_refresh</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="app__controller_8c_source.html#l00031">31</a> of file <a class="el" href="app__controller_8c_source.html">app_controller.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__controller_8c_source.html#l00157">app_controller_request_rtc_refresh()</a>, and <a class="el" href="app__controller_8c_source.html#l00574">app_handle_periodic_update()</a>.</p>
+
+</div>
+</div>
+<a id="af5b7463822847b04fd86214e612fa9b7" name="af5b7463822847b04fd86214e612fa9b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5b7463822847b04fd86214e612fa9b7">&#9670;&#160;</a></span>app_last_astronomy_render_ms</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t app_last_astronomy_render_ms = 0xFFFFFFFFUL</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="app__controller_8c_source.html#l00040">40</a> of file <a class="el" href="app__controller_8c_source.html">app_controller.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__controller_8c_source.html#l00574">app_handle_periodic_update()</a>, <a class="el" href="app__controller_8c_source.html#l00652">app_refresh_active_screen_if_due()</a>, <a class="el" href="app__controller_8c_source.html#l00178">app_render_active_screen()</a>, and <a class="el" href="app__controller_8c_source.html#l00166">app_reset_render_timers()</a>.</p>
+
+</div>
+</div>
+<a id="ad03d71f07aafcac3b1ea28c0eab28a97" name="ad03d71f07aafcac3b1ea28c0eab28a97"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad03d71f07aafcac3b1ea28c0eab28a97">&#9670;&#160;</a></span>app_last_dashboard_render_ms</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t app_last_dashboard_render_ms = 0xFFFFFFFFUL</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="app__controller_8c_source.html#l00038">38</a> of file <a class="el" href="app__controller_8c_source.html">app_controller.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__controller_8c_source.html#l00238">app_controller_init()</a>, <a class="el" href="app__controller_8c_source.html#l00574">app_handle_periodic_update()</a>, <a class="el" href="app__controller_8c_source.html#l00652">app_refresh_active_screen_if_due()</a>, <a class="el" href="app__controller_8c_source.html#l00178">app_render_active_screen()</a>, and <a class="el" href="app__controller_8c_source.html#l00166">app_reset_render_timers()</a>.</p>
+
+</div>
+</div>
+<a id="a081370b8d74b0a42509c49cd0e6c58fc" name="a081370b8d74b0a42509c49cd0e6c58fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a081370b8d74b0a42509c49cd0e6c58fc">&#9670;&#160;</a></span>app_last_environment_render_ms</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t app_last_environment_render_ms = 0xFFFFFFFFUL</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="app__controller_8c_source.html#l00039">39</a> of file <a class="el" href="app__controller_8c_source.html">app_controller.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__controller_8c_source.html#l00574">app_handle_periodic_update()</a>, <a class="el" href="app__controller_8c_source.html#l00652">app_refresh_active_screen_if_due()</a>, <a class="el" href="app__controller_8c_source.html#l00178">app_render_active_screen()</a>, and <a class="el" href="app__controller_8c_source.html#l00166">app_reset_render_timers()</a>.</p>
+
+</div>
+</div>
+<a id="a74547fa2f9f163fd4a19ee7e680e38ca" name="a74547fa2f9f163fd4a19ee7e680e38ca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74547fa2f9f163fd4a19ee7e680e38ca">&#9670;&#160;</a></span>app_last_stopwatch_render_ms</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t app_last_stopwatch_render_ms = 0xFFFFFFFFUL</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="app__controller_8c_source.html#l00037">37</a> of file <a class="el" href="app__controller_8c_source.html">app_controller.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__controller_8c_source.html#l00533">app_handle_ble_stopwatch_control()</a>, <a class="el" href="app__controller_8c_source.html#l00373">app_handle_physical_b3()</a>, <a class="el" href="app__controller_8c_source.html#l00436">app_handle_physical_b4()</a>, <a class="el" href="app__controller_8c_source.html#l00652">app_refresh_active_screen_if_due()</a>, <a class="el" href="app__controller_8c_source.html#l00178">app_render_active_screen()</a>, and <a class="el" href="app__controller_8c_source.html#l00166">app_reset_render_timers()</a>.</p>
+
+</div>
+</div>
+<a id="a8f3880cc0e21d4499bbf4588d10248f5" name="a8f3880cc0e21d4499bbf4588d10248f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f3880cc0e21d4499bbf4588d10248f5">&#9670;&#160;</a></span>app_periodic_update_pending</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint8_t app_periodic_update_pending</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="app__controller_8c_source.html#l00024">24</a> of file <a class="el" href="app__controller_8c_source.html">app_controller.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__controller_8c_source.html#l00157">app_controller_request_rtc_refresh()</a>, <a class="el" href="app__controller_8c_source.html#l00068">app_controller_tick_1ms_isr()</a>, and <a class="el" href="app__controller_8c_source.html#l00574">app_handle_periodic_update()</a>.</p>
+
+</div>
+</div>
+<a id="ab3f67810ed3da409de151be4edf87738" name="ab3f67810ed3da409de151be4edf87738"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3f67810ed3da409de151be4edf87738">&#9670;&#160;</a></span>app_physical_b3_pending</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint8_t app_physical_b3_pending</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="app__controller_8c_source.html#l00025">25</a> of file <a class="el" href="app__controller_8c_source.html">app_controller.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__controller_8c_source.html#l00084">app_controller_b3_button_isr()</a>, <a class="el" href="app__controller_8c_source.html#l00337">app_handle_auto_b3()</a>, and <a class="el" href="app__controller_8c_source.html#l00373">app_handle_physical_b3()</a>.</p>
+
+</div>
+</div>
+<a id="a7290082aa4995e1d5cedb92b3e9e6c47" name="a7290082aa4995e1d5cedb92b3e9e6c47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7290082aa4995e1d5cedb92b3e9e6c47">&#9670;&#160;</a></span>app_physical_b4_pending</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint8_t app_physical_b4_pending</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="app__controller_8c_source.html#l00026">26</a> of file <a class="el" href="app__controller_8c_source.html">app_controller.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__controller_8c_source.html#l00099">app_controller_b4_button_isr()</a>, and <a class="el" href="app__controller_8c_source.html#l00436">app_handle_physical_b4()</a>.</p>
+
+</div>
+</div>
+<a id="a637c98edd0edab14ed7306c9237a8f5d" name="a637c98edd0edab14ed7306c9237a8f5d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a637c98edd0edab14ed7306c9237a8f5d">&#9670;&#160;</a></span>app_stopwatch_ms</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint32_t app_stopwatch_ms</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="app__controller_8c_source.html#l00017">17</a> of file <a class="el" href="app__controller_8c_source.html">app_controller.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__controller_8c_source.html#l00068">app_controller_tick_1ms_isr()</a>, <a class="el" href="app__controller_8c_source.html#l00533">app_handle_ble_stopwatch_control()</a>, <a class="el" href="app__controller_8c_source.html#l00504">app_handle_ble_stopwatch_reset()</a>, <a class="el" href="app__controller_8c_source.html#l00373">app_handle_physical_b3()</a>, <a class="el" href="app__controller_8c_source.html#l00436">app_handle_physical_b4()</a>, <a class="el" href="app__controller_8c_source.html#l00652">app_refresh_active_screen_if_due()</a>, and <a class="el" href="app__controller_8c_source.html#l00178">app_render_active_screen()</a>.</p>
+
+</div>
+</div>
+<a id="a2bcf2998ff032ab94bea50945b73943a" name="a2bcf2998ff032ab94bea50945b73943a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bcf2998ff032ab94bea50945b73943a">&#9670;&#160;</a></span>app_stopwatch_running</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint8_t app_stopwatch_running</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="app__controller_8c_source.html#l00023">23</a> of file <a class="el" href="app__controller_8c_source.html">app_controller.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__controller_8c_source.html#l00068">app_controller_tick_1ms_isr()</a>, <a class="el" href="app__controller_8c_source.html#l00533">app_handle_ble_stopwatch_control()</a>, <a class="el" href="app__controller_8c_source.html#l00504">app_handle_ble_stopwatch_reset()</a>, <a class="el" href="app__controller_8c_source.html#l00373">app_handle_physical_b3()</a>, <a class="el" href="app__controller_8c_source.html#l00436">app_handle_physical_b4()</a>, <a class="el" href="app__controller_8c_source.html#l00652">app_refresh_active_screen_if_due()</a>, and <a class="el" href="app__controller_8c_source.html#l00178">app_render_active_screen()</a>.</p>
+
+</div>
+</div>
+<a id="a07188845441631542543f3ce48c53f47" name="a07188845441631542543f3ce48c53f47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a07188845441631542543f3ce48c53f47">&#9670;&#160;</a></span>app_system_ms</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile uint32_t app_system_ms</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="app__controller_8c_source.html#l00016">16</a> of file <a class="el" href="app__controller_8c_source.html">app_controller.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__controller_8c_source.html#l00084">app_controller_b3_button_isr()</a>, <a class="el" href="app__controller_8c_source.html#l00099">app_controller_b4_button_isr()</a>, <a class="el" href="app__controller_8c_source.html#l00060">app_controller_get_system_ms()</a>, <a class="el" href="app__controller_8c_source.html#l00238">app_controller_init()</a>, <a class="el" href="app__controller_8c_source.html#l00728">app_controller_run()</a>, and <a class="el" href="app__controller_8c_source.html#l00068">app_controller_tick_1ms_isr()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="app__controller_8c.html">app_controller.c</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
 </body>
 </html>

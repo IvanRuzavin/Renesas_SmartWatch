@@ -1,37 +1,39 @@
 <map id="src/app_controller.c" name="src/app_controller.c">
-<area shape="rect" id="Node000001" title="Application state machine and foreground scheduling." alt="" coords="413,5,561,31"/>
-<area shape="rect" id="Node000002" href="$app__controller_8h.html" title="Public declarations for this module." alt="" coords="750,152,877,177"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="561,25,681,45,735,59,772,76,786,90,796,106,810,138,805,140,792,108,782,93,769,81,734,64,680,50,560,30"/>
-<area shape="rect" id="Node000004" href="$app__config_8h.html" title="Compile&#45;time configuration for the R7FA4M2 smartwatch example." alt="" coords="901,152,1005,177"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="562,24,676,42,739,57,801,76,870,108,927,142,924,147,868,113,799,81,738,62,675,48,561,29"/>
-<area shape="rect" id="Node000005" href="$app__interrupts_8h.html" title="Public declarations for this module." alt="" coords="5,152,133,177"/>
-<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="413,23,324,27,227,37,141,54,108,66,86,81,77,93,72,107,69,138,64,138,67,106,72,90,82,77,106,61,139,49,226,31,324,22,412,18"/>
-<area shape="rect" id="Node000006" href="$app__types_8h.html" title="Shared data types and result codes." alt="" coords="333,152,435,177"/>
-<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="488,31,480,66,462,105,441,128,418,147,415,142,438,125,458,103,475,64,483,30"/>
-<area shape="rect" id="Node000007" href="$bletiny_8h.html" title="Public declarations for this module." alt="" coords="96,79,173,104"/>
-<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="427,33,187,81,186,76,426,28"/>
-<area shape="rect" id="Node000008" href="$ips2__display_8h.html" title="Public declarations for this module." alt="" coords="198,79,311,104"/>
-<area shape="poly" id="edge11_Node000001_Node000008" title=" " alt="" coords="450,33,306,77,304,72,449,28"/>
-<area shape="rect" id="Node000009" href="$project__platform_8h.html" title="Project&#45;specific SDK hooks used by the example." alt="" coords="615,79,758,104"/>
-<area shape="poly" id="edge14_Node000001_Node000009" title=" " alt="" coords="520,28,642,71,640,76,518,33"/>
-<area shape="rect" id="Node000012" href="$rtc14_8h.html" title="Public declarations for this module." alt="" coords="524,79,591,104"/>
-<area shape="poly" id="edge18_Node000001_Node000012" title=" " alt="" coords="500,29,538,67,534,71,496,33"/>
-<area shape="rect" id="Node000013" href="$temphum27_8h.html" title="Public declarations for this module." alt="" coords="335,79,449,104"/>
-<area shape="poly" id="edge21_Node000001_Node000013" title=" " alt="" coords="473,33,420,72,417,68,470,29"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="393,225,463,251"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="752,180,477,230,476,225,751,175"/>
-<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="902,178,890,180,659,212,477,234,477,228,658,207,889,175,901,173"/>
-<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="127,175,380,224,379,230,126,180"/>
-<area shape="poly" id="edge8_Node000006_Node000003" title=" " alt="" coords="394,176,416,212,411,215,389,179"/>
-<area shape="poly" id="edge10_Node000007_Node000003" title=" " alt="" coords="156,102,293,175,389,218,386,222,291,180,154,107"/>
-<area shape="poly" id="edge12_Node000008_Node000003" title=" " alt="" coords="264,103,288,137,323,175,356,199,390,217,387,222,353,203,320,179,284,141,259,106"/>
-<area shape="poly" id="edge13_Node000008_Node000006" title=" " alt="" coords="277,102,352,143,349,147,274,106"/>
-<area shape="poly" id="edge15_Node000009_Node000003" title=" " alt="" coords="656,107,605,127,549,154,498,187,455,219,452,214,495,182,547,150,603,122,654,102"/>
-<area shape="rect" id="Node000010" title=" " alt="" coords="561,152,623,177"/>
-<area shape="poly" id="edge16_Node000009_Node000010" title=" " alt="" coords="673,106,620,146,617,141,670,102"/>
-<area shape="rect" id="Node000011" title=" " alt="" coords="648,152,725,177"/>
-<area shape="poly" id="edge17_Node000009_Node000011" title=" " alt="" coords="689,104,689,138,684,138,684,104"/>
-<area shape="poly" id="edge19_Node000012_Node000003" title=" " alt="" coords="549,106,506,154,449,217,445,213,502,150,545,102"/>
-<area shape="poly" id="edge20_Node000012_Node000006" title=" " alt="" coords="530,106,426,149,424,144,528,102"/>
-<area shape="poly" id="edge22_Node000013_Node000006" title=" " alt="" coords="393,105,389,139,384,138,388,104"/>
+<area shape="rect" id="Node000001" title="Application state machine and foreground scheduling." alt="" coords="394,5,542,31"/>
+<area shape="rect" id="Node000002" href="$app__controller_8h.html" title="Application state&#45;machine and foreground&#45;loop interface." alt="" coords="573,152,699,177"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="543,23,571,29,598,40,623,56,644,77,650,92,653,108,648,139,643,138,647,108,645,93,639,80,620,60,596,45,569,35,542,28"/>
+<area shape="rect" id="Node000004" href="$app__config_8h.html" title="Compile&#45;time configuration for the R7FA4M2 smartwatch example." alt="" coords="525,79,629,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="487,28,549,69,546,73,484,33"/>
+<area shape="rect" id="Node000006" href="$app__interrupts_8h.html" title="Interrupt&#45;vector, AGT0 tick and physical&#45;button interface." alt="" coords="964,152,1092,177"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="542,18,617,22,706,32,802,49,894,76,956,107,1005,141,1002,146,953,112,892,81,800,54,706,37,617,27,542,23"/>
+<area shape="rect" id="Node000007" href="$app__types_8h.html" title="Shared data types and result codes." alt="" coords="239,152,340,177"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="394,26,364,32,335,43,308,59,286,80,280,93,278,108,283,138,277,139,273,108,275,92,282,77,304,54,332,38,363,27,393,21"/>
+<area shape="rect" id="Node000008" href="$bletiny_8h.html" title="BLE Tiny Click SCI3 and CodeLess command interface." alt="" coords="5,79,83,104"/>
+<area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="394,32,260,53,96,81,95,76,259,48,393,27"/>
+<area shape="rect" id="Node000009" href="$ips2__display_8h.html" title="IPS Display 2 transport and smartwatch UI rendering interface." alt="" coords="107,79,221,104"/>
+<area shape="poly" id="edge12_Node000001_Node000009" title=" " alt="" coords="420,33,227,78,226,73,419,28"/>
+<area shape="rect" id="Node000010" href="$project__platform_8h.html" title="Project&#45;specific SDK hooks used by the example." alt="" coords="739,79,882,104"/>
+<area shape="poly" id="edge15_Node000001_Node000010" title=" " alt="" coords="524,28,742,73,741,78,523,33"/>
+<area shape="rect" id="Node000013" href="$rtc14_8h.html" title="RTC 14 Click driver interface." alt="" coords="435,79,501,104"/>
+<area shape="poly" id="edge19_Node000001_Node000013" title=" " alt="" coords="471,31,471,65,465,65,465,31"/>
+<area shape="rect" id="Node000014" href="$temphum27_8h.html" title="Temp&amp;Hum 27 Click driver interface." alt="" coords="297,79,410,104"/>
+<area shape="poly" id="edge22_Node000001_Node000014" title=" " alt="" coords="451,33,385,74,382,69,448,28"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="421,225,491,251"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="608,180,499,223,497,218,606,175"/>
+<area shape="poly" id="edge5_Node000004_Node000003" title=" " alt="" coords="570,106,511,179,478,217,474,213,507,176,566,103"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="415,152,497,177"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="559,106,489,147,486,143,556,102"/>
+<area shape="poly" id="edge7_Node000006_Node000003" title=" " alt="" coords="964,178,952,180,505,234,505,229,952,175,963,173"/>
+<area shape="poly" id="edge9_Node000007_Node000003" title=" " alt="" coords="317,175,417,217,415,222,315,180"/>
+<area shape="poly" id="edge11_Node000008_Node000003" title=" " alt="" coords="63,102,121,138,198,175,253,193,309,208,408,227,406,232,308,213,252,198,196,180,119,142,60,107"/>
+<area shape="poly" id="edge13_Node000009_Node000003" title=" " alt="" coords="172,103,193,139,209,159,228,175,272,198,319,215,366,225,407,231,406,236,365,230,318,220,270,203,225,180,205,162,189,142,167,106"/>
+<area shape="poly" id="edge14_Node000009_Node000007" title=" " alt="" coords="185,102,258,143,256,147,183,106"/>
+<area shape="poly" id="edge16_Node000010_Node000003" title=" " alt="" coords="802,106,765,143,740,163,712,180,659,202,603,218,505,235,504,230,602,212,657,197,709,175,737,158,761,139,798,103"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="877,152,939,177"/>
+<area shape="poly" id="edge17_Node000010_Node000011" title=" " alt="" coords="828,102,882,141,879,146,825,106"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="775,152,852,177"/>
+<area shape="poly" id="edge18_Node000010_Node000012" title=" " alt="" coords="814,104,815,138,810,139,808,104"/>
+<area shape="poly" id="edge20_Node000013_Node000003" title=" " alt="" coords="449,106,425,126,405,153,403,169,408,185,432,215,428,218,403,188,397,170,400,151,421,122,446,102"/>
+<area shape="poly" id="edge21_Node000013_Node000007" title=" " alt="" coords="440,107,332,149,330,144,438,102"/>
+<area shape="poly" id="edge23_Node000014_Node000007" title=" " alt="" coords="345,106,311,144,307,140,341,103"/>
 </map>

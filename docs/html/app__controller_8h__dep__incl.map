@@ -1,5 +1,5 @@
 <map id="include/app_controller.h" name="include/app_controller.h">
-<area shape="rect" id="Node000001" title="Public declarations for this module." alt="" coords="239,5,416,31"/>
+<area shape="rect" id="Node000001" title="Application state&#45;machine and foreground&#45;loop interface." alt="" coords="239,5,416,31"/>
 <area shape="rect" id="Node000002" href="$app__controller_8c.html" title="Application state machine and foreground scheduling." alt="" coords="5,79,153,104"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="275,37,120,81,119,76,274,32"/>
 <area shape="rect" id="Node000003" href="$app__interrupts_8c.html" title="RAM vector installation, AGT0 tick and external button IRQ routing." alt="" coords="177,79,328,104"/>

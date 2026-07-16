@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,6 +27,7 @@
   <td id="projectalign">
    <div id="projectname">R7FA4M2 Multi-Click Smartwatch
    </div>
+   <div id="projectbrief">Bare-metal multi-screen smartwatch demo for Clicker 4 for R7FA4M2A</div>
   </td>
  </tr>
  </tbody>
@@ -51,6 +56,23 @@ $(function() {
 $(document).ready(function() { init_codefold(0); });
 /* @license-end */
 </script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('rtc14_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -72,11 +94,6 @@ $(document).ready(function() { init_codefold(0); });
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">rtc14.h</div></div>
 </div><!--header-->
@@ -84,25 +101,38 @@ $(document).ready(function() { init_codefold(0); });
 <a href="rtc14_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#ifndef RTC14_H</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#define RTC14_H</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="app__types_8h.html">app_types.h</a>&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keywordtype">int</span> <a class="code hl_function" href="rtc14_8h.html#ae02084fb7880e0443cb79bc08f00ebd9">rtc14_init</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keywordtype">int</span> <a class="code hl_function" href="rtc14_8h.html#ab1aee4e1c6c5c4ff183a11c5d64263e9">rtc14_set_default_datetime</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keywordtype">int</span> <a class="code hl_function" href="rtc14_8h.html#a594eeb620fb23edac916ba709ba312b2">rtc14_set_datetime_24h</a>(uint16_t year, uint8_t month, uint8_t day, uint8_t hour, uint8_t minute, uint8_t second, uint8_t weekday);</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keywordtype">int</span> <a class="code hl_function" href="rtc14_8h.html#ad6c8223e08739c839ff35f907ac7a1ca">rtc14_get_datetime</a>(<a class="code hl_struct" href="structrtc14__datetime__t.html">rtc14_datetime_t</a> *datetime);</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keywordtype">void</span> <a class="code hl_function" href="rtc14_8h.html#af59ef583c4726de5298aeedd6771edaa">rtc14_print_datetime</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structrtc14__datetime__t.html">rtc14_datetime_t</a> *datetime);</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#endif </span><span class="comment">/* RTC14_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="app__types_8h.html">app_types.h</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keywordtype">int</span> <a class="code hl_function" href="rtc14_8h.html#ae02084fb7880e0443cb79bc08f00ebd9">rtc14_init</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keywordtype">int</span> <a class="code hl_function" href="rtc14_8h.html#ab1aee4e1c6c5c4ff183a11c5d64263e9">rtc14_set_default_datetime</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keywordtype">int</span> <a class="code hl_function" href="rtc14_8h.html#a594eeb620fb23edac916ba709ba312b2">rtc14_set_datetime_24h</a>(uint16_t year, uint8_t month, uint8_t day,</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>                           uint8_t hour, uint8_t minute, uint8_t second,</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>                           uint8_t weekday);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keywordtype">int</span> <a class="code hl_function" href="rtc14_8h.html#ad6c8223e08739c839ff35f907ac7a1ca">rtc14_get_datetime</a>(<a class="code hl_struct" href="structrtc14__datetime__t.html">rtc14_datetime_t</a> *datetime);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keywordtype">void</span> <a class="code hl_function" href="rtc14_8h.html#af59ef583c4726de5298aeedd6771edaa">rtc14_print_datetime</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structrtc14__datetime__t.html">rtc14_datetime_t</a> *datetime);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#endif </span><span class="comment">/* RTC14_H */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="aapp__types_8h_html"><div class="ttname"><a href="app__types_8h.html">app_types.h</a></div><div class="ttdoc">Shared data types and result codes.</div></div>
-<div class="ttc" id="artc14_8h_html_a594eeb620fb23edac916ba709ba312b2"><div class="ttname"><a href="rtc14_8h.html#a594eeb620fb23edac916ba709ba312b2">rtc14_set_datetime_24h</a></div><div class="ttdeci">int rtc14_set_datetime_24h(uint16_t year, uint8_t month, uint8_t day, uint8_t hour, uint8_t minute, uint8_t second, uint8_t weekday)</div><div class="ttdoc">Write a validated 24-hour date/time value to RTC 14.</div><div class="ttdef"><b>Definition</b> rtc14.c:98</div></div>
-<div class="ttc" id="artc14_8h_html_ab1aee4e1c6c5c4ff183a11c5d64263e9"><div class="ttname"><a href="rtc14_8h.html#ab1aee4e1c6c5c4ff183a11c5d64263e9">rtc14_set_default_datetime</a></div><div class="ttdeci">int rtc14_set_default_datetime(void)</div><div class="ttdoc">Apply the example's configured default date and time.</div><div class="ttdef"><b>Definition</b> rtc14.c:153</div></div>
-<div class="ttc" id="artc14_8h_html_ad6c8223e08739c839ff35f907ac7a1ca"><div class="ttname"><a href="rtc14_8h.html#ad6c8223e08739c839ff35f907ac7a1ca">rtc14_get_datetime</a></div><div class="ttdeci">int rtc14_get_datetime(rtc14_datetime_t *datetime)</div><div class="ttdoc">Read a coherent RTC date/time snapshot.</div><div class="ttdef"><b>Definition</b> rtc14.c:165</div></div>
-<div class="ttc" id="artc14_8h_html_ae02084fb7880e0443cb79bc08f00ebd9"><div class="ttname"><a href="rtc14_8h.html#ae02084fb7880e0443cb79bc08f00ebd9">rtc14_init</a></div><div class="ttdeci">int rtc14_init(void)</div><div class="ttdoc">Initialize the shared IIC0 transport used by RTC 14.</div><div class="ttdef"><b>Definition</b> rtc14.c:49</div></div>
-<div class="ttc" id="artc14_8h_html_af59ef583c4726de5298aeedd6771edaa"><div class="ttname"><a href="rtc14_8h.html#af59ef583c4726de5298aeedd6771edaa">rtc14_print_datetime</a></div><div class="ttdeci">void rtc14_print_datetime(const rtc14_datetime_t *datetime)</div><div class="ttdoc">Print a decoded RTC value through printf_me().</div><div class="ttdef"><b>Definition</b> rtc14.c:210</div></div>
-<div class="ttc" id="astructrtc14__datetime__t_html"><div class="ttname"><a href="structrtc14__datetime__t.html">rtc14_datetime_t</a></div><div class="ttdoc">Decoded RTC 14 date and time.</div><div class="ttdef"><b>Definition</b> app_types.h:23</div></div>
+<div class="ttc" id="artc14_8h_html_a594eeb620fb23edac916ba709ba312b2"><div class="ttname"><a href="rtc14_8h.html#a594eeb620fb23edac916ba709ba312b2">rtc14_set_datetime_24h</a></div><div class="ttdeci">int rtc14_set_datetime_24h(uint16_t year, uint8_t month, uint8_t day, uint8_t hour, uint8_t minute, uint8_t second, uint8_t weekday)</div><div class="ttdoc">Write a validated 24-hour date/time value to RTC 14.</div><div class="ttdef"><b>Definition</b> <a href="rtc14_8c_source.html#l00141">rtc14.c:141</a></div></div>
+<div class="ttc" id="artc14_8h_html_ab1aee4e1c6c5c4ff183a11c5d64263e9"><div class="ttname"><a href="rtc14_8h.html#ab1aee4e1c6c5c4ff183a11c5d64263e9">rtc14_set_default_datetime</a></div><div class="ttdeci">int rtc14_set_default_datetime(void)</div><div class="ttdoc">Apply the example's configured default date and time.</div><div class="ttdef"><b>Definition</b> <a href="rtc14_8c_source.html#l00200">rtc14.c:200</a></div></div>
+<div class="ttc" id="artc14_8h_html_ad6c8223e08739c839ff35f907ac7a1ca"><div class="ttname"><a href="rtc14_8h.html#ad6c8223e08739c839ff35f907ac7a1ca">rtc14_get_datetime</a></div><div class="ttdeci">int rtc14_get_datetime(rtc14_datetime_t *datetime)</div><div class="ttdoc">Read a coherent RTC date/time snapshot.</div><div class="ttdef"><b>Definition</b> <a href="rtc14_8c_source.html#l00217">rtc14.c:217</a></div></div>
+<div class="ttc" id="artc14_8h_html_ae02084fb7880e0443cb79bc08f00ebd9"><div class="ttname"><a href="rtc14_8h.html#ae02084fb7880e0443cb79bc08f00ebd9">rtc14_init</a></div><div class="ttdeci">int rtc14_init(void)</div><div class="ttdoc">Initialize the shared IIC0 transport used by RTC 14.</div><div class="ttdef"><b>Definition</b> <a href="rtc14_8c_source.html#l00070">rtc14.c:70</a></div></div>
+<div class="ttc" id="artc14_8h_html_af59ef583c4726de5298aeedd6771edaa"><div class="ttname"><a href="rtc14_8h.html#af59ef583c4726de5298aeedd6771edaa">rtc14_print_datetime</a></div><div class="ttdeci">void rtc14_print_datetime(const rtc14_datetime_t *datetime)</div><div class="ttdoc">Print a decoded RTC value through printf_me().</div><div class="ttdef"><b>Definition</b> <a href="rtc14_8c_source.html#l00266">rtc14.c:266</a></div></div>
+<div class="ttc" id="astructrtc14__datetime__t_html"><div class="ttname"><a href="structrtc14__datetime__t.html">rtc14_datetime_t</a></div><div class="ttdoc">Decoded RTC 14 date and time.</div><div class="ttdef"><b>Definition</b> <a href="app__types_8h_source.html#l00022">app_types.h:23</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="rtc14_8h.html">rtc14.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
 </body>
 </html>

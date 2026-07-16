@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,6 +27,7 @@
   <td id="projectalign">
    <div id="projectname">R7FA4M2 Multi-Click Smartwatch
    </div>
+   <div id="projectbrief">Bare-metal multi-screen smartwatch demo for Clicker 4 for R7FA4M2A</div>
   </td>
  </tr>
  </tbody>
@@ -46,6 +51,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('dir_d44c64559bbebec7f509842c48db8b23.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -67,11 +89,6 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">include Directory Reference</div></div>
 </div><!--header-->
@@ -83,22 +100,22 @@ Files</h2></td></tr>
 <tr class="memdesc:app__config_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compile-time configuration for the R7FA4M2 smartwatch example. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="app__controller_8h_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__controller_8h.html">app_controller.h</a></td></tr>
-<tr class="memdesc:app__controller_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Public declarations for this module. <br /></td></tr>
+<tr class="memdesc:app__controller_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Application state-machine and foreground-loop interface. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="app__interrupts_8h_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__interrupts_8h.html">app_interrupts.h</a></td></tr>
-<tr class="memdesc:app__interrupts_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Public declarations for this module. <br /></td></tr>
+<tr class="memdesc:app__interrupts_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interrupt-vector, AGT0 tick and physical-button interface. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="app__types_8h_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__types_8h.html">app_types.h</a></td></tr>
 <tr class="memdesc:app__types_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shared data types and result codes. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="bletiny_8h_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="bletiny_8h.html">bletiny.h</a></td></tr>
-<tr class="memdesc:bletiny_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Public declarations for this module. <br /></td></tr>
+<tr class="memdesc:bletiny_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">BLE Tiny Click SCI3 and CodeLess command interface. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="iic0__bus_8h_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="iic0__bus_8h.html">iic0_bus.h</a></td></tr>
-<tr class="memdesc:iic0__bus_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Public declarations for this module. <br /></td></tr>
+<tr class="memdesc:iic0__bus_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shared polling IIC0 master interface. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="ips2__display_8h_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ips2__display_8h.html">ips2_display.h</a></td></tr>
-<tr class="memdesc:ips2__display_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Public declarations for this module. <br /></td></tr>
+<tr class="memdesc:ips2__display_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">IPS Display 2 transport and smartwatch UI rendering interface. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="project__platform_8h_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="project__platform_8h.html">project_platform.h</a></td></tr>
 <tr class="memdesc:project__platform_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Project-specific SDK hooks used by the example. <br /></td></tr>
@@ -107,16 +124,20 @@ Files</h2></td></tr>
 <tr class="memdesc:ra4m2__baremetal_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Shared RA4M2 register definitions used by the local bare-metal drivers. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="rtc14_8h_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="rtc14_8h.html">rtc14.h</a></td></tr>
-<tr class="memdesc:rtc14_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Public declarations for this module. <br /></td></tr>
+<tr class="memdesc:rtc14_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">RTC 14 Click driver interface. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top"><a href="temphum27_8h_source.html"><span class="icondoc"></span></a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="temphum27_8h.html">temphum27.h</a></td></tr>
-<tr class="memdesc:temphum27_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Public declarations for this module. <br /></td></tr>
+<tr class="memdesc:temphum27_8h"><td class="mdescLeft">&#160;</td><td class="mdescRight">Temp&amp;Hum 27 Click driver interface. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
 </body>
 </html>

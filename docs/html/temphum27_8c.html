@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,6 +27,7 @@
   <td id="projectalign">
    <div id="projectname">R7FA4M2 Multi-Click Smartwatch
    </div>
+   <div id="projectbrief">Bare-metal multi-screen smartwatch demo for Clicker 4 for R7FA4M2A</div>
   </td>
  </tr>
  </tbody>
@@ -46,6 +51,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('temphum27_8c.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -67,11 +89,6 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
@@ -91,61 +108,436 @@ Include dependency graph for temphum27.c:</div>
 <div class="dyncontent">
 <div class="center"><img src="temphum27_8c__incl.png" border="0" usemap="#asrc_2temphum27_8c" alt=""/></div>
 <map name="asrc_2temphum27_8c" id="asrc_2temphum27_8c">
-<area shape="rect" title="Temp&amp;Hum 27 Click reset, CRC validation and fixed&#45;point conversion." alt="" coords="149,5,283,31"/>
-<area shape="rect" href="temphum27_8h.html" title="Public declarations for this module." alt="" coords="22,79,135,104"/>
-<area shape="poly" title=" " alt="" coords="195,33,114,75,112,70,193,28"/>
-<area shape="rect" href="app__config_8h.html" title="Compile&#45;time configuration for the R7FA4M2 smartwatch example." alt="" coords="131,152,235,177"/>
-<area shape="poly" title=" " alt="" coords="216,31,204,79,191,139,185,138,199,78,211,30"/>
-<area shape="rect" href="iic0__bus_8h.html" title="Public declarations for this module." alt="" coords="214,79,301,104"/>
-<area shape="poly" title=" " alt="" coords="225,30,246,65,241,68,221,32"/>
-<area shape="rect" href="ra4m2__baremetal_8h.html" title="Shared RA4M2 register definitions used by the local bare&#45;metal drivers." alt="" coords="325,79,475,104"/>
-<area shape="poly" title=" " alt="" coords="247,28,358,71,356,76,245,33"/>
+<area shape="rect" title="Temp&amp;Hum 27 Click reset, CRC validation and fixed&#45;point conversion." alt="" coords="199,5,334,31"/>
+<area shape="rect" href="temphum27_8h.html" title="Temp&amp;Hum 27 Click driver interface." alt="" coords="17,79,130,104"/>
+<area shape="poly" title=" " alt="" coords="237,33,118,76,117,71,235,28"/>
+<area shape="rect" href="app__config_8h.html" title="Compile&#45;time configuration for the R7FA4M2 smartwatch example." alt="" coords="171,79,275,104"/>
+<area shape="poly" title=" " alt="" coords="262,32,239,68,235,66,257,30"/>
+<area shape="rect" href="iic0__bus_8h.html" title="Shared polling IIC0 master interface." alt="" coords="289,152,375,177"/>
+<area shape="poly" title=" " alt="" coords="274,30,324,138,319,141,270,32"/>
+<area shape="rect" href="ra4m2__baremetal_8h.html" title="Shared RA4M2 register definitions used by the local bare&#45;metal drivers." alt="" coords="377,79,527,104"/>
+<area shape="poly" title=" " alt="" coords="297,28,410,71,408,76,295,33"/>
 <area shape="rect" href="app__types_8h.html" title="Shared data types and result codes." alt="" coords="5,152,107,177"/>
-<area shape="poly" title=" " alt="" coords="77,105,66,140,61,138,72,104"/>
-<area shape="rect" title=" " alt="" coords="198,225,269,251"/>
-<area shape="poly" title=" " alt="" coords="85,175,193,218,191,223,84,180"/>
-<area shape="poly" title=" " alt="" coords="193,176,219,213,215,216,189,179"/>
-<area shape="poly" title=" " alt="" coords="259,105,249,178,242,212,237,211,244,177,254,104"/>
-<area shape="rect" href="project__platform_8h.html" title="Project&#45;specific SDK hooks used by the example." alt="" coords="322,152,465,177"/>
-<area shape="poly" title=" " alt="" coords="402,105,398,139,393,138,396,104"/>
-<area shape="poly" title=" " alt="" coords="369,180,273,222,271,217,367,175"/>
-<area shape="rect" title=" " alt="" coords="305,225,367,251"/>
-<area shape="poly" title=" " alt="" coords="386,179,356,216,352,213,382,176"/>
-<area shape="rect" title=" " alt="" coords="392,225,469,251"/>
-<area shape="poly" title=" " alt="" coords="402,176,421,212,416,215,397,179"/>
+<area shape="poly" title=" " alt="" coords="73,105,65,140,59,138,68,104"/>
+<area shape="rect" title=" " alt="" coords="226,225,297,251"/>
+<area shape="poly" title=" " alt="" coords="90,175,216,218,214,223,88,180"/>
+<area shape="poly" title=" " alt="" coords="208,106,192,120,177,138,169,157,172,176,192,200,218,217,215,221,188,204,167,178,163,156,172,135,188,117,205,102"/>
+<area shape="rect" title=" " alt="" coords="181,152,264,177"/>
+<area shape="poly" title=" " alt="" coords="225,104,225,138,220,138,220,104"/>
+<area shape="poly" title=" " alt="" coords="322,180,284,218,280,214,318,176"/>
+<area shape="rect" href="project__platform_8h.html" title="Project&#45;specific SDK hooks used by the example." alt="" coords="399,152,542,177"/>
+<area shape="poly" title=" " alt="" coords="458,104,467,138,462,140,453,105"/>
+<area shape="poly" title=" " alt="" coords="438,180,309,223,308,218,436,175"/>
+<area shape="rect" title=" " alt="" coords="391,225,454,251"/>
+<area shape="poly" title=" " alt="" coords="465,179,440,216,436,213,461,176"/>
+<area shape="rect" title=" " alt="" coords="479,225,556,251"/>
+<area shape="poly" title=" " alt="" coords="481,176,504,212,500,215,476,179"/>
 </map>
 </div>
-</div><table class="memberdecls">
+</div>
+<p><a href="temphum27_8c_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a5d245fe7ca1d00637f4653843a3ce82f" id="r_a5d245fe7ca1d00637f4653843a3ce82f"><td class="memItemLeft" align="right" valign="top"><a id="a5d245fe7ca1d00637f4653843a3ce82f" name="a5d245fe7ca1d00637f4653843a3ce82f"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>TEMPHUM27_EN_MASK</b>&#160;&#160;&#160;(1U &lt;&lt; 5) /* P105 */</td></tr>
+<tr class="memitem:a5d245fe7ca1d00637f4653843a3ce82f" id="r_a5d245fe7ca1d00637f4653843a3ce82f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="temphum27_8c.html#a5d245fe7ca1d00637f4653843a3ce82f">TEMPHUM27_EN_MASK</a>&#160;&#160;&#160;(1U &lt;&lt; 5) /* P105 */</td></tr>
 <tr class="separator:a5d245fe7ca1d00637f4653843a3ce82f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02ead36fb81029603e13591c8a47ebd9" id="r_a02ead36fb81029603e13591c8a47ebd9"><td class="memItemLeft" align="right" valign="top"><a id="a02ead36fb81029603e13591c8a47ebd9" name="a02ead36fb81029603e13591c8a47ebd9"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>TEMPHUM27_ALR_MASK</b>&#160;&#160;&#160;(1U &lt;&lt; 1) /* P101 */</td></tr>
+<tr class="memitem:a02ead36fb81029603e13591c8a47ebd9" id="r_a02ead36fb81029603e13591c8a47ebd9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="temphum27_8c.html#a02ead36fb81029603e13591c8a47ebd9">TEMPHUM27_ALR_MASK</a>&#160;&#160;&#160;(1U &lt;&lt; 1) /* P101 */</td></tr>
 <tr class="separator:a02ead36fb81029603e13591c8a47ebd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aea90fc168f43df13925b7a6efdc061d4" id="r_aea90fc168f43df13925b7a6efdc061d4"><td class="memItemLeft" align="right" valign="top"><a id="aea90fc168f43df13925b7a6efdc061d4" name="aea90fc168f43df13925b7a6efdc061d4"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>temphum27_init</b> (void)</td></tr>
-<tr class="memdesc:aea90fc168f43df13925b7a6efdc061d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure and reset Temp&amp;Hum 27 Click. <br /></td></tr>
+<tr class="memitem:a6e945e964f63458cfdb0a1c36bdec83b" id="r_a6e945e964f63458cfdb0a1c36bdec83b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="temphum27_8c.html#a6e945e964f63458cfdb0a1c36bdec83b">temphum27_delay_ms</a> (uint32_t milliseconds)</td></tr>
+<tr class="memdesc:a6e945e964f63458cfdb0a1c36bdec83b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delay for the requested number of milliseconds.  <br /></td></tr>
+<tr class="separator:a6e945e964f63458cfdb0a1c36bdec83b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31f3d729ad17ee6932352ce3321c12ba" id="r_a31f3d729ad17ee6932352ce3321c12ba"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="temphum27_8c.html#a31f3d729ad17ee6932352ce3321c12ba">temphum27_configure_pins</a> (void)</td></tr>
+<tr class="memdesc:a31f3d729ad17ee6932352ce3321c12ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Configure pins.  <br /></td></tr>
+<tr class="separator:a31f3d729ad17ee6932352ce3321c12ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ace4c2977a7720bb3b3c8ed2f587f89d6" id="r_ace4c2977a7720bb3b3c8ed2f587f89d6"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="temphum27_8c.html#ace4c2977a7720bb3b3c8ed2f587f89d6">temphum27_enable</a> (void)</td></tr>
+<tr class="memdesc:ace4c2977a7720bb3b3c8ed2f587f89d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable the Temp&amp;Hum 27 sensor through its GPIO pin.  <br /></td></tr>
+<tr class="separator:ace4c2977a7720bb3b3c8ed2f587f89d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abcde1cff576209145bc5efd5f585adfc" id="r_abcde1cff576209145bc5efd5f585adfc"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="temphum27_8c.html#abcde1cff576209145bc5efd5f585adfc">temphum27_disable</a> (void)</td></tr>
+<tr class="memdesc:abcde1cff576209145bc5efd5f585adfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disable the Temp&amp;Hum 27 sensor through its GPIO pin.  <br /></td></tr>
+<tr class="separator:abcde1cff576209145bc5efd5f585adfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac35b494a5241acf65e5083183b072c29" id="r_ac35b494a5241acf65e5083183b072c29"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="temphum27_8c.html#ac35b494a5241acf65e5083183b072c29">temphum27_reset</a> (void)</td></tr>
+<tr class="memdesc:ac35b494a5241acf65e5083183b072c29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the Temp&amp;Hum 27 sensor and wait for startup.  <br /></td></tr>
+<tr class="separator:ac35b494a5241acf65e5083183b072c29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5a41ddf4dd07a4c1e09ef9a7abc672dd" id="r_a5a41ddf4dd07a4c1e09ef9a7abc672dd"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="temphum27_8c.html#a5a41ddf4dd07a4c1e09ef9a7abc672dd">temphum27_calculate_crc</a> (const uint8_t *data, uint8_t length)</td></tr>
+<tr class="memdesc:a5a41ddf4dd07a4c1e09ef9a7abc672dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the sensor CRC for a two-byte measurement.  <br /></td></tr>
+<tr class="separator:a5a41ddf4dd07a4c1e09ef9a7abc672dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea90fc168f43df13925b7a6efdc061d4" id="r_aea90fc168f43df13925b7a6efdc061d4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="temphum27_8c.html#aea90fc168f43df13925b7a6efdc061d4">temphum27_init</a> (void)</td></tr>
+<tr class="memdesc:aea90fc168f43df13925b7a6efdc061d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the module.  <br /></td></tr>
 <tr class="separator:aea90fc168f43df13925b7a6efdc061d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad5654e687f18d4e9b7810d1c3e0d990a" id="r_ad5654e687f18d4e9b7810d1c3e0d990a"><td class="memItemLeft" align="right" valign="top"><a id="ad5654e687f18d4e9b7810d1c3e0d990a" name="ad5654e687f18d4e9b7810d1c3e0d990a"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>temphum27_read_data</b> (<a class="el" href="structtemphum27__data__t.html">temphum27_data_t</a> *environment)</td></tr>
-<tr class="memdesc:ad5654e687f18d4e9b7810d1c3e0d990a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read temperature and relative humidity with CRC validation. <br /></td></tr>
+<tr class="memitem:ad5654e687f18d4e9b7810d1c3e0d990a" id="r_ad5654e687f18d4e9b7810d1c3e0d990a"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="temphum27_8c.html#ad5654e687f18d4e9b7810d1c3e0d990a">temphum27_read_data</a> (<a class="el" href="structtemphum27__data__t.html">temphum27_data_t</a> *environment)</td></tr>
+<tr class="memdesc:ad5654e687f18d4e9b7810d1c3e0d990a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Read data.  <br /></td></tr>
 <tr class="separator:ad5654e687f18d4e9b7810d1c3e0d990a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a98aad730c3dd5330e3a4c8a7c8fce244" id="r_a98aad730c3dd5330e3a4c8a7c8fce244"><td class="memItemLeft" align="right" valign="top"><a id="a98aad730c3dd5330e3a4c8a7c8fce244" name="a98aad730c3dd5330e3a4c8a7c8fce244"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>temphum27_print_data</b> (const <a class="el" href="structtemphum27__data__t.html">temphum27_data_t</a> *environment)</td></tr>
-<tr class="memdesc:a98aad730c3dd5330e3a4c8a7c8fce244"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print a fixed-point environmental measurement. <br /></td></tr>
+<tr class="memitem:a98aad730c3dd5330e3a4c8a7c8fce244" id="r_a98aad730c3dd5330e3a4c8a7c8fce244"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="temphum27_8c.html#a98aad730c3dd5330e3a4c8a7c8fce244">temphum27_print_data</a> (const <a class="el" href="structtemphum27__data__t.html">temphum27_data_t</a> *environment)</td></tr>
+<tr class="memdesc:a98aad730c3dd5330e3a4c8a7c8fce244"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print data.  <br /></td></tr>
 <tr class="separator:a98aad730c3dd5330e3a4c8a7c8fce244"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Temp&amp;Hum 27 Click reset, CRC validation and fixed-point conversion. </p>
-</div></div><!-- contents -->
+
+<p class="definition">Definition in file <a class="el" href="temphum27_8c_source.html">temphum27.c</a>.</p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a02ead36fb81029603e13591c8a47ebd9" name="a02ead36fb81029603e13591c8a47ebd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02ead36fb81029603e13591c8a47ebd9">&#9670;&#160;</a></span>TEMPHUM27_ALR_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TEMPHUM27_ALR_MASK&#160;&#160;&#160;(1U &lt;&lt; 1) /* P101 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="temphum27_8c_source.html#l00012">12</a> of file <a class="el" href="temphum27_8c_source.html">temphum27.c</a>.</p>
+
+</div>
+</div>
+<a id="a5d245fe7ca1d00637f4653843a3ce82f" name="a5d245fe7ca1d00637f4653843a3ce82f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d245fe7ca1d00637f4653843a3ce82f">&#9670;&#160;</a></span>TEMPHUM27_EN_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TEMPHUM27_EN_MASK&#160;&#160;&#160;(1U &lt;&lt; 5) /* P105 */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="temphum27_8c_source.html#l00011">11</a> of file <a class="el" href="temphum27_8c_source.html">temphum27.c</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a5a41ddf4dd07a4c1e09ef9a7abc672dd" name="a5a41ddf4dd07a4c1e09ef9a7abc672dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a41ddf4dd07a4c1e09ef9a7abc672dd">&#9670;&#160;</a></span>temphum27_calculate_crc()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static uint8_t temphum27_calculate_crc </td>
+          <td>(</td>
+          <td class="paramtype">const uint8_t *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t&#160;</td>
+          <td class="paramname"><em>length</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calculate the sensor CRC for a two-byte measurement. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>Data buffer. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>Number of bytes in the buffer. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Calculated or converted value. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="temphum27_8c_source.html#l00084">84</a> of file <a class="el" href="temphum27_8c_source.html">temphum27.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="temphum27_8c_source.html#l00126">temphum27_read_data()</a>.</p>
+
+</div>
+</div>
+<a id="a31f3d729ad17ee6932352ce3321c12ba" name="a31f3d729ad17ee6932352ce3321c12ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31f3d729ad17ee6932352ce3321c12ba">&#9670;&#160;</a></span>temphum27_configure_pins()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void temphum27_configure_pins </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Configure pins. </p>
+
+<p class="definition">Definition at line <a class="el" href="temphum27_8c_source.html#l00033">33</a> of file <a class="el" href="temphum27_8c_source.html">temphum27.c</a>.</p>
+
+<p class="reference">References <a class="el" href="ra4m2__baremetal_8h_source.html#l00013">PFS_PDR_OUTPUT</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="temphum27_8c_source.html#l00114">temphum27_init()</a>.</p>
+
+</div>
+</div>
+<a id="a6e945e964f63458cfdb0a1c36bdec83b" name="a6e945e964f63458cfdb0a1c36bdec83b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e945e964f63458cfdb0a1c36bdec83b">&#9670;&#160;</a></span>temphum27_delay_ms()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void temphum27_delay_ms </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>milliseconds</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Delay for the requested number of milliseconds. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">milliseconds</td><td>Delay duration in milliseconds. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="temphum27_8c_source.html#l00018">18</a> of file <a class="el" href="temphum27_8c_source.html">temphum27.c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="temphum27_8c_source.html#l00068">temphum27_reset()</a>.</p>
+
+</div>
+</div>
+<a id="abcde1cff576209145bc5efd5f585adfc" name="abcde1cff576209145bc5efd5f585adfc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abcde1cff576209145bc5efd5f585adfc">&#9670;&#160;</a></span>temphum27_disable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void temphum27_disable </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Disable the Temp&amp;Hum 27 sensor through its GPIO pin. </p>
+
+<p class="definition">Definition at line <a class="el" href="temphum27_8c_source.html#l00059">59</a> of file <a class="el" href="temphum27_8c_source.html">temphum27.c</a>.</p>
+
+<p class="reference">References <a class="el" href="temphum27_8c_source.html#l00011">TEMPHUM27_EN_MASK</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="temphum27_8c_source.html#l00068">temphum27_reset()</a>.</p>
+
+</div>
+</div>
+<a id="ace4c2977a7720bb3b3c8ed2f587f89d6" name="ace4c2977a7720bb3b3c8ed2f587f89d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace4c2977a7720bb3b3c8ed2f587f89d6">&#9670;&#160;</a></span>temphum27_enable()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void temphum27_enable </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Enable the Temp&amp;Hum 27 sensor through its GPIO pin. </p>
+
+<p class="definition">Definition at line <a class="el" href="temphum27_8c_source.html#l00050">50</a> of file <a class="el" href="temphum27_8c_source.html">temphum27.c</a>.</p>
+
+<p class="reference">References <a class="el" href="temphum27_8c_source.html#l00011">TEMPHUM27_EN_MASK</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="temphum27_8c_source.html#l00068">temphum27_reset()</a>.</p>
+
+</div>
+</div>
+<a id="aea90fc168f43df13925b7a6efdc061d4" name="aea90fc168f43df13925b7a6efdc061d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea90fc168f43df13925b7a6efdc061d4">&#9670;&#160;</a></span>temphum27_init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void temphum27_init </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Initialize the module. </p>
+<p>Configure, enable and reset Temp&amp;Hum 27 Click. </p>
+
+<p class="definition">Definition at line <a class="el" href="temphum27_8c_source.html#l00114">114</a> of file <a class="el" href="temphum27_8c_source.html">temphum27.c</a>.</p>
+
+<p class="reference">References <a class="el" href="temphum27_8c_source.html#l00033">temphum27_configure_pins()</a>, and <a class="el" href="temphum27_8c_source.html#l00068">temphum27_reset()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__controller_8c_source.html#l00238">app_controller_init()</a>.</p>
+
+</div>
+</div>
+<a id="a98aad730c3dd5330e3a4c8a7c8fce244" name="a98aad730c3dd5330e3a4c8a7c8fce244"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98aad730c3dd5330e3a4c8a7c8fce244">&#9670;&#160;</a></span>temphum27_print_data()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void temphum27_print_data </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="structtemphum27__data__t.html">temphum27_data_t</a> *&#160;</td>
+          <td class="paramname"><em>environment</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Print data. </p>
+<p>Print a fixed-point environmental measurement through <a class="el" href="project__platform_8h.html#a17cb61c4ec78fad11fd285daf22ee5e7" title="Project logging function with printf-compatible formatting.">printf_me()</a>.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">environment</td><td>Temperature and humidity measurement. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definition at line <a class="el" href="temphum27_8c_source.html#l00205">205</a> of file <a class="el" href="temphum27_8c_source.html">temphum27.c</a>.</p>
+
+<p class="reference">References <a class="el" href="app__types_8h_source.html#l00039">temphum27_data_t::humidity_tenths_percent</a>, <a class="el" href="project__platform_8h.html#a17cb61c4ec78fad11fd285daf22ee5e7">printf_me()</a>, and <a class="el" href="app__types_8h_source.html#l00038">temphum27_data_t::temperature_tenths_c</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__controller_8c_source.html#l00238">app_controller_init()</a>, and <a class="el" href="app__controller_8c_source.html#l00574">app_handle_periodic_update()</a>.</p>
+
+</div>
+</div>
+<a id="ad5654e687f18d4e9b7810d1c3e0d990a" name="ad5654e687f18d4e9b7810d1c3e0d990a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5654e687f18d4e9b7810d1c3e0d990a">&#9670;&#160;</a></span>temphum27_read_data()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int temphum27_read_data </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structtemphum27__data__t.html">temphum27_data_t</a> *&#160;</td>
+          <td class="paramname"><em>environment</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Read data. </p>
+<p>Read temperature and relative humidity with CRC validation.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">environment</td><td>Temperature and humidity measurement. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Zero on success; otherwise a negative error code. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="temphum27_8c_source.html#l00126">126</a> of file <a class="el" href="temphum27_8c_source.html">temphum27.c</a>.</p>
+
+<p class="reference">References <a class="el" href="app__types_8h_source.html#l00039">temphum27_data_t::humidity_tenths_percent</a>, <a class="el" href="iic0__bus_8c_source.html#l00369">iic0_bus_read_after_restart()</a>, <a class="el" href="iic0__bus_8c_source.html#l00299">iic0_bus_write()</a>, <a class="el" href="app__types_8h_source.html#l00018">RTC14_ERROR_ARGUMENT</a>, <a class="el" href="app__types_8h_source.html#l00014">RTC14_OK</a>, <a class="el" href="app__types_8h_source.html#l00038">temphum27_data_t::temperature_tenths_c</a>, <a class="el" href="temphum27_8c_source.html#l00084">temphum27_calculate_crc()</a>, <a class="el" href="app__config_8h_source.html#l00036">TEMPHUM27_CMD_HOLD_TEMP_HUM</a>, <a class="el" href="app__config_8h_source.html#l00037">TEMPHUM27_DATA_RESOLUTION</a>, <a class="el" href="app__config_8h_source.html#l00041">TEMPHUM27_ERROR_CRC</a>, <a class="el" href="app__config_8h_source.html#l00040">TEMPHUM27_HUM_SPAN_TENTHS</a>, <a class="el" href="app__config_8h_source.html#l00035">TEMPHUM27_I2C_ADDRESS</a>, <a class="el" href="app__config_8h_source.html#l00039">TEMPHUM27_TEMP_OFFSET_TENTHS</a>, <a class="el" href="app__config_8h_source.html#l00038">TEMPHUM27_TEMP_SPAN_TENTHS</a>, and <a class="el" href="app__types_8h_source.html#l00040">temphum27_data_t::valid</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="app__controller_8c_source.html#l00238">app_controller_init()</a>, and <a class="el" href="app__controller_8c_source.html#l00574">app_handle_periodic_update()</a>.</p>
+
+</div>
+</div>
+<a id="ac35b494a5241acf65e5083183b072c29" name="ac35b494a5241acf65e5083183b072c29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac35b494a5241acf65e5083183b072c29">&#9670;&#160;</a></span>temphum27_reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void temphum27_reset </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reset the Temp&amp;Hum 27 sensor and wait for startup. </p>
+
+<p class="definition">Definition at line <a class="el" href="temphum27_8c_source.html#l00068">68</a> of file <a class="el" href="temphum27_8c_source.html">temphum27.c</a>.</p>
+
+<p class="reference">References <a class="el" href="temphum27_8c_source.html#l00018">temphum27_delay_ms()</a>, <a class="el" href="temphum27_8c_source.html#l00059">temphum27_disable()</a>, and <a class="el" href="temphum27_8c_source.html#l00050">temphum27_enable()</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="temphum27_8c_source.html#l00114">temphum27_init()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="temphum27_8c.html">temphum27.c</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
 </body>
 </html>

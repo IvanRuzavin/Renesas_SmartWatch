@@ -16,12 +16,19 @@ static uintptr_t app_ram_vector_table[APP_VECTOR_COUNT] __attribute__((aligned(2
 /* 1 ms AGT0 tick plus P304/IRQ9 and P111/IRQ4 controls                      */
 /* -------------------------------------------------------------------------- */
 
+/**
+ * @brief Return the AGT0 register view used by the application tick driver.
+ * @return Pointer to the requested register or data view.
+ */
 static volatile ra4m2_agt16_registers_t *rtc14_agt0_registers(void)
 {
     return (volatile ra4m2_agt16_registers_t *)(uintptr_t)R_AGT0;
 }
 
 
+/**
+ * @brief Copy the vector table to RAM and install application handlers.
+ */
 static void rtc14_install_interrupt_vectors(void)
 {
     uint32_t index;
@@ -58,6 +65,13 @@ static void rtc14_install_interrupt_vectors(void)
 }
 
 
+/**
+ * @brief Choose an AGT0 divider and reload value for a 1 ms period.
+ * @param[in] pclkb_hz Peripheral clock B frequency in hertz.
+ * @param[in] agtmr1 Agtmr1 value.
+ * @param[in] reload Reload value.
+ * @return Calculated or converted value.
+ */
 static int rtc14_agt0_select_1ms_clock(uint32_t pclkb_hz,
                                        uint8_t *agtmr1,
                                        uint16_t *reload)
@@ -94,6 +108,11 @@ static int rtc14_agt0_select_1ms_clock(uint32_t pclkb_hz,
 }
 
 
+/**
+ * @brief Configure AGT0 as the 1 ms application timebase.
+ * @param[in] pclkb_hz Peripheral clock B frequency in hertz.
+ * @return Zero on success; otherwise a negative error code.
+ */
 static int rtc14_agt0_init(uint32_t pclkb_hz)
 {
     volatile ra4m2_agt16_registers_t *agt = rtc14_agt0_registers();
@@ -159,6 +178,9 @@ static int rtc14_agt0_init(uint32_t pclkb_hz)
 }
 
 
+/**
+ * @brief Configure P304/IRQ9 as the falling-edge B3 input.
+ */
 static void rtc14_p304_irq_init(void)
 {
     IRQn_Type irq = (IRQn_Type)APP_B3_IRQ_SLOT;
@@ -184,6 +206,9 @@ static void rtc14_p304_irq_init(void)
 }
 
 
+/**
+ * @brief Configure P111/IRQ4 as the falling-edge B4 input.
+ */
 static void rtc14_p111_irq_init(void)
 {
     IRQn_Type irq = (IRQn_Type)APP_B4_IRQ_SLOT;
@@ -209,6 +234,9 @@ static void rtc14_p111_irq_init(void)
 }
 
 
+/**
+ * @brief Handle an AGT0 underflow and advance the 1 ms application tick.
+ */
 void AGT0_IRQHandler(void)
 {
     volatile ra4m2_agt16_registers_t *agt = rtc14_agt0_registers();
@@ -220,6 +248,9 @@ void AGT0_IRQHandler(void)
 }
 
 
+/**
+ * @brief Acknowledge IRQ9 and queue the B3 action.
+ */
 void P304_IRQ9_IRQHandler(void)
 {
     R_ICU->IELSR[APP_B3_IRQ_SLOT] &= ~ICU_IELSR_IR;
@@ -227,6 +258,9 @@ void P304_IRQ9_IRQHandler(void)
 }
 
 
+/**
+ * @brief Acknowledge IRQ4 and queue the B4 action.
+ */
 void P111_IRQ4_IRQHandler(void)
 {
     R_ICU->IELSR[APP_B4_IRQ_SLOT] &= ~ICU_IELSR_IR;
@@ -234,6 +268,11 @@ void P111_IRQ4_IRQHandler(void)
 }
 
 
+/**
+ * @brief Handle interrupts init.
+ * @param[in] pclkb_hz Peripheral clock B frequency in hertz.
+ * @return Zero on success; otherwise a negative error code.
+ */
 int app_interrupts_init(uint32_t pclkb_hz)
 {
     int result;

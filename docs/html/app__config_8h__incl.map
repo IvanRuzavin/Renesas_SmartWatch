@@ -1,5 +1,7 @@
 <map id="include/app_config.h" name="include/app_config.h">
-<area shape="rect" id="Node000001" title="Compile&#45;time configuration for the R7FA4M2 smartwatch example." alt="" coords="5,5,160,31"/>
-<area shape="rect" id="Node000002" title=" " alt="" coords="47,79,118,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="85,31,85,65,80,65,80,31"/>
+<area shape="rect" id="Node000001" title="Compile&#45;time configuration for the R7FA4M2 smartwatch example." alt="" coords="20,5,175,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,79,88,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="91,33,65,69,61,66,87,29"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="113,79,183,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="108,29,134,66,130,69,104,33"/>
 </map>

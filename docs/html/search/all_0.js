@@ -1,28 +1,5 @@
 var searchData=
 [
-  ['agt0_5firqhandler_0',['agt0_irqhandler',['../app__interrupts_8h.html#a58ff762c7e85e21513ca62f5926fdcf9',1,'AGT0_IRQHandler(void):&#160;app_interrupts.c'],['../app__interrupts_8c.html#a58ff762c7e85e21513ca62f5926fdcf9',1,'AGT0_IRQHandler(void):&#160;app_interrupts.c']]],
-  ['allocation_1',['Interrupt allocation',['../index.html#autotoc_md3',1,'']]],
-  ['and_20peripheral_20assignment_2',['Hardware and peripheral assignment',['../index.html#autotoc_md2',1,'']]],
-  ['and_20stopwatch_20behavior_3',['Screen and stopwatch behavior',['../index.html#autotoc_md4',1,'']]],
-  ['and_20time_4',['Set RTC date and time',['../index.html#autotoc_md9',1,'']]],
-  ['app_5fconfig_2eh_5',['app_config.h',['../app__config_8h.html',1,'']]],
-  ['app_5fcontroller_2ec_6',['app_controller.c',['../app__controller_8c.html',1,'']]],
-  ['app_5fcontroller_2eh_7',['app_controller.h',['../app__controller_8h.html',1,'']]],
-  ['app_5fcontroller_5fb3_5fbutton_5fisr_8',['app_controller_b3_button_isr',['../app__controller_8h.html#a8cb556c1622ce60dfe3c43db10ab9a8f',1,'app_controller_b3_button_isr(void):&#160;app_controller.c'],['../app__controller_8c.html#a8cb556c1622ce60dfe3c43db10ab9a8f',1,'app_controller_b3_button_isr(void):&#160;app_controller.c']]],
-  ['app_5fcontroller_5fb4_5fbutton_5fisr_9',['app_controller_b4_button_isr',['../app__controller_8h.html#ac6d1512f368352de9872569ead076d3d',1,'app_controller_b4_button_isr(void):&#160;app_controller.c'],['../app__controller_8c.html#ac6d1512f368352de9872569ead076d3d',1,'app_controller_b4_button_isr(void):&#160;app_controller.c']]],
-  ['app_5fcontroller_5fget_5fsystem_5fms_10',['app_controller_get_system_ms',['../app__controller_8h.html#aec991ed43a97b129754bfcf21e93b96e',1,'app_controller_get_system_ms(void):&#160;app_controller.c'],['../app__controller_8c.html#aec991ed43a97b129754bfcf21e93b96e',1,'app_controller_get_system_ms(void):&#160;app_controller.c']]],
-  ['app_5fcontroller_5finit_11',['app_controller_init',['../app__controller_8h.html#ae7e9cf616595db655e19c65e34620222',1,'app_controller_init(void):&#160;app_controller.c'],['../app__controller_8c.html#ae7e9cf616595db655e19c65e34620222',1,'app_controller_init(void):&#160;app_controller.c']]],
-  ['app_5fcontroller_5frequest_5frtc_5frefresh_12',['app_controller_request_rtc_refresh',['../app__controller_8h.html#a545e01f646dfffc031ec50d1be37e299',1,'app_controller_request_rtc_refresh(void):&#160;app_controller.c'],['../app__controller_8c.html#a545e01f646dfffc031ec50d1be37e299',1,'app_controller_request_rtc_refresh(void):&#160;app_controller.c']]],
-  ['app_5fcontroller_5frequest_5fstopwatch_5fcontrol_13',['app_controller_request_stopwatch_control',['../app__controller_8h.html#a1908f34f03abc183d533f43d062dccc6',1,'app_controller_request_stopwatch_control(void):&#160;app_controller.c'],['../app__controller_8c.html#a1908f34f03abc183d533f43d062dccc6',1,'app_controller_request_stopwatch_control(void):&#160;app_controller.c']]],
-  ['app_5fcontroller_5frequest_5fstopwatch_5fnavigation_14',['app_controller_request_stopwatch_navigation',['../app__controller_8h.html#a62274cdd323be6eb4cfb874916bb9ad9',1,'app_controller_request_stopwatch_navigation(void):&#160;app_controller.c'],['../app__controller_8c.html#a62274cdd323be6eb4cfb874916bb9ad9',1,'app_controller_request_stopwatch_navigation(void):&#160;app_controller.c']]],
-  ['app_5fcontroller_5frequest_5fwatch_5fscreen_15',['app_controller_request_watch_screen',['../app__controller_8c.html#abb6c8c562ca647f7810c95d5e4ae91b0',1,'app_controller_request_watch_screen(void):&#160;app_controller.c'],['../app__controller_8h.html#abb6c8c562ca647f7810c95d5e4ae91b0',1,'app_controller_request_watch_screen(void):&#160;app_controller.c']]],
-  ['app_5fcontroller_5frun_16',['app_controller_run',['../app__controller_8h.html#a76907810401c6da57839b9a5cf5a645e',1,'app_controller_run(void):&#160;app_controller.c'],['../app__controller_8c.html#a76907810401c6da57839b9a5cf5a645e',1,'app_controller_run(void):&#160;app_controller.c']]],
-  ['app_5fcontroller_5ftick_5f1ms_5fisr_17',['app_controller_tick_1ms_isr',['../app__controller_8h.html#a2b0859a741e4b3ccf6ca1428ccec4ff3',1,'app_controller_tick_1ms_isr(void):&#160;app_controller.c'],['../app__controller_8c.html#a2b0859a741e4b3ccf6ca1428ccec4ff3',1,'app_controller_tick_1ms_isr(void):&#160;app_controller.c']]],
-  ['app_5finterrupts_2ec_18',['app_interrupts.c',['../app__interrupts_8c.html',1,'']]],
-  ['app_5finterrupts_2eh_19',['app_interrupts.h',['../app__interrupts_8h.html',1,'']]],
-  ['app_5finterrupts_5finit_20',['app_interrupts_init',['../app__interrupts_8h.html#a0b90afcca0ced68d41f3d0f348c67ec5',1,'app_interrupts_init(uint32_t pclkb_hz):&#160;app_interrupts.c'],['../app__interrupts_8c.html#a0b90afcca0ced68d41f3d0f348c67ec5',1,'app_interrupts_init(uint32_t pclkb_hz):&#160;app_interrupts.c']]],
-  ['app_5fresult_5ft_21',['app_result_t',['../app__types_8h.html#a68f1d7e035c4e2d544ca9cb72a1459bb',1,'app_types.h']]],
-  ['app_5fscreen_5ft_22',['app_screen_t',['../app__types_8h.html#ac70ecff5013af5a2a6b9a3640c180bbd',1,'app_types.h']]],
-  ['app_5ftypes_2eh_23',['app_types.h',['../app__types_8h.html',1,'']]],
-  ['assignment_24',['Hardware and peripheral assignment',['../index.html#autotoc_md2',1,'']]]
+  ['1_20—_20smartwatch_20dashboard_0',['Screen 1 — Smartwatch Dashboard',['../index.html#autotoc_md6',1,'']]],
+  ['15_20second_20screen_20demonstration_1',['Automatic 15-second screen demonstration',['../index.html#autotoc_md13',1,'']]]
 ];

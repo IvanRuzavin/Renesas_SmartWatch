@@ -25,21 +25,34 @@ static uint16_t bletiny_line_length;
 #define BLETINY_RST_MASK (1U << 11) /* P211 */
 
 
+/**
+ * @brief Return the SCI3 register view used by BLE Tiny Click.
+ * @return Pointer to the requested register or data view.
+ */
 static volatile ra4m2_sci_registers_t *bletiny_sci3(void)
 {
     return (volatile ra4m2_sci_registers_t *)(uintptr_t)R_SCI3;
 }
 
+/**
+ * @brief Deassert the BLE Tiny hardware reset signal.
+ */
 static void bletiny_rst_high(void)
 {
     R_PORT2->PODR |= BLETINY_RST_MASK;
 }
 
+/**
+ * @brief Assert the BLE Tiny hardware reset signal.
+ */
 static void bletiny_rst_low(void)
 {
     R_PORT2->PODR &= (uint16_t)~BLETINY_RST_MASK;
 }
 
+/**
+ * @brief Configure pins.
+ */
 static void bletiny_configure_pins(void)
 {
     R_PMISC->PWPR_b.B0WI = 0U;
@@ -60,6 +73,12 @@ static void bletiny_configure_pins(void)
     R_PMISC->PWPR_b.B0WI = 1U;
 }
 
+/**
+ * @brief Select SCI3 baud-rate settings closest to the requested rate.
+ * @param[in] pclka_hz Peripheral clock A frequency in hertz.
+ * @param[in] baud_hz Baud hz value.
+ * @return Zero on success; otherwise a negative error code.
+ */
 static int bletiny_sci3_set_baud(uint32_t pclka_hz, uint32_t baud_hz)
 {
     typedef struct
@@ -155,6 +174,10 @@ static int bletiny_sci3_set_baud(uint32_t pclka_hz, uint32_t baud_hz)
     return 0;
 }
 
+/**
+ * @brief Transmit one byte through SCI3.
+ * @param[in] value Value to process.
+ */
 static void bletiny_uart_write_byte(uint8_t value)
 {
     volatile ra4m2_sci_registers_t *sci = bletiny_sci3();
@@ -165,6 +188,10 @@ static void bletiny_uart_write_byte(uint8_t value)
     sci->tdr = value;
 }
 
+/**
+ * @brief Transmit a null-terminated command string through SCI3.
+ * @param[in] text Null-terminated text string.
+ */
 static void bletiny_uart_write_text(const char *text)
 {
     while (*text != '\0')
@@ -178,6 +205,10 @@ static void bletiny_uart_write_text(const char *text)
     }
 }
 
+/**
+ * @brief Send a CodeLess command terminated with carriage return.
+ * @param[in] command CodeLess or display command string/value.
+ */
 static void bletiny_send_command(const char *command)
 {
     bletiny_uart_write_text(command);
@@ -188,6 +219,10 @@ static void bletiny_send_command(const char *command)
     }
 }
 
+/**
+ * @brief Append one received byte to the interrupt-safe ring buffer.
+ * @param[in] value Value to process.
+ */
 static void bletiny_rx_push(uint8_t value)
 {
     uint16_t next = (uint16_t)((bletiny_rx_head + 1U) %
@@ -204,6 +239,11 @@ static void bletiny_rx_push(uint8_t value)
     }
 }
 
+/**
+ * @brief Remove one byte from the receive ring buffer.
+ * @param[in] value Value to process.
+ * @return Nonzero when the requested work succeeds or changes state; otherwise zero.
+ */
 static int bletiny_rx_pop(uint8_t *value)
 {
     uint32_t primask;
@@ -236,6 +276,12 @@ static int bletiny_rx_pop(uint8_t *value)
     return 1;
 }
 
+/**
+ * @brief Test whether a received response line contains a token.
+ * @param[in] line Null-terminated received response line.
+ * @param[in] token Token to locate or match.
+ * @return Nonzero when the requested work succeeds or changes state; otherwise zero.
+ */
 static uint8_t bletiny_line_contains(const char *line, const char *token)
 {
     uint16_t start;
@@ -270,6 +316,13 @@ static uint8_t bletiny_line_contains(const char *line, const char *token)
     return 0U;
 }
 
+/**
+ * @brief Locate a token inside a received response line.
+ * @param[in] line Null-terminated received response line.
+ * @param[in] token Token to locate or match.
+ * @param[in] token_index Token index value.
+ * @return Result value.
+ */
 static uint8_t bletiny_find_token(const char *line, const char *token,
                                    uint16_t *token_index)
 {
@@ -307,6 +360,13 @@ static uint8_t bletiny_find_token(const char *line, const char *token,
     return 0U;
 }
 
+/**
+ * @brief Parse one unsigned decimal field from a command payload.
+ * @param[in] cursor Current parser position.
+ * @param[in] value Value to process.
+ * @param[in] expect_separator Expect separator value.
+ * @return Nonzero when the requested work succeeds or changes state; otherwise zero.
+ */
 static uint8_t bletiny_parse_uint_field(const char **cursor,
                                         uint32_t *value,
                                         uint8_t expect_separator)
@@ -356,6 +416,11 @@ static uint8_t bletiny_parse_uint_field(const char **cursor,
     return 1U;
 }
 
+/**
+ * @brief Validate and apply an RTC command received through CodeLess memory.
+ * @param[in] line Null-terminated received response line.
+ * @return Result value.
+ */
 static uint8_t bletiny_process_rtc_command(const char *line)
 {
     uint16_t command_index;
@@ -414,7 +479,7 @@ static uint8_t bletiny_process_rtc_command(const char *line)
                   (unsigned int)fields[5],
                   (unsigned int)fields[6]);
 
-        /* Force an immediate fresh RTC read and dashboard repaint. */
+        /* Force an immediate fresh RTC read and active-screen repaint. */
         app_controller_request_rtc_refresh();
 
         /* Mark the slot consumed so the same value is not applied repeatedly. */
@@ -435,6 +500,11 @@ static uint8_t bletiny_process_rtc_command(const char *line)
     return 1U;
 }
 
+/**
+ * @brief Decode BLE screen and stopwatch trigger commands.
+ * @param[in] line Null-terminated received response line.
+ * @return Result value.
+ */
 static uint8_t bletiny_process_stopwatch_command(const char *line)
 {
     uint16_t command_index;
@@ -442,19 +512,41 @@ static uint8_t bletiny_process_stopwatch_command(const char *line)
     /*
      * SmartConsole stores one of these payloads in CodeLess memory slot 0:
      *
-     *   STOPWATCH|B2  - show the clock without changing stopwatch state
-     *   STOPWATCH|B3  - same action as the physical P304 / IRQ9 button
-     *   STOPWATCH|B4  - same action as the physical P111 / IRQ4 button
+     *   SCREEN|B1     - show the smartwatch dashboard
+     *   SCREEN|B2     - show the animated temperature/humidity screen
+     *   SCREEN|B5     - show the astronomical time-of-day screen
+     *   STOPWATCH|B3  - stop and reset the stopwatch
+     *   STOPWATCH|B4  - show/start/pause/continue the stopwatch
      *
-     * The commands only set pending flags. The main loop remains the single
-     * place that changes screens and stopwatch state. B2 is intentionally
-     * display-only: a running stopwatch continues counting in the background.
+     * STOPWATCH|B1, STOPWATCH|B2 and STOPWATCH|B5 are accepted as aliases
+     * for SmartConsole layouts that use a common command prefix.
      */
-    if (bletiny_find_token(line, "STOPWATCH|B2", &command_index) != 0U)
+    if ((bletiny_find_token(line, "SCREEN|B1", &command_index) != 0U) ||
+        (bletiny_find_token(line, "STOPWATCH|B1", &command_index) != 0U))
     {
         (void)command_index;
-        app_controller_request_watch_screen();
-        printf_me("BLE stopwatch trigger: B2 (show clock)\r\n");
+        app_controller_request_dashboard_screen();
+        printf_me("BLE screen trigger: B1 (smartwatch dashboard)\r\n");
+        bletiny_send_command("AT+MEM=0,EMPTY");
+        return 1U;
+    }
+
+    if ((bletiny_find_token(line, "SCREEN|B2", &command_index) != 0U) ||
+        (bletiny_find_token(line, "STOPWATCH|B2", &command_index) != 0U))
+    {
+        (void)command_index;
+        app_controller_request_environment_screen();
+        printf_me("BLE screen trigger: B2 (temperature/humidity)\r\n");
+        bletiny_send_command("AT+MEM=0,EMPTY");
+        return 1U;
+    }
+
+    if ((bletiny_find_token(line, "SCREEN|B5", &command_index) != 0U) ||
+        (bletiny_find_token(line, "STOPWATCH|B5", &command_index) != 0U))
+    {
+        (void)command_index;
+        app_controller_request_astronomy_screen();
+        printf_me("BLE screen trigger: B5 (time of day)\r\n");
         bletiny_send_command("AT+MEM=0,EMPTY");
         return 1U;
     }
@@ -462,8 +554,8 @@ static uint8_t bletiny_process_stopwatch_command(const char *line)
     if (bletiny_find_token(line, "STOPWATCH|B3", &command_index) != 0U)
     {
         (void)command_index;
-        app_controller_request_stopwatch_navigation();
-        printf_me("BLE stopwatch trigger: B3\r\n");
+        app_controller_request_stopwatch_reset();
+        printf_me("BLE stopwatch trigger: B3 (stop/reset)\r\n");
         bletiny_send_command("AT+MEM=0,EMPTY");
         return 1U;
     }
@@ -472,7 +564,7 @@ static uint8_t bletiny_process_stopwatch_command(const char *line)
     {
         (void)command_index;
         app_controller_request_stopwatch_control();
-        printf_me("BLE stopwatch trigger: B4\r\n");
+        printf_me("BLE stopwatch trigger: B4 (show/control)\r\n");
         bletiny_send_command("AT+MEM=0,EMPTY");
         return 1U;
     }
@@ -480,6 +572,10 @@ static uint8_t bletiny_process_stopwatch_command(const char *line)
     return 0U;
 }
 
+/**
+ * @brief Update the cached BLE connection state and change flag.
+ * @param[in] connected BLE connection state or destination for that state.
+ */
 static void bletiny_set_connected(uint8_t connected)
 {
     connected = (connected != 0U) ? 1U : 0U;
@@ -497,6 +593,10 @@ static void bletiny_set_connected(uint8_t connected)
     }
 }
 
+/**
+ * @brief Parse one complete SCI3 response line.
+ * @param[in] line Null-terminated received response line.
+ */
 static void bletiny_process_line(const char *line)
 {
     uint16_t index;
@@ -541,6 +641,10 @@ static void bletiny_process_line(const char *line)
     }
 }
 
+/**
+ * @brief Process rx.
+ * @return Nonzero when the requested work succeeds or changes state; otherwise zero.
+ */
 uint8_t bletiny_process_rx(void)
 {
     uint8_t value;
@@ -590,6 +694,12 @@ uint8_t bletiny_process_rx(void)
     return processed;
 }
 
+/**
+ * @brief Initialize the module.
+ * @param[in] pclka_hz Peripheral clock A frequency in hertz.
+ * @param[in] now_ms Current monotonic application time in milliseconds.
+ * @return Zero on success; otherwise a negative error code.
+ */
 int bletiny_init(uint32_t pclka_hz, uint32_t now_ms)
 {
     volatile ra4m2_sci_registers_t *sci = bletiny_sci3();
@@ -676,6 +786,9 @@ int bletiny_init(uint32_t pclka_hz, uint32_t now_ms)
     return 0;
 }
 
+/**
+ * @brief Store a received SCI3 byte in the BLE ring buffer.
+ */
 void BLETINY_SCI3_RXI_IRQHandler(void)
 {
     volatile ra4m2_sci_registers_t *sci = bletiny_sci3();
@@ -685,6 +798,9 @@ void BLETINY_SCI3_RXI_IRQHandler(void)
     R_ICU->IELSR[BLETINY_SCI3_RX_IRQ_SLOT] &= ~ICU_IELSR_IR;
 }
 
+/**
+ * @brief Clear SCI3 receive errors and preserve any pending byte.
+ */
 void BLETINY_SCI3_ERI_IRQHandler(void)
 {
     volatile ra4m2_sci_registers_t *sci = bletiny_sci3();
@@ -699,11 +815,20 @@ void BLETINY_SCI3_ERI_IRQHandler(void)
 }
 
 
+/**
+ * @brief Determine whether connected.
+ * @return Result value.
+ */
 uint8_t bletiny_is_connected(void)
 {
     return (bletiny_connected != 0U) ? 1U : 0U;
 }
 
+/**
+ * @brief Consume connection changed.
+ * @param[out] connected BLE connection state or destination for that state.
+ * @return Nonzero when the requested work succeeds or changes state; otherwise zero.
+ */
 uint8_t bletiny_take_connection_changed(uint8_t *connected)
 {
     uint32_t primask;
@@ -725,6 +850,11 @@ uint8_t bletiny_take_connection_changed(uint8_t *connected)
     return 1U;
 }
 
+/**
+ * @brief Service periodic module work.
+ * @param[in] now_ms Current monotonic application time in milliseconds.
+ * @return Nonzero when the requested work succeeds or changes state; otherwise zero.
+ */
 uint8_t bletiny_service(uint32_t now_ms)
 {
     uint8_t did_work = 0U;

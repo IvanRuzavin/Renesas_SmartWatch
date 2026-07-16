@@ -1,22 +1,24 @@
 <map id="src/ips2_display.c" name="src/ips2_display.c">
-<area shape="rect" id="Node000001" title="IPS Display 2 initialization, graphics primitives and smartwatch UI." alt="" coords="132,5,267,31"/>
-<area shape="rect" id="Node000002" href="$ips2__display_8h.html" title="Public declarations for this module." alt="" coords="16,79,130,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="181,33,107,74,105,69,178,28"/>
-<area shape="rect" id="Node000005" href="$app__config_8h.html" title="Compile&#45;time configuration for the R7FA4M2 smartwatch example." alt="" coords="148,152,252,177"/>
-<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="202,31,202,138,197,138,197,31"/>
-<area shape="rect" id="Node000006" href="$ra4m2__baremetal_8h.html" title="Shared RA4M2 register definitions used by the local bare&#45;metal drivers." alt="" coords="255,79,406,104"/>
-<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="222,28,298,70,296,74,219,33"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="123,225,194,251"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="55,106,36,121,18,138,9,157,9,167,13,176,32,196,56,212,83,222,110,229,109,234,82,227,54,216,29,201,8,179,3,168,3,156,14,135,32,117,52,102"/>
-<area shape="rect" id="Node000004" href="$app__types_8h.html" title="Shared data types and result codes." alt="" coords="22,152,124,177"/>
-<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="76,104,76,138,70,138,70,104"/>
-<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="88,175,136,214,132,219,85,179"/>
-<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="195,179,174,215,170,212,191,176"/>
-<area shape="rect" id="Node000007" href="$project__platform_8h.html" title="Project&#45;specific SDK hooks used by the example." alt="" coords="276,152,419,177"/>
-<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="336,104,344,138,339,140,331,105"/>
-<area shape="poly" id="edge9_Node000007_Node000003" title=" " alt="" coords="318,180,203,223,201,218,316,175"/>
-<area shape="rect" id="Node000008" title=" " alt="" coords="262,225,324,251"/>
-<area shape="poly" id="edge10_Node000007_Node000008" title=" " alt="" coords="341,179,312,216,308,213,337,176"/>
-<area shape="rect" id="Node000009" title=" " alt="" coords="349,225,426,251"/>
-<area shape="poly" id="edge11_Node000007_Node000009" title=" " alt="" coords="357,176,377,212,372,215,352,179"/>
+<area shape="rect" id="Node000001" title="IPS Display 2 initialization, graphics primitives and smartwatch UI." alt="" coords="148,5,282,31"/>
+<area shape="rect" id="Node000002" href="$ips2__display_8h.html" title="IPS Display 2 transport and smartwatch UI rendering interface." alt="" coords="16,79,129,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="193,33,109,75,107,70,191,28"/>
+<area shape="rect" id="Node000005" href="$app__config_8h.html" title="Compile&#45;time configuration for the R7FA4M2 smartwatch example." alt="" coords="163,79,267,104"/>
+<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="218,31,218,65,212,65,212,31"/>
+<area shape="rect" id="Node000007" href="$ra4m2__baremetal_8h.html" title="Shared RA4M2 register definitions used by the local bare&#45;metal drivers." alt="" coords="296,79,446,104"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="241,28,334,70,332,75,239,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="81,225,152,251"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="55,106,36,120,18,138,9,157,9,166,12,176,23,190,37,202,69,220,67,225,34,207,19,194,7,179,3,167,4,156,14,135,32,116,51,102"/>
+<area shape="rect" id="Node000004" href="$app__types_8h.html" title="Shared data types and result codes." alt="" coords="22,152,123,177"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="75,104,75,138,70,138,70,104"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="82,176,104,212,100,215,77,179"/>
+<area shape="poly" id="edge7_Node000005_Node000003" title=" " alt="" coords="209,106,134,215,130,212,205,103"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="198,152,280,177"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="221,103,233,138,228,140,216,105"/>
+<area shape="rect" id="Node000008" href="$project__platform_8h.html" title="Project&#45;specific SDK hooks used by the example." alt="" coords="305,152,448,177"/>
+<area shape="poly" id="edge9_Node000007_Node000008" title=" " alt="" coords="375,104,377,138,372,139,369,105"/>
+<area shape="poly" id="edge10_Node000008_Node000003" title=" " alt="" coords="335,180,165,226,164,221,334,175"/>
+<area shape="rect" id="Node000009" title=" " alt="" coords="297,225,360,251"/>
+<area shape="poly" id="edge11_Node000008_Node000009" title=" " alt="" coords="371,179,346,216,341,213,366,176"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="384,225,462,251"/>
+<area shape="poly" id="edge12_Node000008_Node000010" title=" " alt="" coords="386,176,410,212,406,215,382,179"/>
 </map>

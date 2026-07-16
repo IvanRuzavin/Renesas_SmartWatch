@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,6 +27,7 @@
   <td id="projectalign">
    <div id="projectname">R7FA4M2 Multi-Click Smartwatch
    </div>
+   <div id="projectbrief">Bare-metal multi-screen smartwatch demo for Clicker 4 for R7FA4M2A</div>
   </td>
  </tr>
  </tbody>
@@ -46,6 +51,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('app__types_8h.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -67,14 +89,9 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
+<a href="#nested-classes">Data Structures</a> &#124;
 <a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle"><div class="title">app_types.h File Reference</div></div>
 </div><!--header-->
@@ -99,15 +116,15 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="center"><img src="app__types_8h__dep__incl.png" border="0" usemap="#ainclude_2app__types_8hdep" alt=""/></div>
 <map name="ainclude_2app__types_8hdep" id="ainclude_2app__types_8hdep">
 <area shape="rect" title="Shared data types and result codes." alt="" coords="315,5,467,31"/>
-<area shape="rect" href="ips2__display_8h.html" title="Public declarations for this module." alt="" coords="497,79,661,104"/>
+<area shape="rect" href="ips2__display_8h.html" title="IPS Display 2 transport and smartwatch UI rendering interface." alt="" coords="497,79,661,104"/>
 <area shape="poly" title=" " alt="" coords="434,33,549,76,547,81,433,38"/>
 <area shape="rect" href="app__controller_8c.html" title="Application state machine and foreground scheduling." alt="" coords="242,152,390,177"/>
 <area shape="poly" title=" " alt="" coords="346,39,319,56,298,80,294,98,296,117,311,151,306,153,291,118,288,98,294,77,315,52,343,34"/>
-<area shape="rect" href="rtc14_8h.html" title="Public declarations for this module." alt="" coords="114,79,233,104"/>
+<area shape="rect" href="rtc14_8h.html" title="RTC 14 Click driver interface." alt="" coords="114,79,233,104"/>
 <area shape="poly" title=" " alt="" coords="344,37,209,81,208,76,342,32"/>
 <area shape="rect" href="bletiny_8c.html" title="BLE TINY CodeLess UART transport, connection tracking and remote commands." alt="" coords="5,152,104,177"/>
 <area shape="poly" title=" " alt="" coords="302,32,186,52,136,65,103,81,87,97,74,117,60,153,55,151,70,114,83,94,100,76,135,60,185,46,301,27"/>
-<area shape="rect" href="temphum27_8h.html" title="Public declarations for this module." alt="" coords="309,79,473,104"/>
+<area shape="rect" href="temphum27_8h.html" title="Temp&amp;Hum 27 Click driver interface." alt="" coords="309,79,473,104"/>
 <area shape="poly" title=" " alt="" coords="393,44,393,79,388,79,388,44"/>
 <area shape="rect" href="app__interrupts_8c.html" title="RAM vector installation, AGT0 tick and external button IRQ routing." alt="" coords="685,79,835,104"/>
 <area shape="poly" title=" " alt="" coords="464,31,701,76,700,81,463,36"/>
@@ -129,7 +146,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <p><a href="app__types_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
+Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structrtc14__datetime__t.html">rtc14_datetime_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decoded RTC 14 date and time.  <a href="structrtc14__datetime__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -139,29 +156,96 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a68f1d7e035c4e2d544ca9cb72a1459bb" id="r_a68f1d7e035c4e2d544ca9cb72a1459bb"><td class="memItemLeft" align="right" valign="top"><a id="a68f1d7e035c4e2d544ca9cb72a1459bb" name="a68f1d7e035c4e2d544ca9cb72a1459bb"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__types_8h.html#a68f1d7e035c4e2d544ca9cb72a1459bb">app_result_t</a> { <br />
-&#160;&#160;<b>RTC14_OK</b> = 0
-, <b>RTC14_ERROR_TIMEOUT</b> = -1
-, <b>RTC14_ERROR_NACK</b> = -2
-, <b>RTC14_ERROR_CLOCK</b> = -3
+<tr class="memitem:a68f1d7e035c4e2d544ca9cb72a1459bb" id="r_a68f1d7e035c4e2d544ca9cb72a1459bb"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__types_8h.html#a68f1d7e035c4e2d544ca9cb72a1459bb">app_result_t</a> { <br />
+&#160;&#160;<a class="el" href="app__types_8h.html#a68f1d7e035c4e2d544ca9cb72a1459bbac198afb45078eebe27a3a69e46f91f2e">RTC14_OK</a> = 0
+, <a class="el" href="app__types_8h.html#a68f1d7e035c4e2d544ca9cb72a1459bbaaa378cd4be1f9f1d6e4d3e5f99a3c8a7">RTC14_ERROR_TIMEOUT</a> = -1
+, <a class="el" href="app__types_8h.html#a68f1d7e035c4e2d544ca9cb72a1459bbad1a6c62f877b241be68339f6accb5336">RTC14_ERROR_NACK</a> = -2
+, <a class="el" href="app__types_8h.html#a68f1d7e035c4e2d544ca9cb72a1459bba4c8c3a8e23211e054ca5a8f964fd28f6">RTC14_ERROR_CLOCK</a> = -3
 , <br />
-&#160;&#160;<b>RTC14_ERROR_ARGUMENT</b> = -4
+&#160;&#160;<a class="el" href="app__types_8h.html#a68f1d7e035c4e2d544ca9cb72a1459bba4385a617192f78977e770c90b3252cfe">RTC14_ERROR_ARGUMENT</a> = -4
 <br />
  }</td></tr>
-<tr class="memdesc:a68f1d7e035c4e2d544ca9cb72a1459bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Common return values used by the bare-metal drivers. <br /></td></tr>
+<tr class="memdesc:a68f1d7e035c4e2d544ca9cb72a1459bb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Common return values used by the bare-metal drivers.  <a href="app__types_8h.html#a68f1d7e035c4e2d544ca9cb72a1459bb">More...</a><br /></td></tr>
 <tr class="separator:a68f1d7e035c4e2d544ca9cb72a1459bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac70ecff5013af5a2a6b9a3640c180bbd" id="r_ac70ecff5013af5a2a6b9a3640c180bbd"><td class="memItemLeft" align="right" valign="top"><a id="ac70ecff5013af5a2a6b9a3640c180bbd" name="ac70ecff5013af5a2a6b9a3640c180bbd"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__types_8h.html#ac70ecff5013af5a2a6b9a3640c180bbd">app_screen_t</a> { <b>APP_SCREEN_CLOCK</b> = 0
-, <b>APP_SCREEN_STOPWATCH</b> = 1
+<tr class="memitem:ac70ecff5013af5a2a6b9a3640c180bbd" id="r_ac70ecff5013af5a2a6b9a3640c180bbd"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="app__types_8h.html#ac70ecff5013af5a2a6b9a3640c180bbd">app_screen_t</a> { <a class="el" href="app__types_8h.html#ac70ecff5013af5a2a6b9a3640c180bbda5163261f091352eebfe3accdd8e8bd19">APP_SCREEN_DASHBOARD</a> = 0
+, <a class="el" href="app__types_8h.html#ac70ecff5013af5a2a6b9a3640c180bbda412f62781da7729b541ec3f7d194de80">APP_SCREEN_ENVIRONMENT</a> = 1
+, <a class="el" href="app__types_8h.html#ac70ecff5013af5a2a6b9a3640c180bbda03eb671c08d43b3f0953cbd2361a6cfb">APP_SCREEN_ASTRONOMY</a> = 2
+, <a class="el" href="app__types_8h.html#ac70ecff5013af5a2a6b9a3640c180bbdad3e10d23a15335324d399b3031f562f4">APP_SCREEN_STOPWATCH</a> = 3
  }</td></tr>
-<tr class="memdesc:ac70ecff5013af5a2a6b9a3640c180bbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visible application screen. <br /></td></tr>
+<tr class="memdesc:ac70ecff5013af5a2a6b9a3640c180bbd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Visible application screen.  <a href="app__types_8h.html#ac70ecff5013af5a2a6b9a3640c180bbd">More...</a><br /></td></tr>
 <tr class="separator:ac70ecff5013af5a2a6b9a3640c180bbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Shared data types and result codes. </p>
-</div></div><!-- contents -->
+
+<p class="definition">Definition in file <a class="el" href="app__types_8h_source.html">app_types.h</a>.</p>
+</div><h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a68f1d7e035c4e2d544ca9cb72a1459bb" name="a68f1d7e035c4e2d544ca9cb72a1459bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a68f1d7e035c4e2d544ca9cb72a1459bb">&#9670;&#160;</a></span>app_result_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="app__types_8h.html#a68f1d7e035c4e2d544ca9cb72a1459bb">app_result_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Common return values used by the bare-metal drivers. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a68f1d7e035c4e2d544ca9cb72a1459bbac198afb45078eebe27a3a69e46f91f2e" name="a68f1d7e035c4e2d544ca9cb72a1459bbac198afb45078eebe27a3a69e46f91f2e"></a>RTC14_OK&#160;</td><td class="fielddoc"><p>Operation completed successfully. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a68f1d7e035c4e2d544ca9cb72a1459bbaaa378cd4be1f9f1d6e4d3e5f99a3c8a7" name="a68f1d7e035c4e2d544ca9cb72a1459bbaaa378cd4be1f9f1d6e4d3e5f99a3c8a7"></a>RTC14_ERROR_TIMEOUT&#160;</td><td class="fielddoc"><p>A peripheral status flag did not arrive in time. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a68f1d7e035c4e2d544ca9cb72a1459bbad1a6c62f877b241be68339f6accb5336" name="a68f1d7e035c4e2d544ca9cb72a1459bbad1a6c62f877b241be68339f6accb5336"></a>RTC14_ERROR_NACK&#160;</td><td class="fielddoc"><p>The addressed I2C device returned NACK. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a68f1d7e035c4e2d544ca9cb72a1459bba4c8c3a8e23211e054ca5a8f964fd28f6" name="a68f1d7e035c4e2d544ca9cb72a1459bba4c8c3a8e23211e054ca5a8f964fd28f6"></a>RTC14_ERROR_CLOCK&#160;</td><td class="fielddoc"><p>A valid peripheral timing configuration was not found. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a68f1d7e035c4e2d544ca9cb72a1459bba4385a617192f78977e770c90b3252cfe" name="a68f1d7e035c4e2d544ca9cb72a1459bba4385a617192f78977e770c90b3252cfe"></a>RTC14_ERROR_ARGUMENT&#160;</td><td class="fielddoc"><p>A pointer or numeric argument was invalid. </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="app__types_8h_source.html#l00012">12</a> of file <a class="el" href="app__types_8h_source.html">app_types.h</a>.</p>
+
+</div>
+</div>
+<a id="ac70ecff5013af5a2a6b9a3640c180bbd" name="ac70ecff5013af5a2a6b9a3640c180bbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac70ecff5013af5a2a6b9a3640c180bbd">&#9670;&#160;</a></span>app_screen_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="app__types_8h.html#ac70ecff5013af5a2a6b9a3640c180bbd">app_screen_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Visible application screen. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ac70ecff5013af5a2a6b9a3640c180bbda5163261f091352eebfe3accdd8e8bd19" name="ac70ecff5013af5a2a6b9a3640c180bbda5163261f091352eebfe3accdd8e8bd19"></a>APP_SCREEN_DASHBOARD&#160;</td><td class="fielddoc"><p>Smartwatch summary with clock, weekday and date. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac70ecff5013af5a2a6b9a3640c180bbda412f62781da7729b541ec3f7d194de80" name="ac70ecff5013af5a2a6b9a3640c180bbda412f62781da7729b541ec3f7d194de80"></a>APP_SCREEN_ENVIRONMENT&#160;</td><td class="fielddoc"><p>Animated thermometer and humidity droplet. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac70ecff5013af5a2a6b9a3640c180bbda03eb671c08d43b3f0953cbd2361a6cfb" name="ac70ecff5013af5a2a6b9a3640c180bbda03eb671c08d43b3f0953cbd2361a6cfb"></a>APP_SCREEN_ASTRONOMY&#160;</td><td class="fielddoc"><p>Time of Day sun/moon scene. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="ac70ecff5013af5a2a6b9a3640c180bbdad3e10d23a15335324d399b3031f562f4" name="ac70ecff5013af5a2a6b9a3640c180bbdad3e10d23a15335324d399b3031f562f4"></a>APP_SCREEN_STOPWATCH&#160;</td><td class="fielddoc"><p>Stopwatch display and controls. </p>
+</td></tr>
+</table>
+
+<p class="definition">Definition at line <a class="el" href="app__types_8h_source.html#l00044">44</a> of file <a class="el" href="app__types_8h_source.html">app_types.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="app__types_8h.html">app_types.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
 </body>
 </html>

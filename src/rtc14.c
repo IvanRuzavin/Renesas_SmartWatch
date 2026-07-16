@@ -19,18 +19,35 @@
 /* Small utility functions                                                     */
 /* -------------------------------------------------------------------------- */
 
+/**
+ * @brief Convert one packed BCD byte to decimal.
+ * @param[in] value Value to process.
+ * @return Calculated or converted value.
+ */
 static uint8_t rtc14_bcd_to_decimal(uint8_t value)
 {
     return (uint8_t)((value & 0x0FU) + ((value >> 4) * 10U));
 }
 
 
+/**
+ * @brief Convert one decimal value to packed BCD.
+ * @param[in] value Value to process.
+ * @return Calculated or converted value.
+ */
 static uint8_t rtc14_decimal_to_bcd(uint8_t value)
 {
     return (uint8_t)(((value / 10U) << 4) | (value % 10U));
 }
 
 
+/**
+ * @brief Read a consecutive RTC register range through IIC0.
+ * @param[in] first_reg First reg value.
+ * @param[out] data Data buffer.
+ * @param[in] length Number of bytes in the buffer.
+ * @return Calculated or converted value.
+ */
 static int rtc14_read_registers(uint8_t first_reg, uint8_t *data, uint32_t length)
 {
     int result = iic0_bus_write(RTC14_I2C_ADDRESS,
@@ -46,6 +63,10 @@ static int rtc14_read_registers(uint8_t first_reg, uint8_t *data, uint32_t lengt
 }
 
 
+/**
+ * @brief Initialize the module.
+ * @return Zero on success; otherwise a negative error code.
+ */
 int rtc14_init(void)
 {
     int result = iic0_bus_init();
@@ -59,6 +80,11 @@ int rtc14_init(void)
 }
 
 
+/**
+ * @brief Determine whether a full Gregorian year is a leap year.
+ * @param[in] year Full year value.
+ * @return Calculated or converted value.
+ */
 static uint8_t rtc14_is_leap_year(uint16_t year)
 {
     if ((year % 400U) == 0U)
@@ -73,6 +99,12 @@ static uint8_t rtc14_is_leap_year(uint16_t year)
 }
 
 
+/**
+ * @brief Return the valid day count for a month and year.
+ * @param[in] year Full year value.
+ * @param[in] month Month in the range 1 through 12.
+ * @return Calculated or converted value.
+ */
 static uint8_t rtc14_days_in_month(uint16_t year, uint8_t month)
 {
     static const uint8_t days[12] =
@@ -95,6 +127,17 @@ static uint8_t rtc14_days_in_month(uint16_t year, uint8_t month)
 }
 
 
+/**
+ * @brief Set datetime 24h.
+ * @param[in] year Full year value.
+ * @param[in] month Month in the range 1 through 12.
+ * @param[in] day Day of month.
+ * @param[in] hour Hour value.
+ * @param[in] minute Minute value.
+ * @param[in] second Second value.
+ * @param[in] weekday Weekday number, where zero is Sunday.
+ * @return Zero on success; otherwise a negative error code.
+ */
 int rtc14_set_datetime_24h(uint16_t year, uint8_t month,
                                   uint8_t day, uint8_t hour,
                                   uint8_t minute, uint8_t second,
@@ -150,6 +193,10 @@ int rtc14_set_datetime_24h(uint16_t year, uint8_t month,
 }
 
 
+/**
+ * @brief Set default datetime.
+ * @return Calculated or converted value.
+ */
 int rtc14_set_default_datetime(void)
 {
     return rtc14_set_datetime_24h(2000U + RTC14_DEFAULT_YEAR,
@@ -162,6 +209,11 @@ int rtc14_set_default_datetime(void)
 }
 
 
+/**
+ * @brief Read datetime.
+ * @param[out] datetime Decoded RTC date and time.
+ * @return Zero on success; otherwise a negative error code.
+ */
 int rtc14_get_datetime(rtc14_datetime_t *datetime)
 {
     uint8_t raw[7];
@@ -207,6 +259,10 @@ int rtc14_get_datetime(rtc14_datetime_t *datetime)
 }
 
 
+/**
+ * @brief Print datetime.
+ * @param[in] datetime Decoded RTC date and time.
+ */
 void rtc14_print_datetime(const rtc14_datetime_t *datetime)
 {
     static const char *const weekday_name[7] =

@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,6 +27,7 @@
   <td id="projectalign">
    <div id="projectname">R7FA4M2 Multi-Click Smartwatch
    </div>
+   <div id="projectbrief">Bare-metal multi-screen smartwatch demo for Clicker 4 for R7FA4M2A</div>
   </td>
  </tr>
  </tbody>
@@ -46,6 +51,23 @@ $(function() {
 /* @license-end */
 </script>
 <div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('ra4m2__baremetal_8h.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -67,14 +89,9 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
+<a href="#nested-classes">Data Structures</a> &#124;
 <a href="#define-members">Macros</a>  </div>
   <div class="headertitle"><div class="title">ra4m2_baremetal.h File Reference</div></div>
 </div><!--header-->
@@ -121,7 +138,7 @@ This graph shows which files directly or indirectly include this file:</div>
 <p><a href="ra4m2__baremetal_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
+Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structra4m2__agt16__registers__t.html">ra4m2_agt16_registers_t</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register view for a 16-bit AGT channel.  <a href="structra4m2__agt16__registers__t.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -131,199 +148,1140 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ad6290dff3ff3362e69d64e20ea3f0570" id="r_ad6290dff3ff3362e69d64e20ea3f0570"><td class="memItemLeft" align="right" valign="top"><a id="ad6290dff3ff3362e69d64e20ea3f0570" name="ad6290dff3ff3362e69d64e20ea3f0570"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>PFS_PODR_HIGH</b>&#160;&#160;&#160;(1UL &lt;&lt; 0)</td></tr>
+<tr class="memitem:ad6290dff3ff3362e69d64e20ea3f0570" id="r_ad6290dff3ff3362e69d64e20ea3f0570"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#ad6290dff3ff3362e69d64e20ea3f0570">PFS_PODR_HIGH</a>&#160;&#160;&#160;(1UL &lt;&lt; 0)</td></tr>
 <tr class="separator:ad6290dff3ff3362e69d64e20ea3f0570"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b0d5c16c441472c15a996196be75be6" id="r_a9b0d5c16c441472c15a996196be75be6"><td class="memItemLeft" align="right" valign="top"><a id="a9b0d5c16c441472c15a996196be75be6" name="a9b0d5c16c441472c15a996196be75be6"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>PFS_PDR_OUTPUT</b>&#160;&#160;&#160;(1UL &lt;&lt; 2)</td></tr>
+<tr class="memitem:a9b0d5c16c441472c15a996196be75be6" id="r_a9b0d5c16c441472c15a996196be75be6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#a9b0d5c16c441472c15a996196be75be6">PFS_PDR_OUTPUT</a>&#160;&#160;&#160;(1UL &lt;&lt; 2)</td></tr>
 <tr class="separator:a9b0d5c16c441472c15a996196be75be6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60183e4fab155d21d4350f40a418aa13" id="r_a60183e4fab155d21d4350f40a418aa13"><td class="memItemLeft" align="right" valign="top"><a id="a60183e4fab155d21d4350f40a418aa13" name="a60183e4fab155d21d4350f40a418aa13"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>PFS_PCR_PULLUP</b>&#160;&#160;&#160;(1UL &lt;&lt; 4)</td></tr>
+<tr class="memitem:a60183e4fab155d21d4350f40a418aa13" id="r_a60183e4fab155d21d4350f40a418aa13"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#a60183e4fab155d21d4350f40a418aa13">PFS_PCR_PULLUP</a>&#160;&#160;&#160;(1UL &lt;&lt; 4)</td></tr>
 <tr class="separator:a60183e4fab155d21d4350f40a418aa13"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae4067e93d041d31d8802c794844fcc8d" id="r_ae4067e93d041d31d8802c794844fcc8d"><td class="memItemLeft" align="right" valign="top"><a id="ae4067e93d041d31d8802c794844fcc8d" name="ae4067e93d041d31d8802c794844fcc8d"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>PFS_NCODR_OPEN_DRAIN</b>&#160;&#160;&#160;(1UL &lt;&lt; 6)</td></tr>
+<tr class="memitem:ae4067e93d041d31d8802c794844fcc8d" id="r_ae4067e93d041d31d8802c794844fcc8d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#ae4067e93d041d31d8802c794844fcc8d">PFS_NCODR_OPEN_DRAIN</a>&#160;&#160;&#160;(1UL &lt;&lt; 6)</td></tr>
 <tr class="separator:ae4067e93d041d31d8802c794844fcc8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac9c6dbbf9ab51cb9ee8a5e908b55072b" id="r_ac9c6dbbf9ab51cb9ee8a5e908b55072b"><td class="memItemLeft" align="right" valign="top"><a id="ac9c6dbbf9ab51cb9ee8a5e908b55072b" name="ac9c6dbbf9ab51cb9ee8a5e908b55072b"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>PFS_ISEL_IRQ</b>&#160;&#160;&#160;(1UL &lt;&lt; 14)</td></tr>
+<tr class="memitem:ac9c6dbbf9ab51cb9ee8a5e908b55072b" id="r_ac9c6dbbf9ab51cb9ee8a5e908b55072b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#ac9c6dbbf9ab51cb9ee8a5e908b55072b">PFS_ISEL_IRQ</a>&#160;&#160;&#160;(1UL &lt;&lt; 14)</td></tr>
 <tr class="separator:ac9c6dbbf9ab51cb9ee8a5e908b55072b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a95c7675a51856c05a894b30025ee80ee" id="r_a95c7675a51856c05a894b30025ee80ee"><td class="memItemLeft" align="right" valign="top"><a id="a95c7675a51856c05a894b30025ee80ee" name="a95c7675a51856c05a894b30025ee80ee"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>PFS_PMR_PERIPHERAL</b>&#160;&#160;&#160;(1UL &lt;&lt; 16)</td></tr>
+<tr class="memitem:a95c7675a51856c05a894b30025ee80ee" id="r_a95c7675a51856c05a894b30025ee80ee"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#a95c7675a51856c05a894b30025ee80ee">PFS_PMR_PERIPHERAL</a>&#160;&#160;&#160;(1UL &lt;&lt; 16)</td></tr>
 <tr class="separator:a95c7675a51856c05a894b30025ee80ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac9b4b7537f1470998eb9733f2b1a56c0" id="r_ac9b4b7537f1470998eb9733f2b1a56c0"><td class="memItemLeft" align="right" valign="top"><a id="ac9b4b7537f1470998eb9733f2b1a56c0" name="ac9b4b7537f1470998eb9733f2b1a56c0"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>PFS_PSEL</b>(value)&#160;&#160;&#160;((uint32_t)(value) &lt;&lt; 24)</td></tr>
+<tr class="memitem:ac9b4b7537f1470998eb9733f2b1a56c0" id="r_ac9b4b7537f1470998eb9733f2b1a56c0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#ac9b4b7537f1470998eb9733f2b1a56c0">PFS_PSEL</a>(value)&#160;&#160;&#160;((uint32_t)(value) &lt;&lt; 24)</td></tr>
 <tr class="separator:ac9b4b7537f1470998eb9733f2b1a56c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31f3521634193608956e493f87b7a880" id="r_a31f3521634193608956e493f87b7a880"><td class="memItemLeft" align="right" valign="top"><a id="a31f3521634193608956e493f87b7a880" name="a31f3521634193608956e493f87b7a880"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>IIC_ICCR1_IICRST</b>&#160;&#160;&#160;(1U &lt;&lt; 6)</td></tr>
+<tr class="memitem:a31f3521634193608956e493f87b7a880" id="r_a31f3521634193608956e493f87b7a880"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#a31f3521634193608956e493f87b7a880">IIC_ICCR1_IICRST</a>&#160;&#160;&#160;(1U &lt;&lt; 6)</td></tr>
 <tr class="separator:a31f3521634193608956e493f87b7a880"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa19d62afee41cf70fb8467c8bb1fe263" id="r_aa19d62afee41cf70fb8467c8bb1fe263"><td class="memItemLeft" align="right" valign="top"><a id="aa19d62afee41cf70fb8467c8bb1fe263" name="aa19d62afee41cf70fb8467c8bb1fe263"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>IIC_ICCR1_ICE</b>&#160;&#160;&#160;(1U &lt;&lt; 7)</td></tr>
+<tr class="memitem:aa19d62afee41cf70fb8467c8bb1fe263" id="r_aa19d62afee41cf70fb8467c8bb1fe263"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#aa19d62afee41cf70fb8467c8bb1fe263">IIC_ICCR1_ICE</a>&#160;&#160;&#160;(1U &lt;&lt; 7)</td></tr>
 <tr class="separator:aa19d62afee41cf70fb8467c8bb1fe263"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9b62c759f55c4da8e9149fe6777280aa" id="r_a9b62c759f55c4da8e9149fe6777280aa"><td class="memItemLeft" align="right" valign="top"><a id="a9b62c759f55c4da8e9149fe6777280aa" name="a9b62c759f55c4da8e9149fe6777280aa"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>IIC_ICCR2_ST</b>&#160;&#160;&#160;(1U &lt;&lt; 1)</td></tr>
+<tr class="memitem:a9b62c759f55c4da8e9149fe6777280aa" id="r_a9b62c759f55c4da8e9149fe6777280aa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#a9b62c759f55c4da8e9149fe6777280aa">IIC_ICCR2_ST</a>&#160;&#160;&#160;(1U &lt;&lt; 1)</td></tr>
 <tr class="separator:a9b62c759f55c4da8e9149fe6777280aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a74e822c1c5d0b634b5c814c0a4276a5f" id="r_a74e822c1c5d0b634b5c814c0a4276a5f"><td class="memItemLeft" align="right" valign="top"><a id="a74e822c1c5d0b634b5c814c0a4276a5f" name="a74e822c1c5d0b634b5c814c0a4276a5f"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>IIC_ICCR2_RS</b>&#160;&#160;&#160;(1U &lt;&lt; 2)</td></tr>
+<tr class="memitem:a74e822c1c5d0b634b5c814c0a4276a5f" id="r_a74e822c1c5d0b634b5c814c0a4276a5f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#a74e822c1c5d0b634b5c814c0a4276a5f">IIC_ICCR2_RS</a>&#160;&#160;&#160;(1U &lt;&lt; 2)</td></tr>
 <tr class="separator:a74e822c1c5d0b634b5c814c0a4276a5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afdf03d678fd6731abbb8dab6d958070e" id="r_afdf03d678fd6731abbb8dab6d958070e"><td class="memItemLeft" align="right" valign="top"><a id="afdf03d678fd6731abbb8dab6d958070e" name="afdf03d678fd6731abbb8dab6d958070e"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>IIC_ICCR2_SP</b>&#160;&#160;&#160;(1U &lt;&lt; 3)</td></tr>
+<tr class="memitem:afdf03d678fd6731abbb8dab6d958070e" id="r_afdf03d678fd6731abbb8dab6d958070e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#afdf03d678fd6731abbb8dab6d958070e">IIC_ICCR2_SP</a>&#160;&#160;&#160;(1U &lt;&lt; 3)</td></tr>
 <tr class="separator:afdf03d678fd6731abbb8dab6d958070e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3ed02e1fb94d71987821b37fec4a7dc6" id="r_a3ed02e1fb94d71987821b37fec4a7dc6"><td class="memItemLeft" align="right" valign="top"><a id="a3ed02e1fb94d71987821b37fec4a7dc6" name="a3ed02e1fb94d71987821b37fec4a7dc6"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>IIC_ICCR2_TRS</b>&#160;&#160;&#160;(1U &lt;&lt; 5)</td></tr>
+<tr class="memitem:a3ed02e1fb94d71987821b37fec4a7dc6" id="r_a3ed02e1fb94d71987821b37fec4a7dc6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#a3ed02e1fb94d71987821b37fec4a7dc6">IIC_ICCR2_TRS</a>&#160;&#160;&#160;(1U &lt;&lt; 5)</td></tr>
 <tr class="separator:a3ed02e1fb94d71987821b37fec4a7dc6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4247be5761bfd6871223077c896f58fd" id="r_a4247be5761bfd6871223077c896f58fd"><td class="memItemLeft" align="right" valign="top"><a id="a4247be5761bfd6871223077c896f58fd" name="a4247be5761bfd6871223077c896f58fd"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>IIC_ICCR2_BBSY</b>&#160;&#160;&#160;(1U &lt;&lt; 7)</td></tr>
+<tr class="memitem:a4247be5761bfd6871223077c896f58fd" id="r_a4247be5761bfd6871223077c896f58fd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#a4247be5761bfd6871223077c896f58fd">IIC_ICCR2_BBSY</a>&#160;&#160;&#160;(1U &lt;&lt; 7)</td></tr>
 <tr class="separator:a4247be5761bfd6871223077c896f58fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ca47bbd4e7cb0a982645a0a870399dd" id="r_a9ca47bbd4e7cb0a982645a0a870399dd"><td class="memItemLeft" align="right" valign="top"><a id="a9ca47bbd4e7cb0a982645a0a870399dd" name="a9ca47bbd4e7cb0a982645a0a870399dd"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>IIC_ICSR2_STOP</b>&#160;&#160;&#160;(1U &lt;&lt; 3)</td></tr>
+<tr class="memitem:a9ca47bbd4e7cb0a982645a0a870399dd" id="r_a9ca47bbd4e7cb0a982645a0a870399dd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#a9ca47bbd4e7cb0a982645a0a870399dd">IIC_ICSR2_STOP</a>&#160;&#160;&#160;(1U &lt;&lt; 3)</td></tr>
 <tr class="separator:a9ca47bbd4e7cb0a982645a0a870399dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58cea206cf2f3624e57ccc5a2c69e273" id="r_a58cea206cf2f3624e57ccc5a2c69e273"><td class="memItemLeft" align="right" valign="top"><a id="a58cea206cf2f3624e57ccc5a2c69e273" name="a58cea206cf2f3624e57ccc5a2c69e273"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>IIC_ICSR2_NACKF</b>&#160;&#160;&#160;(1U &lt;&lt; 4)</td></tr>
+<tr class="memitem:a58cea206cf2f3624e57ccc5a2c69e273" id="r_a58cea206cf2f3624e57ccc5a2c69e273"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#a58cea206cf2f3624e57ccc5a2c69e273">IIC_ICSR2_NACKF</a>&#160;&#160;&#160;(1U &lt;&lt; 4)</td></tr>
 <tr class="separator:a58cea206cf2f3624e57ccc5a2c69e273"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2fdb8920c3f960b5269b70fbed22fcd" id="r_ac2fdb8920c3f960b5269b70fbed22fcd"><td class="memItemLeft" align="right" valign="top"><a id="ac2fdb8920c3f960b5269b70fbed22fcd" name="ac2fdb8920c3f960b5269b70fbed22fcd"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>IIC_ICSR2_RDRF</b>&#160;&#160;&#160;(1U &lt;&lt; 5)</td></tr>
+<tr class="memitem:ac2fdb8920c3f960b5269b70fbed22fcd" id="r_ac2fdb8920c3f960b5269b70fbed22fcd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#ac2fdb8920c3f960b5269b70fbed22fcd">IIC_ICSR2_RDRF</a>&#160;&#160;&#160;(1U &lt;&lt; 5)</td></tr>
 <tr class="separator:ac2fdb8920c3f960b5269b70fbed22fcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a01d9af44593b624a189c4fd4fc634e48" id="r_a01d9af44593b624a189c4fd4fc634e48"><td class="memItemLeft" align="right" valign="top"><a id="a01d9af44593b624a189c4fd4fc634e48" name="a01d9af44593b624a189c4fd4fc634e48"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>IIC_ICSR2_TEND</b>&#160;&#160;&#160;(1U &lt;&lt; 6)</td></tr>
+<tr class="memitem:a01d9af44593b624a189c4fd4fc634e48" id="r_a01d9af44593b624a189c4fd4fc634e48"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#a01d9af44593b624a189c4fd4fc634e48">IIC_ICSR2_TEND</a>&#160;&#160;&#160;(1U &lt;&lt; 6)</td></tr>
 <tr class="separator:a01d9af44593b624a189c4fd4fc634e48"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5448b0b02409d0a153ca407ddd7f5445" id="r_a5448b0b02409d0a153ca407ddd7f5445"><td class="memItemLeft" align="right" valign="top"><a id="a5448b0b02409d0a153ca407ddd7f5445" name="a5448b0b02409d0a153ca407ddd7f5445"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>IIC_ICSR2_TDRE</b>&#160;&#160;&#160;(1U &lt;&lt; 7)</td></tr>
+<tr class="memitem:a5448b0b02409d0a153ca407ddd7f5445" id="r_a5448b0b02409d0a153ca407ddd7f5445"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#a5448b0b02409d0a153ca407ddd7f5445">IIC_ICSR2_TDRE</a>&#160;&#160;&#160;(1U &lt;&lt; 7)</td></tr>
 <tr class="separator:a5448b0b02409d0a153ca407ddd7f5445"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a982aa65e25ef70a34f11ff168c232e94" id="r_a982aa65e25ef70a34f11ff168c232e94"><td class="memItemLeft" align="right" valign="top"><a id="a982aa65e25ef70a34f11ff168c232e94" name="a982aa65e25ef70a34f11ff168c232e94"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>IIC_ICMR3_NF_MASK</b>&#160;&#160;&#160;(0x03U)</td></tr>
+<tr class="memitem:a982aa65e25ef70a34f11ff168c232e94" id="r_a982aa65e25ef70a34f11ff168c232e94"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#a982aa65e25ef70a34f11ff168c232e94">IIC_ICMR3_NF_MASK</a>&#160;&#160;&#160;(0x03U)</td></tr>
 <tr class="separator:a982aa65e25ef70a34f11ff168c232e94"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55308723fde3a68ddca2ad1b4aae2c85" id="r_a55308723fde3a68ddca2ad1b4aae2c85"><td class="memItemLeft" align="right" valign="top"><a id="a55308723fde3a68ddca2ad1b4aae2c85" name="a55308723fde3a68ddca2ad1b4aae2c85"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>IIC_ICMR3_ACKBT</b>&#160;&#160;&#160;(1U &lt;&lt; 3)</td></tr>
+<tr class="memitem:a55308723fde3a68ddca2ad1b4aae2c85" id="r_a55308723fde3a68ddca2ad1b4aae2c85"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#a55308723fde3a68ddca2ad1b4aae2c85">IIC_ICMR3_ACKBT</a>&#160;&#160;&#160;(1U &lt;&lt; 3)</td></tr>
 <tr class="separator:a55308723fde3a68ddca2ad1b4aae2c85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab734b617385eb12f3b5ee7dc551fcc2" id="r_aab734b617385eb12f3b5ee7dc551fcc2"><td class="memItemLeft" align="right" valign="top"><a id="aab734b617385eb12f3b5ee7dc551fcc2" name="aab734b617385eb12f3b5ee7dc551fcc2"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>IIC_ICMR3_ACKWP</b>&#160;&#160;&#160;(1U &lt;&lt; 4)</td></tr>
+<tr class="memitem:aab734b617385eb12f3b5ee7dc551fcc2" id="r_aab734b617385eb12f3b5ee7dc551fcc2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#aab734b617385eb12f3b5ee7dc551fcc2">IIC_ICMR3_ACKWP</a>&#160;&#160;&#160;(1U &lt;&lt; 4)</td></tr>
 <tr class="separator:aab734b617385eb12f3b5ee7dc551fcc2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a407083b3dcd0723b593364117d974eb4" id="r_a407083b3dcd0723b593364117d974eb4"><td class="memItemLeft" align="right" valign="top"><a id="a407083b3dcd0723b593364117d974eb4" name="a407083b3dcd0723b593364117d974eb4"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>IIC_ICMR3_WAIT</b>&#160;&#160;&#160;(1U &lt;&lt; 6)</td></tr>
+<tr class="memitem:a407083b3dcd0723b593364117d974eb4" id="r_a407083b3dcd0723b593364117d974eb4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#a407083b3dcd0723b593364117d974eb4">IIC_ICMR3_WAIT</a>&#160;&#160;&#160;(1U &lt;&lt; 6)</td></tr>
 <tr class="separator:a407083b3dcd0723b593364117d974eb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd7a32ac5486352c7c8e498de1b3dfd3" id="r_afd7a32ac5486352c7c8e498de1b3dfd3"><td class="memItemLeft" align="right" valign="top"><a id="afd7a32ac5486352c7c8e498de1b3dfd3" name="afd7a32ac5486352c7c8e498de1b3dfd3"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>IIC_ICFER_NFE</b>&#160;&#160;&#160;(1U &lt;&lt; 5)</td></tr>
+<tr class="memitem:afd7a32ac5486352c7c8e498de1b3dfd3" id="r_afd7a32ac5486352c7c8e498de1b3dfd3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#afd7a32ac5486352c7c8e498de1b3dfd3">IIC_ICFER_NFE</a>&#160;&#160;&#160;(1U &lt;&lt; 5)</td></tr>
 <tr class="separator:afd7a32ac5486352c7c8e498de1b3dfd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34b4e0b2cf90ea1897c3d7308aeaf4eb" id="r_a34b4e0b2cf90ea1897c3d7308aeaf4eb"><td class="memItemLeft" align="right" valign="top"><a id="a34b4e0b2cf90ea1897c3d7308aeaf4eb" name="a34b4e0b2cf90ea1897c3d7308aeaf4eb"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>IIC_ICFER_SCLE</b>&#160;&#160;&#160;(1U &lt;&lt; 6)</td></tr>
+<tr class="memitem:a34b4e0b2cf90ea1897c3d7308aeaf4eb" id="r_a34b4e0b2cf90ea1897c3d7308aeaf4eb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#a34b4e0b2cf90ea1897c3d7308aeaf4eb">IIC_ICFER_SCLE</a>&#160;&#160;&#160;(1U &lt;&lt; 6)</td></tr>
 <tr class="separator:a34b4e0b2cf90ea1897c3d7308aeaf4eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac8ca742a5676f3a97511b3c88c45a89c" id="r_ac8ca742a5676f3a97511b3c88c45a89c"><td class="memItemLeft" align="right" valign="top"><a id="ac8ca742a5676f3a97511b3c88c45a89c" name="ac8ca742a5676f3a97511b3c88c45a89c"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>IIC_ICMR1_CKS_SHIFT</b>&#160;&#160;&#160;(4U)</td></tr>
+<tr class="memitem:ac8ca742a5676f3a97511b3c88c45a89c" id="r_ac8ca742a5676f3a97511b3c88c45a89c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#ac8ca742a5676f3a97511b3c88c45a89c">IIC_ICMR1_CKS_SHIFT</a>&#160;&#160;&#160;(4U)</td></tr>
 <tr class="separator:ac8ca742a5676f3a97511b3c88c45a89c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a503122c44d439ab53312b6edd01a63ea" id="r_a503122c44d439ab53312b6edd01a63ea"><td class="memItemLeft" align="right" valign="top"><a id="a503122c44d439ab53312b6edd01a63ea" name="a503122c44d439ab53312b6edd01a63ea"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>AGT_AGTCR_TCSTF</b>&#160;&#160;&#160;(1U &lt;&lt; 1)</td></tr>
+<tr class="memitem:a503122c44d439ab53312b6edd01a63ea" id="r_a503122c44d439ab53312b6edd01a63ea"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#a503122c44d439ab53312b6edd01a63ea">AGT_AGTCR_TCSTF</a>&#160;&#160;&#160;(1U &lt;&lt; 1)</td></tr>
 <tr class="separator:a503122c44d439ab53312b6edd01a63ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e801f962a1ee05531a65763936c0d46" id="r_a7e801f962a1ee05531a65763936c0d46"><td class="memItemLeft" align="right" valign="top"><a id="a7e801f962a1ee05531a65763936c0d46" name="a7e801f962a1ee05531a65763936c0d46"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>AGT_AGTCR_STATUS_FLAGS</b>&#160;&#160;&#160;(0xF0U)</td></tr>
+<tr class="memitem:a7e801f962a1ee05531a65763936c0d46" id="r_a7e801f962a1ee05531a65763936c0d46"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#a7e801f962a1ee05531a65763936c0d46">AGT_AGTCR_STATUS_FLAGS</a>&#160;&#160;&#160;(0xF0U)</td></tr>
 <tr class="separator:a7e801f962a1ee05531a65763936c0d46"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a26aba5b6cb76ee05adaa9408668919ed" id="r_a26aba5b6cb76ee05adaa9408668919ed"><td class="memItemLeft" align="right" valign="top"><a id="a26aba5b6cb76ee05adaa9408668919ed" name="a26aba5b6cb76ee05adaa9408668919ed"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>AGT_AGTCR_START_TIMER</b>&#160;&#160;&#160;(0xF1U)</td></tr>
+<tr class="memitem:a26aba5b6cb76ee05adaa9408668919ed" id="r_a26aba5b6cb76ee05adaa9408668919ed"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#a26aba5b6cb76ee05adaa9408668919ed">AGT_AGTCR_START_TIMER</a>&#160;&#160;&#160;(0xF1U)</td></tr>
 <tr class="separator:a26aba5b6cb76ee05adaa9408668919ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a518a846a374d7fc34b823139d157d7c7" id="r_a518a846a374d7fc34b823139d157d7c7"><td class="memItemLeft" align="right" valign="top"><a id="a518a846a374d7fc34b823139d157d7c7" name="a518a846a374d7fc34b823139d157d7c7"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>AGT_AGTMR1_TCK_PCLKB_DIV_1</b>&#160;&#160;&#160;(0x00U)</td></tr>
+<tr class="memitem:a518a846a374d7fc34b823139d157d7c7" id="r_a518a846a374d7fc34b823139d157d7c7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#a518a846a374d7fc34b823139d157d7c7">AGT_AGTMR1_TCK_PCLKB_DIV_1</a>&#160;&#160;&#160;(0x00U)</td></tr>
 <tr class="separator:a518a846a374d7fc34b823139d157d7c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab9d33013afb3782187ecf41a54c53b3b" id="r_ab9d33013afb3782187ecf41a54c53b3b"><td class="memItemLeft" align="right" valign="top"><a id="ab9d33013afb3782187ecf41a54c53b3b" name="ab9d33013afb3782187ecf41a54c53b3b"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>AGT_AGTMR1_TCK_PCLKB_DIV_8</b>&#160;&#160;&#160;(0x01U)</td></tr>
+<tr class="memitem:ab9d33013afb3782187ecf41a54c53b3b" id="r_ab9d33013afb3782187ecf41a54c53b3b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#ab9d33013afb3782187ecf41a54c53b3b">AGT_AGTMR1_TCK_PCLKB_DIV_8</a>&#160;&#160;&#160;(0x01U)</td></tr>
 <tr class="separator:ab9d33013afb3782187ecf41a54c53b3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4575f49fc9a5c24ca918b353ab121af0" id="r_a4575f49fc9a5c24ca918b353ab121af0"><td class="memItemLeft" align="right" valign="top"><a id="a4575f49fc9a5c24ca918b353ab121af0" name="a4575f49fc9a5c24ca918b353ab121af0"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>AGT_AGTMR1_TCK_PCLKB_DIV_2</b>&#160;&#160;&#160;(0x03U)</td></tr>
+<tr class="memitem:a4575f49fc9a5c24ca918b353ab121af0" id="r_a4575f49fc9a5c24ca918b353ab121af0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#a4575f49fc9a5c24ca918b353ab121af0">AGT_AGTMR1_TCK_PCLKB_DIV_2</a>&#160;&#160;&#160;(0x03U)</td></tr>
 <tr class="separator:a4575f49fc9a5c24ca918b353ab121af0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3eb90812b11152bef143bee75a8f3cee" id="r_a3eb90812b11152bef143bee75a8f3cee"><td class="memItemLeft" align="right" valign="top"><a id="a3eb90812b11152bef143bee75a8f3cee" name="a3eb90812b11152bef143bee75a8f3cee"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>ICU_IELSR_IR</b>&#160;&#160;&#160;(1UL &lt;&lt; 16)</td></tr>
+<tr class="memitem:a3eb90812b11152bef143bee75a8f3cee" id="r_a3eb90812b11152bef143bee75a8f3cee"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#a3eb90812b11152bef143bee75a8f3cee">ICU_IELSR_IR</a>&#160;&#160;&#160;(1UL &lt;&lt; 16)</td></tr>
 <tr class="separator:a3eb90812b11152bef143bee75a8f3cee"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a41c353053390dc288a0d45598b81ef95" id="r_a41c353053390dc288a0d45598b81ef95"><td class="memItemLeft" align="right" valign="top"><a id="a41c353053390dc288a0d45598b81ef95" name="a41c353053390dc288a0d45598b81ef95"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>ICU_IRQCR_FALLING_EDGE</b>&#160;&#160;&#160;(0x00U)</td></tr>
+<tr class="memitem:a41c353053390dc288a0d45598b81ef95" id="r_a41c353053390dc288a0d45598b81ef95"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#a41c353053390dc288a0d45598b81ef95">ICU_IRQCR_FALLING_EDGE</a>&#160;&#160;&#160;(0x00U)</td></tr>
 <tr class="separator:a41c353053390dc288a0d45598b81ef95"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6e4668ee67ce604627c78de059c8b09" id="r_aa6e4668ee67ce604627c78de059c8b09"><td class="memItemLeft" align="right" valign="top"><a id="aa6e4668ee67ce604627c78de059c8b09" name="aa6e4668ee67ce604627c78de059c8b09"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>AGT0_MSTPCRD_BIT</b>&#160;&#160;&#160;(3U)</td></tr>
+<tr class="memitem:aa6e4668ee67ce604627c78de059c8b09" id="r_aa6e4668ee67ce604627c78de059c8b09"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#aa6e4668ee67ce604627c78de059c8b09">AGT0_MSTPCRD_BIT</a>&#160;&#160;&#160;(3U)</td></tr>
 <tr class="separator:aa6e4668ee67ce604627c78de059c8b09"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a46e4b25f1013c75273d212db79659e01" id="r_a46e4b25f1013c75273d212db79659e01"><td class="memItemLeft" align="right" valign="top"><a id="a46e4b25f1013c75273d212db79659e01" name="a46e4b25f1013c75273d212db79659e01"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SCI_SCR_RE</b>&#160;&#160;&#160;(1U &lt;&lt; 4)</td></tr>
+<tr class="memitem:a46e4b25f1013c75273d212db79659e01" id="r_a46e4b25f1013c75273d212db79659e01"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#a46e4b25f1013c75273d212db79659e01">SCI_SCR_RE</a>&#160;&#160;&#160;(1U &lt;&lt; 4)</td></tr>
 <tr class="separator:a46e4b25f1013c75273d212db79659e01"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af73dfbf02ec676cc3440be22a2c37286" id="r_af73dfbf02ec676cc3440be22a2c37286"><td class="memItemLeft" align="right" valign="top"><a id="af73dfbf02ec676cc3440be22a2c37286" name="af73dfbf02ec676cc3440be22a2c37286"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SCI_SCR_TE</b>&#160;&#160;&#160;(1U &lt;&lt; 5)</td></tr>
+<tr class="memitem:af73dfbf02ec676cc3440be22a2c37286" id="r_af73dfbf02ec676cc3440be22a2c37286"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#af73dfbf02ec676cc3440be22a2c37286">SCI_SCR_TE</a>&#160;&#160;&#160;(1U &lt;&lt; 5)</td></tr>
 <tr class="separator:af73dfbf02ec676cc3440be22a2c37286"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a44c76995df93adaef922a660610b2a8b" id="r_a44c76995df93adaef922a660610b2a8b"><td class="memItemLeft" align="right" valign="top"><a id="a44c76995df93adaef922a660610b2a8b" name="a44c76995df93adaef922a660610b2a8b"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SCI_SCR_RIE</b>&#160;&#160;&#160;(1U &lt;&lt; 6)</td></tr>
+<tr class="memitem:a44c76995df93adaef922a660610b2a8b" id="r_a44c76995df93adaef922a660610b2a8b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#a44c76995df93adaef922a660610b2a8b">SCI_SCR_RIE</a>&#160;&#160;&#160;(1U &lt;&lt; 6)</td></tr>
 <tr class="separator:a44c76995df93adaef922a660610b2a8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a221eb64d61883fdd7eb19480359241e9" id="r_a221eb64d61883fdd7eb19480359241e9"><td class="memItemLeft" align="right" valign="top"><a id="a221eb64d61883fdd7eb19480359241e9" name="a221eb64d61883fdd7eb19480359241e9"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SCI_SSR_TEND</b>&#160;&#160;&#160;(1U &lt;&lt; 2)</td></tr>
+<tr class="memitem:a221eb64d61883fdd7eb19480359241e9" id="r_a221eb64d61883fdd7eb19480359241e9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#a221eb64d61883fdd7eb19480359241e9">SCI_SSR_TEND</a>&#160;&#160;&#160;(1U &lt;&lt; 2)</td></tr>
 <tr class="separator:a221eb64d61883fdd7eb19480359241e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa2c9011511a64bc24c8ab08b04502992" id="r_aa2c9011511a64bc24c8ab08b04502992"><td class="memItemLeft" align="right" valign="top"><a id="aa2c9011511a64bc24c8ab08b04502992" name="aa2c9011511a64bc24c8ab08b04502992"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SCI_SSR_PER</b>&#160;&#160;&#160;(1U &lt;&lt; 3)</td></tr>
+<tr class="memitem:aa2c9011511a64bc24c8ab08b04502992" id="r_aa2c9011511a64bc24c8ab08b04502992"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#aa2c9011511a64bc24c8ab08b04502992">SCI_SSR_PER</a>&#160;&#160;&#160;(1U &lt;&lt; 3)</td></tr>
 <tr class="separator:aa2c9011511a64bc24c8ab08b04502992"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a908eb39d647afb96c3bbade87dfab52e" id="r_a908eb39d647afb96c3bbade87dfab52e"><td class="memItemLeft" align="right" valign="top"><a id="a908eb39d647afb96c3bbade87dfab52e" name="a908eb39d647afb96c3bbade87dfab52e"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SCI_SSR_FER</b>&#160;&#160;&#160;(1U &lt;&lt; 4)</td></tr>
+<tr class="memitem:a908eb39d647afb96c3bbade87dfab52e" id="r_a908eb39d647afb96c3bbade87dfab52e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#a908eb39d647afb96c3bbade87dfab52e">SCI_SSR_FER</a>&#160;&#160;&#160;(1U &lt;&lt; 4)</td></tr>
 <tr class="separator:a908eb39d647afb96c3bbade87dfab52e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1e2c689541f36a98779a9bb23097ca7" id="r_af1e2c689541f36a98779a9bb23097ca7"><td class="memItemLeft" align="right" valign="top"><a id="af1e2c689541f36a98779a9bb23097ca7" name="af1e2c689541f36a98779a9bb23097ca7"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SCI_SSR_ORER</b>&#160;&#160;&#160;(1U &lt;&lt; 5)</td></tr>
+<tr class="memitem:af1e2c689541f36a98779a9bb23097ca7" id="r_af1e2c689541f36a98779a9bb23097ca7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#af1e2c689541f36a98779a9bb23097ca7">SCI_SSR_ORER</a>&#160;&#160;&#160;(1U &lt;&lt; 5)</td></tr>
 <tr class="separator:af1e2c689541f36a98779a9bb23097ca7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a42f779dc07a83d4c4c51baebbd377088" id="r_a42f779dc07a83d4c4c51baebbd377088"><td class="memItemLeft" align="right" valign="top"><a id="a42f779dc07a83d4c4c51baebbd377088" name="a42f779dc07a83d4c4c51baebbd377088"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SCI_SSR_RDRF</b>&#160;&#160;&#160;(1U &lt;&lt; 6)</td></tr>
+<tr class="memitem:a42f779dc07a83d4c4c51baebbd377088" id="r_a42f779dc07a83d4c4c51baebbd377088"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#a42f779dc07a83d4c4c51baebbd377088">SCI_SSR_RDRF</a>&#160;&#160;&#160;(1U &lt;&lt; 6)</td></tr>
 <tr class="separator:a42f779dc07a83d4c4c51baebbd377088"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a89938f6f4a75b26146cd3eeaa2989763" id="r_a89938f6f4a75b26146cd3eeaa2989763"><td class="memItemLeft" align="right" valign="top"><a id="a89938f6f4a75b26146cd3eeaa2989763" name="a89938f6f4a75b26146cd3eeaa2989763"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SCI_SSR_TDRE</b>&#160;&#160;&#160;(1U &lt;&lt; 7)</td></tr>
+<tr class="memitem:a89938f6f4a75b26146cd3eeaa2989763" id="r_a89938f6f4a75b26146cd3eeaa2989763"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#a89938f6f4a75b26146cd3eeaa2989763">SCI_SSR_TDRE</a>&#160;&#160;&#160;(1U &lt;&lt; 7)</td></tr>
 <tr class="separator:a89938f6f4a75b26146cd3eeaa2989763"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0eab68ef49c64dbc3fda8b2efb4fe5aa" id="r_a0eab68ef49c64dbc3fda8b2efb4fe5aa"><td class="memItemLeft" align="right" valign="top"><a id="a0eab68ef49c64dbc3fda8b2efb4fe5aa" name="a0eab68ef49c64dbc3fda8b2efb4fe5aa"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SCI_SCMR_SMIF</b>&#160;&#160;&#160;(1U &lt;&lt; 0)</td></tr>
+<tr class="memitem:a0eab68ef49c64dbc3fda8b2efb4fe5aa" id="r_a0eab68ef49c64dbc3fda8b2efb4fe5aa"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#a0eab68ef49c64dbc3fda8b2efb4fe5aa">SCI_SCMR_SMIF</a>&#160;&#160;&#160;(1U &lt;&lt; 0)</td></tr>
 <tr class="separator:a0eab68ef49c64dbc3fda8b2efb4fe5aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac5c7231b7fa09fc46170015ab1cb8e7b" id="r_ac5c7231b7fa09fc46170015ab1cb8e7b"><td class="memItemLeft" align="right" valign="top"><a id="ac5c7231b7fa09fc46170015ab1cb8e7b" name="ac5c7231b7fa09fc46170015ab1cb8e7b"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SCI_SCMR_SINV</b>&#160;&#160;&#160;(1U &lt;&lt; 2)</td></tr>
+<tr class="memitem:ac5c7231b7fa09fc46170015ab1cb8e7b" id="r_ac5c7231b7fa09fc46170015ab1cb8e7b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#ac5c7231b7fa09fc46170015ab1cb8e7b">SCI_SCMR_SINV</a>&#160;&#160;&#160;(1U &lt;&lt; 2)</td></tr>
 <tr class="separator:ac5c7231b7fa09fc46170015ab1cb8e7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a15c6aede46f563ac65ca9d382228e8a8" id="r_a15c6aede46f563ac65ca9d382228e8a8"><td class="memItemLeft" align="right" valign="top"><a id="a15c6aede46f563ac65ca9d382228e8a8" name="a15c6aede46f563ac65ca9d382228e8a8"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SCI_SCMR_SDIR</b>&#160;&#160;&#160;(1U &lt;&lt; 3)</td></tr>
+<tr class="memitem:a15c6aede46f563ac65ca9d382228e8a8" id="r_a15c6aede46f563ac65ca9d382228e8a8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#a15c6aede46f563ac65ca9d382228e8a8">SCI_SCMR_SDIR</a>&#160;&#160;&#160;(1U &lt;&lt; 3)</td></tr>
 <tr class="separator:a15c6aede46f563ac65ca9d382228e8a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a16ddcfa5d1bac1e5f56cbb3f6a6261fc" id="r_a16ddcfa5d1bac1e5f56cbb3f6a6261fc"><td class="memItemLeft" align="right" valign="top"><a id="a16ddcfa5d1bac1e5f56cbb3f6a6261fc" name="a16ddcfa5d1bac1e5f56cbb3f6a6261fc"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SCI_SCMR_CHR1</b>&#160;&#160;&#160;(1U &lt;&lt; 4)</td></tr>
+<tr class="memitem:a16ddcfa5d1bac1e5f56cbb3f6a6261fc" id="r_a16ddcfa5d1bac1e5f56cbb3f6a6261fc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#a16ddcfa5d1bac1e5f56cbb3f6a6261fc">SCI_SCMR_CHR1</a>&#160;&#160;&#160;(1U &lt;&lt; 4)</td></tr>
 <tr class="separator:a16ddcfa5d1bac1e5f56cbb3f6a6261fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2cbcb6a5a375bdb3bdb8a3d9ff28752c" id="r_a2cbcb6a5a375bdb3bdb8a3d9ff28752c"><td class="memItemLeft" align="right" valign="top"><a id="a2cbcb6a5a375bdb3bdb8a3d9ff28752c" name="a2cbcb6a5a375bdb3bdb8a3d9ff28752c"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SCI_SIMR1_IICM</b>&#160;&#160;&#160;(1U &lt;&lt; 0)</td></tr>
+<tr class="memitem:a2cbcb6a5a375bdb3bdb8a3d9ff28752c" id="r_a2cbcb6a5a375bdb3bdb8a3d9ff28752c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#a2cbcb6a5a375bdb3bdb8a3d9ff28752c">SCI_SIMR1_IICM</a>&#160;&#160;&#160;(1U &lt;&lt; 0)</td></tr>
 <tr class="separator:a2cbcb6a5a375bdb3bdb8a3d9ff28752c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5102abf7826247274a5c393596dd615e" id="r_a5102abf7826247274a5c393596dd615e"><td class="memItemLeft" align="right" valign="top"><a id="a5102abf7826247274a5c393596dd615e" name="a5102abf7826247274a5c393596dd615e"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SCI_SPMR_CKPOL</b>&#160;&#160;&#160;(1U &lt;&lt; 6)</td></tr>
+<tr class="memitem:a5102abf7826247274a5c393596dd615e" id="r_a5102abf7826247274a5c393596dd615e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#a5102abf7826247274a5c393596dd615e">SCI_SPMR_CKPOL</a>&#160;&#160;&#160;(1U &lt;&lt; 6)</td></tr>
 <tr class="separator:a5102abf7826247274a5c393596dd615e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e3a0b5f8922962b487daa7a6b23617a" id="r_a7e3a0b5f8922962b487daa7a6b23617a"><td class="memItemLeft" align="right" valign="top"><a id="a7e3a0b5f8922962b487daa7a6b23617a" name="a7e3a0b5f8922962b487daa7a6b23617a"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SCI_SPMR_CKPH</b>&#160;&#160;&#160;(1U &lt;&lt; 7)</td></tr>
+<tr class="memitem:a7e3a0b5f8922962b487daa7a6b23617a" id="r_a7e3a0b5f8922962b487daa7a6b23617a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#a7e3a0b5f8922962b487daa7a6b23617a">SCI_SPMR_CKPH</a>&#160;&#160;&#160;(1U &lt;&lt; 7)</td></tr>
 <tr class="separator:a7e3a0b5f8922962b487daa7a6b23617a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a926c61b7e452c6bba4f016e66a6d5c56" id="r_a926c61b7e452c6bba4f016e66a6d5c56"><td class="memItemLeft" align="right" valign="top"><a id="a926c61b7e452c6bba4f016e66a6d5c56" name="a926c61b7e452c6bba4f016e66a6d5c56"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SCI_SMR_CKS_MASK</b>&#160;&#160;&#160;(0x03U)</td></tr>
+<tr class="memitem:a926c61b7e452c6bba4f016e66a6d5c56" id="r_a926c61b7e452c6bba4f016e66a6d5c56"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#a926c61b7e452c6bba4f016e66a6d5c56">SCI_SMR_CKS_MASK</a>&#160;&#160;&#160;(0x03U)</td></tr>
 <tr class="separator:a926c61b7e452c6bba4f016e66a6d5c56"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a7343d82f6ca7b6994a131c2d1b0336" id="r_a2a7343d82f6ca7b6994a131c2d1b0336"><td class="memItemLeft" align="right" valign="top"><a id="a2a7343d82f6ca7b6994a131c2d1b0336" name="a2a7343d82f6ca7b6994a131c2d1b0336"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SCI_SMR_STOP</b>&#160;&#160;&#160;(1U &lt;&lt; 3)</td></tr>
+<tr class="memitem:a2a7343d82f6ca7b6994a131c2d1b0336" id="r_a2a7343d82f6ca7b6994a131c2d1b0336"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#a2a7343d82f6ca7b6994a131c2d1b0336">SCI_SMR_STOP</a>&#160;&#160;&#160;(1U &lt;&lt; 3)</td></tr>
 <tr class="separator:a2a7343d82f6ca7b6994a131c2d1b0336"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1da32e6bc97c2cb6182fde65405d8b4e" id="r_a1da32e6bc97c2cb6182fde65405d8b4e"><td class="memItemLeft" align="right" valign="top"><a id="a1da32e6bc97c2cb6182fde65405d8b4e" name="a1da32e6bc97c2cb6182fde65405d8b4e"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SCI_SMR_PM</b>&#160;&#160;&#160;(1U &lt;&lt; 4)</td></tr>
+<tr class="memitem:a1da32e6bc97c2cb6182fde65405d8b4e" id="r_a1da32e6bc97c2cb6182fde65405d8b4e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#a1da32e6bc97c2cb6182fde65405d8b4e">SCI_SMR_PM</a>&#160;&#160;&#160;(1U &lt;&lt; 4)</td></tr>
 <tr class="separator:a1da32e6bc97c2cb6182fde65405d8b4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afa31db62c438d71e473da26b5390cf9a" id="r_afa31db62c438d71e473da26b5390cf9a"><td class="memItemLeft" align="right" valign="top"><a id="afa31db62c438d71e473da26b5390cf9a" name="afa31db62c438d71e473da26b5390cf9a"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SCI_SMR_PE</b>&#160;&#160;&#160;(1U &lt;&lt; 5)</td></tr>
+<tr class="memitem:afa31db62c438d71e473da26b5390cf9a" id="r_afa31db62c438d71e473da26b5390cf9a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#afa31db62c438d71e473da26b5390cf9a">SCI_SMR_PE</a>&#160;&#160;&#160;(1U &lt;&lt; 5)</td></tr>
 <tr class="separator:afa31db62c438d71e473da26b5390cf9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a87b2ee200869aff19718945c6d84a4ab" id="r_a87b2ee200869aff19718945c6d84a4ab"><td class="memItemLeft" align="right" valign="top"><a id="a87b2ee200869aff19718945c6d84a4ab" name="a87b2ee200869aff19718945c6d84a4ab"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SCI_SMR_CHR</b>&#160;&#160;&#160;(1U &lt;&lt; 6)</td></tr>
+<tr class="memitem:a87b2ee200869aff19718945c6d84a4ab" id="r_a87b2ee200869aff19718945c6d84a4ab"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#a87b2ee200869aff19718945c6d84a4ab">SCI_SMR_CHR</a>&#160;&#160;&#160;(1U &lt;&lt; 6)</td></tr>
 <tr class="separator:a87b2ee200869aff19718945c6d84a4ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a987995be3f1890ef95657c1357fde2b1" id="r_a987995be3f1890ef95657c1357fde2b1"><td class="memItemLeft" align="right" valign="top"><a id="a987995be3f1890ef95657c1357fde2b1" name="a987995be3f1890ef95657c1357fde2b1"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SCI_SMR_CM</b>&#160;&#160;&#160;(1U &lt;&lt; 7)</td></tr>
+<tr class="memitem:a987995be3f1890ef95657c1357fde2b1" id="r_a987995be3f1890ef95657c1357fde2b1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#a987995be3f1890ef95657c1357fde2b1">SCI_SMR_CM</a>&#160;&#160;&#160;(1U &lt;&lt; 7)</td></tr>
 <tr class="separator:a987995be3f1890ef95657c1357fde2b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad825fe681a3ced3f9a2a53238e70339e" id="r_ad825fe681a3ced3f9a2a53238e70339e"><td class="memItemLeft" align="right" valign="top"><a id="ad825fe681a3ced3f9a2a53238e70339e" name="ad825fe681a3ced3f9a2a53238e70339e"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SCI_SEMR_BRME</b>&#160;&#160;&#160;(1U &lt;&lt; 2)</td></tr>
+<tr class="memitem:ad825fe681a3ced3f9a2a53238e70339e" id="r_ad825fe681a3ced3f9a2a53238e70339e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#ad825fe681a3ced3f9a2a53238e70339e">SCI_SEMR_BRME</a>&#160;&#160;&#160;(1U &lt;&lt; 2)</td></tr>
 <tr class="separator:ad825fe681a3ced3f9a2a53238e70339e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a203a78580f2a625f1234e66db029bdd5" id="r_a203a78580f2a625f1234e66db029bdd5"><td class="memItemLeft" align="right" valign="top"><a id="a203a78580f2a625f1234e66db029bdd5" name="a203a78580f2a625f1234e66db029bdd5"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SCI_SEMR_ABCSE</b>&#160;&#160;&#160;(1U &lt;&lt; 3)</td></tr>
+<tr class="memitem:a203a78580f2a625f1234e66db029bdd5" id="r_a203a78580f2a625f1234e66db029bdd5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#a203a78580f2a625f1234e66db029bdd5">SCI_SEMR_ABCSE</a>&#160;&#160;&#160;(1U &lt;&lt; 3)</td></tr>
 <tr class="separator:a203a78580f2a625f1234e66db029bdd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa7c72d67c295128b11e5df9b6812ee7c" id="r_aa7c72d67c295128b11e5df9b6812ee7c"><td class="memItemLeft" align="right" valign="top"><a id="aa7c72d67c295128b11e5df9b6812ee7c" name="aa7c72d67c295128b11e5df9b6812ee7c"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SCI_SEMR_ABCS</b>&#160;&#160;&#160;(1U &lt;&lt; 4)</td></tr>
+<tr class="memitem:aa7c72d67c295128b11e5df9b6812ee7c" id="r_aa7c72d67c295128b11e5df9b6812ee7c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#aa7c72d67c295128b11e5df9b6812ee7c">SCI_SEMR_ABCS</a>&#160;&#160;&#160;(1U &lt;&lt; 4)</td></tr>
 <tr class="separator:aa7c72d67c295128b11e5df9b6812ee7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa760be9096b3df12b05ec5980776f497" id="r_aa760be9096b3df12b05ec5980776f497"><td class="memItemLeft" align="right" valign="top"><a id="aa760be9096b3df12b05ec5980776f497" name="aa760be9096b3df12b05ec5980776f497"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SCI_SEMR_BGDM</b>&#160;&#160;&#160;(1U &lt;&lt; 6)</td></tr>
+<tr class="memitem:aa760be9096b3df12b05ec5980776f497" id="r_aa760be9096b3df12b05ec5980776f497"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#aa760be9096b3df12b05ec5980776f497">SCI_SEMR_BGDM</a>&#160;&#160;&#160;(1U &lt;&lt; 6)</td></tr>
 <tr class="separator:aa760be9096b3df12b05ec5980776f497"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae1814b398d51bedd9385a13383aa2e11" id="r_ae1814b398d51bedd9385a13383aa2e11"><td class="memItemLeft" align="right" valign="top"><a id="ae1814b398d51bedd9385a13383aa2e11" name="ae1814b398d51bedd9385a13383aa2e11"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>SCI_FCR_FM</b>&#160;&#160;&#160;(1U &lt;&lt; 0)</td></tr>
+<tr class="memitem:ae1814b398d51bedd9385a13383aa2e11" id="r_ae1814b398d51bedd9385a13383aa2e11"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="ra4m2__baremetal_8h.html#ae1814b398d51bedd9385a13383aa2e11">SCI_FCR_FM</a>&#160;&#160;&#160;(1U &lt;&lt; 0)</td></tr>
 <tr class="separator:ae1814b398d51bedd9385a13383aa2e11"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Shared RA4M2 register definitions used by the local bare-metal drivers. </p>
-</div></div><!-- contents -->
+
+<p class="definition">Definition in file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="aa6e4668ee67ce604627c78de059c8b09" name="aa6e4668ee67ce604627c78de059c8b09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6e4668ee67ce604627c78de059c8b09">&#9670;&#160;</a></span>AGT0_MSTPCRD_BIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AGT0_MSTPCRD_BIT&#160;&#160;&#160;(3U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00050">50</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="a26aba5b6cb76ee05adaa9408668919ed" name="a26aba5b6cb76ee05adaa9408668919ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26aba5b6cb76ee05adaa9408668919ed">&#9670;&#160;</a></span>AGT_AGTCR_START_TIMER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AGT_AGTCR_START_TIMER&#160;&#160;&#160;(0xF1U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00044">44</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="a7e801f962a1ee05531a65763936c0d46" name="a7e801f962a1ee05531a65763936c0d46"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e801f962a1ee05531a65763936c0d46">&#9670;&#160;</a></span>AGT_AGTCR_STATUS_FLAGS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AGT_AGTCR_STATUS_FLAGS&#160;&#160;&#160;(0xF0U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00043">43</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="a503122c44d439ab53312b6edd01a63ea" name="a503122c44d439ab53312b6edd01a63ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a503122c44d439ab53312b6edd01a63ea">&#9670;&#160;</a></span>AGT_AGTCR_TCSTF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AGT_AGTCR_TCSTF&#160;&#160;&#160;(1U &lt;&lt; 1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00042">42</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="a518a846a374d7fc34b823139d157d7c7" name="a518a846a374d7fc34b823139d157d7c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a518a846a374d7fc34b823139d157d7c7">&#9670;&#160;</a></span>AGT_AGTMR1_TCK_PCLKB_DIV_1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AGT_AGTMR1_TCK_PCLKB_DIV_1&#160;&#160;&#160;(0x00U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00045">45</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="a4575f49fc9a5c24ca918b353ab121af0" name="a4575f49fc9a5c24ca918b353ab121af0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4575f49fc9a5c24ca918b353ab121af0">&#9670;&#160;</a></span>AGT_AGTMR1_TCK_PCLKB_DIV_2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AGT_AGTMR1_TCK_PCLKB_DIV_2&#160;&#160;&#160;(0x03U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00047">47</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="ab9d33013afb3782187ecf41a54c53b3b" name="ab9d33013afb3782187ecf41a54c53b3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9d33013afb3782187ecf41a54c53b3b">&#9670;&#160;</a></span>AGT_AGTMR1_TCK_PCLKB_DIV_8</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define AGT_AGTMR1_TCK_PCLKB_DIV_8&#160;&#160;&#160;(0x01U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00046">46</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="a3eb90812b11152bef143bee75a8f3cee" name="a3eb90812b11152bef143bee75a8f3cee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3eb90812b11152bef143bee75a8f3cee">&#9670;&#160;</a></span>ICU_IELSR_IR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ICU_IELSR_IR&#160;&#160;&#160;(1UL &lt;&lt; 16)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00048">48</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="a41c353053390dc288a0d45598b81ef95" name="a41c353053390dc288a0d45598b81ef95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41c353053390dc288a0d45598b81ef95">&#9670;&#160;</a></span>ICU_IRQCR_FALLING_EDGE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ICU_IRQCR_FALLING_EDGE&#160;&#160;&#160;(0x00U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00049">49</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="aa19d62afee41cf70fb8467c8bb1fe263" name="aa19d62afee41cf70fb8467c8bb1fe263"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa19d62afee41cf70fb8467c8bb1fe263">&#9670;&#160;</a></span>IIC_ICCR1_ICE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IIC_ICCR1_ICE&#160;&#160;&#160;(1U &lt;&lt; 7)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00022">22</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="a31f3521634193608956e493f87b7a880" name="a31f3521634193608956e493f87b7a880"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31f3521634193608956e493f87b7a880">&#9670;&#160;</a></span>IIC_ICCR1_IICRST</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IIC_ICCR1_IICRST&#160;&#160;&#160;(1U &lt;&lt; 6)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00021">21</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="a4247be5761bfd6871223077c896f58fd" name="a4247be5761bfd6871223077c896f58fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4247be5761bfd6871223077c896f58fd">&#9670;&#160;</a></span>IIC_ICCR2_BBSY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IIC_ICCR2_BBSY&#160;&#160;&#160;(1U &lt;&lt; 7)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00027">27</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="a74e822c1c5d0b634b5c814c0a4276a5f" name="a74e822c1c5d0b634b5c814c0a4276a5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74e822c1c5d0b634b5c814c0a4276a5f">&#9670;&#160;</a></span>IIC_ICCR2_RS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IIC_ICCR2_RS&#160;&#160;&#160;(1U &lt;&lt; 2)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00024">24</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="afdf03d678fd6731abbb8dab6d958070e" name="afdf03d678fd6731abbb8dab6d958070e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdf03d678fd6731abbb8dab6d958070e">&#9670;&#160;</a></span>IIC_ICCR2_SP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IIC_ICCR2_SP&#160;&#160;&#160;(1U &lt;&lt; 3)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00025">25</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="a9b62c759f55c4da8e9149fe6777280aa" name="a9b62c759f55c4da8e9149fe6777280aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b62c759f55c4da8e9149fe6777280aa">&#9670;&#160;</a></span>IIC_ICCR2_ST</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IIC_ICCR2_ST&#160;&#160;&#160;(1U &lt;&lt; 1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00023">23</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="a3ed02e1fb94d71987821b37fec4a7dc6" name="a3ed02e1fb94d71987821b37fec4a7dc6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ed02e1fb94d71987821b37fec4a7dc6">&#9670;&#160;</a></span>IIC_ICCR2_TRS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IIC_ICCR2_TRS&#160;&#160;&#160;(1U &lt;&lt; 5)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00026">26</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="afd7a32ac5486352c7c8e498de1b3dfd3" name="afd7a32ac5486352c7c8e498de1b3dfd3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd7a32ac5486352c7c8e498de1b3dfd3">&#9670;&#160;</a></span>IIC_ICFER_NFE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IIC_ICFER_NFE&#160;&#160;&#160;(1U &lt;&lt; 5)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00037">37</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="a34b4e0b2cf90ea1897c3d7308aeaf4eb" name="a34b4e0b2cf90ea1897c3d7308aeaf4eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34b4e0b2cf90ea1897c3d7308aeaf4eb">&#9670;&#160;</a></span>IIC_ICFER_SCLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IIC_ICFER_SCLE&#160;&#160;&#160;(1U &lt;&lt; 6)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00038">38</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="ac8ca742a5676f3a97511b3c88c45a89c" name="ac8ca742a5676f3a97511b3c88c45a89c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8ca742a5676f3a97511b3c88c45a89c">&#9670;&#160;</a></span>IIC_ICMR1_CKS_SHIFT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IIC_ICMR1_CKS_SHIFT&#160;&#160;&#160;(4U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00039">39</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="a55308723fde3a68ddca2ad1b4aae2c85" name="a55308723fde3a68ddca2ad1b4aae2c85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55308723fde3a68ddca2ad1b4aae2c85">&#9670;&#160;</a></span>IIC_ICMR3_ACKBT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IIC_ICMR3_ACKBT&#160;&#160;&#160;(1U &lt;&lt; 3)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00034">34</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="aab734b617385eb12f3b5ee7dc551fcc2" name="aab734b617385eb12f3b5ee7dc551fcc2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab734b617385eb12f3b5ee7dc551fcc2">&#9670;&#160;</a></span>IIC_ICMR3_ACKWP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IIC_ICMR3_ACKWP&#160;&#160;&#160;(1U &lt;&lt; 4)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00035">35</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="a982aa65e25ef70a34f11ff168c232e94" name="a982aa65e25ef70a34f11ff168c232e94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a982aa65e25ef70a34f11ff168c232e94">&#9670;&#160;</a></span>IIC_ICMR3_NF_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IIC_ICMR3_NF_MASK&#160;&#160;&#160;(0x03U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00033">33</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="a407083b3dcd0723b593364117d974eb4" name="a407083b3dcd0723b593364117d974eb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a407083b3dcd0723b593364117d974eb4">&#9670;&#160;</a></span>IIC_ICMR3_WAIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IIC_ICMR3_WAIT&#160;&#160;&#160;(1U &lt;&lt; 6)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00036">36</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="a58cea206cf2f3624e57ccc5a2c69e273" name="a58cea206cf2f3624e57ccc5a2c69e273"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a58cea206cf2f3624e57ccc5a2c69e273">&#9670;&#160;</a></span>IIC_ICSR2_NACKF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IIC_ICSR2_NACKF&#160;&#160;&#160;(1U &lt;&lt; 4)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00029">29</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="ac2fdb8920c3f960b5269b70fbed22fcd" name="ac2fdb8920c3f960b5269b70fbed22fcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2fdb8920c3f960b5269b70fbed22fcd">&#9670;&#160;</a></span>IIC_ICSR2_RDRF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IIC_ICSR2_RDRF&#160;&#160;&#160;(1U &lt;&lt; 5)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00030">30</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="a9ca47bbd4e7cb0a982645a0a870399dd" name="a9ca47bbd4e7cb0a982645a0a870399dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9ca47bbd4e7cb0a982645a0a870399dd">&#9670;&#160;</a></span>IIC_ICSR2_STOP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IIC_ICSR2_STOP&#160;&#160;&#160;(1U &lt;&lt; 3)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00028">28</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="a5448b0b02409d0a153ca407ddd7f5445" name="a5448b0b02409d0a153ca407ddd7f5445"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5448b0b02409d0a153ca407ddd7f5445">&#9670;&#160;</a></span>IIC_ICSR2_TDRE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IIC_ICSR2_TDRE&#160;&#160;&#160;(1U &lt;&lt; 7)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00032">32</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="a01d9af44593b624a189c4fd4fc634e48" name="a01d9af44593b624a189c4fd4fc634e48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01d9af44593b624a189c4fd4fc634e48">&#9670;&#160;</a></span>IIC_ICSR2_TEND</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IIC_ICSR2_TEND&#160;&#160;&#160;(1U &lt;&lt; 6)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00031">31</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="ac9c6dbbf9ab51cb9ee8a5e908b55072b" name="ac9c6dbbf9ab51cb9ee8a5e908b55072b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9c6dbbf9ab51cb9ee8a5e908b55072b">&#9670;&#160;</a></span>PFS_ISEL_IRQ</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PFS_ISEL_IRQ&#160;&#160;&#160;(1UL &lt;&lt; 14)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00016">16</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="ae4067e93d041d31d8802c794844fcc8d" name="ae4067e93d041d31d8802c794844fcc8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae4067e93d041d31d8802c794844fcc8d">&#9670;&#160;</a></span>PFS_NCODR_OPEN_DRAIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PFS_NCODR_OPEN_DRAIN&#160;&#160;&#160;(1UL &lt;&lt; 6)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00015">15</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="a60183e4fab155d21d4350f40a418aa13" name="a60183e4fab155d21d4350f40a418aa13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60183e4fab155d21d4350f40a418aa13">&#9670;&#160;</a></span>PFS_PCR_PULLUP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PFS_PCR_PULLUP&#160;&#160;&#160;(1UL &lt;&lt; 4)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00014">14</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="a9b0d5c16c441472c15a996196be75be6" name="a9b0d5c16c441472c15a996196be75be6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b0d5c16c441472c15a996196be75be6">&#9670;&#160;</a></span>PFS_PDR_OUTPUT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PFS_PDR_OUTPUT&#160;&#160;&#160;(1UL &lt;&lt; 2)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00013">13</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="a95c7675a51856c05a894b30025ee80ee" name="a95c7675a51856c05a894b30025ee80ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95c7675a51856c05a894b30025ee80ee">&#9670;&#160;</a></span>PFS_PMR_PERIPHERAL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PFS_PMR_PERIPHERAL&#160;&#160;&#160;(1UL &lt;&lt; 16)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00017">17</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="ad6290dff3ff3362e69d64e20ea3f0570" name="ad6290dff3ff3362e69d64e20ea3f0570"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6290dff3ff3362e69d64e20ea3f0570">&#9670;&#160;</a></span>PFS_PODR_HIGH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PFS_PODR_HIGH&#160;&#160;&#160;(1UL &lt;&lt; 0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00012">12</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="ac9b4b7537f1470998eb9733f2b1a56c0" name="ac9b4b7537f1470998eb9733f2b1a56c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9b4b7537f1470998eb9733f2b1a56c0">&#9670;&#160;</a></span>PFS_PSEL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PFS_PSEL</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">value</td><td>)</td>
+          <td>&#160;&#160;&#160;((uint32_t)(value) &lt;&lt; 24)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00018">18</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="ae1814b398d51bedd9385a13383aa2e11" name="ae1814b398d51bedd9385a13383aa2e11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae1814b398d51bedd9385a13383aa2e11">&#9670;&#160;</a></span>SCI_FCR_FM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SCI_FCR_FM&#160;&#160;&#160;(1U &lt;&lt; 0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00079">79</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="a16ddcfa5d1bac1e5f56cbb3f6a6261fc" name="a16ddcfa5d1bac1e5f56cbb3f6a6261fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16ddcfa5d1bac1e5f56cbb3f6a6261fc">&#9670;&#160;</a></span>SCI_SCMR_CHR1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SCI_SCMR_CHR1&#160;&#160;&#160;(1U &lt;&lt; 4)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00065">65</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="a15c6aede46f563ac65ca9d382228e8a8" name="a15c6aede46f563ac65ca9d382228e8a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15c6aede46f563ac65ca9d382228e8a8">&#9670;&#160;</a></span>SCI_SCMR_SDIR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SCI_SCMR_SDIR&#160;&#160;&#160;(1U &lt;&lt; 3)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00064">64</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="ac5c7231b7fa09fc46170015ab1cb8e7b" name="ac5c7231b7fa09fc46170015ab1cb8e7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac5c7231b7fa09fc46170015ab1cb8e7b">&#9670;&#160;</a></span>SCI_SCMR_SINV</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SCI_SCMR_SINV&#160;&#160;&#160;(1U &lt;&lt; 2)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00063">63</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="a0eab68ef49c64dbc3fda8b2efb4fe5aa" name="a0eab68ef49c64dbc3fda8b2efb4fe5aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0eab68ef49c64dbc3fda8b2efb4fe5aa">&#9670;&#160;</a></span>SCI_SCMR_SMIF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SCI_SCMR_SMIF&#160;&#160;&#160;(1U &lt;&lt; 0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00062">62</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="a46e4b25f1013c75273d212db79659e01" name="a46e4b25f1013c75273d212db79659e01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46e4b25f1013c75273d212db79659e01">&#9670;&#160;</a></span>SCI_SCR_RE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SCI_SCR_RE&#160;&#160;&#160;(1U &lt;&lt; 4)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00053">53</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="a44c76995df93adaef922a660610b2a8b" name="a44c76995df93adaef922a660610b2a8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44c76995df93adaef922a660610b2a8b">&#9670;&#160;</a></span>SCI_SCR_RIE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SCI_SCR_RIE&#160;&#160;&#160;(1U &lt;&lt; 6)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00055">55</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="af73dfbf02ec676cc3440be22a2c37286" name="af73dfbf02ec676cc3440be22a2c37286"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af73dfbf02ec676cc3440be22a2c37286">&#9670;&#160;</a></span>SCI_SCR_TE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SCI_SCR_TE&#160;&#160;&#160;(1U &lt;&lt; 5)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00054">54</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="aa7c72d67c295128b11e5df9b6812ee7c" name="aa7c72d67c295128b11e5df9b6812ee7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7c72d67c295128b11e5df9b6812ee7c">&#9670;&#160;</a></span>SCI_SEMR_ABCS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SCI_SEMR_ABCS&#160;&#160;&#160;(1U &lt;&lt; 4)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00077">77</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="a203a78580f2a625f1234e66db029bdd5" name="a203a78580f2a625f1234e66db029bdd5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a203a78580f2a625f1234e66db029bdd5">&#9670;&#160;</a></span>SCI_SEMR_ABCSE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SCI_SEMR_ABCSE&#160;&#160;&#160;(1U &lt;&lt; 3)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00076">76</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="aa760be9096b3df12b05ec5980776f497" name="aa760be9096b3df12b05ec5980776f497"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa760be9096b3df12b05ec5980776f497">&#9670;&#160;</a></span>SCI_SEMR_BGDM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SCI_SEMR_BGDM&#160;&#160;&#160;(1U &lt;&lt; 6)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00078">78</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="ad825fe681a3ced3f9a2a53238e70339e" name="ad825fe681a3ced3f9a2a53238e70339e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad825fe681a3ced3f9a2a53238e70339e">&#9670;&#160;</a></span>SCI_SEMR_BRME</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SCI_SEMR_BRME&#160;&#160;&#160;(1U &lt;&lt; 2)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00075">75</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="a2cbcb6a5a375bdb3bdb8a3d9ff28752c" name="a2cbcb6a5a375bdb3bdb8a3d9ff28752c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2cbcb6a5a375bdb3bdb8a3d9ff28752c">&#9670;&#160;</a></span>SCI_SIMR1_IICM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SCI_SIMR1_IICM&#160;&#160;&#160;(1U &lt;&lt; 0)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00066">66</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="a87b2ee200869aff19718945c6d84a4ab" name="a87b2ee200869aff19718945c6d84a4ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87b2ee200869aff19718945c6d84a4ab">&#9670;&#160;</a></span>SCI_SMR_CHR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SCI_SMR_CHR&#160;&#160;&#160;(1U &lt;&lt; 6)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00073">73</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="a926c61b7e452c6bba4f016e66a6d5c56" name="a926c61b7e452c6bba4f016e66a6d5c56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a926c61b7e452c6bba4f016e66a6d5c56">&#9670;&#160;</a></span>SCI_SMR_CKS_MASK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SCI_SMR_CKS_MASK&#160;&#160;&#160;(0x03U)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00069">69</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="a987995be3f1890ef95657c1357fde2b1" name="a987995be3f1890ef95657c1357fde2b1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a987995be3f1890ef95657c1357fde2b1">&#9670;&#160;</a></span>SCI_SMR_CM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SCI_SMR_CM&#160;&#160;&#160;(1U &lt;&lt; 7)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00074">74</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="afa31db62c438d71e473da26b5390cf9a" name="afa31db62c438d71e473da26b5390cf9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afa31db62c438d71e473da26b5390cf9a">&#9670;&#160;</a></span>SCI_SMR_PE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SCI_SMR_PE&#160;&#160;&#160;(1U &lt;&lt; 5)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00072">72</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="a1da32e6bc97c2cb6182fde65405d8b4e" name="a1da32e6bc97c2cb6182fde65405d8b4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1da32e6bc97c2cb6182fde65405d8b4e">&#9670;&#160;</a></span>SCI_SMR_PM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SCI_SMR_PM&#160;&#160;&#160;(1U &lt;&lt; 4)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00071">71</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="a2a7343d82f6ca7b6994a131c2d1b0336" name="a2a7343d82f6ca7b6994a131c2d1b0336"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a7343d82f6ca7b6994a131c2d1b0336">&#9670;&#160;</a></span>SCI_SMR_STOP</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SCI_SMR_STOP&#160;&#160;&#160;(1U &lt;&lt; 3)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00070">70</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="a7e3a0b5f8922962b487daa7a6b23617a" name="a7e3a0b5f8922962b487daa7a6b23617a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e3a0b5f8922962b487daa7a6b23617a">&#9670;&#160;</a></span>SCI_SPMR_CKPH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SCI_SPMR_CKPH&#160;&#160;&#160;(1U &lt;&lt; 7)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00068">68</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="a5102abf7826247274a5c393596dd615e" name="a5102abf7826247274a5c393596dd615e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5102abf7826247274a5c393596dd615e">&#9670;&#160;</a></span>SCI_SPMR_CKPOL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SCI_SPMR_CKPOL&#160;&#160;&#160;(1U &lt;&lt; 6)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00067">67</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="a908eb39d647afb96c3bbade87dfab52e" name="a908eb39d647afb96c3bbade87dfab52e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a908eb39d647afb96c3bbade87dfab52e">&#9670;&#160;</a></span>SCI_SSR_FER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SCI_SSR_FER&#160;&#160;&#160;(1U &lt;&lt; 4)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00058">58</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="af1e2c689541f36a98779a9bb23097ca7" name="af1e2c689541f36a98779a9bb23097ca7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1e2c689541f36a98779a9bb23097ca7">&#9670;&#160;</a></span>SCI_SSR_ORER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SCI_SSR_ORER&#160;&#160;&#160;(1U &lt;&lt; 5)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00059">59</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="aa2c9011511a64bc24c8ab08b04502992" name="aa2c9011511a64bc24c8ab08b04502992"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2c9011511a64bc24c8ab08b04502992">&#9670;&#160;</a></span>SCI_SSR_PER</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SCI_SSR_PER&#160;&#160;&#160;(1U &lt;&lt; 3)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00057">57</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="a42f779dc07a83d4c4c51baebbd377088" name="a42f779dc07a83d4c4c51baebbd377088"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42f779dc07a83d4c4c51baebbd377088">&#9670;&#160;</a></span>SCI_SSR_RDRF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SCI_SSR_RDRF&#160;&#160;&#160;(1U &lt;&lt; 6)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00060">60</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="a89938f6f4a75b26146cd3eeaa2989763" name="a89938f6f4a75b26146cd3eeaa2989763"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89938f6f4a75b26146cd3eeaa2989763">&#9670;&#160;</a></span>SCI_SSR_TDRE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SCI_SSR_TDRE&#160;&#160;&#160;(1U &lt;&lt; 7)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00061">61</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+<a id="a221eb64d61883fdd7eb19480359241e9" name="a221eb64d61883fdd7eb19480359241e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a221eb64d61883fdd7eb19480359241e9">&#9670;&#160;</a></span>SCI_SSR_TEND</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SCI_SSR_TEND&#160;&#160;&#160;(1U &lt;&lt; 2)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="ra4m2__baremetal_8h_source.html#l00056">56</a> of file <a class="el" href="ra4m2__baremetal_8h_source.html">ra4m2_baremetal.h</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="ra4m2__baremetal_8h.html">ra4m2_baremetal.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
 </body>
 </html>

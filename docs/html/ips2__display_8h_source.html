@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,6 +27,7 @@
   <td id="projectalign">
    <div id="projectname">R7FA4M2 Multi-Click Smartwatch
    </div>
+   <div id="projectbrief">Bare-metal multi-screen smartwatch demo for Clicker 4 for R7FA4M2A</div>
   </td>
  </tr>
  </tbody>
@@ -51,6 +56,23 @@ $(function() {
 $(document).ready(function() { init_codefold(0); });
 /* @license-end */
 </script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('ips2__display_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -72,11 +94,6 @@ $(document).ready(function() { init_codefold(0); });
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">ips2_display.h</div></div>
 </div><!--header-->
@@ -84,29 +101,54 @@ $(document).ready(function() { init_codefold(0); });
 <a href="ips2__display_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#ifndef IPS2_DISPLAY_H</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#define IPS2_DISPLAY_H</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="app__types_8h.html">app_types.h</a>&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keywordtype">int</span> <a class="code hl_function" href="ips2__display_8h.html#a1ecb84c31dbaab6d140ac26ee0e6d0bd">ips2_init</a>(uint32_t pclka_hz);</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keywordtype">void</span> <a class="code hl_function" href="ips2__display_8h.html#a9b9a9d6daa0c5d880e8cc44c3a9cfcbd">ips2_invalidate_screen</a>(<span class="keywordtype">void</span>);</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keywordtype">void</span> <a class="code hl_function" href="ips2__display_8h.html#a1fae05305e88c85b413997950d075bfd">ips2_render_dashboard</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structrtc14__datetime__t.html">rtc14_datetime_t</a> *datetime, <span class="keyword">const</span> <a class="code hl_struct" href="structtemphum27__data__t.html">temphum27_data_t</a> *environment, uint8_t ble_connected);</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keywordtype">void</span> <a class="code hl_function" href="ips2__display_8h.html#a0e1cf0f404be0c578074841bf0c710f1">ips2_render_timer</a>(uint32_t elapsed_ms, uint8_t running, uint8_t ble_connected);</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keywordtype">void</span> <a class="code hl_function" href="ips2__display_8h.html#a4724f17d9e00ae79731dabdb93855900">ips2_render_error</a>(uint8_t ble_connected);</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keywordtype">void</span> <a class="code hl_function" href="ips2__display_8h.html#a311b4228874c0412df304a851662f727">ips2_render_ble_status</a>(uint8_t connected, <a class="code hl_enumeration" href="app__types_8h.html#ac70ecff5013af5a2a6b9a3640c180bbd">app_screen_t</a> screen);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#endif </span><span class="comment">/* IPS2_DISPLAY_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="app__types_8h.html">app_types.h</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keywordtype">int</span> <a class="code hl_function" href="ips2__display_8h.html#a1ecb84c31dbaab6d140ac26ee0e6d0bd">ips2_init</a>(uint32_t pclka_hz);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keywordtype">void</span> <a class="code hl_function" href="ips2__display_8h.html#a9b9a9d6daa0c5d880e8cc44c3a9cfcbd">ips2_invalidate_screen</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keywordtype">void</span> <a class="code hl_function" href="ips2__display_8h.html#a1fae05305e88c85b413997950d075bfd">ips2_render_dashboard</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structrtc14__datetime__t.html">rtc14_datetime_t</a> *datetime,</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>                           <span class="keyword">const</span> <a class="code hl_struct" href="structtemphum27__data__t.html">temphum27_data_t</a> *environment,</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>                           uint8_t ble_connected);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keywordtype">void</span> <a class="code hl_function" href="ips2__display_8h.html#a7959a0493205895960c2514353c54c2b">ips2_render_environment</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structtemphum27__data__t.html">temphum27_data_t</a> *environment,</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                             uint8_t ble_connected,</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                             uint32_t animation_ms);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="keywordtype">void</span> <a class="code hl_function" href="ips2__display_8h.html#aee3bebd915f0ec7e0f0e7a7c87b8e2f1">ips2_render_astronomy</a>(<span class="keyword">const</span> <a class="code hl_struct" href="structrtc14__datetime__t.html">rtc14_datetime_t</a> *datetime,</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                           uint8_t ble_connected,</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>                           uint32_t animation_ms);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keywordtype">void</span> <a class="code hl_function" href="ips2__display_8h.html#a0e1cf0f404be0c578074841bf0c710f1">ips2_render_timer</a>(uint32_t elapsed_ms, uint8_t running,</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>                       uint8_t ble_connected);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="keywordtype">void</span> <a class="code hl_function" href="ips2__display_8h.html#a4724f17d9e00ae79731dabdb93855900">ips2_render_error</a>(uint8_t ble_connected);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="keywordtype">void</span> <a class="code hl_function" href="ips2__display_8h.html#a311b4228874c0412df304a851662f727">ips2_render_ble_status</a>(uint8_t connected, <a class="code hl_enumeration" href="app__types_8h.html#ac70ecff5013af5a2a6b9a3640c180bbd">app_screen_t</a> screen);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="preprocessor">#endif </span><span class="comment">/* IPS2_DISPLAY_H */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="aapp__types_8h_html"><div class="ttname"><a href="app__types_8h.html">app_types.h</a></div><div class="ttdoc">Shared data types and result codes.</div></div>
-<div class="ttc" id="aapp__types_8h_html_ac70ecff5013af5a2a6b9a3640c180bbd"><div class="ttname"><a href="app__types_8h.html#ac70ecff5013af5a2a6b9a3640c180bbd">app_screen_t</a></div><div class="ttdeci">app_screen_t</div><div class="ttdoc">Visible application screen.</div><div class="ttdef"><b>Definition</b> app_types.h:45</div></div>
-<div class="ttc" id="aips2__display_8h_html_a0e1cf0f404be0c578074841bf0c710f1"><div class="ttname"><a href="ips2__display_8h.html#a0e1cf0f404be0c578074841bf0c710f1">ips2_render_timer</a></div><div class="ttdeci">void ips2_render_timer(uint32_t elapsed_ms, uint8_t running, uint8_t ble_connected)</div><div class="ttdoc">Draw the stopwatch and its current button actions.</div><div class="ttdef"><b>Definition</b> ips2_display.c:1074</div></div>
-<div class="ttc" id="aips2__display_8h_html_a1ecb84c31dbaab6d140ac26ee0e6d0bd"><div class="ttname"><a href="ips2__display_8h.html#a1ecb84c31dbaab6d140ac26ee0e6d0bd">ips2_init</a></div><div class="ttdeci">int ips2_init(uint32_t pclka_hz)</div><div class="ttdoc">Initialize IPS Display 2 Click over SCI0 SPI.</div><div class="ttdef"><b>Definition</b> ips2_display.c:1144</div></div>
-<div class="ttc" id="aips2__display_8h_html_a1fae05305e88c85b413997950d075bfd"><div class="ttname"><a href="ips2__display_8h.html#a1fae05305e88c85b413997950d075bfd">ips2_render_dashboard</a></div><div class="ttdeci">void ips2_render_dashboard(const rtc14_datetime_t *datetime, const temphum27_data_t *environment, uint8_t ble_connected)</div><div class="ttdoc">Draw the clock, environment, date and BLE status dashboard.</div><div class="ttdef"><b>Definition</b> ips2_display.c:916</div></div>
-<div class="ttc" id="aips2__display_8h_html_a311b4228874c0412df304a851662f727"><div class="ttname"><a href="ips2__display_8h.html#a311b4228874c0412df304a851662f727">ips2_render_ble_status</a></div><div class="ttdeci">void ips2_render_ble_status(uint8_t connected, app_screen_t screen)</div><div class="ttdoc">Refresh only the BLE icon on the selected screen.</div><div class="ttdef"><b>Definition</b> ips2_display.c:657</div></div>
-<div class="ttc" id="aips2__display_8h_html_a4724f17d9e00ae79731dabdb93855900"><div class="ttname"><a href="ips2__display_8h.html#a4724f17d9e00ae79731dabdb93855900">ips2_render_error</a></div><div class="ttdeci">void ips2_render_error(uint8_t ble_connected)</div><div class="ttdoc">Draw the RTC error screen while retaining BLE status.</div><div class="ttdef"><b>Definition</b> ips2_display.c:1126</div></div>
-<div class="ttc" id="aips2__display_8h_html_a9b9a9d6daa0c5d880e8cc44c3a9cfcbd"><div class="ttname"><a href="ips2__display_8h.html#a9b9a9d6daa0c5d880e8cc44c3a9cfcbd">ips2_invalidate_screen</a></div><div class="ttdeci">void ips2_invalidate_screen(void)</div><div class="ttdoc">Invalidate all UI caches so the next render redraws the screen.</div><div class="ttdef"><b>Definition</b> ips2_display.c:549</div></div>
-<div class="ttc" id="astructrtc14__datetime__t_html"><div class="ttname"><a href="structrtc14__datetime__t.html">rtc14_datetime_t</a></div><div class="ttdoc">Decoded RTC 14 date and time.</div><div class="ttdef"><b>Definition</b> app_types.h:23</div></div>
-<div class="ttc" id="astructtemphum27__data__t_html"><div class="ttname"><a href="structtemphum27__data__t.html">temphum27_data_t</a></div><div class="ttdoc">Fixed-point Temp&amp;Hum 27 measurement.</div><div class="ttdef"><b>Definition</b> app_types.h:37</div></div>
+<div class="ttc" id="aapp__types_8h_html_ac70ecff5013af5a2a6b9a3640c180bbd"><div class="ttname"><a href="app__types_8h.html#ac70ecff5013af5a2a6b9a3640c180bbd">app_screen_t</a></div><div class="ttdeci">app_screen_t</div><div class="ttdoc">Visible application screen.</div><div class="ttdef"><b>Definition</b> <a href="app__types_8h_source.html#l00044">app_types.h:45</a></div></div>
+<div class="ttc" id="aips2__display_8h_html_a0e1cf0f404be0c578074841bf0c710f1"><div class="ttname"><a href="ips2__display_8h.html#a0e1cf0f404be0c578074841bf0c710f1">ips2_render_timer</a></div><div class="ttdeci">void ips2_render_timer(uint32_t elapsed_ms, uint8_t running, uint8_t ble_connected)</div><div class="ttdoc">Draw the stopwatch and its context-sensitive button actions.</div><div class="ttdef"><b>Definition</b> <a href="ips2__display_8c_source.html#l02194">ips2_display.c:2194</a></div></div>
+<div class="ttc" id="aips2__display_8h_html_a1ecb84c31dbaab6d140ac26ee0e6d0bd"><div class="ttname"><a href="ips2__display_8h.html#a1ecb84c31dbaab6d140ac26ee0e6d0bd">ips2_init</a></div><div class="ttdeci">int ips2_init(uint32_t pclka_hz)</div><div class="ttdoc">Initialize IPS Display 2 Click over SCI0 simple SPI.</div><div class="ttdef"><b>Definition</b> <a href="ips2__display_8c_source.html#l02274">ips2_display.c:2274</a></div></div>
+<div class="ttc" id="aips2__display_8h_html_a1fae05305e88c85b413997950d075bfd"><div class="ttname"><a href="ips2__display_8h.html#a1fae05305e88c85b413997950d075bfd">ips2_render_dashboard</a></div><div class="ttdeci">void ips2_render_dashboard(const rtc14_datetime_t *datetime, const temphum27_data_t *environment, uint8_t ble_connected)</div><div class="ttdoc">Draw the smartwatch dashboard with time, weekday, date and summaries.</div><div class="ttdef"><b>Definition</b> <a href="ips2__display_8c_source.html#l01279">ips2_display.c:1279</a></div></div>
+<div class="ttc" id="aips2__display_8h_html_a311b4228874c0412df304a851662f727"><div class="ttname"><a href="ips2__display_8h.html#a311b4228874c0412df304a851662f727">ips2_render_ble_status</a></div><div class="ttdeci">void ips2_render_ble_status(uint8_t connected, app_screen_t screen)</div><div class="ttdoc">Refresh only the BLE icon on the selected screen.</div><div class="ttdef"><b>Definition</b> <a href="ips2__display_8c_source.html#l00986">ips2_display.c:986</a></div></div>
+<div class="ttc" id="aips2__display_8h_html_a4724f17d9e00ae79731dabdb93855900"><div class="ttname"><a href="ips2__display_8h.html#a4724f17d9e00ae79731dabdb93855900">ips2_render_error</a></div><div class="ttdeci">void ips2_render_error(uint8_t ble_connected)</div><div class="ttdoc">Draw the RTC error screen while retaining BLE status.</div><div class="ttdef"><b>Definition</b> <a href="ips2__display_8c_source.html#l02250">ips2_display.c:2250</a></div></div>
+<div class="ttc" id="aips2__display_8h_html_a7959a0493205895960c2514353c54c2b"><div class="ttname"><a href="ips2__display_8h.html#a7959a0493205895960c2514353c54c2b">ips2_render_environment</a></div><div class="ttdeci">void ips2_render_environment(const temphum27_data_t *environment, uint8_t ble_connected, uint32_t animation_ms)</div><div class="ttdoc">Draw the animated temperature and humidity screen.</div><div class="ttdef"><b>Definition</b> <a href="ips2__display_8c_source.html#l01624">ips2_display.c:1624</a></div></div>
+<div class="ttc" id="aips2__display_8h_html_a9b9a9d6daa0c5d880e8cc44c3a9cfcbd"><div class="ttname"><a href="ips2__display_8h.html#a9b9a9d6daa0c5d880e8cc44c3a9cfcbd">ips2_invalidate_screen</a></div><div class="ttdeci">void ips2_invalidate_screen(void)</div><div class="ttdoc">Invalidate UI caches so the next render redraws the complete screen.</div><div class="ttdef"><b>Definition</b> <a href="ips2__display_8c_source.html#l00699">ips2_display.c:699</a></div></div>
+<div class="ttc" id="aips2__display_8h_html_aee3bebd915f0ec7e0f0e7a7c87b8e2f1"><div class="ttname"><a href="ips2__display_8h.html#aee3bebd915f0ec7e0f0e7a7c87b8e2f1">ips2_render_astronomy</a></div><div class="ttdeci">void ips2_render_astronomy(const rtc14_datetime_t *datetime, uint8_t ble_connected, uint32_t animation_ms)</div><div class="ttdoc">Draw RTC time with the sun/moon Time of Day scene.</div><div class="ttdef"><b>Definition</b> <a href="ips2__display_8c_source.html#l01974">ips2_display.c:1974</a></div></div>
+<div class="ttc" id="astructrtc14__datetime__t_html"><div class="ttname"><a href="structrtc14__datetime__t.html">rtc14_datetime_t</a></div><div class="ttdoc">Decoded RTC 14 date and time.</div><div class="ttdef"><b>Definition</b> <a href="app__types_8h_source.html#l00022">app_types.h:23</a></div></div>
+<div class="ttc" id="astructtemphum27__data__t_html"><div class="ttname"><a href="structtemphum27__data__t.html">temphum27_data_t</a></div><div class="ttdoc">Fixed-point Temp&amp;Hum 27 measurement.</div><div class="ttdef"><b>Definition</b> <a href="app__types_8h_source.html#l00036">app_types.h:37</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="ips2__display_8h.html">ips2_display.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
 </body>
 </html>

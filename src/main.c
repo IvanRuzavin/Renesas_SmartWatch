@@ -9,6 +9,10 @@
 
 #include "app_controller.h"
 
+/**
+ * @brief Initialize the smartwatch application and enter its foreground loop.
+ * @return Zero if initialization returns; normally not reached.
+ */
 int main(void)
 {
     #ifdef PREINIT_SUPPORTED

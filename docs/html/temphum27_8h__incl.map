@@ -1,5 +1,5 @@
 <map id="include/temphum27.h" name="include/temphum27.h">
-<area shape="rect" id="Node000001" title="Public declarations for this module." alt="" coords="5,5,169,31"/>
+<area shape="rect" id="Node000001" title="Temp&amp;Hum 27 Click driver interface." alt="" coords="5,5,169,31"/>
 <area shape="rect" id="Node000002" href="$app__types_8h.html" title="Shared data types and result codes." alt="" coords="37,79,138,104"/>
 <area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="90,31,90,65,85,65,85,31"/>
 <area shape="rect" id="Node000003" title=" " alt="" coords="52,152,123,177"/>

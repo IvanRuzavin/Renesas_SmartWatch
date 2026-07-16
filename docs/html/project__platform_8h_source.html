@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,6 +27,7 @@
   <td id="projectalign">
    <div id="projectname">R7FA4M2 Multi-Click Smartwatch
    </div>
+   <div id="projectbrief">Bare-metal multi-screen smartwatch demo for Clicker 4 for R7FA4M2A</div>
   </td>
  </tr>
  </tbody>
@@ -51,6 +56,23 @@ $(function() {
 $(document).ready(function() { init_codefold(0); });
 /* @license-end */
 </script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('project__platform_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -72,11 +94,6 @@ $(document).ready(function() { init_codefold(0); });
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">project_platform.h</div></div>
 </div><!--header-->
@@ -92,12 +109,12 @@ $(document).ready(function() { init_codefold(0); });
 <div class="foldopen" id="foldopen00014" data-start="{" data-end="};">
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="structsystem__clocks__t.html">   14</a></span><span class="keyword">typedef</span> <span class="keyword">struct</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>{</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    uint32_t iclk;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    uint32_t pclka;</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    uint32_t pclkb;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    uint32_t pclkc;</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    uint32_t pclkd;</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    uint32_t fclk;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="structsystem__clocks__t.html#a43ca35c20c70426d6bff3911c4613804">   16</a></span>    uint32_t <a class="code hl_variable" href="structsystem__clocks__t.html#a43ca35c20c70426d6bff3911c4613804">iclk</a>;  </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="structsystem__clocks__t.html#ad346b62f594a0d1e6288db30dcb7c37f">   17</a></span>    uint32_t <a class="code hl_variable" href="structsystem__clocks__t.html#ad346b62f594a0d1e6288db30dcb7c37f">pclka</a>; </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="structsystem__clocks__t.html#aeb23a70686a1d9a244c01f93219ffd95">   18</a></span>    uint32_t <a class="code hl_variable" href="structsystem__clocks__t.html#aeb23a70686a1d9a244c01f93219ffd95">pclkb</a>; </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="structsystem__clocks__t.html#a99d16a51e589d3cb2f84942810ea6bf7">   19</a></span>    uint32_t <a class="code hl_variable" href="structsystem__clocks__t.html#a99d16a51e589d3cb2f84942810ea6bf7">pclkc</a>; </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="structsystem__clocks__t.html#abdb65abe8293b142f5828213c287e316">   20</a></span>    uint32_t <a class="code hl_variable" href="structsystem__clocks__t.html#abdb65abe8293b142f5828213c287e316">pclkd</a>; </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="structsystem__clocks__t.html#ad651d8dacedb584db8d65cd3cf7ef7f2">   21</a></span>    uint32_t <a class="code hl_variable" href="structsystem__clocks__t.html#ad651d8dacedb584db8d65cd3cf7ef7f2">fclk</a>;  </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>} <a class="code hl_struct" href="structsystem__clocks__t.html">system_clocks_t</a>;</div>
 </div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
@@ -108,11 +125,21 @@ $(document).ready(function() { init_codefold(0); });
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#endif </span><span class="comment">/* PROJECT_PLATFORM_H */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="aproject__platform_8h_html_a17cb61c4ec78fad11fd285daf22ee5e7"><div class="ttname"><a href="project__platform_8h.html#a17cb61c4ec78fad11fd285daf22ee5e7">printf_me</a></div><div class="ttdeci">int printf_me(const char *format,...)</div><div class="ttdoc">Project logging function with printf-compatible formatting.</div></div>
 <div class="ttc" id="aproject__platform_8h_html_ab3b699102d01f9fae47c234fb1dd5c51"><div class="ttname"><a href="project__platform_8h.html#ab3b699102d01f9fae47c234fb1dd5c51">SYSTEM_GetClocksFrequency</a></div><div class="ttdeci">void SYSTEM_GetClocksFrequency(system_clocks_t *clocks)</div><div class="ttdoc">Read the configured MCU clock frequencies.</div></div>
-<div class="ttc" id="astructsystem__clocks__t_html"><div class="ttname"><a href="structsystem__clocks__t.html">system_clocks_t</a></div><div class="ttdoc">System clock frequencies supplied by the NECTO project.</div><div class="ttdef"><b>Definition</b> project_platform.h:15</div></div>
+<div class="ttc" id="astructsystem__clocks__t_html"><div class="ttname"><a href="structsystem__clocks__t.html">system_clocks_t</a></div><div class="ttdoc">System clock frequencies supplied by the NECTO project.</div><div class="ttdef"><b>Definition</b> <a href="project__platform_8h_source.html#l00014">project_platform.h:15</a></div></div>
+<div class="ttc" id="astructsystem__clocks__t_html_a43ca35c20c70426d6bff3911c4613804"><div class="ttname"><a href="structsystem__clocks__t.html#a43ca35c20c70426d6bff3911c4613804">system_clocks_t::iclk</a></div><div class="ttdeci">uint32_t iclk</div><div class="ttdoc">CPU instruction clock frequency in hertz.</div><div class="ttdef"><b>Definition</b> <a href="project__platform_8h_source.html#l00016">project_platform.h:16</a></div></div>
+<div class="ttc" id="astructsystem__clocks__t_html_a99d16a51e589d3cb2f84942810ea6bf7"><div class="ttname"><a href="structsystem__clocks__t.html#a99d16a51e589d3cb2f84942810ea6bf7">system_clocks_t::pclkc</a></div><div class="ttdeci">uint32_t pclkc</div><div class="ttdoc">Peripheral clock C frequency in hertz.</div><div class="ttdef"><b>Definition</b> <a href="project__platform_8h_source.html#l00019">project_platform.h:19</a></div></div>
+<div class="ttc" id="astructsystem__clocks__t_html_abdb65abe8293b142f5828213c287e316"><div class="ttname"><a href="structsystem__clocks__t.html#abdb65abe8293b142f5828213c287e316">system_clocks_t::pclkd</a></div><div class="ttdeci">uint32_t pclkd</div><div class="ttdoc">Peripheral clock D frequency in hertz.</div><div class="ttdef"><b>Definition</b> <a href="project__platform_8h_source.html#l00020">project_platform.h:20</a></div></div>
+<div class="ttc" id="astructsystem__clocks__t_html_ad346b62f594a0d1e6288db30dcb7c37f"><div class="ttname"><a href="structsystem__clocks__t.html#ad346b62f594a0d1e6288db30dcb7c37f">system_clocks_t::pclka</a></div><div class="ttdeci">uint32_t pclka</div><div class="ttdoc">Peripheral clock A frequency in hertz.</div><div class="ttdef"><b>Definition</b> <a href="project__platform_8h_source.html#l00017">project_platform.h:17</a></div></div>
+<div class="ttc" id="astructsystem__clocks__t_html_ad651d8dacedb584db8d65cd3cf7ef7f2"><div class="ttname"><a href="structsystem__clocks__t.html#ad651d8dacedb584db8d65cd3cf7ef7f2">system_clocks_t::fclk</a></div><div class="ttdeci">uint32_t fclk</div><div class="ttdoc">Flash interface clock frequency in hertz.</div><div class="ttdef"><b>Definition</b> <a href="project__platform_8h_source.html#l00021">project_platform.h:21</a></div></div>
+<div class="ttc" id="astructsystem__clocks__t_html_aeb23a70686a1d9a244c01f93219ffd95"><div class="ttname"><a href="structsystem__clocks__t.html#aeb23a70686a1d9a244c01f93219ffd95">system_clocks_t::pclkb</a></div><div class="ttdeci">uint32_t pclkb</div><div class="ttdoc">Peripheral clock B frequency in hertz.</div><div class="ttdef"><b>Definition</b> <a href="project__platform_8h_source.html#l00018">project_platform.h:18</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="project__platform_8h.html">project_platform.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
 </body>
 </html>

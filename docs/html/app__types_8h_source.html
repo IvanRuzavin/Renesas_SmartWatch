@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,6 +27,7 @@
   <td id="projectalign">
    <div id="projectname">R7FA4M2 Multi-Click Smartwatch
    </div>
+   <div id="projectbrief">Bare-metal multi-screen smartwatch demo for Clicker 4 for R7FA4M2A</div>
   </td>
  </tr>
  </tbody>
@@ -51,6 +56,23 @@ $(function() {
 $(document).ready(function() { init_codefold(0); });
 /* @license-end */
 </script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('app__types_8h_source.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -72,11 +94,6 @@ $(document).ready(function() { init_codefold(0); });
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li>  </ul>
-</div>
-</div><!-- top -->
 <div class="header">
   <div class="headertitle"><div class="title">app_types.h</div></div>
 </div><!--header-->
@@ -90,55 +107,82 @@ $(document).ready(function() { init_codefold(0); });
 <div class="foldopen" id="foldopen00012" data-start="{" data-end="};">
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="app__types_8h.html#a68f1d7e035c4e2d544ca9cb72a1459bb">   12</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>{</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    RTC14_OK = 0,</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    RTC14_ERROR_TIMEOUT = -1,</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    RTC14_ERROR_NACK = -2,</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    RTC14_ERROR_CLOCK = -3,</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    RTC14_ERROR_ARGUMENT = -4</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>} <a class="code hl_enumeration" href="app__types_8h.html#a68f1d7e035c4e2d544ca9cb72a1459bb">app_result_t</a>;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="app__types_8h.html#a68f1d7e035c4e2d544ca9cb72a1459bbac198afb45078eebe27a3a69e46f91f2e">   14</a></span>    <a class="code hl_enumvalue" href="app__types_8h.html#a68f1d7e035c4e2d544ca9cb72a1459bbac198afb45078eebe27a3a69e46f91f2e">RTC14_OK</a> = 0,              </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="app__types_8h.html#a68f1d7e035c4e2d544ca9cb72a1459bbaaa378cd4be1f9f1d6e4d3e5f99a3c8a7">   15</a></span>    <a class="code hl_enumvalue" href="app__types_8h.html#a68f1d7e035c4e2d544ca9cb72a1459bbaaa378cd4be1f9f1d6e4d3e5f99a3c8a7">RTC14_ERROR_TIMEOUT</a> = -1, </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="app__types_8h.html#a68f1d7e035c4e2d544ca9cb72a1459bbad1a6c62f877b241be68339f6accb5336">   16</a></span>    <a class="code hl_enumvalue" href="app__types_8h.html#a68f1d7e035c4e2d544ca9cb72a1459bbad1a6c62f877b241be68339f6accb5336">RTC14_ERROR_NACK</a> = -2,    </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="app__types_8h.html#a68f1d7e035c4e2d544ca9cb72a1459bba4c8c3a8e23211e054ca5a8f964fd28f6">   17</a></span>    <a class="code hl_enumvalue" href="app__types_8h.html#a68f1d7e035c4e2d544ca9cb72a1459bba4c8c3a8e23211e054ca5a8f964fd28f6">RTC14_ERROR_CLOCK</a> = -3,   </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <a class="code hl_enumvalue" href="app__types_8h.html#a68f1d7e035c4e2d544ca9cb72a1459bba4385a617192f78977e770c90b3252cfe">RTC14_ERROR_ARGUMENT</a> = -4 </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="app__types_8h.html#a68f1d7e035c4e2d544ca9cb72a1459bba4385a617192f78977e770c90b3252cfe">   19</a></span>} <a class="code hl_enumeration" href="app__types_8h.html#a68f1d7e035c4e2d544ca9cb72a1459bb">app_result_t</a>;</div>
 </div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
 <div class="foldopen" id="foldopen00022" data-start="{" data-end="};">
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="structrtc14__datetime__t.html">   22</a></span><span class="keyword">typedef</span> <span class="keyword">struct</span></div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>{</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    uint8_t second;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    uint8_t minute;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    uint8_t hour;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    uint8_t day;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    uint8_t month;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    uint8_t year;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    uint8_t weekday;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    uint8_t is_24_hour;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    uint8_t is_pm;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="structrtc14__datetime__t.html#ad9e3d4e60bf9f59f1d4b6d073f157c15">   24</a></span>    uint8_t <a class="code hl_variable" href="structrtc14__datetime__t.html#ad9e3d4e60bf9f59f1d4b6d073f157c15">second</a>;     </div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="structrtc14__datetime__t.html#aa2039951dbcc1a9b260fbe7107aae8bc">   25</a></span>    uint8_t <a class="code hl_variable" href="structrtc14__datetime__t.html#aa2039951dbcc1a9b260fbe7107aae8bc">minute</a>;     </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="structrtc14__datetime__t.html#a908e99f9a78949b1291ea8926a82685a">   26</a></span>    uint8_t <a class="code hl_variable" href="structrtc14__datetime__t.html#a908e99f9a78949b1291ea8926a82685a">hour</a>;       </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="structrtc14__datetime__t.html#a91196bd4a6de8fc0c0e331723975b9fe">   27</a></span>    uint8_t <a class="code hl_variable" href="structrtc14__datetime__t.html#a91196bd4a6de8fc0c0e331723975b9fe">day</a>;        </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="structrtc14__datetime__t.html#a0bf135b60eb238175933dc703c0b066f">   28</a></span>    uint8_t <a class="code hl_variable" href="structrtc14__datetime__t.html#a0bf135b60eb238175933dc703c0b066f">month</a>;      </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno"><a class="line" href="structrtc14__datetime__t.html#a3636ed0c6521fb58d58ce9066c76a2ff">   29</a></span>    uint8_t <a class="code hl_variable" href="structrtc14__datetime__t.html#a3636ed0c6521fb58d58ce9066c76a2ff">year</a>;       </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="structrtc14__datetime__t.html#a4c58ca132cd481af9444eff2816cc408">   30</a></span>    uint8_t <a class="code hl_variable" href="structrtc14__datetime__t.html#a4c58ca132cd481af9444eff2816cc408">weekday</a>;    </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="structrtc14__datetime__t.html#a4f7669937b9c6bfd2c6e2bab315821ae">   31</a></span>    uint8_t <a class="code hl_variable" href="structrtc14__datetime__t.html#a4f7669937b9c6bfd2c6e2bab315821ae">is_24_hour</a>; </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="structrtc14__datetime__t.html#a1d6cdbee1c41e820c03cd7fbf4120645">   32</a></span>    uint8_t <a class="code hl_variable" href="structrtc14__datetime__t.html#a1d6cdbee1c41e820c03cd7fbf4120645">is_pm</a>;      </div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>} <a class="code hl_struct" href="structrtc14__datetime__t.html">rtc14_datetime_t</a>;</div>
 </div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
 <div class="foldopen" id="foldopen00036" data-start="{" data-end="};">
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="structtemphum27__data__t.html">   36</a></span><span class="keyword">typedef</span> <span class="keyword">struct</span></div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>{</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    int16_t temperature_tenths_c;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    uint16_t humidity_tenths_percent;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    uint8_t valid;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="structtemphum27__data__t.html#a4dbb78dc635994917214eab554ed5a96">   38</a></span>    int16_t <a class="code hl_variable" href="structtemphum27__data__t.html#a4dbb78dc635994917214eab554ed5a96">temperature_tenths_c</a>;       </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="structtemphum27__data__t.html#a8d12647b606b9b2f6b8d18f9910eb76f">   39</a></span>    uint16_t <a class="code hl_variable" href="structtemphum27__data__t.html#a8d12647b606b9b2f6b8d18f9910eb76f">humidity_tenths_percent</a>;   </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="structtemphum27__data__t.html#a2ba89616f962c555c28100ee3e2784e9">   40</a></span>    uint8_t <a class="code hl_variable" href="structtemphum27__data__t.html#a2ba89616f962c555c28100ee3e2784e9">valid</a>;                      </div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>} <a class="code hl_struct" href="structtemphum27__data__t.html">temphum27_data_t</a>;</div>
 </div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
 <div class="foldopen" id="foldopen00044" data-start="{" data-end="};">
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="app__types_8h.html#ac70ecff5013af5a2a6b9a3640c180bbd">   44</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span></div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>{</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    APP_SCREEN_CLOCK = 0,</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    APP_SCREEN_STOPWATCH = 1</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>} <a class="code hl_enumeration" href="app__types_8h.html#ac70ecff5013af5a2a6b9a3640c180bbd">app_screen_t</a>;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="app__types_8h.html#ac70ecff5013af5a2a6b9a3640c180bbda5163261f091352eebfe3accdd8e8bd19">   46</a></span>    <a class="code hl_enumvalue" href="app__types_8h.html#ac70ecff5013af5a2a6b9a3640c180bbda5163261f091352eebfe3accdd8e8bd19">APP_SCREEN_DASHBOARD</a> = 0,  </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="app__types_8h.html#ac70ecff5013af5a2a6b9a3640c180bbda412f62781da7729b541ec3f7d194de80">   47</a></span>    <a class="code hl_enumvalue" href="app__types_8h.html#ac70ecff5013af5a2a6b9a3640c180bbda412f62781da7729b541ec3f7d194de80">APP_SCREEN_ENVIRONMENT</a> = 1,</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="app__types_8h.html#ac70ecff5013af5a2a6b9a3640c180bbda03eb671c08d43b3f0953cbd2361a6cfb">   48</a></span>    <a class="code hl_enumvalue" href="app__types_8h.html#ac70ecff5013af5a2a6b9a3640c180bbda03eb671c08d43b3f0953cbd2361a6cfb">APP_SCREEN_ASTRONOMY</a> = 2,  </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    <a class="code hl_enumvalue" href="app__types_8h.html#ac70ecff5013af5a2a6b9a3640c180bbdad3e10d23a15335324d399b3031f562f4">APP_SCREEN_STOPWATCH</a> = 3   </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="app__types_8h.html#ac70ecff5013af5a2a6b9a3640c180bbdad3e10d23a15335324d399b3031f562f4">   50</a></span>} <a class="code hl_enumeration" href="app__types_8h.html#ac70ecff5013af5a2a6b9a3640c180bbd">app_screen_t</a>;</div>
 </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#endif </span><span class="comment">/* APP_TYPES_H */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="aapp__types_8h_html_a68f1d7e035c4e2d544ca9cb72a1459bb"><div class="ttname"><a href="app__types_8h.html#a68f1d7e035c4e2d544ca9cb72a1459bb">app_result_t</a></div><div class="ttdeci">app_result_t</div><div class="ttdoc">Common return values used by the bare-metal drivers.</div><div class="ttdef"><b>Definition</b> app_types.h:13</div></div>
-<div class="ttc" id="aapp__types_8h_html_ac70ecff5013af5a2a6b9a3640c180bbd"><div class="ttname"><a href="app__types_8h.html#ac70ecff5013af5a2a6b9a3640c180bbd">app_screen_t</a></div><div class="ttdeci">app_screen_t</div><div class="ttdoc">Visible application screen.</div><div class="ttdef"><b>Definition</b> app_types.h:45</div></div>
-<div class="ttc" id="astructrtc14__datetime__t_html"><div class="ttname"><a href="structrtc14__datetime__t.html">rtc14_datetime_t</a></div><div class="ttdoc">Decoded RTC 14 date and time.</div><div class="ttdef"><b>Definition</b> app_types.h:23</div></div>
-<div class="ttc" id="astructtemphum27__data__t_html"><div class="ttname"><a href="structtemphum27__data__t.html">temphum27_data_t</a></div><div class="ttdoc">Fixed-point Temp&amp;Hum 27 measurement.</div><div class="ttdef"><b>Definition</b> app_types.h:37</div></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#endif </span><span class="comment">/* APP_TYPES_H */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aapp__types_8h_html_a68f1d7e035c4e2d544ca9cb72a1459bb"><div class="ttname"><a href="app__types_8h.html#a68f1d7e035c4e2d544ca9cb72a1459bb">app_result_t</a></div><div class="ttdeci">app_result_t</div><div class="ttdoc">Common return values used by the bare-metal drivers.</div><div class="ttdef"><b>Definition</b> <a href="app__types_8h_source.html#l00012">app_types.h:13</a></div></div>
+<div class="ttc" id="aapp__types_8h_html_a68f1d7e035c4e2d544ca9cb72a1459bba4385a617192f78977e770c90b3252cfe"><div class="ttname"><a href="app__types_8h.html#a68f1d7e035c4e2d544ca9cb72a1459bba4385a617192f78977e770c90b3252cfe">RTC14_ERROR_ARGUMENT</a></div><div class="ttdeci">@ RTC14_ERROR_ARGUMENT</div><div class="ttdoc">A pointer or numeric argument was invalid.</div><div class="ttdef"><b>Definition</b> <a href="app__types_8h_source.html#l00019">app_types.h:18</a></div></div>
+<div class="ttc" id="aapp__types_8h_html_a68f1d7e035c4e2d544ca9cb72a1459bba4c8c3a8e23211e054ca5a8f964fd28f6"><div class="ttname"><a href="app__types_8h.html#a68f1d7e035c4e2d544ca9cb72a1459bba4c8c3a8e23211e054ca5a8f964fd28f6">RTC14_ERROR_CLOCK</a></div><div class="ttdeci">@ RTC14_ERROR_CLOCK</div><div class="ttdoc">A valid peripheral timing configuration was not found.</div><div class="ttdef"><b>Definition</b> <a href="app__types_8h_source.html#l00017">app_types.h:17</a></div></div>
+<div class="ttc" id="aapp__types_8h_html_a68f1d7e035c4e2d544ca9cb72a1459bbaaa378cd4be1f9f1d6e4d3e5f99a3c8a7"><div class="ttname"><a href="app__types_8h.html#a68f1d7e035c4e2d544ca9cb72a1459bbaaa378cd4be1f9f1d6e4d3e5f99a3c8a7">RTC14_ERROR_TIMEOUT</a></div><div class="ttdeci">@ RTC14_ERROR_TIMEOUT</div><div class="ttdoc">A peripheral status flag did not arrive in time.</div><div class="ttdef"><b>Definition</b> <a href="app__types_8h_source.html#l00015">app_types.h:15</a></div></div>
+<div class="ttc" id="aapp__types_8h_html_a68f1d7e035c4e2d544ca9cb72a1459bbac198afb45078eebe27a3a69e46f91f2e"><div class="ttname"><a href="app__types_8h.html#a68f1d7e035c4e2d544ca9cb72a1459bbac198afb45078eebe27a3a69e46f91f2e">RTC14_OK</a></div><div class="ttdeci">@ RTC14_OK</div><div class="ttdoc">Operation completed successfully.</div><div class="ttdef"><b>Definition</b> <a href="app__types_8h_source.html#l00014">app_types.h:14</a></div></div>
+<div class="ttc" id="aapp__types_8h_html_a68f1d7e035c4e2d544ca9cb72a1459bbad1a6c62f877b241be68339f6accb5336"><div class="ttname"><a href="app__types_8h.html#a68f1d7e035c4e2d544ca9cb72a1459bbad1a6c62f877b241be68339f6accb5336">RTC14_ERROR_NACK</a></div><div class="ttdeci">@ RTC14_ERROR_NACK</div><div class="ttdoc">The addressed I2C device returned NACK.</div><div class="ttdef"><b>Definition</b> <a href="app__types_8h_source.html#l00016">app_types.h:16</a></div></div>
+<div class="ttc" id="aapp__types_8h_html_ac70ecff5013af5a2a6b9a3640c180bbd"><div class="ttname"><a href="app__types_8h.html#ac70ecff5013af5a2a6b9a3640c180bbd">app_screen_t</a></div><div class="ttdeci">app_screen_t</div><div class="ttdoc">Visible application screen.</div><div class="ttdef"><b>Definition</b> <a href="app__types_8h_source.html#l00044">app_types.h:45</a></div></div>
+<div class="ttc" id="aapp__types_8h_html_ac70ecff5013af5a2a6b9a3640c180bbda03eb671c08d43b3f0953cbd2361a6cfb"><div class="ttname"><a href="app__types_8h.html#ac70ecff5013af5a2a6b9a3640c180bbda03eb671c08d43b3f0953cbd2361a6cfb">APP_SCREEN_ASTRONOMY</a></div><div class="ttdeci">@ APP_SCREEN_ASTRONOMY</div><div class="ttdoc">Time of Day sun/moon scene.</div><div class="ttdef"><b>Definition</b> <a href="app__types_8h_source.html#l00048">app_types.h:48</a></div></div>
+<div class="ttc" id="aapp__types_8h_html_ac70ecff5013af5a2a6b9a3640c180bbda412f62781da7729b541ec3f7d194de80"><div class="ttname"><a href="app__types_8h.html#ac70ecff5013af5a2a6b9a3640c180bbda412f62781da7729b541ec3f7d194de80">APP_SCREEN_ENVIRONMENT</a></div><div class="ttdeci">@ APP_SCREEN_ENVIRONMENT</div><div class="ttdoc">Animated thermometer and humidity droplet.</div><div class="ttdef"><b>Definition</b> <a href="app__types_8h_source.html#l00047">app_types.h:47</a></div></div>
+<div class="ttc" id="aapp__types_8h_html_ac70ecff5013af5a2a6b9a3640c180bbda5163261f091352eebfe3accdd8e8bd19"><div class="ttname"><a href="app__types_8h.html#ac70ecff5013af5a2a6b9a3640c180bbda5163261f091352eebfe3accdd8e8bd19">APP_SCREEN_DASHBOARD</a></div><div class="ttdeci">@ APP_SCREEN_DASHBOARD</div><div class="ttdoc">Smartwatch summary with clock, weekday and date.</div><div class="ttdef"><b>Definition</b> <a href="app__types_8h_source.html#l00046">app_types.h:46</a></div></div>
+<div class="ttc" id="aapp__types_8h_html_ac70ecff5013af5a2a6b9a3640c180bbdad3e10d23a15335324d399b3031f562f4"><div class="ttname"><a href="app__types_8h.html#ac70ecff5013af5a2a6b9a3640c180bbdad3e10d23a15335324d399b3031f562f4">APP_SCREEN_STOPWATCH</a></div><div class="ttdeci">@ APP_SCREEN_STOPWATCH</div><div class="ttdoc">Stopwatch display and controls.</div><div class="ttdef"><b>Definition</b> <a href="app__types_8h_source.html#l00050">app_types.h:49</a></div></div>
+<div class="ttc" id="astructrtc14__datetime__t_html"><div class="ttname"><a href="structrtc14__datetime__t.html">rtc14_datetime_t</a></div><div class="ttdoc">Decoded RTC 14 date and time.</div><div class="ttdef"><b>Definition</b> <a href="app__types_8h_source.html#l00022">app_types.h:23</a></div></div>
+<div class="ttc" id="astructrtc14__datetime__t_html_a0bf135b60eb238175933dc703c0b066f"><div class="ttname"><a href="structrtc14__datetime__t.html#a0bf135b60eb238175933dc703c0b066f">rtc14_datetime_t::month</a></div><div class="ttdeci">uint8_t month</div><div class="ttdoc">Month in the range 1 through 12.</div><div class="ttdef"><b>Definition</b> <a href="app__types_8h_source.html#l00028">app_types.h:28</a></div></div>
+<div class="ttc" id="astructrtc14__datetime__t_html_a1d6cdbee1c41e820c03cd7fbf4120645"><div class="ttname"><a href="structrtc14__datetime__t.html#a1d6cdbee1c41e820c03cd7fbf4120645">rtc14_datetime_t::is_pm</a></div><div class="ttdeci">uint8_t is_pm</div><div class="ttdoc">Nonzero for PM while using 12-hour mode.</div><div class="ttdef"><b>Definition</b> <a href="app__types_8h_source.html#l00032">app_types.h:32</a></div></div>
+<div class="ttc" id="astructrtc14__datetime__t_html_a3636ed0c6521fb58d58ce9066c76a2ff"><div class="ttname"><a href="structrtc14__datetime__t.html#a3636ed0c6521fb58d58ce9066c76a2ff">rtc14_datetime_t::year</a></div><div class="ttdeci">uint8_t year</div><div class="ttdoc">Two-digit year value.</div><div class="ttdef"><b>Definition</b> <a href="app__types_8h_source.html#l00029">app_types.h:29</a></div></div>
+<div class="ttc" id="astructrtc14__datetime__t_html_a4c58ca132cd481af9444eff2816cc408"><div class="ttname"><a href="structrtc14__datetime__t.html#a4c58ca132cd481af9444eff2816cc408">rtc14_datetime_t::weekday</a></div><div class="ttdeci">uint8_t weekday</div><div class="ttdoc">Weekday number, where zero is Sunday.</div><div class="ttdef"><b>Definition</b> <a href="app__types_8h_source.html#l00030">app_types.h:30</a></div></div>
+<div class="ttc" id="astructrtc14__datetime__t_html_a4f7669937b9c6bfd2c6e2bab315821ae"><div class="ttname"><a href="structrtc14__datetime__t.html#a4f7669937b9c6bfd2c6e2bab315821ae">rtc14_datetime_t::is_24_hour</a></div><div class="ttdeci">uint8_t is_24_hour</div><div class="ttdoc">Nonzero when the RTC is operating in 24-hour mode.</div><div class="ttdef"><b>Definition</b> <a href="app__types_8h_source.html#l00031">app_types.h:31</a></div></div>
+<div class="ttc" id="astructrtc14__datetime__t_html_a908e99f9a78949b1291ea8926a82685a"><div class="ttname"><a href="structrtc14__datetime__t.html#a908e99f9a78949b1291ea8926a82685a">rtc14_datetime_t::hour</a></div><div class="ttdeci">uint8_t hour</div><div class="ttdoc">Decoded hour in RTC-selected 12- or 24-hour form.</div><div class="ttdef"><b>Definition</b> <a href="app__types_8h_source.html#l00026">app_types.h:26</a></div></div>
+<div class="ttc" id="astructrtc14__datetime__t_html_a91196bd4a6de8fc0c0e331723975b9fe"><div class="ttname"><a href="structrtc14__datetime__t.html#a91196bd4a6de8fc0c0e331723975b9fe">rtc14_datetime_t::day</a></div><div class="ttdeci">uint8_t day</div><div class="ttdoc">Day of month.</div><div class="ttdef"><b>Definition</b> <a href="app__types_8h_source.html#l00027">app_types.h:27</a></div></div>
+<div class="ttc" id="astructrtc14__datetime__t_html_aa2039951dbcc1a9b260fbe7107aae8bc"><div class="ttname"><a href="structrtc14__datetime__t.html#aa2039951dbcc1a9b260fbe7107aae8bc">rtc14_datetime_t::minute</a></div><div class="ttdeci">uint8_t minute</div><div class="ttdoc">Minutes in the range 0 through 59.</div><div class="ttdef"><b>Definition</b> <a href="app__types_8h_source.html#l00025">app_types.h:25</a></div></div>
+<div class="ttc" id="astructrtc14__datetime__t_html_ad9e3d4e60bf9f59f1d4b6d073f157c15"><div class="ttname"><a href="structrtc14__datetime__t.html#ad9e3d4e60bf9f59f1d4b6d073f157c15">rtc14_datetime_t::second</a></div><div class="ttdeci">uint8_t second</div><div class="ttdoc">Seconds in the range 0 through 59.</div><div class="ttdef"><b>Definition</b> <a href="app__types_8h_source.html#l00024">app_types.h:24</a></div></div>
+<div class="ttc" id="astructtemphum27__data__t_html"><div class="ttname"><a href="structtemphum27__data__t.html">temphum27_data_t</a></div><div class="ttdoc">Fixed-point Temp&amp;Hum 27 measurement.</div><div class="ttdef"><b>Definition</b> <a href="app__types_8h_source.html#l00036">app_types.h:37</a></div></div>
+<div class="ttc" id="astructtemphum27__data__t_html_a2ba89616f962c555c28100ee3e2784e9"><div class="ttname"><a href="structtemphum27__data__t.html#a2ba89616f962c555c28100ee3e2784e9">temphum27_data_t::valid</a></div><div class="ttdeci">uint8_t valid</div><div class="ttdoc">Nonzero when both values passed CRC validation.</div><div class="ttdef"><b>Definition</b> <a href="app__types_8h_source.html#l00040">app_types.h:40</a></div></div>
+<div class="ttc" id="astructtemphum27__data__t_html_a4dbb78dc635994917214eab554ed5a96"><div class="ttname"><a href="structtemphum27__data__t.html#a4dbb78dc635994917214eab554ed5a96">temphum27_data_t::temperature_tenths_c</a></div><div class="ttdeci">int16_t temperature_tenths_c</div><div class="ttdoc">Temperature in tenths of a degree Celsius.</div><div class="ttdef"><b>Definition</b> <a href="app__types_8h_source.html#l00038">app_types.h:38</a></div></div>
+<div class="ttc" id="astructtemphum27__data__t_html_a8d12647b606b9b2f6b8d18f9910eb76f"><div class="ttname"><a href="structtemphum27__data__t.html#a8d12647b606b9b2f6b8d18f9910eb76f">temphum27_data_t::humidity_tenths_percent</a></div><div class="ttdeci">uint16_t humidity_tenths_percent</div><div class="ttdoc">Relative humidity in tenths of a percent.</div><div class="ttdef"><b>Definition</b> <a href="app__types_8h_source.html#l00039">app_types.h:39</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="app__types_8h.html">app_types.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
 </body>
 </html>

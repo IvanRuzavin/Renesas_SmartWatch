@@ -9,6 +9,10 @@
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
@@ -23,6 +27,7 @@
   <td id="projectalign">
    <div id="projectname">R7FA4M2 Multi-Click Smartwatch
    </div>
+   <div id="projectbrief">Bare-metal multi-screen smartwatch demo for Clicker 4 for R7FA4M2A</div>
   </td>
  </tr>
  </tbody>
@@ -47,6 +52,22 @@ $(function() {
 </script>
 <div id="main-nav"></div>
 </div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(document).ready(function(){initNavTree('index.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
 <!-- window showing the filter options -->
 <div id="MSearchSelectWindow"
      onmouseover="return searchBox.OnSearchSelectShow()"
@@ -72,27 +93,56 @@ $(function() {
   <div class="headertitle"><div class="title">R7FA4M2 Multi-Click Smartwatch Example </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md_README"></a> This project was done using <a href="https://www.mikroe.com/necto">NECTOStudio IDE</a></p>
-<p>This bare-metal example turns an <a href="https://www.mikroe.com/blog/clicker-4-for-r7fa4m2ad3cfp">Clicker 4 for R7FA4M2A</a> board into a small smartwatch-style dashboard. It combines a real-time clock <a href="https://www.mikroe.com/rtc-14-click">RTC 14 Click Board</a>, environmental sensing <a href="https://www.mikroe.com/temphum-27-click">Temp&amp;Hum 27 CLick Board</a>, a graphical <a href="https://www.mikroe.com/ips-display-2-click">IPS 2 Display Click Board</a>, a stopwatch, physical interrupt controls, and <a href="https://www.mikroe.com/ble-tiny-click">BLE Tiny Click Board</a> to control the board through <a href="https://lpccs-docs.renesas.com/UM-140-DA145x-CodeLess/smartconsole.html">Renesas CodeLess/SmartConsole</a>.</p>
+<div class="textblock"><p><a class="anchor" id="md_README"></a> This project was done using <a href="https://www.mikroe.com/necto">NECTOStudio IDE</a>.</p>
+<p>This bare-metal example turns a <a href="https://www.mikroe.com/blog/clicker-4-for-r7fa4m2ad3cfp">Clicker 4 for R7FA4M2A</a> board into a small smartwatch-style demo. It combines a real-time clock using <a href="https://www.mikroe.com/rtc-14-click">RTC 14 Click</a>, environmental sensing through <a href="https://www.mikroe.com/temphum-27-click">Temp&amp;Hum 27 Click</a>, graphics on <a href="https://www.mikroe.com/ips-display-2-click">IPS Display 2 Click</a>, stopwatch control through push buttons, and remote BLE control using <a href="https://www.mikroe.com/ble-tiny-click">BLE Tiny Click</a> with <a href="https://lpccs-docs.renesas.com/UM-140-DA145x-CodeLess/smartconsole.html">Renesas CodeLess / SmartConsole</a>.</p>
 <h1><a class="anchor" id="autotoc_md1"></a>
-Features</h1>
+What is new in this version</h1>
 <ul>
-<li>Clock dashboard with <code>HH:MM AM/PM</code>, weekday and date.</li>
-<li>Temperature and humidity values with compact graphical icons.</li>
-<li>BLE connected/disconnected indicator on both screens.</li>
-<li>Millisecond stopwatch with start, pause, continue, reset and background operation.</li>
-<li>Physical controls through P304/IRQ9 and P111/IRQ4.</li>
-<li>Equivalent remote controls through BLE TINY and SmartConsole.</li>
-<li>RTC date/time synchronization through a pipe-separated CodeLess memory command.</li>
-<li>Cooperative foreground loop; ISRs only acknowledge hardware and update small state flags/counters.</li>
+<li>The original <b>smartwatch dashboard</b> is restored as the first screen. It shows:<ul>
+<li><code>HH:MM</code> time with AM/PM or 24-hour mode,</li>
+<li>temperature and humidity summary cards,</li>
+<li>day of the week,</li>
+<li>full date.</li>
+</ul>
+</li>
+<li>The dedicated <b>Environment screen</b> keeps the animated thermometer and filling humidity droplet.</li>
+<li>The dedicated <b>Time of Day screen</b> now uses the title **"TIME OF DAY"**.</li>
+<li>The sun and moon follow a <b>lower trajectory</b> that remains inside the visible sky scene instead of approaching the header.</li>
+<li>The sun/moon position is recalculated from RTC time and changes once per minute.</li>
+<li>Physical B3 now cycles through four screens, while BLE still uses separate trigger numbers and reserves B3 for stopwatch stop/reset.</li>
+<li>An optional compile-time demonstration mode can generate the same B3 action automatically every 15 seconds.</li>
+<li>Missing source-level Doxygen comments have been added, and a ready-to-use <code>Doxyfile</code> is included.</li>
 </ul>
 <h1><a class="anchor" id="autotoc_md2"></a>
+Features</h1>
+<ul>
+<li>Four-screen smartwatch UI:<ol type="1">
+<li><b>Smartwatch Dashboard</b> — time, weekday, date, temperature and humidity summary.</li>
+<li><b>Environment</b> — animated temperature and humidity widgets.</li>
+<li><b>Time of Day</b> — RTC time with lower sun/moon sky trajectory.</li>
+<li><b>Stopwatch</b> — start, pause, continue, stop and reset.</li>
+</ol>
+</li>
+<li>Animated thermometer level and temperature-dependent color.</li>
+<li>Animated humidity droplet with water level based on relative humidity.</li>
+<li>RTC-based day/night visualization with transparent sun/moon rendering.</li>
+<li>Sun/moon position updated once per RTC minute.</li>
+<li>BLE connected/disconnected status indicator on every screen.</li>
+<li>Millisecond stopwatch with background counting.</li>
+<li>Physical interrupt controls through P304/IRQ9 and P111/IRQ4.</li>
+<li>Separate BLE/SmartConsole commands for screen selection and stopwatch control.</li>
+<li>RTC date/time synchronization through a pipe-separated CodeLess memory command.</li>
+<li>Cooperative foreground loop; ISRs only acknowledge hardware and update small state flags/counters.</li>
+<li>Optional automatic screen demonstration using the existing physical B3 state-machine path.</li>
+<li>Doxygen comments for public APIs, internal helpers, interrupt handlers and configuration groups.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md3"></a>
 Hardware and peripheral assignment</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">mikroBUS socket   </th><th class="markdownTableHeadNone">Click board   </th><th class="markdownTableHeadNone">MCU peripheral   </th><th class="markdownTableHeadNone">Main pins   </th><th class="markdownTableHeadNone">Purpose    </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">1   </td><td class="markdownTableBodyNone">BLE TINY Click   </td><td class="markdownTableBodyNone">SCI3 UART, 57,600 baud   </td><td class="markdownTableBodyNone">P408 RX, P409 TX, P211 RST   </td><td class="markdownTableBodyNone">CodeLess connection status, RTC synchronization and remote stopwatch controls    </td></tr>
+<td class="markdownTableBodyNone">1   </td><td class="markdownTableBodyNone">BLE TINY Click   </td><td class="markdownTableBodyNone">SCI3 UART, 57,600 baud   </td><td class="markdownTableBodyNone">P408 RX, P409 TX, P211 RST   </td><td class="markdownTableBodyNone">CodeLess connection status, RTC synchronization, remote screen selection and remote stopwatch control    </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">2   </td><td class="markdownTableBodyNone">IPS Display 2 Click   </td><td class="markdownTableBodyNone">SCI0 simple SPI, 5 MHz   </td><td class="markdownTableBodyNone">P410 MISO, P411 MOSI, P412 SCK, P708 CS, P415 DC, P210 RST, P001 backlight   </td><td class="markdownTableBodyNone">240 × 240 smartwatch UI    </td></tr>
 <tr class="markdownTableRowOdd">
@@ -101,7 +151,7 @@ Hardware and peripheral assignment</h1>
 <td class="markdownTableBodyNone">4   </td><td class="markdownTableBodyNone">Temp&amp;Hum 27 Click   </td><td class="markdownTableBodyNone">IIC0, 100 kHz   </td><td class="markdownTableBodyNone">P400 SCL, P401 SDA, P105 enable, P101 alert   </td><td class="markdownTableBodyNone">Temperature and relative-humidity measurements   </td></tr>
 </table>
 <p>RTC 14 and Temp&amp;Hum 27 intentionally share IIC0. Their 7-bit addresses are different (<code>0x6F</code> and <code>0x54</code>), so both devices can use P400/P401 simultaneously.</p>
-<h1><a class="anchor" id="autotoc_md3"></a>
+<h1><a class="anchor" id="autotoc_md4"></a>
 Interrupt allocation</h1>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -109,66 +159,146 @@ Interrupt allocation</h1>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">AGT0 underflow   </td><td class="markdownTableBodyRight"><code>0x040</code>   </td><td class="markdownTableBodyRight">15   </td><td class="markdownTableBodyRight">12   </td><td class="markdownTableBodyNone">1 ms system tick and stopwatch timebase    </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">P304 / IRQ9   </td><td class="markdownTableBodyRight"><code>0x00A</code>   </td><td class="markdownTableBodyRight">16   </td><td class="markdownTableBodyRight">6   </td><td class="markdownTableBodyNone">B3: stopwatch screen, reset and back    </td></tr>
+<td class="markdownTableBodyNone">P304 / IRQ9   </td><td class="markdownTableBodyRight"><code>0x00A</code>   </td><td class="markdownTableBodyRight">16   </td><td class="markdownTableBodyRight">6   </td><td class="markdownTableBodyNone">B3: physical screen cycle or stopwatch reset    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">P111 / IRQ4   </td><td class="markdownTableBodyRight"><code>0x005</code>   </td><td class="markdownTableBodyRight">17   </td><td class="markdownTableBodyRight">6   </td><td class="markdownTableBodyNone">B4: start, pause and continue    </td></tr>
+<td class="markdownTableBodyNone">P111 / IRQ4   </td><td class="markdownTableBodyRight"><code>0x005</code>   </td><td class="markdownTableBodyRight">17   </td><td class="markdownTableBodyRight">6   </td><td class="markdownTableBodyNone">B4: stopwatch start, pause and continue    </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">SCI3 RXI   </td><td class="markdownTableBodyRight"><code>0x192</code>   </td><td class="markdownTableBodyRight">18   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyNone">Store BLE UART bytes in the receive ring buffer    </td></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">SCI3 ERI   </td><td class="markdownTableBodyRight"><code>0x195</code>   </td><td class="markdownTableBodyRight">19   </td><td class="markdownTableBodyRight">5   </td><td class="markdownTableBodyNone">Clear SCI errors and preserve a pending byte   </td></tr>
 </table>
 <p>The active vector table is copied to aligned RAM and only the required entries are replaced. This preserves the UART vectors already supplied by the surrounding NECTO project.</p>
-<h1><a class="anchor" id="autotoc_md4"></a>
-Screen and stopwatch behavior</h1>
-<h2><a class="anchor" id="autotoc_md5"></a>
-B3 — P304/IRQ9 or &lt;tt&gt;STOPWATCH|B3&lt;/tt&gt;</h2>
-<ul>
-<li>From the watch screen: open the stopwatch at its current value and state.</li>
-<li>From a nonzero stopwatch value: reset to <code>00:00:00:000</code> and stop.</li>
-<li>From a zero stopwatch value: return to the watch screen.</li>
-</ul>
+<h1><a class="anchor" id="autotoc_md5"></a>
+Screen behavior</h1>
 <h2><a class="anchor" id="autotoc_md6"></a>
-B4 — P111/IRQ4 or &lt;tt&gt;STOPWATCH|B4&lt;/tt&gt;</h2>
+Screen 1 — Smartwatch Dashboard</h2>
+<p>The restored first screen contains:</p>
 <ul>
-<li>Ready at zero: start.</li>
-<li>Running: pause.</li>
-<li>Paused: continue from the preserved value.</li>
-<li>On the watch screen: no stopwatch state change.</li>
+<li><code>HH:MM</code> time,</li>
+<li>AM/PM or 24-hour indicator,</li>
+<li>compact temperature and humidity values,</li>
+<li>day of the week,</li>
+<li>date,</li>
+<li>BLE status indicator.</li>
 </ul>
 <h2><a class="anchor" id="autotoc_md7"></a>
-BLE B2 — &lt;tt&gt;STOPWATCH|B2&lt;/tt&gt;</h2>
-<p>B2 switches to the watch dashboard without pausing or resetting the stopwatch. When B3 is triggered later, the stopwatch reopens with the value accumulated in the background.</p>
-<h1><a class="anchor" id="autotoc_md8"></a>
+Screen 2 — Environment</h2>
+<p>This screen contains only environmental information:</p>
+<ul>
+<li>temperature value,</li>
+<li>animated thermometer,</li>
+<li>temperature color transition from blue to red,</li>
+<li>humidity value,</li>
+<li>animated water droplet,</li>
+<li>BLE status indicator.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md8"></a>
+Screen 3 — Time of Day</h2>
+<p>This screen contains only time-of-day information:</p>
+<ul>
+<li>header text <b>TIME OF DAY</b>,</li>
+<li>digital RTC time,</li>
+<li>daytime sky with the sun or nighttime sky with the moon,</li>
+<li>a lowered trajectory that keeps the celestial body inside the sky area,</li>
+<li>sun/moon position updated once every minute,</li>
+<li>BLE status indicator.</li>
+</ul>
+<h2><a class="anchor" id="autotoc_md9"></a>
+Screen 4 — Stopwatch</h2>
+<p>This screen contains only stopwatch information:</p>
+<ul>
+<li>elapsed time in hours, minutes, seconds and milliseconds,</li>
+<li>status (<code>READY</code>, <code>RUNNING</code>, <code>PAUSED</code>),</li>
+<li>B4 action hints,</li>
+<li>B3 behavior hint,</li>
+<li>BLE status indicator.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md10"></a>
+Physical button behavior</h1>
+<h2><a class="anchor" id="autotoc_md11"></a>
+B3 — P304 / IRQ9</h2>
+<p>Physical B3 is now dedicated to <b>screen cycling</b> with one exception.</p>
+<ul>
+<li>From <b>Smartwatch Dashboard</b>: go to <b>Environment</b>.</li>
+<li>From <b>Environment</b>: go to <b>Time of Day</b>.</li>
+<li>From <b>Time of Day</b>: go to <b>Stopwatch</b>.</li>
+<li>From <b>Stopwatch</b> at <code>00:00:00.000</code>: go to <b>Smartwatch Dashboard</b>.</li>
+<li>From <b>Stopwatch</b> while running or while the elapsed value is nonzero: <b>stop and reset</b> the stopwatch to zero, and stay on the stopwatch screen.</li>
+</ul>
+<p>This means physical B3 does <b>not</b> jump back from the stopwatch to the main screen until the stopwatch is already reset to zero.</p>
+<h2><a class="anchor" id="autotoc_md12"></a>
+B4 — P111 / IRQ4</h2>
+<p>Physical B4 controls only the stopwatch while the stopwatch screen is active:</p>
+<ul>
+<li>Ready at zero: <b>start</b>.</li>
+<li>Running: <b>pause</b>.</li>
+<li>Paused: <b>continue</b>.</li>
+<li>On other screens: no stopwatch state change.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md13"></a>
+Automatic 15-second screen demonstration</h1>
+<p>Automatic screen cycling is disabled by default. To enable it, edit <code><a class="el" href="app__config_8h.html" title="Compile-time configuration for the R7FA4M2 smartwatch example.">include/app_config.h</a></code> and change one macro:</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#define APP_AUTO_B3_DEMO_ENABLED            (true)</span></div>
+</div><!-- fragment --><p>When enabled, the application queues the same B3 action used by the physical P304/IRQ9 button every 15 seconds. The sequence is therefore:</p>
+<div class="fragment"><div class="line">Smartwatch Dashboard -&gt; Environment -&gt; Time of Day -&gt; Stopwatch -&gt; Smartwatch Dashboard</div>
+</div><!-- fragment --><p>The implementation does not maintain a second navigation state machine. Automatic mode sets the normal <code>app_physical_b3_pending</code> flag, so button and automatic behavior remain identical. Every processed manual or automatic B3 action restarts the 15-second interval.</p>
+<p>If the stopwatch is running or contains a nonzero value when an automatic B3 action occurs, the normal B3 rule still applies: the stopwatch is stopped and reset first, and the screen remains on the stopwatch until the following B3 action.</p>
+<p>To return to manual-only operation, set the macro back to <code>false</code>.</p>
+<h1><a class="anchor" id="autotoc_md14"></a>
+BLE / SmartConsole behavior</h1>
+<p>BLE navigation is intentionally separated from the physical-button behavior.</p>
+<ul>
+<li><code>SCREEN|B1</code> → show <b>Smartwatch Dashboard</b>.</li>
+<li><code>SCREEN|B2</code> → show <b>Environment</b>.</li>
+<li><code>SCREEN|B5</code> → show <b>Time of Day</b>.</li>
+<li><code>STOPWATCH|B4</code> → show the <b>Stopwatch</b> screen and toggle start/pause/continue.</li>
+<li><code>STOPWATCH|B3</code> → <b>stop and reset</b> the stopwatch and show the stopwatch screen.</li>
+</ul>
+<p>This keeps <b>BLE B3</b> dedicated to stopping/resetting the stopwatch, while physical B3 remains the screen-cycle button.</p>
+<h1><a class="anchor" id="autotoc_md15"></a>
 SmartConsole commands</h1>
 <p>SmartConsole stores commands in CodeLess memory slot 0. The firmware reads the slot every 200 ms while connected and replaces a successfully processed command with <code>EMPTY</code>.</p>
-<h2><a class="anchor" id="autotoc_md9"></a>
+<h2><a class="anchor" id="autotoc_md16"></a>
 Set RTC date and time</h2>
 <div class="fragment"><div class="line">AT+MEM=0,RTC|YYYY|MM|DD|HH|MM|SS|WEEKDAY</div>
 </div><!-- fragment --><p>Example:</p>
 <div class="fragment"><div class="line">AT+MEM=0,RTC|2026|07|13|15|57|00|1</div>
 </div><!-- fragment --><p><code>HH</code> is a 24-hour value. Weekday numbering is <code>0 = Sunday</code> through <code>6 = Saturday</code>.</p>
-<h2><a class="anchor" id="autotoc_md10"></a>
-Show the watch without stopping the stopwatch</h2>
-<div class="fragment"><div class="line">AT+MEM=0,STOPWATCH|B2</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md11"></a>
-Trigger B3</h2>
+<h2><a class="anchor" id="autotoc_md17"></a>
+Show the Smartwatch Dashboard</h2>
+<div class="fragment"><div class="line">AT+MEM=0,SCREEN|B1</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md18"></a>
+Show the Environment screen</h2>
+<div class="fragment"><div class="line">AT+MEM=0,SCREEN|B2</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md19"></a>
+Show the Time of Day screen</h2>
+<div class="fragment"><div class="line">AT+MEM=0,SCREEN|B5</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md20"></a>
+Stop and reset the stopwatch</h2>
 <div class="fragment"><div class="line">AT+MEM=0,STOPWATCH|B3</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md12"></a>
-Trigger B4</h2>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md21"></a>
+Show or control the stopwatch</h2>
 <div class="fragment"><div class="line">AT+MEM=0,STOPWATCH|B4</div>
 </div><!-- fragment --><p>When SmartConsole's <b>AT+ prefix</b> option is enabled, enter only the part beginning with <code>MEM=...</code>. SmartConsole automatically converts local commands to the remote <code>ATr...</code> form.</p>
-<h1><a class="anchor" id="autotoc_md13"></a>
-Demo: control through pin interrupts</h1>
-<p>The first demo shows the physical-control path. P304 generates IRQ9 for B3 actions, while P111 generates IRQ4 for B4 actions. Both inputs use internal pull-ups, falling-edge detection and 200 ms software debounce. AGT0 continues to maintain the stopwatch independently of display rendering.</p>
-<p><img src="./pin_interrupt_control.gif" alt="Controlling the example through pin interrupts" class="inline"/></p>
-<h1><a class="anchor" id="autotoc_md14"></a>
+<h1><a class="anchor" id="autotoc_md22"></a>
+Demo: physical and automatic screen cycling</h1>
+<p>The first GIF shows the local B3/B4 control path and the four-screen navigation. P304 generates IRQ9 for B3 actions, while P111 generates IRQ4 for B4 actions. When <code>APP_AUTO_B3_DEMO_ENABLED</code> is <code>true</code>, the same sequence can be demonstrated without pressing B3 because the firmware queues B3 every 15 seconds.</p>
+<div class="image">
+<img src="pin_interrupt_control.gif" alt=""/>
+<div class="caption">
+Controlling and cycling the smartwatch screens</div></div>
+    <h1><a class="anchor" id="autotoc_md23"></a>
 Demo: control through Bluetooth</h1>
-<p>The second demo shows the same state machine driven remotely through BLE TINY. SmartConsole writes B2, B3, B4 or RTC payloads to CodeLess memory slot 0. SCI3 interrupts collect the UART response, and the foreground parser applies the command without performing display or I2C work inside an ISR.</p>
-<p><img src="./bluetooth_control.gif" alt="Controlling the example through Bluetooth" class="inline"/></p>
-<h1><a class="anchor" id="autotoc_md15"></a>
+<p>The second GIF shows remote control through BLE Tiny Click and SmartConsole. BLE uses dedicated screen commands, while <code>STOPWATCH|B3</code> remains reserved for stopping and resetting the stopwatch.</p>
+<div class="image">
+<img src="bluetooth_control.gif" alt=""/>
+<div class="caption">
+Controlling the example through Bluetooth</div></div>
+    <h1><a class="anchor" id="autotoc_md24"></a>
 Project structure</h1>
 <div class="fragment"><div class="line">.</div>
 <div class="line">├── README.md</div>
+<div class="line">├── CMakeLists.txt</div>
 <div class="line">├── Doxyfile</div>
 <div class="line">├── include</div>
 <div class="line">│   ├── app_config.h</div>
@@ -182,16 +312,16 @@ Project structure</h1>
 <div class="line">│   ├── ra4m2_baremetal.h</div>
 <div class="line">│   ├── rtc14.h</div>
 <div class="line">│   └── temphum27.h</div>
-<div class="line">├── src</div>
-<div class="line">│   ├── app_controller.c</div>
-<div class="line">│   ├── app_interrupts.c</div>
-<div class="line">│   ├── bletiny.c</div>
-<div class="line">│   ├── iic0_bus.c</div>
-<div class="line">│   ├── ips2_display.c</div>
-<div class="line">│   ├── main.c</div>
-<div class="line">│   ├── rtc14.c</div>
-<div class="line">│   └── temphum27.c</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md16"></a>
+<div class="line">└── src</div>
+<div class="line">    ├── app_controller.c</div>
+<div class="line">    ├── app_interrupts.c</div>
+<div class="line">    ├── bletiny.c</div>
+<div class="line">    ├── iic0_bus.c</div>
+<div class="line">    ├── ips2_display.c</div>
+<div class="line">    ├── main.c</div>
+<div class="line">    ├── rtc14.c</div>
+<div class="line">    └── temphum27.c</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md25"></a>
 Module responsibilities</h1>
 <ul>
 <li><code>app_controller</code>: owns visible screen, stopwatch state, pending actions and foreground scheduling.</li>
@@ -199,29 +329,32 @@ Module responsibilities</h1>
 <li><code>iic0_bus</code>: shared polling IIC0 master implementation.</li>
 <li><code>rtc14</code>: RTC validation, BCD conversion, read/write and logging.</li>
 <li><code>temphum27</code>: sensor reset, measurement, CRC and fixed-point conversion.</li>
-<li><code>ips2_display</code>: SCI0 SPI transport, display initialization, drawing primitives and UI caching.</li>
+<li><code>ips2_display</code>: SCI0 SPI transport, display initialization, drawing primitives, caching and all four smartwatch UI screens.</li>
 <li><code>bletiny</code>: SCI3 UART, ring buffer, CodeLess parsing, BLE state and SmartConsole commands.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md17"></a>
+<h1><a class="anchor" id="autotoc_md26"></a>
 Integration notes</h1>
 <ol type="1">
 <li>Add every file under <code>src/</code> to the NECTO project and add <code>include/</code> to the compiler include path.</li>
 <li>Keep the project's existing <code>mcu.h</code>, <code>delays.h</code>, startup code and linker script.</li>
 <li>The project must provide <code><a class="el" href="project__platform_8h.html#ab3b699102d01f9fae47c234fb1dd5c51" title="Read the configured MCU clock frequencies.">SYSTEM_GetClocksFrequency()</a></code> and <code><a class="el" href="project__platform_8h.html#a17cb61c4ec78fad11fd285daf22ee5e7" title="Project logging function with printf-compatible formatting.">printf_me()</a></code>.</li>
 <li>Do not add another owner for SCI0, SCI3, IIC0 or AGT0.</li>
-<li>The example writes the configured default RTC date/time at every reset. Remove the <code><a class="el" href="rtc14_8h.html#ab1aee4e1c6c5c4ff183a11c5d64263e9" title="Apply the example&#39;s configured default date and time.">rtc14_set_default_datetime()</a></code> call in <code><a class="el" href="app__controller_8h.html#ae7e9cf616595db655e19c65e34620222" title="Initialize all Click boards, UI, BLE and interrupt sources.">app_controller_init()</a></code> when RTC battery-backed time must survive MCU resets.</li>
+<li>The example writes the configured default RTC date/time at every reset. Remove the <code><a class="el" href="rtc14_8h.html#ab1aee4e1c6c5c4ff183a11c5d64263e9" title="Apply the example&#39;s configured default date and time.">rtc14_set_default_datetime()</a></code> call in <code><a class="el" href="app__controller_8h.html#ae7e9cf616595db655e19c65e34620222" title="Initialize Click boards, sensors, display, BLE and interrupt sources.">app_controller_init()</a></code> when RTC battery-backed time must survive MCU resets.</li>
 <li>Long I2C and display operations run only in the foreground. The interrupt handlers remain short.</li>
 </ol>
-<h1><a class="anchor" id="autotoc_md18"></a>
+<h1><a class="anchor" id="autotoc_md27"></a>
 Documentation</h1>
-<p>All public declarations have Doxygen-style comments. Run Doxygen from this directory:</p>
-<div class="fragment"><div class="line">doxygen Doxyfile</div>
-</div><!-- fragment --><p>Generated HTML documentation is written to <code>docs/html/</code>. </p>
-</div></div><!-- PageDoc -->
+<p>The project includes Doxygen-style comments for public declarations, internal helper functions, interrupt handlers, shared data types and configuration groups. Static functions are included in the generated output.</p>
+<p>The generated documentation is written to:</p>
+<div class="fragment"><div class="line">docs/html/index.html</div>
+</div><!-- fragment --> </div></div><!-- PageDoc -->
 </div><!-- contents -->
+</div><!-- doc-content -->
 <!-- start footer part -->
-<hr class="footer"/><address class="footer"><small>
-Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8
-</small></address>
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+  </ul>
+</div>
 </body>
 </html>

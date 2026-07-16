@@ -1,28 +1,30 @@
 <map id="src/app_interrupts.c" name="src/app_interrupts.c">
-<area shape="rect" id="Node000001" title="RAM vector installation, AGT0 tick and external button IRQ routing." alt="" coords="259,5,410,31"/>
-<area shape="rect" id="Node000002" href="$app__interrupts_8h.html" title="Public declarations for this module." alt="" coords="5,152,133,177"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="315,33,103,148,101,143,312,29"/>
-<area shape="rect" id="Node000004" href="$app__config_8h.html" title="Compile&#45;time configuration for the R7FA4M2 smartwatch example." alt="" coords="157,152,261,177"/>
-<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="326,33,230,143,226,140,322,29"/>
-<area shape="rect" id="Node000005" href="$app__controller_8h.html" title="Public declarations for this module." alt="" coords="286,152,413,177"/>
-<area shape="poly" id="edge5_Node000001_Node000005" title=" " alt="" coords="331,32,319,65,317,84,319,103,335,140,331,142,313,105,311,84,314,63,326,30"/>
-<area shape="rect" id="Node000006" href="$app__types_8h.html" title="Shared data types and result codes." alt="" coords="328,79,429,104"/>
-<area shape="poly" id="edge7_Node000001_Node000006" title=" " alt="" coords="344,30,367,66,362,68,340,32"/>
-<area shape="rect" id="Node000007" href="$bletiny_8h.html" title="Public declarations for this module." alt="" coords="453,79,531,104"/>
-<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="361,28,455,71,453,75,359,33"/>
-<area shape="rect" id="Node000008" href="$ra4m2__baremetal_8h.html" title="Shared RA4M2 register definitions used by the local bare&#45;metal drivers." alt="" coords="555,79,706,104"/>
-<area shape="poly" id="edge11_Node000001_Node000008" title=" " alt="" coords="383,28,570,73,569,78,382,33"/>
-<area shape="rect" id="Node000003" title=" " alt="" coords="386,225,457,251"/>
-<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="126,175,373,224,372,229,125,180"/>
-<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="244,175,375,218,373,223,243,180"/>
-<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="363,176,402,214,398,218,359,180"/>
-<area shape="poly" id="edge8_Node000006_Node000003" title=" " alt="" coords="394,103,413,124,428,151,433,183,430,212,425,212,427,183,423,153,408,127,390,106"/>
-<area shape="poly" id="edge10_Node000007_Node000003" title=" " alt="" coords="489,106,435,214,431,212,484,103"/>
-<area shape="rect" id="Node000009" href="$project__platform_8h.html" title="Project&#45;specific SDK hooks used by the example." alt="" coords="551,152,694,177"/>
-<area shape="poly" id="edge12_Node000008_Node000009" title=" " alt="" coords="632,105,628,139,623,138,627,104"/>
-<area shape="poly" id="edge13_Node000009_Node000003" title=" " alt="" coords="591,180,468,223,466,218,589,175"/>
-<area shape="rect" id="Node000010" title=" " alt="" coords="525,225,587,251"/>
-<area shape="poly" id="edge14_Node000009_Node000010" title=" " alt="" coords="614,179,578,217,574,213,610,176"/>
-<area shape="rect" id="Node000011" title=" " alt="" coords="612,225,689,251"/>
-<area shape="poly" id="edge15_Node000009_Node000011" title=" " alt="" coords="630,177,644,212,639,214,625,179"/>
+<area shape="rect" id="Node000001" title="RAM vector installation, AGT0 tick and external button IRQ routing." alt="" coords="298,5,449,31"/>
+<area shape="rect" id="Node000002" href="$app__interrupts_8h.html" title="Interrupt&#45;vector, AGT0 tick and physical&#45;button interface." alt="" coords="5,152,133,177"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="316,33,248,52,177,81,130,112,93,144,89,140,127,108,175,76,246,47,314,28"/>
+<area shape="rect" id="Node000004" href="$app__config_8h.html" title="Compile&#45;time configuration for the R7FA4M2 smartwatch example." alt="" coords="188,79,292,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="353,33,275,74,273,70,351,28"/>
+<area shape="rect" id="Node000006" href="$app__controller_8h.html" title="Application state&#45;machine and foreground&#45;loop interface." alt="" coords="315,152,442,177"/>
+<area shape="poly" id="edge6_Node000001_Node000006" title=" " alt="" coords="370,32,359,64,356,84,357,103,369,139,364,141,352,105,351,84,354,63,365,30"/>
+<area shape="rect" id="Node000007" href="$app__types_8h.html" title="Shared data types and result codes." alt="" coords="367,79,468,104"/>
+<area shape="poly" id="edge8_Node000001_Node000007" title=" " alt="" coords="383,30,405,66,401,68,378,32"/>
+<area shape="rect" id="Node000008" href="$bletiny_8h.html" title="BLE Tiny Click SCI3 and CodeLess command interface." alt="" coords="492,79,569,104"/>
+<area shape="poly" id="edge10_Node000001_Node000008" title=" " alt="" coords="400,28,494,71,492,75,398,33"/>
+<area shape="rect" id="Node000009" href="$ra4m2__baremetal_8h.html" title="Shared RA4M2 register definitions used by the local bare&#45;metal drivers." alt="" coords="594,79,745,104"/>
+<area shape="poly" id="edge12_Node000001_Node000009" title=" " alt="" coords="422,28,609,73,608,78,420,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="394,225,465,251"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="128,175,381,224,380,230,127,180"/>
+<area shape="poly" id="edge5_Node000004_Node000003" title=" " alt="" coords="228,106,213,121,199,140,193,159,194,167,198,176,209,185,227,194,274,210,381,229,380,234,273,215,225,199,206,190,194,179,189,169,188,158,195,137,209,118,224,103"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="208,152,291,177"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="244,104,249,138,243,139,239,105"/>
+<area shape="poly" id="edge7_Node000006_Node000003" title=" " alt="" coords="389,176,415,213,411,216,385,179"/>
+<area shape="poly" id="edge9_Node000007_Node000003" title=" " alt="" coords="430,103,445,124,457,151,459,168,457,185,446,214,441,212,452,183,454,168,452,153,440,127,425,106"/>
+<area shape="poly" id="edge11_Node000008_Node000003" title=" " alt="" coords="525,106,476,179,449,216,444,213,471,176,521,103"/>
+<area shape="rect" id="Node000010" href="$project__platform_8h.html" title="Project&#45;specific SDK hooks used by the example." alt="" coords="583,152,726,177"/>
+<area shape="poly" id="edge13_Node000009_Node000010" title=" " alt="" coords="670,105,662,139,657,138,664,104"/>
+<area shape="poly" id="edge14_Node000010_Node000003" title=" " alt="" coords="619,180,479,224,477,219,618,175"/>
+<area shape="rect" id="Node000011" title=" " alt="" coords="575,225,638,251"/>
+<area shape="poly" id="edge15_Node000010_Node000011" title=" " alt="" coords="649,179,624,216,620,213,645,176"/>
+<area shape="rect" id="Node000012" title=" " alt="" coords="663,225,740,251"/>
+<area shape="poly" id="edge16_Node000010_Node000012" title=" " alt="" coords="665,176,688,212,684,215,660,179"/>
 </map>
