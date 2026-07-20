@@ -266,12 +266,13 @@ The second GIF shows remote control through BLE Tiny Click and SmartConsole. BLE
 
 ## Integration notes
 
-1. Add every file under `src/` to the NECTO project and add `include/` to the compiler include path.
-2. Keep the project's existing `mcu.h`, `delays.h`, startup code and linker script.
-3. The project must provide `SYSTEM_GetClocksFrequency()` and `printf_me()`.
-4. Do not add another owner for SCI0, SCI3, IIC0 or AGT0.
-5. The example writes the configured default RTC date/time at every reset. Remove the `rtc14_set_default_datetime()` call in `app_controller_init()` when RTC battery-backed time must survive MCU resets.
-6. Long I2C and display operations run only in the foreground. The interrupt handlers remain short.
+1. Clone this repo to you PC.
+2. Open NECTOStudio IDE.
+3. Create Configuration for [Clicker 4 for R7FA4M2A](https://www.mikroe.com/blog/clicker-4-for-r7fa4m2ad3cfp) Board.
+4. Update Terget connection parameters to be as on this image:![image](./R7FA4M2_TARGET_OPTIONS.png)
+5. Open cloned repo as a project in NECTOStudio IDE and select created Configuration.
+6. Connect USB-C cable to your [Clicker 4 for R7FA4M2A](https://www.mikroe.com/blog/clicker-4-for-r7fa4m2ad3cfp) Board and program it.
+7. Use [Renesas CodeLess / SmartConsole](https://lpccs-docs.renesas.com/UM-140-DA145x-CodeLess/smartconsole.html) or Buttons B3/B4 to control the application flow.
 
 ## Documentation
 
