@@ -212,7 +212,7 @@ AT+MEM=0,STOPWATCH|B4
 
 When SmartConsole's **AT+ prefix** option is enabled, enter only the part beginning with `MEM=...`. SmartConsole automatically converts local commands to the remote `ATr...` form.
 
-## Demo: physical and automatic screen cycling
+## Demo: physical screen cycling
 
 The first GIF shows the local B3/B4 control path and the four-screen navigation. P304 generates IRQ9 for B3 actions, while P111 generates IRQ4 for B4 actions. When `APP_AUTO_B3_DEMO_ENABLED` is `true`, the same sequence can be demonstrated without pressing B3 because the firmware queues B3 every 15 seconds.
 
